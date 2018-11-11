@@ -44,7 +44,6 @@ module.exports = class StaticVoidHost {
             sessionElement.destroy();
         });
 
-        sessionElement.
     }
 
     registerBehavior(Behavior) {
