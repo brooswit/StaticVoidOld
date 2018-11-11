@@ -37,6 +37,8 @@ module.exports = class StaticVoidHost {
         this.createElement(['SessionBehavior', ws])
     }
 
+    use()
+
     registerBehavior(Behavior) {
         this._Behaviors[Behavior.name] = Behavior;
     }
