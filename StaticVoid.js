@@ -35,7 +35,7 @@ module.exports = class StaticVoidHost {
 
     _handleStream(ws) {
         let sessionElement = this.createElement(['SessionBehavior', ws]);
-        sessionElement
+        sessionElement.send
     }
 
     registerBehavior(Behavior) {
