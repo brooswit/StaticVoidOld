@@ -41,7 +41,8 @@ module.exports = class StaticVoidHost {
         });
 
         ws.on('close', () => {
-            this.destroy() ;
+            sessionElement.destroy();
+        });
 
         sessionElement.
     }
