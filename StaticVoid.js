@@ -47,9 +47,9 @@ module.exports = class StaticVoidHost {
         (async ()=>{
             let ping = 0
             while(true) {
-                let snapshot = await sessionElement.getSnapshot({ping})
-                let startTime = Date.now()
-                let rawSnap = JSON.stringify(snapshot)
+                let snapshot = await sessionElement.getSnapshot({ping});
+                let startTime = Date.now();
+                let rawSnap = JSON.stringify(snapshot);
                 await new Promise((done) => ws.send(rawSnap, done))
                 let endTime = Date.now()
                 ping = endTime - startTime
