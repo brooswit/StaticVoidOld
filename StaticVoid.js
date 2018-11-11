@@ -56,7 +56,7 @@ module.exports = class StaticVoidHost {
                 await new Promise((done) => ws.send(rawData, done));
                 let sendSnapshotEndTime = Date.now();
 
-                ping = endTime - generateSnapshotTime;
+                ping = sendSnapshotEndTime - getSnapshotStartTime;
 
                 let throttle = this._syncThrottle
                 let delay = Math.min(Math.max(1, throttle - ping), throttle)
