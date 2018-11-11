@@ -49,7 +49,7 @@ module.exports = class StaticVoidHost {
             let getSnapshotEndTime;
             let sendSnapshotStartTime;
             let sendSnapshotEndTime;
-            let ping = 0
+            let ping = 0;
             while(true) {
                 getSnapshotStartTime = Date.now();
                 let snapshot = await sessionElement.getSnapshot({});
