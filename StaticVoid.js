@@ -39,8 +39,9 @@ module.exports = class StaticVoidHost {
         ws.on('message', (msg) => {
             sessionElement.handleEvent(JSON.parse(msg));
         });
-        
-        ws.on('close', () => this.destroy() );
+
+        ws.on('close', () => {
+            this.destroy() ;
 
         sessionElement.
     }
