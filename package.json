@@ -1,0 +1,30 @@
+{
+    "name": "staticvoid",
+    "version": "0.0.21",
+    "description": "",
+    "main": "StaticVoid.js",
+    "scripts": {
+        "test": "echo \"Bo test specified\"",
+        "update": "bash ./scripts/deploy.sh"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/brooswit/StaticVoid.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/brooswit/StaticVoid/issues"
+    },
+    "homepage": "https://github.com/brooswit/StaticVoid#readme",
+    "devDependencies": {
+        "grunt": "^1.0.3",
+        "grunt-contrib-watch": "^1.1.0"
+    },
+    "dependencies": {
+        "ejs": "^2.6.1",
+        "express": "^4.16.4",
+        "express-ws": "^4.0.0",
+        "grunt-shell": "^2.1.0"
+    }
+}
