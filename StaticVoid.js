@@ -49,10 +49,10 @@ module.exports = class StaticVoidHost {
             let getSnapshotEndTime;
             let sendSnapshotStartTime;
             let sendSnapshotEndTime;
-            let ping = 0
+            let s = 0;
             while(true) {
                 getSnapshotStartTime = Date.now();
-                let snapshot = await sessionElement.getSnapshot({ping});
+                let snapshot = await sessionElement.getSnapshot({s});
                 let rawData = JSON.stringify(snapshot);
                 getSnapshotEndTime = Date.now();
 
@@ -60,10 +60,10 @@ module.exports = class StaticVoidHost {
                 await new Promise((done) => ws.send(rawData, done));
                 sendSnapshotEndTime = Date.now();
 
-                ping = sendSnapshotEndTime - getSnapshotStartTime;
+                s = sendSnapshotEndTime - getSnapshotStartTime;
 
                 let throttle = this._syncThrottle
-                let delay = Math.min(Math.max(1, throttle - ping), throttle)
+                let delay = Math.min(Math.max(1, throttle - s), throttle)
                 await new Promise((done) => setTimeout(done, delay))
             }
         })()
