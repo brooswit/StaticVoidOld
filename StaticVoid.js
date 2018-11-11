@@ -49,7 +49,7 @@ module.exports = class StaticVoidHost {
             let getSnapshotEndTime;
             let sendSnapshotStartTime;
             let sendSnapshotEndTime;
-            
+
             while(true) {
                 let debug = {
                     getSnapshotStartTime,
