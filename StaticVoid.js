@@ -44,7 +44,6 @@ module.exports = class StaticVoidHost {
             sessionElement.destroy();
         });
 
-
         (async ()=>{
             let ping = 0
             while(true) {
