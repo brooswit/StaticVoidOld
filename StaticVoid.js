@@ -37,7 +37,8 @@ module.exports = class StaticVoidHost {
         let sessionElement = this.createElement(['SessionBehavior', ws]);
 
         ws.on('message', (msg) => {
-            this.handleEvent(JSON.parse(msg)) );
+            sessionElement.handleEvent(JSON.parse(msg)) )
+        };
         ws.on('close', () => this.destroy() );
 
         sessionElement.
