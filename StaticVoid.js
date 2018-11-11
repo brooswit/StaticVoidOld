@@ -47,13 +47,13 @@ module.exports = class StaticVoidHost {
         (async ()=>{
             let ping = 0
             while(true) {
-                let startTime = Date.now();
+                let gTime = Date.now();
                 let snapshot = await sessionElement.getSnapshot({ping});
                 let rawData = JSON.stringify(snapshot);
                 let generateSnapshotTime = Date.now();
                 await new Promise((done) => ws.send(rawData, done));
                 let endTime = Date.now()
-                ping = endTime - generateSnapshotTime
+                ping = endTime - generateSnapshotTime;
                 let throttle = this._syncThrottle
                 let delay = Math.min(Math.max(1, throttle - ping), throttle)
                 await new Promise((done) => setTimeout(done, delay))
