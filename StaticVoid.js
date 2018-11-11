@@ -44,6 +44,7 @@ module.exports = class StaticVoidHost {
             sessionElement.destroy();
         });
 
+
         (async ()=>{
             let ping = 0
             while(true) {
@@ -58,7 +59,6 @@ module.exports = class StaticVoidHost {
                 await new Promise((done) => setTimeout(done, delay))
             }
         })()
-
     }
 
     registerBehavior(Behavior) {
