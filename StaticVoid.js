@@ -53,6 +53,8 @@ module.exports = class StaticVoidHost {
             while(true) {
                 let debug = {
                     getSnapshotStartTime,
+                    getSnapshotEndTime,
+                    sendSnapshotStartTime,
                     
                 }
                 getSnapshotStartTime = Date.now();
