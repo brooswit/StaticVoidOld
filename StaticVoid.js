@@ -46,6 +46,9 @@ module.exports = class StaticVoidHost {
 
         (async ()=>{
             let getSnapshotStartTime;
+            let getSnapshotEndTime;
+            let getSnapshotEndTime;
+            let getSnapshotEndTime;
             let ping = 0
             while(true) {
                 let getSnapshotStartTime = Date.now();
