@@ -59,7 +59,7 @@ module.exports = class StaticVoidHost {
 
                 getSnapshotStartTime = Date.now();
                 let snapshot = await sessionElement.getSnapshot({});
-                snapshot = {debug;
+                snapshot.debug = debug;
                 let rawData = JSON.stringify(snapshot);
                 getSnapshotEndTime = Date.now();
 
