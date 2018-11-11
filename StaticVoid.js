@@ -13,24 +13,24 @@ module.exports = class StaticVoidHost {
 
         this._nextElementId = 0;
         this._elements = [];
-        this._Behaviors = []
+        this._Behaviors = [];
 
-        const app = express()
+        const app = express();
 
-        enableWs(app)
+        enableWs(app);
 
         app.use(express.static(path.join(__dirname, 'public')))
           .set('views', path.join(__dirname, 'views'))
           .set('view engine', 'ejs')
           .get('/', this._handleRequest)
           .ws('/stream', this._handleStream)
-          .listen(this._port)
+          .listen(this._port);
 
-        this.registerBehavior(SessionBehavior)
+        this.registerBehavior(SessionBehavior);
     }
 
     _handleRequest(req, res) {
-        res.render('pages/main', {})
+        res.render('pages/main', {});
     }
 
     _handleStream(ws) {
