@@ -5,7 +5,7 @@ const path = require('path')
 const Element = require('./classes/Element')
 const Behavior = require('./classes/Behavior')
 
-const SessionBehavior = require('./behaviors/SessionBehavior')
+const Session = require('./behaviors/Session')
 
 class StaticVoidHost {
     constructor(options = {}) {
@@ -27,7 +27,7 @@ class StaticVoidHost {
           .ws('/stream', this._handleStream)
           .listen(this._port);
 
-        this.registerBehavior(SessionBehavior);
+        this.registerBehavior(Session);
     }
 
     _handleRequest(req, res) {
@@ -35,7 +35,7 @@ class StaticVoidHost {
     }
 
     _handleStream(ws) {
-        let sessionElement = this.createElement(['SessionBehavior', ws]);
+        let sessionElement = this.createElement(['Session', ws]);
 
         ws.on('message', (msg) => {
             sessionElement.handleEvent(JSON.parse(msg));
