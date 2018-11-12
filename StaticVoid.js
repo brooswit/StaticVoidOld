@@ -90,4 +90,5 @@ class StaticVoidHost {
 
 module.exports = {
     StaticVoid,
+    Behavior,
 }
