@@ -5,14 +5,20 @@ module.exports = function(grunt) {
             tasks: ['shell']
         },
         shell: {
+            update: {
+                command: 'npm run update',
+                options: {
+                    stdout: true
+                }
+            },
             test: {
                 command: 'npm run test',
                 options: {
                     stdout: true
                 }
             },
-            update: {
-                command: 'npm run update',
+            deploy: {
+                command: 'npm run deploy',
                 options: {
                     stdout: true
                 }
