@@ -42,6 +42,7 @@ module.exports = class StaticVoidHost {
 
         ws.on('close', () => {
             sessionElement.destroy();
+            sessionElement = null;
         });
 
         (async ()=>{
