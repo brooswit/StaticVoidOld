@@ -87,3 +87,7 @@ class StaticVoidHost {
         elements[id] = new Element(id, behaviors, state)
     }
 }
+
+module.exports = {
+    StaticVoid,
+}
