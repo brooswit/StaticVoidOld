@@ -88,7 +88,4 @@ class StaticVoidHost {
     }
 }
 
-module.exports = {
-    StaticVoid,
-    Behavior,
-}
+module.exports = StaticVoid;
