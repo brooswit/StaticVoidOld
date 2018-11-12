@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express');
 const enableWs = require('express-ws');
 const path = require('path');
 
@@ -26,8 +26,6 @@ class StaticVoidHost {
           .get('/', this._handleRequest)
           .ws('/stream', this._handleStream)
           .listen(this._port);
-
-        this.registerBehavior(Session);
     }
 
     _handleRequest(req, res) {
