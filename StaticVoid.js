@@ -1,11 +1,11 @@
 const express = require('express')
 const enableWs = require('express-ws');
-const path = require('path')
+const path = require('path');
 
-const Element = require('./classes/Element')
-const Behavior = require('./classes/Behavior')
+const Element = require('./classes/Element');
+const Behavior = require('./classes/Behavior');
 
-const Session = require('./behaviors/Session')
+const Session = require('./behaviors/Session');
 
 class StaticVoidHost {
     constructor(options = {}) {
