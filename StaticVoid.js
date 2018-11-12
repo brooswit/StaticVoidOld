@@ -88,4 +88,6 @@ class StaticVoidHost {
     }
 }
 
+StaticVoid.Behavior = Behavior;
+
 module.exports = StaticVoid;
