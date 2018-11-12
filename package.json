@@ -1,11 +1,12 @@
 {
     "name": "staticvoid",
-    "version": "0.0.95",
+    "version": "0.0.96",
     "description": "",
     "main": "StaticVoid.js",
     "scripts": {
+        "u": "echo \"No test specified\"",
         "test": "echo \"No test specified\"",
-        "update": "bash ./scripts/deploy.sh"
+        "deploy": "bash ./scripts/deploy.sh"
     },
     "repository": {
         "type": "git",
