@@ -5,7 +5,7 @@ const path = require('path');
 const Element = require('./classes/Element');
 const Behavior = require('./classes/Behavior');
 
-class StaticVoidHost {
+class StaticVoid {
     constructor(options = {}) {
         this._port = process.env.PORT || options.port || 8080;
         this._syncThrottle = options.syncThrottle || 1000/3;
