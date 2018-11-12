@@ -3,6 +3,7 @@ const enableWs = require('express-ws');
 const path = require('path')
 
 const Element = require('./classes/Element')
+const Behavior = require('./classes/Behavior')
 
 const SessionBehavior = require('./behaviors/SessionBehavior')
 
