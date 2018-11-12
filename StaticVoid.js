@@ -51,7 +51,7 @@ module.exports = class StaticVoidHost {
             let sendSnapshotStartTime;
             let sendSnapshotEndTime;
 
-            while(true) {
+            while(sessionElement) {
                 let debug = {
                     getSnapshotStartTime,
                     getSnapshotEndTime,
@@ -82,7 +82,7 @@ module.exports = class StaticVoidHost {
         this._Behaviors[Behavior.name] = Behavior;
     }
 
-    createElement(behaviors, state) {
+    createElement(behaviors, state = {}) {
         let id = nextElementId++
         elements[id] = new Element(id, behaviors, state)
     }
