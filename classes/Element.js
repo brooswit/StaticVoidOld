@@ -16,7 +16,7 @@ module.exports = class ElementFactory {
     }
 
     attachController(element, controllerName, state) {
-        new this.Controllers
+        new this.Controllers[controllerName](element, state);
     }
 
     registerController(Controller) {
