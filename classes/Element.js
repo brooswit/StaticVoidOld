@@ -26,31 +26,31 @@ class Element extends EventEmitter {
         this._Controllers = {};
     }
 
-    addBehavior(behaviorName) {
-        this._behaviors[behaviorName] = this._behaviors[behaviorName] || new Behaviors[behaviorName](this, state)
+    addBontroller(bontrollerName) {
+        this._bontrollers[bontrollerName] = this._bontrollers[bontrollerName] || new Bontrollers[bontrollerName](this, state)
     }
 
-    removeBehavior(behaviorName) {
-        this._behaviors[behaviorName].destroy()
-        this._behaviors[behaviorName] = null
+    removeBontroller(bontrollerName) {
+        this._bontrollers[bontrollerName].destroy()
+        this._bontrollers[bontrollerName] = null
     }
 
     destroy() {
-        for(let behaviorIndex in behaviors) {
-            let behaviorName = behaviors[behaviorIndex]
-            this.removeBehavior(behaviorName)
+        for(let bontrollerIndex in bontrollers) {
+            let bontrollerName = bontrollers[bontrollerIndex]
+            this.removeBontroller(bontrollerName)
         }
     }
 
     handleEvent(eventData) {
-        for(let behavior in this._state.behaviors) {
-            this._behaviors[behavior].handleEvent(eventData)
+        for(let bontroller in this._state.bontrollers) {
+            this._bontrollers[bontroller].handleEvent(eventData)
         }
     }
 
     async getSnapshot(snapshot = {}) {
-        for(let behavior in this._state.behaviors) {
-        snapshot = await this._behaviors[behavior].getSnapshot(snapshot)
+        for(let bontroller in this._state.bontrollers) {
+        snapshot = await this._bontrollers[bontroller].getSnapshot(snapshot)
         }
         return snapshot
     }
