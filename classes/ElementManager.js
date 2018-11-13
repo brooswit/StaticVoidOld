@@ -49,10 +49,10 @@ class Element extends EventEmitter {
 
     destroy() {
         this.emit('destroy');
-        }
     }
 
     async getSnapshot(snapshot = {}) {
+        
         for(let controller in this._state.controllers) {
             snapshot = await this._controllers[controller].getSnapshot(snapshot)
         }
