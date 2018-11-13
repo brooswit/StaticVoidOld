@@ -1,13 +1,13 @@
 const EventEmitter = require('events');
 
 module.exports = class Element extends EventEmitter {
-    constructor(id, behaviors = [], state = {}) {
+    constructor(id, Behaviors = [], state = {}) {
         this._id = id
         this._state = state
-        this._behaviors = {}
+        this._Behaviors = {}
 
-        for(let behaviorIndex in behaviors) {
-            let behaviorName = behaviors[behaviorIndex]
+        for(let behaviorIndex in Behaviors) {
+            let behaviorName = Behaviors[behaviorIndex]
             this.addBehavior(behaviorName)
         }
     }
