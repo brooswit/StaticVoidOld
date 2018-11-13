@@ -1,7 +1,7 @@
 const EventEmitter = require('events');
 
 module.exports = class ElementFactory extends EventEmitter{
-    constructor (staticVoid, Controllers=[], startId=0) {
+    constructor (Controllers=[], startId=0) {
         this._staticVoid = staticVoid;
         this._Controllers = Controllers;
         this._id = startId;
@@ -22,7 +22,7 @@ module.exports = class ElementFactory extends EventEmitter{
     }
 
     attachController(element, controllerName, state) {
-        let newController = new (this.Controllers[controllerName] || this.Controllers['Behavior'])(this._staticVoid, element, this._id++, state);
+        let newController = new (this.Controllers[controllerName] || this.Controllers['Behavior'])(element, this._id++, state);
         this.trigger('newController', newController);
         return newController;
     }
