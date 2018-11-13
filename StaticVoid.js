@@ -6,7 +6,7 @@ const Controller = require('./Controller');
 const ElementManager = require('./classes/ElementManager');
 
 async function asynchronously(method) {
-    return
+    return await method();
 }
 
 class StaticVoid extends ElementManager {
