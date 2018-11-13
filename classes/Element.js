@@ -10,10 +10,10 @@ module.exports = class ElementFactory extends EventEmitter{
         let newElement = new Element(this, state);
         for(controllerIndex in controllerNames) {
             let controllerName = controllerNames[controllerIndex];
-            newElement.addController(controllerName)
+            newElement.addController(controllerName);
         }
         this.trigger('newElement', newElement);
-        return newElement
+        return newElement;
     }
 
     registerController(Controller) {
@@ -24,10 +24,6 @@ module.exports = class ElementFactory extends EventEmitter{
         let newController = new (this.Controllers[controllerName] || this.Controllers['Behavior'])(element, this._id++, state);
         this.trigger('newController', newController);
         return newController;
-    }
-
-    _provisionId() {
-        return ;
     }
 }
 
