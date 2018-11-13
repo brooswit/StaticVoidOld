@@ -52,13 +52,7 @@ class Element extends EventEmitter {
     }
 
     async getSnapshot(snapshot = {}) {
-        this.emit('snapshot', snapshot)
+        this.emit('snapshot', snapshot);
         return snapshot
     }
-
-    // handleEvent(eventData) {
-    //     for(let controller in this._state.controllers) {
-    //         this._controllers[controller].handleEvent(eventData)
-    //     }
-    // }
 }
