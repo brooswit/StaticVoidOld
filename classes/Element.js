@@ -6,8 +6,8 @@ module.exports = class Element extends EventEmitter {
         this._state = state
         this._Controllers = {}
 
-        for(let behaviorIndex in Controllers) {
-            let Behavior = Controllers[behaviorIndex]
+        for(let ControllerIndex in Controllers) {
+            let Behavior = Controllers[ControllerIndex]
             this.addBehavior(Behavior)
         }
     }
