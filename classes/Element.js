@@ -1,6 +1,6 @@
 const EventEmitter = require('events');
 
-module.exports = class ElementFactory {
+module.exports = class ElementFactory extends EventEmitter{
     constructor (staticVoid, Controllers=[], startId=0) {
         this._staticVoid = staticVoid;
         this._Controllers = Controllers;
