@@ -40,8 +40,7 @@ class StaticVoid extends ElementManager {
         sessionElement.on('destroy', () => {
             sessionElement = null;
         });
-        asynchronously()
-        (async ()=>{
+        asynchronously(()=>{
             let getSnapshotStartTime;
             let getSnapshotEndTime;
             let sendSnapshotStartTime;
@@ -71,7 +70,7 @@ class StaticVoid extends ElementManager {
                 let delay = Math.min(Math.max(1, throttle - snapshotDeltaTime), throttle)
                 await new Promise((done) => setTimeout(done, delay))
             }
-        })();
+        });
     }
 }
 
