@@ -15,7 +15,9 @@ module.exports = class ElementFactory {
         }
     }
 
-    buildController(element, controllerName, state)
+    attachController(element, controllerName, state) {
+        
+    }
 
     registerController(Controller) {
         this._Controllers[Controller.name] = Controller;
@@ -35,7 +37,7 @@ class Element extends EventEmitter {
     }
 
     addController(controllerName, state={}) {
-        this._controllers[controllerName] = this._controllers[controllerName] || factory.buildController(this, controllerName, state)
+        this._controllers[controllerName] = this._controllers[controllerName] || factory.attachController(this, controllerName, state)
     }
 
     removeController(controllerName) {
