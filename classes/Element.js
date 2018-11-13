@@ -22,13 +22,13 @@ module.exports = class ElementFactory extends EventEmitter{
     }
 
     attachController(element, controllerName, state) {
-        let newController = new this.Controllers[controllerName](element, state);
+        let newController = new this.Controllers[controllerName](element, this._id++, state);
         this.trigger('newController', newController);
         return newController;
     }
 
     _provisionId() {
-        return this._id++;
+        return ;
     }
 }
 
