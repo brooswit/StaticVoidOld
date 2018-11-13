@@ -7,6 +7,6 @@ module.exports = class Session extends Controller {
     }
 
     injestMessage(payload) {
-        
+        if (pay)
     }
 }
