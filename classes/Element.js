@@ -20,11 +20,6 @@ class Element extends EventEmitter {
         this._id = id
         this._state = state
         this._Controllers = {}
-
-        for(let ControllerIndex in Controllers) {
-            let Controller = Controllers[ControllerIndex]
-            this.addController(Controller)
-        }
     }
 
     addBehavior(behaviorName) {
