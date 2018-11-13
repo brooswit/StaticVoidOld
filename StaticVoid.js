@@ -34,7 +34,7 @@ class StaticVoid {
         let sessionElement = this.createElement(['Session', ws]);
 
         ws.on('message', (msg) => {
-            sessionElement.handleEvent('clientMessage'JSON.parse(msg));
+            sessionElement.handleEvent('session', JSON.parse(msg));
         });
 
         ws.on('close', () => {
