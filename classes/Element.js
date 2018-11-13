@@ -33,8 +33,8 @@ module.exports = class ElementFactory extends EventEmitter{
 }
 
 class Element extends EventEmitter {
-    constructor(factory, state = {}) {
-        this._id = factory._provisionId();
+    constructor(factory, id, state = {}) {
+        this._id = id;
         this._state = state;
         this._factory = factory;
         this._controllers = {};
