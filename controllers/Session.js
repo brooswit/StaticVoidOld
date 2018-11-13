@@ -1,6 +1,6 @@
-const Behavior = re;
+const Controller = require('../classes/Controller');
 
-module.exports = class SessionBehavior extends Behavior {
+module.exports = class Session extends Controller {
     constructor(parent, state) {
         super(parent, state);
     }
