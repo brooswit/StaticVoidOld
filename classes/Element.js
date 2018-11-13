@@ -6,6 +6,8 @@ module.exports = class ElementFactory {
         this._Behaviors = Behaviors;
         this._id = startId;
     }
+
+    b
 }
 class Element extends EventEmitter {
     constructor(id, Controllers = [], state = {}) {
