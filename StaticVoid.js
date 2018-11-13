@@ -16,9 +16,9 @@ class StaticVoid extends ElementManager {
 
         this._app = express();
 
-        enableWs(app);
+        enableWs(_app);
 
-        app.use(express.static(path.join(__dirname, 'public')))
+        _app.use(express.static(path.join(__dirname, 'public')))
           .set('views', path.join(__dirname, 'views'))
           .set('view engine', 'ejs')
           .get('/', this._handleRequest)
