@@ -1,7 +1,7 @@
 const EventEmitter = require('events');
 
 module.exports = class Element extends EventEmitter {
-    constructor(id, behaviors, state) {
+    constructor(id, behaviors = [], state = {}) {
         this._id = id
         this._state = state
         this._behaviors = {}
