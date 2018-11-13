@@ -7,7 +7,8 @@ module.exports = class ElementFactory {
         this._id = startId;
     }
 
-    build(controllers, state={}) {
+    build(state={}, controller=[]) {
+        
         return new Element(this._id++. state);
     } 
 }
