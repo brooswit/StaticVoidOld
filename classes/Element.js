@@ -26,31 +26,31 @@ class Element extends EventEmitter {
         this._Controllers = {};
     }
 
-    addController(bontrollerName) {
-        this._bontrollers[bontrollerName] = this._bontrollers[bontrollerName] || new Bontrollers[bontrollerName](this, state)
+    addController(controllerName) {
+        this._controllers[controllerName] = this._controllers[controllerName] || new controllers[controllerName](this, state)
     }
 
-    removeController(bontrollerName) {
-        this._bontrollers[bontrollerName].destroy()
-        this._bontrollers[bontrollerName] = null
+    removeController(controllerName) {
+        this._controllers[controllerName].destroy()
+        this._controllers[controllerName] = null
     }
 
     destroy() {
-        for(let bontrollerIndex in bontrollers) {
-            let bontrollerName = bontrollers[bontrollerIndex]
-            this.removeController(bontrollerName)
+        for(let controllerIndex in controllers) {
+            let controllerName = controllers[controllerIndex]
+            this.removeController(controllerName)
         }
     }
 
     handleEvent(eventData) {
-        for(let bontroller in this._state.bontrollers) {
-            this._bontrollers[bontroller].handleEvent(eventData)
+        for(let controller in this._state.controllers) {
+            this._controllers[controller].handleEvent(eventData)
         }
     }
 
     async getSnapshot(snapshot = {}) {
-        for(let bontroller in this._state.bontrollers) {
-        snapshot = await this._bontrollers[bontroller].getSnapshot(snapshot)
+        for(let controller in this._state.controllers) {
+            snapshot = await this._controllers[controller].getSnapshot(snapshot)
         }
         return snapshot
     }
