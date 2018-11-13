@@ -22,9 +22,9 @@ module.exports = class ElementFactory extends EventEmitter{
     }
 
     attachController(element, controllerName, state) {
-        let newController =
-        this.trigger('newElement', newElement);
-        return new this.Controllers[controllerName](element, state);
+        let newController = new this.Controllers[controllerName](element, state);
+        this.trigger('newController', newController);
+        return newController;
     }
 
     provisionId() {
