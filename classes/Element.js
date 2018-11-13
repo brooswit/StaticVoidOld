@@ -7,7 +7,9 @@ module.exports = class ElementFactory {
         this._id = startId;
     }
 
-    build(controllers, state={}) 
+    build(controllers, state={}) {
+        return new Element()
+    } 
 }
 class Element extends EventEmitter {
     constructor(id, Controllers = [], state = {}) {
