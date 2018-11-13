@@ -49,7 +49,7 @@ class StaticVoid extends ElementManager {
                     getSnapshotEndTime,
                     sendSnapshotStartTime,
                     sendSnapshotEndTime
-                }
+                };
 
                 getSnapshotStartTime = Date.now();
                 let snapshot = await sessionElement.getSnapshot({});
