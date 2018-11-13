@@ -18,6 +18,8 @@ module.exports = class ElementFactory {
     registerController(Controller) {
         this._Controllers[Controller.name] = Controller;
     }
+
+    getCont
 }
 class Element extends EventEmitter {
     constructor(id, state = {}, Controllers) {
