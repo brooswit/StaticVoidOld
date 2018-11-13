@@ -1,7 +1,7 @@
 const EventEmitter = require('events');
 const Controller = require('./Controller');
 
-module.exports = class Element extends EventEmitter{
+module.exports = class ElementManager extends EventEmitter{
     constructor (Controllers=[], startId=0) {
         this._Controllers = Controllers;
         this._id = startId;
@@ -29,16 +29,16 @@ module.exports = class Element extends EventEmitter{
 }
 
 class Element extends EventEmitter {
-    constructor(factory, id, state = {}) {
+    constructor(manager, id, state = {}) {
         this._id = id;
         this._state = state;
-        this._factory = factory;
+        this._manager = manager;
         this._controllers = {};
     }
 
     addController(controllerName, state={}) {
         if (this.hasController(controller)) return;
-        this._controllers[controllerName] = factory.attachController(this, controllerName, state)
+        this._controllers[controllerName] = manager.attachController(this, controllerName, state)
     }
 
     removeController(controllerName) {
