@@ -15,6 +15,8 @@ module.exports = class ElementFactory {
         }
     }
 
+    buildController(element)
+
     registerController(Controller) {
         this._Controllers[Controller.name] = Controller;
     }
