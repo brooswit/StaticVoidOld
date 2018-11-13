@@ -21,9 +21,9 @@ module.exports = class ElementFactory {
 }
 class Element extends EventEmitter {
     constructor(Controllers, id, state = {}) {
-        this._id = id
-        this._state = state
-        this._Controllers = {}
+        this._id = id;
+        this._state = state;
+        this._Controllers = {};
     }
 
     addBehavior(behaviorName) {
