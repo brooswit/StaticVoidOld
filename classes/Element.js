@@ -7,8 +7,8 @@ module.exports = class Element extends EventEmitter {
         this._Controllers = {}
 
         for(let ControllerIndex in Controllers) {
-            let Behavior = Controllers[ControllerIndex]
-            this.addBehavior(Behavior)
+            let Controller = Controllers[ControllerIndex]
+            this.addController(Controller)
         }
     }
 
