@@ -40,7 +40,7 @@ class StaticVoid extends ElementManager {
         sessionElement.on('destroy', () => {
             sessionElement = null;
         });
-
+        asynchronously()
         (async ()=>{
             let getSnapshotStartTime;
             let getSnapshotEndTime;
