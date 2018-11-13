@@ -35,7 +35,7 @@ class StaticVoid extends ElementManager {
         ws.on('close', () => {
             sessionElement.destroy();
         });
-        
+
         sessionElement.on('destroy', () => {
             sessionElement = null;
         });
@@ -71,15 +71,6 @@ class StaticVoid extends ElementManager {
                 await new Promise((done) => setTimeout(done, delay))
             }
         })()
-    }
-
-    registerBehavior(Behavior) {
-        this._Behaviors[Behavior.name] = Behavior;
-    }
-
-    createElement(behaviors = [], state = {}) {
-        let id = nextElementId++
-        elements[id] = new Element(id, behaviors, state)
     }
 }
 
