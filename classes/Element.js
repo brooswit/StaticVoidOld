@@ -18,11 +18,15 @@ module.exports = class ElementFactory {
     registerController(Controller) {
         this._Controllers[Controller.name] = Controller;
     }
+
+    provisionId() {
+        
+    }
 }
 
 class Element extends EventEmitter {
     constructor(factory, id, state = {}) {
-        this._id = factory.p;
+        this._id = factory.provisionId();
         this._state = state;
         this._factory = {};
         this._controllers = {};
