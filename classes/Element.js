@@ -26,11 +26,11 @@ class Element extends EventEmitter {
         this._Controllers = {};
     }
 
-    addBontroller(bontrollerName) {
+    addController(bontrollerName) {
         this._bontrollers[bontrollerName] = this._bontrollers[bontrollerName] || new Bontrollers[bontrollerName](this, state)
     }
 
-    removeBontroller(bontrollerName) {
+    removeController(bontrollerName) {
         this._bontrollers[bontrollerName].destroy()
         this._bontrollers[bontrollerName] = null
     }
@@ -38,7 +38,7 @@ class Element extends EventEmitter {
     destroy() {
         for(let bontrollerIndex in bontrollers) {
             let bontrollerName = bontrollers[bontrollerIndex]
-            this.removeBontroller(bontrollerName)
+            this.removeController(bontrollerName)
         }
     }
 
