@@ -2,15 +2,14 @@ const EventEmitter = require('events');
 
 module.exports = class ElementFactory extends EventEmitter{
     constructor (Controllers=[], startId=0) {
-        this._staticVoid = staticVoid;
         this._Controllers = Controllers;
         this._id = startId;
     }
 
-    buildElement(state={}, controllers=[]) {
+    buildElement(state={}, controllerNames=[]) {
         let newElement = new Element(this, state);
-        for(controllerIndex in controllers) {
-            let controllerName = controllers[controllerIndex];
+        for(controllerIndex in controllerNames) {
+            let controllerName = controllerNames[controllerIndex];
             newElement.addController(controllerName)
         }
         this.trigger('newElement', newElement);
