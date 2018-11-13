@@ -15,12 +15,12 @@ module.exports = class ElementFactory {
         }
     }
 
-    attachController(element, controllerName, state) {
-        return new this.Controllers[controllerName](element, state);
-    }
-
     registerController(Controller) {
         this._Controllers[Controller.name] = Controller;
+    }
+
+    attachController(element, controllerName, state) {
+        return new this.Controllers[controllerName](element, state);
     }
 
     provisionId() {
