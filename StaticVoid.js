@@ -26,7 +26,7 @@ class StaticVoid extends ElementManager {
     }
 
     _handleStream(ws) {
-        let sessionElement = this.buildElement();
+        let sessionElement = this.buildElement(['Se']);
 
         ws.on('message', (msg) => {
             sessionElement.handleEvent('sessionRPC', JSON.parse(msg));
