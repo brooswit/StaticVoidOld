@@ -9,10 +9,6 @@ class StaticVoid extends ElementManager {
         this._port = process.env.PORT || options.port || 8080;
         this._syncThrottle = options.syncThrottle || 1000/3;
 
-        this._nextElementId = 0;
-        this._elements = [];
-        this._Behaviors = [];
-
         const app = express();
 
         enableWs(app);
@@ -30,7 +26,7 @@ class StaticVoid extends ElementManager {
     }
 
     _handleStream(ws) {
-        let sessionElement = this.createElement(['Session', ws]);
+        let sessionElement = this.buildElement(['Session', ws]);
 
         ws.on('message', (msg) => {
             sessionElement.handleEvent('sessionRPC', JSON.parse(msg));
