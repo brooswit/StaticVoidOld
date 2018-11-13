@@ -1,7 +1,8 @@
 module.exports = class Controller {
     constructor(parent, state = {}) {
-        this._parent = parent
-        this._state = state
+        this._parent = parent;
+        this,_parent.on('dest')
+        this._state = state;
     }
 
     destroy() {}
