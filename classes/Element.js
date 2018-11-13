@@ -16,7 +16,7 @@ module.exports = class ElementFactory {
     }
 
     registerController(Controller) {
-        
+        this._Controllers[Con]
     }
 }
 class Element extends EventEmitter {
