@@ -2,8 +2,9 @@ const EventEmitter = require('events');
 
 module.exports = class ElementFactory {
     constructor (staticVoid, Behaviors=[], startId=0) {
-        this._id = startId;
+        this._staticVoid = staticVoid;
         this._Behaviors = Behaviors;
+        this._id = startId;
     }
 }
 class Element extends EventEmitter {
