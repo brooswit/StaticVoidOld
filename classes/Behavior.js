@@ -1,4 +1,4 @@
-module.exports = class Behavior {
+module.exports = class Controller {
     constructor(parent, state = {}) {
         this._parent = parent
         this._state = state
