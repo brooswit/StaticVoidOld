@@ -27,7 +27,7 @@ class StaticVoid extends ElementManager {
 
     _handleStream(ws) {
         let sessionElement = this.buildElement(['Session']);
-
+        sessionElement.on('destroy')
         ws.on('message', (msg) => {
             sessionElement.emit('sessionMessage', JSON.parse(msg));
         });
