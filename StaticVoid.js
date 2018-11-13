@@ -5,7 +5,9 @@ const path = require('path');
 const Controller = require('./Controller');
 const ElementManager = require('./classes/ElementManager');
 
-asynchronously
+async function asynchronously(method) {
+    return
+}
 
 class StaticVoid extends ElementManager {
     constructor(options = {}) {
