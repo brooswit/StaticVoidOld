@@ -33,7 +33,7 @@ class Element extends EventEmitter {
     }
 
     addController(controllerName, state={}) {
-        this._controllers[controllerName] = this._controllers[controllerName] || factory.buildController(controllerName, this, state)
+        this._controllers[controllerName] = this._controllers[controllerName] || factory.buildController(this, controllerName, state)
     }
 
     removeController(controllerName) {
