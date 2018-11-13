@@ -48,9 +48,7 @@ class Element extends EventEmitter {
     }
 
     destroy() {
-        for(let controllerIndex in this._controllers) {
-            let controllerName = this._controllers[controllerIndex]
-            this.removeController(controllerName)
+        this.emit('destroy');
         }
     }
 
