@@ -8,7 +8,7 @@ module.exports = class Account extends Controller {
         });
     }
 
-    login({username, passwordHash}) {
-        this.parent.trigger(`session_${payload.command}`, payload.options);
+    login(username, passwordHash) {
+        
     }
 }
