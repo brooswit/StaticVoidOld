@@ -5,6 +5,8 @@ const path = require('path');
 const Controller = require('./Controller');
 const ElementManager = require('./classes/ElementManager');
 
+const asynchronously
+
 class StaticVoid extends ElementManager {
     constructor(options = {}) {
         this._port = process.env.PORT || options.port || 8080;
