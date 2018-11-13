@@ -1,4 +1,5 @@
-module.exports = class Element {
+module.exports = classconst EventEmitter = require('events');
+ Element {
     constructor(id, behaviors, state) {
         this._id = id
         this._state = state
