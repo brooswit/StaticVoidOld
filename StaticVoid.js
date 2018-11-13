@@ -14,7 +14,7 @@ class StaticVoid extends ElementManager {
         this._port = process.env.PORT || options.port || 8080;
         this._syncThrottle = options.syncThrottle || 1000/3;
 
-        const app = express();
+        this._app = express();
 
         enableWs(app);
 
