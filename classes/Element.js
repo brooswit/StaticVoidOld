@@ -1,5 +1,5 @@
 const EventEmitter = require('events');
-const Behavior = require('./Behavior');
+const BaseController = require('./BaseController');
 
 module.exports = class ElementFactory extends EventEmitter{
     constructor (Controllers=[], startId=0) {
@@ -22,7 +22,7 @@ module.exports = class ElementFactory extends EventEmitter{
     }
 
     attachController(element, controllerName, state) {
-        let newController = new (this.Controllers[controllerName] || this.Controllers['Behavior'])(element, this._id++, state);
+        let newController = new (this.Controllers[controllerName] || this.Controllers['BaseController'])(element, this._id++, state);
         this.trigger('newController', newController);
         return newController;
     }
