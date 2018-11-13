@@ -11,9 +11,11 @@ module.exports = class ElementFactory {
         let newElement = new Element(this._id++, state);
         for(controllerIndex in controllers) {
             let controllerName = controllers[controllerIndex];
-            newElement.addController()
+            newElement.addController(controllerName)
         }
-    } 
+    }
+
+    registerController
 }
 class Element extends EventEmitter {
     constructor(id, state = {}, Controllers) {
