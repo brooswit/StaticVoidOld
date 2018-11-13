@@ -13,6 +13,7 @@ module.exports = class ElementFactory extends EventEmitter{
             let controllerName = controllers[controllerIndex];
             newElement.addController(controllerName)
         }
+        this.trigger('newElement', )
     }
 
     registerController(Controller) {
