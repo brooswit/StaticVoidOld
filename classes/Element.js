@@ -5,7 +5,6 @@ module.exports = class ElementFactory extends EventEmitter{
     constructor (Controllers=[], startId=0) {
         this._Controllers = Controllers;
         this._id = startId;
-        this.registerController(Controller);
     }
 
     buildElement(state={}, controllerNames=[]) {
@@ -23,7 +22,7 @@ module.exports = class ElementFactory extends EventEmitter{
     }
 
     attachController(element, controllerName, state) {
-        let newController = new (this.Controllers[controllerName] || this.Controllers['Controller'])(element, this._id++, state);
+        let newController = new (this.Controllers[controllerName] || Controller)(element, this._id++, state);
         this.trigger('newController', newController);
         return newController;
     }
