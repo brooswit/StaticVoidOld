@@ -7,9 +7,11 @@ module.exports = class ElementFactory {
         this._id = startId;
     }
 
-    build(state={}, controller=[]) {
+    build(state={}, controllers=[]) {
         let newElement = new Element(this._id++, state);
-        for(controlle)
+        for(controllerIndex in controllers) {
+            
+        }
     } 
 }
 class Element extends EventEmitter {
