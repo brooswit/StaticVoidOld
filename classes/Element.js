@@ -22,7 +22,7 @@ module.exports = class ElementFactory extends EventEmitter{
     }
 
     attachController(element, controllerName, state) {
-        let newController = new (this.Controllers[controllerName] || Behavior)(element, this._id++, state);
+        let newController = new (this.Controllers[controllerName] || this.Controllers['Behavior'])(element, this._id++, state);
         this.trigger('newController', newController);
         return newController;
     }
