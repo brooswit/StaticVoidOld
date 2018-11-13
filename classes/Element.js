@@ -27,14 +27,14 @@ module.exports = class ElementFactory extends EventEmitter{
         return newController;
     }
 
-    provisionId() {
+    _provisionId() {
         return this._id++;
     }
 }
 
 class Element extends EventEmitter {
     constructor(factory, state = {}) {
-        this._id = factory.provisionId();
+        this._id = factory._provisionId();
         this._state = state;
         this._factory = factory;
         this._controllers = {};
