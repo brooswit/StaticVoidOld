@@ -6,5 +6,7 @@ module.exports = class Session extends Controller {
         this.parent.on('sessionMessage', this.injestMessage);
     }
 
-    injestMessage(payload) {}
+    injestMessage(payload) {
+        
+    }
 }
