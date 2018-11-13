@@ -53,6 +53,6 @@ class Element extends EventEmitter {
 
     async getSnapshot(snapshot = {}) {
         this.emit('snapshot', snapshot);
-        return snapshot
+        return snapshot;
     }
 }
