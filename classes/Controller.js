@@ -11,7 +11,5 @@ module.exports = class Controller extends EventEmitter {
 
     destroy() {}
 
-    decorateSnapshot(snapshot = {}) {
-        
-    }
+    decorateSnapshot(snapshot = {}) {}
 }
