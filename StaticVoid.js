@@ -2,6 +2,7 @@ const express = require('express');
 const enableWs = require('express-ws');
 const path = require('path');
 
+const Controller = require('./Controller');
 const ElementManager = require('./classes/ElementManager');
 
 class StaticVoid extends ElementManager {
@@ -74,6 +75,6 @@ class StaticVoid extends ElementManager {
     }
 }
 
-StaticVoid.Behavior = Behavior;
+StaticVoid.Controller = Controller;
 
 module.exports = StaticVoid;
