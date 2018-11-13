@@ -41,6 +41,7 @@ class Element extends EventEmitter {
     }
 
     removeController(controllerName) {
+        if (!this.hasController(controller))
         this._controllers[controllerName].destroy()
         this._controllers[controllerName] = null
     }
@@ -53,16 +54,16 @@ class Element extends EventEmitter {
         }
     }
 
-    // handleEvent(eventData) {
-    //     for(let controller in this._state.controllers) {
-    //         this._controllers[controller].handleEvent(eventData)
-    //     }
-    // }
-
     async getSnapshot(snapshot = {}) {
         for(let controller in this._state.controllers) {
             snapshot = await this._controllers[controller].getSnapshot(snapshot)
         }
         return snapshot
     }
+
+    // handleEvent(eventData) {
+    //     for(let controller in this._state.controllers) {
+    //         this._controllers[controller].handleEvent(eventData)
+    //     }
+    // }
 }
