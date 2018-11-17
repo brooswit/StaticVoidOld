@@ -4,7 +4,7 @@ module.exports = class Controller extends EventEmitter {
     constructor(parent, state = {}) {
         this._element = element;
         this,_element.on('destroy', this.destroy);
-        this,_element.on('snapshot', this.decorateSnapshot);
+        this,_element.on('snapshot', this.snapshot);
 
         this._state = state;
     }
@@ -15,5 +15,5 @@ module.exports = class Controller extends EventEmitter {
 
     destroy() {}
 
-    decorateSnapshot(snapshot) {}
+    snapshot(snapshot) {}
 }
