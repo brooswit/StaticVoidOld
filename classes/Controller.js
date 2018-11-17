@@ -25,10 +25,11 @@ module.exports = class Controller extends EventEmitter {
     snapshot(snapshot) {}
 
     addController() {
-        if(this._removed) return;
+        if(!this.getElement()) return;
         return this._element.addController.apply(this._element, arguments);
     }
     removeController() {
+        if(!this.getElement()) return;
         if(this._removed) return;
         return this._element.removeController.apply(this._element, arguments);
     }
