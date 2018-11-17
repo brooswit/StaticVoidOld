@@ -23,6 +23,9 @@ module.exports = class Controller extends EventEmitter {
     off() {
         this._element.off.apply(this._element, arguments);
     }
+    trigger() {
+        this._element.trigger.apply(this._element, arguments);
+    }
 
     destroy() {
         this._element.off('destroy', this.destroy);
