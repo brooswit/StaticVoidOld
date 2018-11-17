@@ -9,7 +9,9 @@ module.exports = class Controller extends EventEmitter {
         this._state = state;
     }
 
-    get
+    getElement() {
+        return this._element;
+    }
 
     destroy() {}
 
