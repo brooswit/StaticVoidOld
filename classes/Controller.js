@@ -14,7 +14,7 @@ module.exports = class Controller extends EventEmitter {
     }
 
     remove() {
-        this._removed 
+        this._removed = true;
         this._element.off('destroy', this.remove);
         this._element.off('snapshot', this.snapshot);
     }
