@@ -1,12 +1,12 @@
 const Controller = require('../classes/Controller');
 
 module.exports = class Session extends Controller {
-    constructor(parent, state) {
-        super(parent, state);
-        this.parent.on('session_message', this.injestMessage);
+    constructor(element, state) {
+        super(element, state);
+        this.element.on('session_message', this.injestMessage);
     }
 
     injestMessage(payload) {
-        this.parent.trigger(`session_${payload.command}`, payload.options);
+        this.element.trigger(`session_${payload.command}`, payload.options);
     }
 }
