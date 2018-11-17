@@ -24,21 +24,26 @@ module.exports = class Controller extends EventEmitter {
 
     addController() {
         if(this._removed) return;
-        this._element.addController.apply(this._element, arguments);
+        return this._element.addController.apply(this._element, arguments);
     }
     removeController() {
-        this._element.removeController.apply(this._element, arguments);
+        if(this._removed) return;
+        return this._element.removeController.apply(this._element, arguments);
     }
     destroy() {
-        this._element.destroy.apply(this._element, arguments);
+        if(this._removed) return;
+        return this._element.destroy.apply(this._element, arguments);
     }
     on() {
-        this._element.on.apply(this._element, arguments);
+        if(this._removed) return;
+        return this._element.on.apply(this._element, arguments);
     }
     off() {
-        this._element.off.apply(this._element, arguments);
+        if(this._removed) return;
+        return this._element.off.apply(this._element, arguments);
     }
     trigger() {
-        this._element.trigger.apply(this._element, arguments);
+        if(this._removed) return;
+        return this._element.trigger.apply(this._element, arguments);
     }
 }
