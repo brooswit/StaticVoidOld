@@ -17,8 +17,11 @@ module.exports = class Controller extends EventEmitter {
         this._element.addController.apply(this._element, arguments);
     }
 
-    addController() {
-        this._element.addController.apply(this._element, arguments);
+    on() {
+        this._element.on.apply(this._element, arguments);
+    }
+    off() {
+        this._element.off.apply(this._element, arguments);
     }
 
     destroy() {
