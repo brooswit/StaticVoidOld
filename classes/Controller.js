@@ -11,6 +11,7 @@ module.exports = class Controller extends EventEmitter {
     }
 
     getElement() {
+        if(this._removed) return null;
         return this._element;
     }
 
