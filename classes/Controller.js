@@ -15,16 +15,15 @@ module.exports = class Controller extends EventEmitter {
     }
 
     remove() {
-        this._removed = true;
-
         this._element.off('destroy', this.remove);
         this._element.off('snapshot', this.snapshot);
+        this._removed = true;
     }
 
     snapshot(snapshot) {}
 
     addController() {
-        this._element.addController.apply(this._element, arguments);
+        !this._removed && this._element.addController.apply(this._element, arguments);
     }
     removeController() {
         this._element.removeController.apply(this._element, arguments);
