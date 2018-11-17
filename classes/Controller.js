@@ -17,6 +17,9 @@ module.exports = class Controller extends EventEmitter {
         this._element.addController.apply(this._element, arguments);
     }
 
+    removeController() {
+        this._element.removeController.apply(this._element, arguments);
+    }
     on() {
         this._element.on.apply(this._element, arguments);
     }
