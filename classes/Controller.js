@@ -13,7 +13,9 @@ module.exports = class Controller extends EventEmitter {
         return this._element;
     }
 
-    destroy() {}
+    destroy() {
+        this._element.
+    }
 
     snapshot(snapshot) {}
 }
