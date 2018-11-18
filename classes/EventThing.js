@@ -3,7 +3,9 @@ class InterfaceFactory {
 
     }
 
-    newInter
+    newInterface() {
+        return 
+    }
 }
 class EventManager {
     constructor() {
