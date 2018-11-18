@@ -75,8 +75,8 @@ class EventyView {
 
 class EventyInternal {
     constructor() {
-        this._emitter = new EventEmitter();
-        this._emitterEventyWra
+        this._emitter = EmitterEventyWrapper(new EventEmitter();
+        this._emitterEventyWrapper
     }
     trigger() {
         
