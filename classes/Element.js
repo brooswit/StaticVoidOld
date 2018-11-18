@@ -3,11 +3,15 @@ const EventManager = require('./EventManager');
 module.exports = class Element extends EventManager {
     constructor(parent) {
         this.state = {};
-        this.p
+        this.parent = null;
         this._parentInterface = null;
         this._isDestroyed = false;
 
         if (parent) this.attach(parent);
+    }
+
+    root() {
+        
     }
 
     attach(parent) {
