@@ -1,6 +1,6 @@
 const EventEmitter = require('events');
 
-class EventConsumer {
+class EventManagerInterface {
     constructor(eventManager) {
         this._emitter = new EventEmitter();
         this.attached = null;
@@ -69,8 +69,8 @@ class EventHandler extends Promise {
 
         this._triggerCount = 0;
         
-        this._managerEventInterface = new EventConsumer(emitter);
-        this._managerInternalEventInterface = new EventConsumer(internalEmitter);
+        this._managerEventInterface = new EventManagerInterface(emitter);
+        this._managerInternalEventInterface = new EventManagerInterface(internalEmitter);
 
         this._managerEventInterface.on(eventName, this.trigger);
         this._managerInternalEventInterface.once(`close`, this.off);
@@ -138,6 +138,6 @@ class EventManager {
     }
 }
 
-EventManager.Interface = EventConsumer;
+EventManager.Interface = EventManagerInterface;
 
 module.exports = EventManager;
