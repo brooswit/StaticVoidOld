@@ -5,6 +5,7 @@ class EventyHandler extends Promise {
     constructor(source, internalEvents, eventName, callback, payload) {
         super(on);
         
+        if(source) this_onAttached
         this._source = source;
         this._events = internalEvents;
         this._eventName = eventName;
