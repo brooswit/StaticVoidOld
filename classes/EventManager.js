@@ -1,6 +1,6 @@
 class EventManagerInterface {
-    constructor(targetEmitter) {
-        this._targetEventManager = targetEmitter;
+    constructor(_targetEventManager) {
+        this._targetEventManager = _targetEventManager;
         this._emitter = new EventEmitter();
     }
 
