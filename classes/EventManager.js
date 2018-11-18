@@ -63,11 +63,6 @@ class EventyHandler extends Promise {
         this._events.on('triggered', this._callback);
 
         if(eventy) this._onAttach(eventy);
-
-        this._internalEvents = internalEvents;
-        this._internalEvents.on('attached', this._onAttach);
-        this._internalEvents.on('detached', this._onDetach);
-        this._internalEvents.once('closed', this.off);
     }
 
     trigger(payload) {
