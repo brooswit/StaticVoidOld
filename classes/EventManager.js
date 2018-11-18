@@ -25,7 +25,7 @@ class EventyView {
         this._emitter.emit('dettached');
     }
     on(eventName, callback, payload) {
-        this._emitter.on('attached', 
+        this._emitter.once('attached', 
     }
     trigger() { return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
 
