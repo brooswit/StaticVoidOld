@@ -4,6 +4,7 @@ module.exports = class Element extends EventManager {
     constructor(world) {
         this._isDestroyed = false;
         this.state = {};
+        this.world = null;
         if (world) this.attach(world);
     }
 
