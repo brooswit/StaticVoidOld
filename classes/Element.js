@@ -39,7 +39,7 @@ module.exports = class Element extends EventManager {
         if (!this._parent) return;
 
         this._parent = null;
-        this.parent.detach();
+        this.detach();
 
         this.trigger('dettached');
     }
