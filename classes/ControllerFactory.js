@@ -7,16 +7,6 @@ module.exports = class ControllerManager extends EventManager {
         this._Controllers = Controllers;
     }
 
-    buildElement(controllerNames = [], state = {}) {
-        let newElement = new Element(this, state);
-        for(controllerIndex in controllerNames) {
-            let controllerName = controllerNames[controllerIndex];
-            newElement.addController(controllerName);
-        }
-        this.trigger('newElement', newElement);
-        return newElement;
-    }
-
     registerController(Controller) {
         this._Controllers[Controller.name] = Controller;
     }
