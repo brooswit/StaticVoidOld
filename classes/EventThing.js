@@ -72,7 +72,7 @@ class EventManager {
     }
 
     get(eventName) {
-        return 
+        return this._events[eventName];
     }
 
     on(eventName, callback) {
