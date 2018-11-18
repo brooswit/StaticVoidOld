@@ -21,7 +21,7 @@ class EventHandler {
         this._triggerPromise = null;
 
         // Requires Cleanup \/
-        this._manager._emitter[once ? 'once' : 'on']('eventName', this._cb);
+        this._manager._emitter.on('eventName', this._cb);
         
         this._manager._internalEmitter.once(`close`, this.off);
         this._manager._internalEmitter.once(`off`, this.off);
