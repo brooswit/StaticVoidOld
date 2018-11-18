@@ -1,5 +1,7 @@
 class EventInterface {
-    constructor() {}
+    constructor() {
+        this._emitter = new EventEmitter();
+    }
 
     on
 
