@@ -1,5 +1,5 @@
 function firstToUppercase(str) {
-    return 
+    return str.charAt(0).toUpperCase() + name.slice(1)
 }
 function the(subject) {
     return {is: {
