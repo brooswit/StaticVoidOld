@@ -1,7 +1,7 @@
 const EventManagerInterface = require('./EventManagerInterface');
-const EventManagerInterface = require('./EventManagerInterface');
+const EventHandler = require('./EventHandler');
 const EventEmitter = require('events');
-
+class 
 class EventManager {
     constructor() {
         this._isClosed = false;
