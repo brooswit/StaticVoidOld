@@ -13,7 +13,9 @@ class EventyView {
     trigger(eventName) {
 
     }
-    attach(eventy)
+    attach(eventy) {
+        this.
+    }
 }
 class Eventy extends EventyView {
     constructor() {
