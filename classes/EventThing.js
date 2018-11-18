@@ -19,9 +19,8 @@ class EventHandler extends Promise {
         this._triggerCount = 0;
 
         // Requires Cleanup \/
-        this._emitt
         this._emitter.on('trigger', this._handleEvent);
-
+        this._emitter.on('close')
         this._manager._emitter.on(eventName, this._handleEvent);
         
         this._manager._internalEmitter.once(`close`, this.off);
