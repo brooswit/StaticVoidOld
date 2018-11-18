@@ -5,6 +5,7 @@ function the(subject) {
     return {is: {
         a: (Class) {
             let type = subject.constructor.name;
+            let targetType = Class.name
             if (type === "Object") {
                 type = subject.Name
             }
