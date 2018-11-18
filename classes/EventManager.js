@@ -2,7 +2,9 @@ const EventManagerInterface = require('./EventManagerInterface');
 const EventHandler = require('./EventHandler');
 const EventEmitter = require('events');
 class EventCore {
-    
+    getView() {
+        
+    }
 }
 class EventManager {
     constructor() {
