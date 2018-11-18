@@ -30,7 +30,7 @@ class EventyHandler extends Promise {
     }
     off() {
         this.detach();
-        this._
+        
     }
 }
 class EventyView {
