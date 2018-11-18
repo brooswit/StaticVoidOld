@@ -3,6 +3,7 @@ let nextId = 0;
 module.exports = class Element extends EventManager {
     constructor(parent) {
         super();
+        this.id = nextId++;
         this.state = {};
         this._parent = null;
         this.parentInterface = new EventManagerInterface(parent)
