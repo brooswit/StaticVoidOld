@@ -3,7 +3,7 @@ class EventHandler {
         this._eventEmitter = eventEmitter;
         this._callbackIndex = this._eventEmitter._nextCallbackIndex ++;
         this._callbackLookup[this._callbackIndex] = this;
-        this._eventLookup
+        this._eventLookup[eventName]
     }
 }
 
