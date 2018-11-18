@@ -29,7 +29,7 @@ class EventHandler extends Promise {
     }
 
     handle(resolve, reject) {
-        rethis.on()
+        this.on(resolve);
     }
 
     on(cb) {
