@@ -1,6 +1,3 @@
-const EventManagerInterface = require('./EventManagerInterface');
-const EventHandler = require('./EventHandler');
-const EventEmitter = require('events');
 class EventyHandler extends Promise {
     constructor(source, internalEvents, eventName, callback, payload) {
         super(this._resolver);
@@ -28,7 +25,6 @@ class EventyHandler extends Promise {
     _onDetached() {
         this.eventyHandler.off();
     }
-    on()
     off() {
 
     }
