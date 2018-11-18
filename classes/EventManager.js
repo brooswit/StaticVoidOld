@@ -17,7 +17,7 @@ class EventyView {
     attach(eventy) {
         this.detach();
         this._source = eventy;
-
+        this._emitter.emit('change')
     }
 }
 class Eventy extends EventyView {
