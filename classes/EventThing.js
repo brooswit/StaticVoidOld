@@ -1,5 +1,5 @@
 class EventHandler {
-    constructor(eventManager, eventName, callback, once = false) {
+    constructor(eventManager, eventName, callback, triggerLimit) {
         this._manager = eventManager;
         this._name = eventName;
         this._cb = callback;
