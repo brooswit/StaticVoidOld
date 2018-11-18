@@ -22,7 +22,7 @@ class EventManagerInterface {
 }
 
 class EventHandler extends Promise {
-    constructor(eventManager, eventName, callback, context, triggerLimit = false) {
+    constructor(_emitter, _internalEmitter, eventName, callback, context, triggerLimit = false) {
         super(on);
 
         this._manager = eventManager;
