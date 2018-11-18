@@ -20,7 +20,9 @@ class EventHandler extends Promise {
         this._emitter = this._manager._eventEmitter;
         this._internalEmitter = this._manager._internalEventEmitter;
 
-        
+        this.untiawait new Promise((resolve, reject) {
+            this.on('trigger', resolve);
+        }
         // Requires Cleanup \/
         this._emitter[once ? 'once' : 'on']('eventName', this._cb);
         
