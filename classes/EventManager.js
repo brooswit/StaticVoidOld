@@ -16,18 +16,22 @@ class EventyView {
         this._source = null;
         if (eventySource) this.attach(eventySource);
     }
+
     attach(eventy) {
         this.detach();
         this._source = eventy;
         this._internalEvents.emit('attached', eventy);
     }
+
     detach() {
         this._source = null;
         this._internalEvents.emit('dettached');
     }
+
     on(eventName, callback, payload) {
         return new EventHandler(this._source, this._internalEvents, eventName, callback, payload);
     }
+
     trigger() { return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
 
 }
