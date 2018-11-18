@@ -37,7 +37,7 @@ module.exports = class Controller extends EventManager {
     }
     on() {
         if(!this.getElement()) return;
-        return this._element.on.apply(this._element, arguments);
+        return this._elementEventInterface.on.apply(this._element, arguments);
     }
     off() {
         if(!this.getElement()) return;
@@ -45,6 +45,6 @@ module.exports = class Controller extends EventManager {
     }
     trigger() {
         if(!this.getElement()) return;
-        return this._element.trigger.apply(this._element, arguments);
+        return this._elementEventInterface.trigger.apply(this._element, arguments);
     }
 }
