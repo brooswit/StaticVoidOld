@@ -9,7 +9,7 @@ async function asynchronously(method) {
     return method.then ? await method() : method();
 }
 
-function 
+function JSONsafeParse()
 
 class StaticVoid extends ElementManager {
     constructor(options = {}) {
