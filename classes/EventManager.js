@@ -5,6 +5,10 @@ class EventyHandler extends Promise {
     constructor(emitter, eventName, callback, payload) {
         super(
     }
+    
+    off() {
+
+    }
 }
 class EventyView {
     constructor(eventySource) {
