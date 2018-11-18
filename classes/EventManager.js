@@ -39,6 +39,8 @@ class EventHandler extends Promise {
 
         this._emitter = new EventMamager();
         this._emitterInterface = new EventManagerInterface(this._emitter);
+        this._emitterInterface = new EventManagerInterface(this._emitter);
+
         this._isOff = false;
         this._triggerCount = 0;
 
