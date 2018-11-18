@@ -53,7 +53,7 @@ class EventyView {
     }
 
     detach(eventy) {
-        if(this._isAttached) return;
+        if(!this._isAttached) return;
         this._source = null;
         this._events.emit('dettached');
     }
