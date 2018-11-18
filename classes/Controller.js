@@ -1,9 +1,9 @@
 const EventManager = require('./EventManager');
 
 module.exports = class Controller extends EventManager.Interface {
-    constructor(globalEventManagerInterface, element, state = {}) {
+    constructor(globalEventManager, element, state = {}) {
         super(element);
-        this.globalEvents = globalEventManagerInterface;new EventManager.Interface(this.elementManager)
+        this.globalEvents = new EventManager.Interface(globalEventManagerInterface)
 
         this._isRemoved = false;
         this._element = element;
