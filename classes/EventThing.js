@@ -52,7 +52,8 @@ class EventHandler extends Promise {
         );
         this._eventInterface.once(
             this._emitter,
-            `off`
+            `off`,
+            this.
         );
     }
 
