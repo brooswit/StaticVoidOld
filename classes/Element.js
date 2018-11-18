@@ -3,9 +3,10 @@ const EventManager = require('./EventManager');
 module.exports = class Element extends EventManager {
     constructor() {
         this.state = {};
-        this.world
+        this._world = null;
         this._controllers = {};
     }
+    
 
     addController(controllerName, state={}) {
         if (this.hasController(controller)) return;
