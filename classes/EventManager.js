@@ -74,7 +74,9 @@ class EventyView {
 }
 
 class EmitterEventyWrapper {
-    constructor(eventEmitter)
+    constructor(eventEmitter) {
+        eventEmitter
+    }
 }
 class EventyInternal {
     constructor() {
