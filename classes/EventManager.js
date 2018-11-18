@@ -17,11 +17,10 @@ class EventyView {
     attach(eventy) {
         this.detach();
         this._source = eventy;
-        this._emitter.emit('source_changed');
+        this._emitter.emit('attached', eventy);
     }
     detach() {
         this._source = null;
-        
     }
     trigger() { return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
     on() { return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
