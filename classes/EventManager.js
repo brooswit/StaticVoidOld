@@ -1,3 +1,4 @@
+const EventManagerInterface = require('./EventManagerInterface');
 const EventEmitter = require('events');
 
 class EventManagerInterface {
