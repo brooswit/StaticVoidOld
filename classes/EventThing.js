@@ -16,9 +16,6 @@ class EventManager {
     constructor() {
         this._eventEmitter = new EventEmitter();
         this._internalEventEmitter = new EventEmitter();
-        this._nextEventHandlerIndex = 0;
-        this._eventHandlerLookup = {};
-        this._eventLookup = {}
     }
 
     on(eventName, callback) {
