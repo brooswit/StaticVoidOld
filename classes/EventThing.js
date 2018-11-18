@@ -10,7 +10,7 @@ class EventHandler {
 class EventEmitter {
     constructor() {
         this._nextEventHandlerIndex = 0;
-        this._callbackLookup = {};
+        this._eventHandlerLookup = {};
         this._eventLookup = {}
     }
 
