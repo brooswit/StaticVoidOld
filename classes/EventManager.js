@@ -74,8 +74,9 @@ class EventyView {
 }
 
 class EventyInternal {
+    
     trigger() {
-
+        
     }
     on() {
         return new EventyHandler(this.emitter, this._events, eventName, callback, payload);
