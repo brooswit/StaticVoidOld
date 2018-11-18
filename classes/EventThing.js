@@ -1,6 +1,7 @@
 class EventHandler extends Promise {
     constructor(eventManager, eventName, callback = null, triggerLimit = false) {
-        super(callback  on)
+        super(on)
+        if (typeof callback !== 'function')  
 
         this._manager = eventManager;
         this._name = eventName;
