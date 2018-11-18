@@ -4,7 +4,7 @@ class EventHandler extends Promise {
 
         this._manager = eventManager;
         this._name = eventName;
-        this._cb = callback;
+        this._cb = this._handleEve;
         this._triggerLimit = triggerLimit === true ?
             1 : typeof triggerLimit === 'number' ?
             triggerLimit : false;
@@ -48,8 +48,8 @@ class EventHandler extends Promise {
         this._off = true;
         this._emitter.off('trigger', this._cb);
 
-        this._manager._emitter.off('eventName', callback);
-        
+        this._manager._emitter.off('eventName', this._cb);
+
         this._manager._internalEmitter.once(`close`, this.off);
         this._manager._internalEmitter.once(`off`, this.off);
         this._manager._internalEmitter.once(`off:${this._eventName}`, this.off);
