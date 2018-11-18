@@ -40,23 +40,23 @@ class EventyHandler extends Promise {
 }
 
 class EventyView extends Eventy {
-    constructor(source) {
-        this._source = null;
-        if (source) this.attach(source);
+    constructor(eventy) {
+        this._eventy = null;
+        if (eventy) this.attach(eventy);
     }
 
-    attach(newSource) {
-        if(this._source) return;
-        this._source = newSource;
-        this._internalEvents.on('triggered', this._source.trigger);
-        this._internalEvents.emit('attached', newSource);
+    attach(newEventy) {
+        if(this._eventy) return;
+        this._eventy = newEventy;
+        this._internalEvents.on('triggered', this._eventy.trigger);
+        this._internalEvents.emit('attached', newEventy);
     }
 
     detach() {
-        if(!this._source) return;
-        let oldSource = this._source; this._source = null;
-        this._internalEvents.off('triggered', oldSource.trigger);
-        this._internalEvents.emit('dettached', oldSource);
+        if(!this._eventy) return;
+        let oldeventy = this._eventy; this._eventy = null;
+        this._internalEvents.off('triggered', oldeventy.trigger);
+        this._internalEvents.emit('dettached', oldeventy);
     }
 }
 
