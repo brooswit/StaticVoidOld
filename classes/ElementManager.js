@@ -1,4 +1,4 @@
-const EventEmitter = require('events');
+const EventManager = require('./EventManager');
 const Controller = require('./Controller');
 
 module.exports = class ElementManager extends EventManager {
