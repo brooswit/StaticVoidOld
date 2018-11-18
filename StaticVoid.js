@@ -5,6 +5,7 @@ const path = require('path');
 const Controller = require('./Controller');
 const ElementManager = require('./classes/ElementManager');
 
+// UTILITY
 async function asynchronously(method) {
     return method.then ? await method() : method();
 }
@@ -13,10 +14,11 @@ function JSONsafeParse(str) {
     try {
         return JSON.parse(str);
     } catch (ex) {
-        return undefined
+        return undefined;
     }
 }
 
+// CORE
 class StaticVoid extends ElementManager {
     constructor(options = {}) {
         this._port = process.env.PORT || options.port || 8080;
