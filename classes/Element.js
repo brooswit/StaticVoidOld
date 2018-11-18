@@ -6,6 +6,7 @@ module.exports = class Element extends EventManager {
         this.id = nextId++;
         this.state = {};
         this.parentInterface = new EventManager.Interface();
+        this.rootInterface = new EventManager.Interface();
         this._parent = null;
         this._isDestroyed = false;
 
