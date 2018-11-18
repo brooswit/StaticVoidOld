@@ -5,7 +5,7 @@ class EventHandler {
         this._off = false;
 
         this._manager._eventEmitter[once ? 'once' : 'on']('eventName', callback);
-        this._manager._internalEventEmitter.once('off, off);
+        this._manager._internalEventEmitter.once('off', (eventNameoff);
         this._manager._internalEventEmitter.once('close', off);
     }
 
