@@ -76,12 +76,13 @@ class EventyView {
 class EventyInternal {
     constructor() {
         this._source = new EmitterEventyWrapper(new EventEmitter());
+        this._events = new EventEmitter();
     }
     trigger() {
         
     }
     on() {
-        return new EventyHandler(this.emitter, this._events, eventName, callback, payload);
+        return new EventyHandler(this._source, this._events, eventName, callback, payload);
     }
 }
 class Eventy extends EventyView {
