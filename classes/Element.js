@@ -17,8 +17,7 @@ module.exports = class Element extends EventManager {
         this.trigger('destroy');
     }
 
-    async getSnapshot(snapshot = {}) {
+    snapshot(snapshot) {
         this.trigger('snapshot', snapshot);
-        return snapshot;
     }
 }
