@@ -85,7 +85,7 @@ class EventyHandler extends Promise, EventyInterface {
     }
     _onAttach(source) {
         this._onDetach();
-        this.eventyHandler = source.on(this._eventName, this.trigger, this._payload);
+        this.eventyHandler = source.on(this._eventName, this.trigger);
     }
     _onDetach() {
         if(!this.eventyHandler) return;
