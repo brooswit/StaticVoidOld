@@ -1,1 +1,5 @@
-class EventM
+class EventManager {
+    constructor() {
+        
+    }
+}
