@@ -10,7 +10,7 @@ class EventHandler {
         assert(this._manager instanceof EventManager);
         assert(typeof this._name === 'string');
         assert(typeof this._cb === 'function');
-        assert(that(this._triggerLimit).is.a(Number).or === 'number' || typeof this._triggerLimit === 'boolean');
+        assert(that(this._triggerLimit).is.a(Number).or.a(Boolean)) === 'number' || typeof this._triggerLimit === 'boolean');
         assert(typeof this._triggerLimit === 'number' || typeof this._triggerLimit === 'boolean');
 
         this._off = false;
