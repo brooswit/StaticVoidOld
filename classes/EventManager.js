@@ -3,7 +3,7 @@ const EventHandler = require('./EventHandler');
 const EventEmitter = require('events');
 class EventyHandler extends Promise {
     constructor(source, internalEvents, eventName, callback, payload) {
-        super(promiseReso);
+        super(this._resolver);
         
         this._eventName = eventName;
         this._callback = callback;
@@ -13,6 +13,7 @@ class EventyHandler extends Promise {
         internalEvents.on('attached', this._onAttached);
         internalEvents.on('dettached', this._onDettached);
     }
+    _
     _onAttached(source) {
         this.eventyHandler = source.on(this._eventName, this._callback, this._payload);
     }
