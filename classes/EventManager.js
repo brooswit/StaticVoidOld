@@ -6,7 +6,8 @@ class EventyHandler extends Promise {
         super(on);
         
         if(source) this._onAttached(source);
-        internalEvents.on('attached', this._onAttached)
+        internalEvents.on('attached', this._onAttached);
+        internalEvents.on('dettached', this._onDettached);
         this._events = ;
         this._eventName = eventName;
         this._callback = callback;
