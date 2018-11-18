@@ -1,7 +1,7 @@
 class EventHandler {
     constructor(eventManager, eventName, callback) {
         this._manager = eventManager;
-        this._manage
+        this._manager._eventEmitter.on('eventName', callback);
     }
 
     off() {
