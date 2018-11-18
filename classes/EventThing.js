@@ -62,18 +62,18 @@ class EventHandler extends Promise {
         this._cb.apply(context, arguments);
     }
 
+    trigger() {
+        if (this._off) return;
+        if (this._triggerLimit !== false && ++this._triggerCount >= this._triggerLimit) this.off();
+        return this._emitter.emit.apply(_emitter, ['trigger'].concat(arguments));
+    }
+
     on(callback) {
         return this._manager.on.apply(this._manager, [this._name].concat(arguments));
     }
 
     once(callback) {
         return this._manager.once.apply(this._manager, [this._name].concat(arguments));
-    }
-
-    trigger() {
-        if (this._off) return;
-        if (this._triggerLimit !== false && ++this._triggerCount >= this._triggerLimit) this.off();
-        return this._emitter.emit.apply(_emitter, ['trigger'].concat(arguments));
     }
 
     off() {
