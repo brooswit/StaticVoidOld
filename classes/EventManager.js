@@ -2,7 +2,7 @@ const EventManagerInterface = require('./EventManagerInterface');
 const EventHandler = require('./EventHandler');
 const EventEmitter = require('events');
 class EventyHandler extends Promise {
-    constructor(eventyView, eventName, callback, payload) {
+    constructor(emitter, eventName, callback, payload) {
         
     }
 }
