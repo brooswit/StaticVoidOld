@@ -23,9 +23,9 @@ class EventHandler extends Promise {
         // Requires Cleanup \/
         this._manager._emitter[once ? 'once' : 'on']('eventName', this._cb);
         
-        this._manager._internalEventEmitter.once(`close`, this.off);
-        this._manager._internalEventEmitter.once(`off`, this.off);
-        this._manager._internalEventEmitter.once(`off:${this._eventName}`, this.off);
+        this._manager._internalEmitter.once(`close`, this.off);
+        this._manager._internalEmitter.once(`off`, this.off);
+        this._manager._internalEmitter.once(`off:${this._eventName}`, this.off);
     }
 
     async on() {
@@ -58,16 +58,16 @@ class EventHandler extends Promise {
         this._off = true;
 
         this._manager._emitter.off('eventName', callback);
-        this._manager._internalEventEmitter.once(`close`, this.off);
-        this._manager._internalEventEmitter.once(`off`, this.off);
-        this._manager._internalEventEmitter.once(`off:${this._eventName}`, this.off);
+        this._manager._internalEmitter.once(`close`, this.off);
+        this._manager._internalEmitter.once(`off`, this.off);
+        this._manager._internalEmitter.once(`off:${this._eventName}`, this.off);
     }
 }
 
 class EventManager {
     constructor() {
         this._emitter = new EventEmitterPlus();
-        this._internalEventEmitter = new EventEmitterPlus();
+        this._internalEmitter = new EventEmitterPlus();
     }
 
     on(eventName, callback, triggerLimit) {
@@ -77,13 +77,13 @@ class EventManager {
 
     off(eventName) {
         if(this._isClosed) return;
-        this._internalEventEmitter.emit(`off:${eventName}`);
+        this._internalEmitter.emit(`off:${eventName}`);
     }
 
     close() {
         if(this._isClosed) return;
         this._isClosed = true;
-        this._internalEventEmitter.emit('close')
+        this._internalEmitter.emit('close')
     }
 }
 class EventInterface {
