@@ -2,7 +2,7 @@ const EventEmitter = require('events');
 
 class EventManagerInterface {
     constructor(targetEventManager) {
-        this._targetEventManager = targetEventManager;
+        this._sourceEventManager = targetEventManager;
         this._emitter = new EventEmitter();
     }
 
@@ -29,17 +29,17 @@ class EventManagerInterface {
     }
 
     attach(targetEventManager) {
-        this._targetEventManager
+        this._sourceEventManager
     }
 
     on(eventName, callback) {
-        let eventHandler = this._targetEventManager.on(eventName, callback);
+        let eventHandler = this._sourceEventManager.on(eventName, callback);
         this._emitter.once('close', eventHandler.off);
         return eventHandler;
     }
 
     once(eventName, callback) {
-        let eventHandler = this._targetEventManager.once(eventName, callback);
+        let eventHandler = this._sourceEventManager.once(eventName, callback);
         this._emitter.once('close', eventHandler.off);
         return eventHandler;
     }
