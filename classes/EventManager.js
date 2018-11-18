@@ -47,7 +47,7 @@ class EventyView extends Eventy {
 }
 
 
-class EventyHandler extends Promise, EventyInterface {
+class EventyHandler extends Promise {
     _promiseResolver(resolve, reject) {
         this._events.on('triggered', resolve);
         this._events.on('errored', reject);
@@ -67,10 +67,6 @@ class EventyHandler extends Promise, EventyInterface {
         this._internalEvents.on('attached', this._onAttach);
         this._internalEvents.on('detached', this._onDetach);
         this._internalEvents.once('closed', this.off);
-    }
-
-    on(callback) {
-        return new EventyHandler(this._events, this._internalEvents, this._eventName, callback);
     }
 
     trigger(payload) {
