@@ -32,7 +32,7 @@ class EventManagerInterface {
     }
 
     hook(eventName, eventManager) {
-        this.on(eventName, eventManager.trigger, eventName)
+        return this.on(eventName, eventManager.trigger, eventName)
     }
 
     _handleHook()
@@ -57,7 +57,7 @@ class EventManagerInterface {
 }
 
 class EventHandler extends Promise {
-    constructor(emitter, internalEmitter, eventName, callback, context, triggerLimit = false, args) {
+    constructor(emitter, internalEmitter, eventName, callback, context, triggerLimit = false, args = []) {
         super(on);
         this._isOff = false;
 
