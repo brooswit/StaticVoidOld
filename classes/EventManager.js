@@ -74,11 +74,12 @@ class EventyView {
 }
 
 class EmitterEventyWrapper {
-    constructor(eventEmitter) {
-        this._eventEmitter = new EventEmitter();
+    constructor() {
+        this._events = new EventEmitter();
+        this._internavents = new EventEmitter();
     }
     trigger(eventName, payload) {
-        this._eventEmitter.emit(eventName, payload);
+        this._events.emit(eventName, payload);
     }
     on(eventName, callback, payload) {
         return new EventyHandler(this, this._events, eventName, callback, payload);
