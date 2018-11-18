@@ -2,16 +2,16 @@ class EventInterface {
     constructor() {}
 
     on(emitter, eventName, callback) {
-        this._callbackHandlers.push(emitter.on(eventName, callback));
+        this._eventHandlers.push(emitter.on(eventName, callback));
     }
     once(emitter, eventName, callback) {
-        return this._callbackHandlers.push(emitter.once(eventName, callback));
+        return this._eventHandlers.push(emitter.once(eventName, callback));
     }
 
     close() {
-        for(callbackHandlerIndex in this._callbackHandlers) {
-            let callbackHandler = this._callbackHandlers[callbackHandlerIndex];
-            callbackHandler.off();
+        for(backHandlerIndex in this._eventHandlers) {
+            let backHandler = this._eventHandlers[backHandlerIndex];
+            backHandler.off();
         }
     }
 }
