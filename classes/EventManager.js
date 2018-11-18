@@ -41,7 +41,6 @@ class EventyHandler extends Promise {
 
 class EventyView {
     constructor(eventySource) {
-        this._events = new EventEmitter();
         this._internalEvents = new EventEmitter();
         this._source = null;
         if (eventySource) this.attach(eventySource);
