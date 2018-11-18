@@ -1,32 +1,3 @@
-function capitalize(str) {
-    return str.charAt(0).toUpperCase() + name.slice(1)
-}
-class TypeChecker {
-    constructor(subject, Class);
-}
-class Check {
-    constructor(subject) {
-        this._subject = subject;
-    }
-
-    is(value) {
-        if (value !== undefined) return new ValueChecker(subject, value);
-        else return new TypeChecker(subject, value);
-    }
-    return {is: {
-        a: (Class) => {
-            return new Checker((resolve) => {
-                let type = subject.constructor.name;
-                let targetType = Class.name;
-                resolve(type === targetType);
-            })
-            
-        },
-        not {
-            a
-        }
-    }}
-}
 class EventHandler {
     constructor(eventManager, eventName, callback, triggerLimit) {
         this._manager = eventManager;
@@ -39,7 +10,6 @@ class EventHandler {
         assert(this._manager instanceof EventManager);
         assert(typeof this._name === 'string');
         assert(typeof this._cb === 'function');
-        assert(await new Check(this._triggerLimit).is.a(Number).or.a(Boolean);
         assert(typeof this._triggerLimit === 'number' || typeof this._triggerLimit === 'boolean');
 
         this._off = false;
