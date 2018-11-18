@@ -6,7 +6,7 @@ class EventEmitter {
     on(eventName, callback) {
         return new Promise((resolve, reject) => {
             this._events[eventName]
-        }
+        });
     }
 }
 class EventInterface {
