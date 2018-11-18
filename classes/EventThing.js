@@ -1,5 +1,5 @@
 class EventHandler {
-    constructor(eventManager, eventName, callback, triggerLimit) {
+    constructor(eventManager, eventName, callback, triggerLimit = false) {
         super(on)
 
         this._manager = eventManager;
@@ -17,8 +17,6 @@ class EventHandler {
         this._emitter = new EventEmitter();
         this._off = false;
         this._triggerCount = 0;
-
-        this._triggerPromise = null;
 
         // Requires Cleanup \/
         this._manager._emitter.on(eventName, this._cb);
