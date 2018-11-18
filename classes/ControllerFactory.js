@@ -8,7 +8,7 @@ module.exports = class ControllerManager extends EventManager {
     }
 
     registerController(Controller, optionalName) {
-        this._Controllers[Controller.name] = Controller;
+        this._Controllers[optionalName || Controller.name] = Controller;
     }
 
     attachController(element, controllerName, state) {
