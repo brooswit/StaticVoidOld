@@ -1,3 +1,6 @@
+class Interface {
+    c
+}
 class InterfaceFactory {
     constructor() {
 
