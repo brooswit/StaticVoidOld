@@ -77,7 +77,9 @@ class EmitterEventyWrapper {
     constructor(eventEmitter) {
         this._eventEmitter = eventEmitter;
     }
-    trigger
+    trigger() {
+        this._eventEmitter.emit.
+    }
 }
 class EventyInternal {
     constructor() {
