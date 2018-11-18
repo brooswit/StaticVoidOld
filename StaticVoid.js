@@ -91,9 +91,9 @@ class StaticVoid extends ElementManager {
 
                 let snapshotDeltaTime = sendSnapshotEndTime - getSnapshotStartTime;
 
-                let throttle = this._syncThrottle
-                let delay = Math.min(Math.max(1, throttle - snapshotDeltaTime), throttle)
-                await new Promise((done) => setTimeout(done, delay))
+                let throttle = this._syncThrottle;
+                let delay = Math.min(Math.max(1, throttle - snapshotDeltaTime), throttle);
+                await new Promise((done) => setTimeout(done, delay));
             }
         });
     }
