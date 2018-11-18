@@ -1,7 +1,11 @@
+class EventEmitter {
+    
+}
 class EventInterface {
     constructor(parent) {
         this._parent = parent;
     }
+
 
     close() {
 
