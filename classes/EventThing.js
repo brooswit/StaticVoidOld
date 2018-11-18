@@ -25,7 +25,7 @@ class EventHandler {
         assert(this._manager instanceof EventManager);
         assert(typeof this._name === 'string');
         assert(typeof this._cb === 'function');
-        assert(await new Check(the(this._triggerLimit).is.a(Number).or.a(Boolean));
+        assert(await new Check(this._triggerLimit).is.a(Number).or.a(Boolean);
         assert(typeof this._triggerLimit === 'number' || typeof this._triggerLimit === 'boolean');
 
         this._off = false;
