@@ -3,9 +3,10 @@ const EventEmitter = require('events');
 module.exports = class Controller extends EventManager {
     constructor(parent, state = {}) {
         this._element = element;
+        this._e
         this._elementEventInterface = new EventManager.Interface(element);
-        this,_element.on('destroy', this.remove);
-        this,_element.on('snapshot', this.snapshot);
+        this,_elementEventInterface.on('destroy', this.remove);
+        this,_elementEventInterface.on('snapshot', this.snapshot);
         this._removed = false;
 
         this._state = state;
