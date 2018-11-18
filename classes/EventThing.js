@@ -7,8 +7,9 @@ class Check {
     }
 
     is(value) {
+        return new Checker
         if(value) {
-            
+
         }
     }
     return {is: {
