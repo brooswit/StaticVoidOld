@@ -1,6 +1,6 @@
 class EventHandler {
     constructor(eventEmitter) {
-        this
+        this._eventEmitter = eventEm
     }
 }
 
