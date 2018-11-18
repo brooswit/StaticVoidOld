@@ -1,10 +1,10 @@
 function firstToUppercase(str) {
-    
+    return 
 }
 function the(subject) {
     return {is: {
         a: (Class) {
-            let type = typeof 
+            let type = (typeof subject)
         },
         not {
             a
