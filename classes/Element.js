@@ -15,6 +15,7 @@ module.exports = class Element extends EventManager {
 
         this.detach();
 
+        this.parent = parent;
         this.parentEvents = new EventInterface(parent);
         this.parentEvents.on('snapshot', this.snapshot);
 
