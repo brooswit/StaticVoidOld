@@ -47,8 +47,8 @@ class EventManager {
         this._internalEventEmitter = new EventEmitter();
     }
 
-    on(eventName, callback) {
-        return new EventHandler(this, eventName, callback);
+    on(eventName, callback, triggerLimit) {
+        return new EventHandler(this, eventName, callback, triggerLimit);
     }
 
     close() {
