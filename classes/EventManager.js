@@ -23,7 +23,7 @@ class EventyView {
         this._source = null;
         this._emitter.emit('dettached');
     }
-    on() { return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
+    on(eventName, callback, ) { return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
     trigger() { return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
 
 }
