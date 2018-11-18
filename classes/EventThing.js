@@ -3,7 +3,8 @@ class EventHandler {
         this._manager = eventManager;
         this._name = eventName;
         this._cb = callback;
-        this._once = triggerLimit === true ? 1 : triggerLimit;
+        this._triggerLimit = triggerLimit === true ? 1 : triggerLimit;
+        
         this._off = false;
         this._emitter = this._manager._eventEmitter;
         this._internalEmitter = this._manager._internalEventEmitter;
@@ -17,7 +18,7 @@ class EventHandler {
 
     trigger() {
         if (this._off) return;
-        if (this._once) this.off();
+        if (this._triggerLimit) this.off();
         return this._cb.apply(null, arguments);
     }
 
