@@ -7,6 +7,6 @@ module.exports = class Session extends Controller {
     }
 
     injestMessage(payload) {
-        this.element.trigger(`session_${payload.command}`, payload.options);
+        this.element.trigger(`rpc_${payload.rpc}`, payload.options);
     }
 }
