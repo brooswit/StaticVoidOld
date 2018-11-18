@@ -3,13 +3,13 @@ const EventManager = require('./EventManager');
 module.exports = class Element extends EventManager {
     constructor() {
         this.state = {};
-        this._world = null;
+        this.world = null;
         this._controllers = {};
     }
 
     attach(world) {
         if (this._world) return;
-        this._world = world;
+        this.world = world;
         this.trigger('attached', world)
     }
 
