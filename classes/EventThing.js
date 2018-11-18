@@ -34,7 +34,6 @@ class EventHandler extends Promise {
     }
 
     async once(cb) {
-        if (this._off) return;
         return this._emitter.on('trigger', cb);
     }
 
