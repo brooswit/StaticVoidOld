@@ -26,6 +26,8 @@ class EventManagerInterface {
         this._emitter.trigger('dettached');
     }
 
+    trigger(eventName)
+
     on(eventName, callback) {
         if (!this.attached) return;
         let eventHandler = this.attached.on(eventName, callback);
