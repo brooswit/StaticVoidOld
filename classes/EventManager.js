@@ -27,19 +27,20 @@ class EventHandler extends Promise {
 
         this._name = eventName;
         this._cb = callback;
-        this._context = context;
 
         this._triggerLimit = triggerLimit === true ?
             1 : typeof triggerLimit === 'number' ?
             triggerLimit : false;
 
-            this._managerEventInterface = new EventManagerInterface(emitter);
-            this._managerInternalEventInterface = new EventManagerInterface(internalEmitter);
-            
         assert(typeof this._name === 'string');
         assert(typeof this._cb === 'function');
         assert(typeof this._triggerLimit === 'number' || typeof this._triggerLimit === 'boolean');
 
+        this._context = context;
+
+        this._managerEventInterface = new EventManagerInterface(emitter);
+        this._managerInternalEventInterface = new EventManagerInterface(internalEmitter);
+        
 
         this._isOff = false;
         this._triggerCount = 0;
