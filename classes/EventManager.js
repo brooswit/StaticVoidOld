@@ -12,7 +12,9 @@ class EventyHandler extends Promise {
         this._payload = payload;
         this._events.on('attached', )
     }
-    _onAttached
+    _onAttached(newSource) {
+        this.so
+    }
     on()
     off() {
 
