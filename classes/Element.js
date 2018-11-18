@@ -3,7 +3,7 @@ const EventManager = require('./EventManager');
 module.exports = class Element extends EventManager {
     constructor(parent) {
         this.state = {};
-        this._parentInterface = new EventManagerInterface
+        this._parentInterface = new EventManagerInterface(parent)
         this.parent = null;
         this._parentInterface = null;
         this._isDestroyed = false;
@@ -29,7 +29,7 @@ module.exports = class Element extends EventManager {
         this.detach();
 
         this.parent = parent;
-        this._parentInterface = new EventInterface(parent);
+        this._parentInterface = new EventManagerInterface(parent);
         this._parentInterface.hook('snapshot', this);
 
         this.trigger('attached');
