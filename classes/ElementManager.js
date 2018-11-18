@@ -7,7 +7,7 @@ module.exports = class ElementFactory {
         this._nextId = startId;
     }
 
-    buildElement(controllerNames = [], state = {}) {
+    build(controllerNames = [], state = {}) {
         let newElement = new Element(this, this._nextId++);
         for(controllerIndex in controllerNames) {
             let controllerName = controllerNames[controllerIndex];
