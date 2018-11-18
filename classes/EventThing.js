@@ -1,8 +1,8 @@
 class EventHandler {
     constructor(eventEmitter, eventName, callback) {
         this._eventEmitter = eventEmitter;
-        this._ceventHandlerIndex = this._eventEmitter._nextCeventHandlerIndex ++;
-        this._ceventHandlerLookup[this._ceventHandlerIndex] = this;
+        this._EventHandlerIndex = this._eventEmitter._nextCeventHandlerIndex ++;
+        this._eventHandlerLookup[this._eventHandlerIndex] = this;
         this._eventLookup[eventName]
     }
 }
