@@ -1,4 +1,4 @@
-class EventInterface {
+class EventInterface extends EventManager {
     constructor() {}
 
     on(emitter, eventName, callback) {
