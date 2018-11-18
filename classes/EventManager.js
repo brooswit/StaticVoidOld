@@ -38,7 +38,6 @@ class EventHandler extends Promise {
         assert(typeof this._triggerLimit === 'number' || typeof this._triggerLimit === 'boolean');
 
         this._emitter = new EventManager();
-        this._emitterInterface = new EventManagerInterface(this._emitter);
         this._managerEventInterface = new EventManagerInterface(this._manager._emitter);
         this._managerInternalEventInterface = new EventManagerInterface(this._manager._emitter);
 
@@ -61,6 +60,7 @@ class EventHandler extends Promise {
     trigger() {
         if (this._isOff) return;
         if (this._triggerLimit !== false && ++this._triggerCount >= this._triggerLimit) this.off();
+        return this._cb.apply(context, arguments);
         return this._emitter.emit.apply(_emitter, ['trigger'].concat(arguments));
     }
 
