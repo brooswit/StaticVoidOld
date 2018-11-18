@@ -9,6 +9,7 @@ class EventHandler {
         this._internalEmitter = this._manager._internalEventEmitter;
 
         this._emitter[once ? 'once' : 'on']('eventName', this._cb);
+        
         this._internalEmitter.once(`close`, this.off);
         this._internalEmitter.once(`off`, this.off);
         this._internalEmitter.once(`off:${this._eventName}`, this.off);
@@ -24,7 +25,10 @@ class EventHandler {
         if (this._off) return;
         this._off = true;
 
-        this._manager._eventEmitter.off('eventName', callback);
+        this._emitter.off('eventName', callback);
+        this._internalEmitter.once(`close`, this.off);
+        this._internalEmitter.once(`off`, this.off);
+        this._internalEmitter.once(`off:${this._eventName}`, this.off);
     }
 }
 
