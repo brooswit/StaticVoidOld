@@ -5,7 +5,7 @@ class EventInterface {
         this.callbackHandlers.push(emitter.on(eventName, callback));
     }
     once(emitter, eventName, callback) {
-        this.callbackHandlers.push(emitter.onceeventName, callback));
+        this.callbackHandlers.push(emitter.once(eventName, callback));
     }
 
     close() {
