@@ -1,7 +1,7 @@
 class EventInterface {
     constructor() {}
 
-    on
+    on(emitter, eventName, ca)
 
     close() {
 
