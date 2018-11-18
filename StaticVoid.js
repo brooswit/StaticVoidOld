@@ -44,9 +44,8 @@ class StaticVoid extends ElementManager {
         let sessionElement = this.buildElement(['Session']);
 
         ws.on('message', (msg) => {
-            let data = 
 
-            let {rpc} = data = JSONsafeParse(msg) || {};;
+            let data, {rpc} = data = JSONsafeParse(msg) || {};;
             if (rpc) {
                 if (!rpc.command) {
                     let options = rpc.options || {};
