@@ -3,8 +3,10 @@ function capitalize(str) {
 }
 class Check {
     constructor(subject) {
-        
+        this._subject = subject;
     }
+
+    
     return {is: {
         a: (Class) => {
             return new Checker((resolve) => {
