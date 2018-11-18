@@ -7,13 +7,13 @@ module.exports = class ElementManager extends EventManager {
         this._id = startId;
     }
 
-    buildElement(controllerNames=[], state={}) {
+    buildElement(controllerNames = [], state = {}) {
         let newElement = new Element(this, state);
         for(controllerIndex in controllerNames) {
             let controllerName = controllerNames[controllerIndex];
             newElement.addController(controllerName);
         }
-        this.emit('newElement', newElement);
+        this.trigger('newElement', newElement);
         return newElement;
     }
 
@@ -23,8 +23,8 @@ module.exports = class ElementManager extends EventManager {
 
     attachController(element, controllerName, state) {
         let newController = new (this._Controllers[controllerName] || Controller)(element, this._id++, state);
-        this.emit('newController', newController);
-        this.emit(`new${controllerName}`, newController);
+        this.trigger('newController', newController);
+        this.trigger(`new${controllerName}`, newController);
         return newController;
     }
 }
