@@ -14,7 +14,7 @@ module.exports = class Element extends EventManager {
 
         this.detach();
 
-        this.world = new EventInterface(world);
+        this.worldEvents = new EventInterface(world);
         this.world.on('snapshot', this.snapshot);
 
         this.trigger('attached');
