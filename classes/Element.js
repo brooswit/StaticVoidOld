@@ -9,7 +9,8 @@ module.exports = class Element extends EventManager {
     attach(world) {
         if (this.world) return;
         this.world = new EventInterface(world);
-        this.trigger('attached', world)
+        this.world.on('')
+        this.trigger('attached');
     }
 
     destroy() {
