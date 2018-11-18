@@ -1,5 +1,5 @@
 class EventHandler extends Promise {
-    constructor(eventManager, eventName, callback, context = null, triggerLimit = false) {
+    constructor(eventManager, eventName, callback, context, triggerLimit = false) {
         super(on);
 
         this._manager = eventManager;
@@ -29,7 +29,7 @@ class EventHandler extends Promise {
     }
 
     _handleEvent() {
-        this._cb.apply(null, arguments);
+        this._cb.apply(context, arguments);
     }
 
     on(callback) {
