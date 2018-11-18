@@ -4,28 +4,29 @@ module.exports = class Element extends EventManager {
     constructor(parent) {
         this._isDestroyed = false;
         this.state = {};
-        this._parentEvents = null;
+
+        this.parentEvents = null;
         if (parent) this.attach(parent);
     }
 
     attach(parent) {
         if (this._isDestroyed) return;
-        if (this._parentEvents === parent) return;
+        if (this.parentEvents === parent) return;
 
         this.detach();
 
-        this._parentEvents = new EventInterface(parent);
-        this._parentEvents.on('snapshot', this.snapshot);
+        this.parentEvents = new EventInterface(parent);
+        this.parentEvents.on('snapshot', this.snapshot);
 
         this.trigger('attached');
     }
 
     detach() {
         if (this._isDestroyed) return;
-        if (!this._parentEvents) return;
+        if (!this.parentEvents) return;
 
-        this._parentEvents.close();
-        this._parentEvents = null;
+        this.parentEvents.close();
+        this.parentEvents = null;
 
         this.trigger('dettached');
     }
