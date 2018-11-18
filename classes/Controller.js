@@ -17,9 +17,7 @@ module.exports = class Controller extends EventManager {
 
     remove() {
         if(!this.getElement()) return;
-        this._elementEventInterface
-        this._element.off('destroy', this.remove);
-        this._element.off('snapshot', this.snapshot);
+        this._elementEventInterface.close();
         this._removed = true;
     }
 
