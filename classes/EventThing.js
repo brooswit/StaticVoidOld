@@ -1,5 +1,5 @@
 class EventHandler {
-    constructor(eventEmitter, eventName, callback) {
+    constructor(eventManager, eventName, callback) {
 
         this._eventEmitter = eventEmitter;
         this._eventHandlerIndex = this._eventEmitter._nextEventHandlerIndex ++;
