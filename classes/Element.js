@@ -8,7 +8,7 @@ module.exports = class Element extends EventManager {
 
     attach(world) {
         if (this._isDestroyed) return;
-        if (this.world) return;
+        if (this.world === world) return;
         this.world = new EventInterface(world);
         this.world.on('snapshot', this.snapshot);
         this.trigger('attached');
@@ -19,7 +19,7 @@ module.exports = class Element extends EventManager {
         if (!this.world) return;
         this.world.close();
         this.world = null;
-        this.trigger('attached');
+        this.trigger('dettached');
     }
 
     destroy() {
