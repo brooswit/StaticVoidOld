@@ -2,7 +2,7 @@
 function the(subject) {
     return {is: {
         a: (Class) {
-            let type = typeof
+            let type = typeof 
         },
         not {
             a
