@@ -1,6 +1,6 @@
 class EventEmitter {
     constructor() {
-        this._nextCallbackReferenceIndex = 0;
+        this._nextCallbackIndex = 0;
         this._callbacks
     }
 
