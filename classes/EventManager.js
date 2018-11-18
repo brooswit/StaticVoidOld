@@ -52,15 +52,10 @@ class EventHandler extends Promise {
             this._emitter, `off`, this._eventInterface.close
         );
 
-        this._managerEventInterface.on(eventName, this.trigger
-        );
+        this._managerEventInterface.on(eventName, this.trigger);
 
-        this._managerInternalEventInterface.once(
-            this._manager._internalEmitter, `close`, this.off
-        );
-        this._managerInternalEventInterface.once(
-            this._manager._internalEmitter, `off`, this.off
-        );
+        this._managerInternalEventInterface.once(this._manager._internalEmitter, `close`, this.off);
+        this._managerInternalEventInterface.once(this._manager._internalEmitter, `off`, this.off);
         this._managerInternalEventInterface.once(
             this._manager._internalEmitter, `off:${this._eventName}`, this.off
         );
