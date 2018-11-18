@@ -8,7 +8,7 @@ class EventyView {
     constructor(eventySource) {
         this._source = null;
         if (eventySource) this.attach(eventySource);
-    }
+----+-***---------------+9    }
 }
 class Eventy {
     () {
