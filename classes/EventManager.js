@@ -39,7 +39,7 @@ class EventyHandler extends Promise {
     }
 }
 
-class EventyView  {
+class EventyView extends EventyInterface {
     constructor(source) {
         this._events = new EventEmitter();
         this._source = null;
