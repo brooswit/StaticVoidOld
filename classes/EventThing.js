@@ -5,6 +5,10 @@ class EventHandler {
         this._eventEmitter._eventHandlerIndexLookup[this._eventHandlerIndex] = this;
         this._eventEmitter._eventLookup[eventName]
     }
+
+    off() {
+        
+    }
 }
 
 class EventEmitter {
