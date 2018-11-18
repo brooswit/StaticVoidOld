@@ -6,9 +6,6 @@ class EventyHandler extends Promise {
         
     }
 }
-class EventyInternal {
-
-}
 class EventyView {
     constructor(eventySource) {
         this._events = new EventEmitter();
@@ -33,6 +30,9 @@ class EventyView {
     }
 
     trigger() { return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
+
+}
+class EventyInternal {
 
 }
 class Eventy extends EventyView {
