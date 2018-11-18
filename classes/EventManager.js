@@ -92,4 +92,6 @@ class Eventy extends EventyInterface {
     }
 }
 
-class EventyInt
+class EventyInterface {
+    on(eventName, callback)
+}
