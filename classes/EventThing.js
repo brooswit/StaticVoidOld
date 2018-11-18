@@ -1,8 +1,10 @@
 function capitalize(str) {
     return str.charAt(0).toUpperCase() + name.slice(1)
 }
-class Check
+class Check {
     constructor(subject) {
+        
+    }
     return {is: {
         a: (Class) => {
             return new Checker((resolve) => {
