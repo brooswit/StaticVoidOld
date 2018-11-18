@@ -1,10 +1,12 @@
 class EventHandler {
     constructor(eventManager, eventName, callback, once = false) {
         this._manager = eventManager;
+        this._of
         this._manager._eventEmitter[once ? 'once' : 'on']('eventName', callback);
     }
 
     trigger() {
+
         return callback.apply(null, arguments);
     }
 
