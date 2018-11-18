@@ -29,7 +29,7 @@ module.exports = class Element extends EventManager {
         this.detach();
 
         this._parent = parent;
-        this._parentInterface.attach(parent);
+        this._parentInterface.attach(this._parent);
         this._parentInterface.hook('snapshot', this);
 
         this.trigger('attached');
