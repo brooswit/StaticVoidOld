@@ -73,7 +73,9 @@ class EventyView {
     }
 }
 
-class 
+class EmitterEventyWrapper {
+    con
+}
 class EventyInternal {
     constructor() {
         this._source = new EmitterEventyWrapper(new EventEmitter());
