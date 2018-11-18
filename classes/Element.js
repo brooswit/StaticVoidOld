@@ -14,8 +14,8 @@ module.exports = class Element extends EventManager {
         let element = this;
         let token = {};
         while (element.parent) {
-            if (element.root.token === token) return null;
-            element.__loopToken = token;
+            if (element.root.__token === token) return null;
+            element.root.__token = token;
             element = element.parent;
         }
         return element;
