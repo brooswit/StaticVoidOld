@@ -1,6 +1,6 @@
 const EventEmitter = require('events');
 
-module.exports = class Controller extends EventEmitter {
+module.exports = class Controller extends EventManager {
     constructor(parent, state = {}) {
         this._element = element;
         this,_element.on('destroy', this.remove);
