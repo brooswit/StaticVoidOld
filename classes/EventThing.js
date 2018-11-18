@@ -1,6 +1,6 @@
 class InterfaceFactory {
     constructor(Class) {
-
+        
     }
 
     newInterface() {
