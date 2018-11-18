@@ -1,6 +1,8 @@
 
 function the(subject) {
-    return { }
+    return {is: {
+        a: {}
+    }}
 }
 class EventHandler {
     constructor(eventManager, eventName, callback, triggerLimit) {
