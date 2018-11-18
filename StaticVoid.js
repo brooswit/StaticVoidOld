@@ -35,7 +35,8 @@ class StaticVoid extends ElementManager {
 
         ws.on('message', (msg) => {
             let data = JSON.parse(msg);
-            let {}
+            let {rpc} = data;
+            if(rpc)
             sessionElement.emit('sessionMessage', data);
         });
 
