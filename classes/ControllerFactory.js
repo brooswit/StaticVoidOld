@@ -7,7 +7,7 @@ module.exports = class ControllerManager extends EventManager {
         this._Controllers = Controllers;
     }
 
-    registerController(Controller) {
+    registerController(Controller, optionalName) {
         this._Controllers[Controller.name] = Controller;
     }
 
