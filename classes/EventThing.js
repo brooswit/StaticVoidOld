@@ -1,6 +1,6 @@
 class EventHandler extends Promise {
     constructor(eventManager, eventName, callback, triggerLimit) {
-        super((reso)=>{
+        super((resolve, reject)=>{
 
         })
         this._manager = eventManager;
@@ -28,6 +28,7 @@ class EventHandler extends Promise {
         this._internalEmitter.once(`off`, this.off);
         this._internalEmitter.once(`off:${this._eventName}`, this.off);
     }
+    
 
     trigger() {
         if (this._off) return;
