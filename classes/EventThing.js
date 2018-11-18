@@ -28,7 +28,9 @@ class EventHandler extends Promise {
         this._internalEmitter.once(`off:${this._eventName}`, this.off);
     }
 
-    async awaitTrigger()
+    async awaitTrigger() {
+        this.on('')
+    }
 
     
     _resolve() {
