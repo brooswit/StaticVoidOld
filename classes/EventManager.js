@@ -12,7 +12,7 @@ class Eventy extends EventyInterface {
     }
 
     on(eventName, callback) {
-        return new EventyHandler(this, this._internalEvents, eventName, callback);
+        return new EventyHandler(this, eventName, callback);
     }
 
     trigger(eventName, payload) {
