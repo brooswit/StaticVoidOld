@@ -27,7 +27,7 @@ class EventManagerInterface {
     }
 
     trigger(eventName) {
-        this.attached.trigger(eventName, arguments)
+        this.attached.trigger(eventName, Array.prototype.slice.arguments)
     }
 
     on(eventName, callback) {
