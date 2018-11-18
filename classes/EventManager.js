@@ -17,6 +17,7 @@ class Eventy extends EventyView {
     constructor() {
         super(new EventyInternal);
     }
+    attach(eventySource)
 }
 class EventManager {
     constructor() {
