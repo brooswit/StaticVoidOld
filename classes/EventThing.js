@@ -32,7 +32,7 @@ class EventHandler extends Promise {
     }
 
     on(cb) {
-        return this._manager.on(this._name, cb);
+        return this._manager.on.apply(this._name, cb);
     }
 
     once(cb) {
@@ -44,7 +44,6 @@ class EventHandler extends Promise {
         if (this._triggerLimit !== false && ++this._triggerCount >= this._triggerLimit) this.off();
         this._emitter.emit.apply(_emitter, ['trigger'].concat(arguments), );
         let result = this._cb.apply(null, arguments);
-        this._resolve(result);
         return result;
     }
 
