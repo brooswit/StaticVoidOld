@@ -33,9 +33,7 @@ class EventHandler extends Promise {
     }
 
     _handleTrigger() {
-
-        let result = this._cb.apply(null, arguments);
-        return result;
+        return this._cb.apply(null, arguments);
     }
 
     on() {
