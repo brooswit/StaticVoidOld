@@ -12,6 +12,8 @@ class EventHandler {
     }
 
     off() {
+        if (this._iof)
+        this._off = true;
         this._manager._eventEmitter.off('eventName', callback);
     }
 }
