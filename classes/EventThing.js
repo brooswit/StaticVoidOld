@@ -37,7 +37,7 @@ class EventHandler extends Promise {
 
         this._eventInterface = new EventInterface();
         this._emitter = new EventEmitter();
-        this._off = false;
+        this._isOff = false;
         this._triggerCount = 0;
 
         this._eventInterface.on(
@@ -67,7 +67,7 @@ class EventHandler extends Promise {
     }
 
     trigger() {
-        if (this._off) return;
+        if (this._isOff) return;
         if (this._triggerLimit !== false && ++this._triggerCount >= this._triggerLimit) this.off();
         return this._emitter.emit.apply(_emitter, ['trigger'].concat(arguments));
     }
@@ -81,8 +81,8 @@ class EventHandler extends Promise {
     }
 
     off() {
-        if (this._off) return;
-        this._off = true;
+        if (this._isOff) return;
+        this._isOff = true;
         this._emitter.on('off');
     }
 }
