@@ -30,7 +30,7 @@ class EventyHandler extends Promise {
         this._events.off('triggered', this._callback);
     }
     _onAttach(source) {
-        
+        this._onDetach();
         this.eventyHandler = source.on(this._eventName, this.trigger, this._payload);
     }
     _onDetach() {
@@ -74,7 +74,7 @@ class EventyView {
 }
 
 class EventyInternal {
-
+    
 }
 class Eventy extends EventyView {
     constructor() {
