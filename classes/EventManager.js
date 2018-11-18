@@ -73,6 +73,7 @@ class EventyView {
     }
 }
 
+class 
 class EventyInternal {
     constructor() {
         this._source = new EmitterEventyWrapper(new EventEmitter());
@@ -88,6 +89,7 @@ class EventyInternal {
         this._events.emit('closed');
     }
 }
+
 class Eventy extends EventyView {
     constructor() {
         super(new EventyInternal());
