@@ -6,6 +6,28 @@ class EventManagerInterface {
         this._emitter = new EventEmitter();
     }
 
+    attach(eventManager) {
+        if (this._isDestroyed) return;
+        if (this.world === world) return;
+
+        this.detach();
+
+        this.world = new EventInterface(world);
+        this.world.on('snapshot', this.snapshot);
+
+        this.trigger('attached');
+    }
+
+    detach() {
+        if (this._isDestroyed) return;
+        if (!this.world) return;
+
+        this.world.close();
+        this.world = null;
+
+        this.trigger('dettached');
+    }
+
     attach(targetEventManager) {
         this._targetEventManager
     }
