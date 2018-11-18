@@ -62,7 +62,7 @@ class EventyView {
     }
 
     close() {
-        this._internalEvents
+        this._internalEvents.emit()
     }
     trigger() { return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
 
