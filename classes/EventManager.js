@@ -7,7 +7,7 @@ class EventyHandler extends Promise {
         this._payload = payload;
 
         this._events = new EventEmitter();
-        this._events.on('triggered', )
+        this._events.on('triggered', this._callback);
 
         if(source) this._attach(source);
 
