@@ -1,7 +1,9 @@
 const EventManagerInterface = require('./EventManagerInterface');
 const EventHandler = require('./EventHandler');
 const EventEmitter = require('events');
-class EventyHandler
+class EventyHandler {
+
+}
 class EventyInternal {
 
 }
@@ -20,6 +22,7 @@ class EventyView {
         this._source = eventy;
         this._emitter.emit('source_changed');
     }
+    
 }
 class Eventy extends EventyView {
     constructor() {
