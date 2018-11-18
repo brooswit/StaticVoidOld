@@ -24,6 +24,7 @@ class EventManagerInterface {
 class EventHandler extends Promise {
     constructor(emitter, internalEmitter, eventName, callback, context, triggerLimit = false) {
         super(on);
+        this._isOff = false;
 
         this._name = eventName;
         this._cb = callback;
@@ -37,7 +38,6 @@ class EventHandler extends Promise {
 
         this._context = context;
 
-        this._isOff = false;
         this._triggerCount = 0;
         
         this._managerEventInterface = new EventManagerInterface(emitter);
@@ -74,10 +74,11 @@ class EventHandler extends Promise {
 
 class EventManager {
     constructor() {
+        this._isClosed = false;
+        
         this._emitter = new EventEmitter();
         this._internalEmitter = new EventEmitter();
 
-        this._isClosed = false;
     }
 
     on(eventName, callback) {
