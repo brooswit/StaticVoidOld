@@ -4,7 +4,7 @@ const Element = require('./Element');
 module.exports = class ElementFactory {
     constructor (Controllers = [], startId = 0) {
         this._Controllers = Controllers;
-        this._id = startId;
+        this._nextId = startId;
     }
 
     buildElement(controllerNames = [], state = {}) {
