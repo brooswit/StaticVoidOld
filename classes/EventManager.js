@@ -52,7 +52,7 @@ class EventyHandler extends Promise, EventyInterface {
         this._events.on('triggered', resolve);
         this._events.on('errored', reject);
     }
-    constructor(source, internalEvents, eventName, callback, payload) {
+    constructor(source, internalEvents, eventName, callback) {
         super(this._promiseResolver);
         
         this._eventName = eventName;
