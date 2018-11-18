@@ -1,3 +1,4 @@
+class EventHandler
 class EventEmitter {
     constructor() {
         this._nextCallbackIndex = 0;
