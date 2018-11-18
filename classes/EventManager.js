@@ -32,7 +32,7 @@ class EventManagerInterface {
     }
 
     hook(eventName, eventManager) {
-        this.on()
+        this.on(eventName, )
     }
 
     _handleHook()
