@@ -4,8 +4,8 @@ module.exports = class ElementControllerInterface extends EventManager.Interface
     constructor(element) {
         super(element);
         this._element = element;
-        this.globalEvents = new EventManager.Interface(element.globalEvents);
-        this.state = element.state;
+        this.globalEvents = new EventManager.Interface(this._element.globalEvents);
+        this.state = this._element.state;
 
         this._isRemoved = false;
 
