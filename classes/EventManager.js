@@ -12,6 +12,7 @@ class EventyHandler extends Promise {
         this._payload = payload;
         this.source
     }
+    on()
     off() {
 
     }
