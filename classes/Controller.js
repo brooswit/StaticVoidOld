@@ -4,7 +4,7 @@ module.exports = class Controller extends EventManager.Interface {
     constructor(element) {
         super(element);
         this.state = this._element.state;
-        this.worldEvents = this.world || null;
+        this.worldEvents = new EventManager.Interface(;
         this.element = this.element || null
         this._isRemoved = false;
 
