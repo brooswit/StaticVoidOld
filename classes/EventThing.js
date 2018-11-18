@@ -41,8 +41,10 @@ class EventHandler extends Promise {
         return this;
     }
 
-     once(cb) {
-        return this._emitter.on('trigger', cb);
+    once(cb) {
+        if (this._off) return;
+        this._emitter.once('trigger', cb);
+        return this;
     }
 
     
