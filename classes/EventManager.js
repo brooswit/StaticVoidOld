@@ -49,7 +49,7 @@ class EventHandler extends Promise {
             this._emitter, `off`, this._eventInterface.close
         );
 
-        this._eventInterface.on(
+        this._managerEventInterface.on(
             this._manager._emitter, eventName, this.trigger
         );
 
