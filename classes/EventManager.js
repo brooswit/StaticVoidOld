@@ -50,12 +50,12 @@ class EventyView extends EventyInterface {
         return new EventyHandler(this._source, this._events, eventName, callback, payload);
     }
 
-    close() {
-        this._events.emit('closed');
-    }
-
     trigger(payload) { 
         this._events.emit('triggered', payload);
+    }
+
+    close() {
+        this._events.emit('closed');
     }
 
     attach(newSource) {
