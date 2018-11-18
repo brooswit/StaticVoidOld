@@ -1,3 +1,24 @@
+
+
+class Eventy extends EventyInterface {
+    constructor() {
+        this._events = new EventEmitter();
+        this._internalEvents = new EventEmitter();
+    }
+
+    on(eventName, callback, payload) {
+        return new EventyHandler(this._events, this._internalEvents, eventName, callback, payload);
+    }
+
+    trigger(eventName, payload) {
+        this._events.emit(eventName, payload);
+    }
+
+    close() {
+        this._internalEvents.emit('closed');
+    }
+}
+
 class EventyHandler extends Promise {
     _promiseResolver(resolve, reject) {
         this._events.on('triggered', resolve);
@@ -58,25 +79,6 @@ class EventyView extends Eventy {
         let oldEventy = this._eventy; this._eventy = null;
         this._internalEvents.off('triggered', oldEventy.trigger);
         this._internalEvents.emit('dettached', oldEventy);
-    }
-}
-
-class Eventy extends EventyInterface {
-    constructor() {
-        this._events = new EventEmitter();
-        this._internalEvents = new EventEmitter();
-    }
-
-    on(eventName, callback, payload) {
-        return new EventyHandler(this._events, this._internalEvents, eventName, callback, payload);
-    }
-
-    trigger(eventName, payload) {
-        this._events.emit(eventName, payload);
-    }
-
-    close() {
-        this._internalEvents.emit('closed');
     }
 }
 
