@@ -31,6 +31,8 @@ class EventManagerInterface {
         this.attached.trigger.apply(this.attached, arguments);
     }
 
+    hook(eventName, eventM)
+
     on(eventName, callback) {
         if (!this.attached) return;
         let eventHandler = this.attached.on(eventName, callback);
