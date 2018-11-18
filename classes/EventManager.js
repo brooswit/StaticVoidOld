@@ -54,9 +54,9 @@ class EventyView extends Eventy {
 
     detach() {
         if(!this._eventy) return;
-        let oldeventy = this._eventy; this._eventy = null;
-        this._internalEvents.off('triggered', oldeventy.trigger);
-        this._internalEvents.emit('dettached', oldeventy);
+        let oldEventy = this._eventy; this._eventy = null;
+        this._internalEvents.off('triggered', oldEventy.trigger);
+        this._internalEvents.emit('dettached', oldEventy);
     }
 }
 
