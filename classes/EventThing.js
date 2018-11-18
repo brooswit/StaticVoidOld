@@ -54,7 +54,7 @@ class EventManager {
     }
 
     off(eventName) {
-        if(eventName) 
+        if(eventName) this._internalEventEmitter.emit('')
         return new EventHandler(this, eventName, callback, triggerLimit);
     }
 
