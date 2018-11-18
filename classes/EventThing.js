@@ -17,9 +17,6 @@ class EventHandler extends Promise {
         this._off = false;
         this._triggerCount = 0;
 
-        this._manager._eventEmitter = this._manager._eventEmitter;
-        this._internalEmitter = this._manager._internalEventEmitter;
-
         this.tilTrigger = new Promise((resolve, reject) {
             this.on('trigger', resolve);
         });
@@ -27,9 +24,9 @@ class EventHandler extends Promise {
         // Requires Cleanup \/
         this._manager._eventEmitter[once ? 'once' : 'on']('eventName', this._cb);
         
-        this._internalEmitter.once(`close`, this.off);
-        this._internalEmitter.once(`off`, this.off);
-        this._internalEmitter.once(`off:${this._eventName}`, this.off);
+        this._manager._internalEventEmitter.once(`close`, this.off);
+        this._manager._internalEventEmitter.once(`off`, this.off);
+        this._manager._internalEventEmitter.once(`off:${this._eventName}`, this.off);
     }
 
     async on() {
@@ -56,9 +53,9 @@ class EventHandler extends Promise {
         this._off = true;
 
         this._manager._eventEmitter.off('eventName', callback);
-        this._internalEmitter.once(`close`, this.off);
-        this._internalEmitter.once(`off`, this.off);
-        this._internalEmitter.once(`off:${this._eventName}`, this.off);
+        this._manager._internalEventEmitter.once(`close`, this.off);
+        this._manager._internalEventEmitter.once(`off`, this.off);
+        this._manager._internalEventEmitter.once(`off:${this._eventName}`, this.off);
     }
 }
 
