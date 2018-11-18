@@ -44,17 +44,11 @@ class EventHandler extends Promise {
         this._isOff = false;
         this._triggerCount = 0;
 
-        this._emitter.on('trigger', this._handleEvent);
-
         this._managerEventInterface.on(eventName, this.trigger);
 
         this._managerInternalEventInterface.once(`close`, this.off);
         this._managerInternalEventInterface.once(`off`, this.off);
         this._managerInternalEventInterface.once(`off:${this._eventName}`, this.off);
-    }
-
-    _handleEvent() {
-        this._cb.apply(context, arguments);
     }
 
     trigger() {
@@ -74,6 +68,7 @@ class EventHandler extends Promise {
     off() {
         if (this._isOff) return;
         this._isOff = true;
+        this._emitter.close();
         this._emitter.on('off');
     }
 }
