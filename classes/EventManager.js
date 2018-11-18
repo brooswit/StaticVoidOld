@@ -57,7 +57,7 @@ class EventHandler extends Promise {
     }
 
     on(callback) {
-        return this._manager.on.apply(this._manager, [this._name].concat(arguments));
+        return this._manager.on(this._name,callback);
     }
 
     once(callback) {
@@ -67,7 +67,7 @@ class EventHandler extends Promise {
     off() {
         if (this._isOff) return;
         this._isOff = true;
-    
+
         this._managerEventInterface.close();
         this._managerInternalEventInterface.close();ß
     }
