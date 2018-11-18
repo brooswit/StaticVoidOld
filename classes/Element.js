@@ -8,7 +8,8 @@ module.exports = class Element extends EventManager {
     }
 
     attach(world) {
-        if(this._world)
+        if (this._world) return;
+        this._world = world;
     }
 
     addController(controllerName, state={}) {
