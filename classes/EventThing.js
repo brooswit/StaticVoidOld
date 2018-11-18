@@ -1,5 +1,7 @@
 
-function the
+function the(subject) {
+    return { }
+}
 class EventHandler {
     constructor(eventManager, eventName, callback, triggerLimit) {
         this._manager = eventManager;
