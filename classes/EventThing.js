@@ -29,7 +29,7 @@ class EventHandler extends Promise {
     }
 
     async on() {
-        return this._triggerPromise = this._triggerPromise || new Promise((resolve, reject) => {
+        return this._emitter.pro = this._triggerPromise || new Promise((resolve, reject) => {
             this._emitter.on('trigger', resolve);
         });
     }
