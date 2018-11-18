@@ -1,9 +1,10 @@
 const EventEmitter = require('events');
 
 class EventManagerInterface {
-    constructor() {
+    constructor(eventManager) {
         this._emitter = new EventEmitter();
         this._eventManager = null;
+        
     }
 
     attach(eventManager) {
