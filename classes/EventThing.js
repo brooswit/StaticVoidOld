@@ -6,7 +6,7 @@ class EventHandler {
         this._triggerLimit = triggerLimit === true ? 1 : triggerLimit;
 
         this._off = false;
-        this._triggerLi = 0;
+        this._triggerCount = 0;
 
         this._emitter = this._manager._eventEmitter;
         this._internalEmitter = this._manager._internalEventEmitter;
@@ -20,7 +20,7 @@ class EventHandler {
 
     trigger() {
         if (this._off) return;
-        if (this._triggerLimit) this.off();
+        if (++this._triggerCount > this._triggerLimit) this.off();
         return this._cb.apply(null, arguments);
     }
 
