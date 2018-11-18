@@ -6,7 +6,8 @@ class EventyInternal {
 }
 class EventyView {
     constructor(eventySource) {
-        this._source = eventySource.getSource()
+        this._source = eventySource;
+        
     }
 }
 class Eventy {
