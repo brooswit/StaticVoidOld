@@ -43,7 +43,7 @@ class StaticVoid extends ElementManager {
                     sessionElement.emit(`rpc`, {command, options});
                 }
             } else {
-                console.log('unknown websocket ')
+                return console.log('unknown websocket message type');
             }
         });
 
