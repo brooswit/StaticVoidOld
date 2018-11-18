@@ -81,7 +81,9 @@ class StaticVoid extends ElementManager {
 
                 getSnapshotStartTime = Date.now();
                 let snapshot = await sessionElement.getSnapshot({
-                    rst
+                    state: {},
+                    rpc: [],
+                    debug
                 });
                 snapshot.debug = debug;
                 let rawData = JSON.stringify(snapshot);
