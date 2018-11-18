@@ -16,14 +16,14 @@ class EventyHandler extends Promise {
         internalEvents.on('dettached', this._onDettached);
     }
     trigger() {
-        this._events.emit
+        this._events.emit('triggered');
     }
     _resolver(resolve, reject) {
         this._events.on('triggered', resolve);
         this._events.on('errored', reject);
     }
     _onAttached(source) {
-        this.eventyHandler = source.on(this._eventName, this._callback, this._payload);
+        this.eventyHandler = source.on(this._eventName, this.trigger, this._payload);
     }
     _onDetached() {
         this.eventyHandler.off();
