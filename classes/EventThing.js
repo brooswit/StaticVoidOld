@@ -33,6 +33,7 @@ class EventHandler extends Promise {
     }
 
     on(cb) {
+        this._manager
         if (this._off) return;
         this._emitter.on('trigger', cb);
     }
@@ -80,7 +81,7 @@ class EventManager {
     on(eventName, callback) {
         if(this._isClosed) return;
         let eventHandler = new Event(this, eventName, callback);
-        return eventCallbackHandler;
+        return eventHandler;
     }
 
     off(eventName) {
