@@ -46,7 +46,7 @@ class EventManagerInterface {
 
     once() {
         if (!this.attached) return;
-        let eventHandler = this.attached.once(eventName, callback);
+        let eventHandler = this.attached.once.apply(this.attached, arguments);
         this._emitter.once('close', eventHandler.off);
         return eventHandler;
     }
@@ -88,14 +88,6 @@ class EventHandler extends Promise {
         if (this._isOff) return;
         if (this._triggerLimit !== false && ++this._triggerCount >= this._triggerLimit) return this.off();
         return this._cb.apply(this._context, arguments);
-    }
-
-    on(callback) {
-        return this._managerEventInterface.on(this._name, callback);
-    }
-
-    once(callback) {
-        return this._managerEventInterface.once(this._name, callback);
     }
 
     off() {
