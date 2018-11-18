@@ -8,8 +8,8 @@ class EventyHandler extends Promise {
 
         this._events = new EventEmitter();
 
-        if(source) this._onAttached(source);
-        internalEvents.on('attached', this._onAttached);
+        if(source) this.attach(source);
+        internalEvents.on('attached', this.attach);
         internalEvents.on('dettached', this.detach);
     }
     trigger(payload) {
@@ -19,7 +19,7 @@ class EventyHandler extends Promise {
         this._events.on('triggered', resolve);
         this._events.on('errored', reject);
     }
-    _onAttached(source) {
+    attach(source) {
         this.eventyHandler = source.on(this._eventName, this.trigger, this._payload);
     }
     detach() {
