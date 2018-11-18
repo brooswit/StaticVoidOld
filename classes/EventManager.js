@@ -1,8 +1,8 @@
 const EventEmitter = require('events');
 
 class EventManagerInterface {
-    constructor(targetEventManager) {
-        this._sourceEventManager = targetEventManager;
+    constructor(parentEventManager) {
+        this._sourceEventManager = parentEventManager;
         this._emitter = new EventEmitter();
     }
 
@@ -28,7 +28,7 @@ class EventManagerInterface {
         this.trigger('dettached');
     }
 
-    attach(targetEventManager) {
+    attach(parentEventManager) {
         this._sourceEventManager
     }
 
