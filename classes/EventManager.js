@@ -26,13 +26,14 @@ class EventManagerInterface {
     }
 
     on(eventName, callback) {
-        if (!_eventManager)
+        if (!this._eventManager) return;
         let eventHandler = this._eventManager.on(eventName, callback);
         this._emitter.once('close', eventHandler.off);
         return eventHandler;
     }
 
     once(eventName, callback) {
+        if (!this._eventManager) return;
         let eventHandler = this._eventManager.once(eventName, callback);
         this._emitter.once('close', eventHandler.off);
         return eventHandler;
