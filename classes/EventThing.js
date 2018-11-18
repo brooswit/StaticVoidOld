@@ -1,5 +1,5 @@
 class InterfaceFactory {
-    constructor()
+    constructor(Class)
 }
 class EventManager {
     constructor() {
