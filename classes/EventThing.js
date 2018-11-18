@@ -4,7 +4,7 @@ function capitalize(str) {
 function the(subject) {
     return {is: {
         a: (Class) {
-            let type = capitalize(typeof subject);
+            let type = subject.constructor.name;
             if (type === "Object") {
                 type = subject.Name
             }
