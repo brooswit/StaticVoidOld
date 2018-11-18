@@ -2,15 +2,16 @@ const EventManagerInterface = require('./EventManagerInterface');
 const EventHandler = require('./EventHandler');
 const EventEmitter = require('events');
 class EventyHandler extends Promise {
-    constructor(eventyView, eventName, callback, 
+    constructor(eventyView, eventName, callback, payload) {
+        
+    }
 }
 class EventyInternal {
 
 }
 class EventyView {
-    constructor(eventySource, static) {
+    constructor(eventySource) {
         this._emitter = new EventEmitter();
-        this._static = static;
         this._source = null;
         if (eventySource) this.attach(eventySource);
     }
