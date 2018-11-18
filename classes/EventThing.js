@@ -1,4 +1,4 @@
-class EventHandler {
+class EventHandler extends {
     constructor(eventManager, eventName, callback, triggerLimit = false) {
         if (typeof callback !== 'function') 
         super(on)
