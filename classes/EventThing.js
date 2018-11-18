@@ -120,4 +120,4 @@ class EventManager {
     }
 }
 
-module.exports {}
+module.exports {EventManager;
