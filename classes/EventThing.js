@@ -1,5 +1,7 @@
 class EventEmitter {
-    
+    constructor() {
+        
+    }
 }
 class EventInterface {
     constructor(parent) {
