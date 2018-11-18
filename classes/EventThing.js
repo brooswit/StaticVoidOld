@@ -14,11 +14,11 @@ class EventHandler extends Promise {
         assert(typeof this._cb === 'function');
         assert(typeof this._triggerLimit === 'number' || typeof this._triggerLimit === 'boolean');
 
+        this._eventInterface = new EventInterface();
         this._emitter = new EventEmitter();
         this._off = false;
         this._triggerCount = 0;
 
-        this._eventInterface = new EventInterface();
         this._eventInterface.on(
             this._emitter, 'trigger', this._handleEvent
         );
@@ -40,7 +40,7 @@ class EventHandler extends Promise {
             this._manager._internalEmitter, `off`, this.off
         );
         this._eventInterface.once(
-            this._manager._internalEmitter,`off:${this._eventName}`, this.off
+            this._manager._internalEmitter, `off:${this._eventName}`, this.off
         );
     }
 
