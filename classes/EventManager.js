@@ -47,14 +47,14 @@ class EventyView {
     }
 
     attach(eventy) {
-        if(this._isAttached) return;
+        if(this._source) return;
         this._source = eventy;
         this._events.on('triggered', this._source.trigger);
         this._events.emit('attached', eventy);
     }
 
     detach() {
-        if(!this._isAttached) return;
+        if(!this._source) return;
         this._events.off('triggered', this._source.trigger);
         let oldSource = this._source;
         this._source = null;
