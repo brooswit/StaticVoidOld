@@ -28,11 +28,11 @@ class EventHandler extends Promise {
         this._manager._internalEmitter.once(`off:${this._eventName}`, this.off);
     }
 
-    async on(cb) {
+    on(cb) {
         if (cb) {
             this._emitter.on('trigger', cb);
         } else {
-            
+            return
         }
         return this._emitter.promise( = this._triggerPromise || new Promise((resolve, reject) => {
             this._emitter.on('trigger', resolve);
