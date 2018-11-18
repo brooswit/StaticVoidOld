@@ -6,7 +6,9 @@ class EventManagerInterface {
         this._emitter = new EventEmitter();
     }
 
-    attach()
+    attach(targetEventManager) {
+        this._targetEventManager
+    }
 
     on(eventName, callback) {
         let eventHandler = this._targetEventManager.on(eventName, callback);
