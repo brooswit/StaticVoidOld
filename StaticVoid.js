@@ -81,7 +81,7 @@ class StaticVoid extends ElementManager {
 
                 getSnapshotStartTime = Date.now();
                 let snapshot = await sessionElement.getSnapshot({
-                    state: state.client,
+                    state: state.public,
                     rpc: [],
                     debug
                 });
