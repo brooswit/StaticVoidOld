@@ -4,7 +4,8 @@ const EventEmitter = require('events');
 class EventyHandler extends Promise {
     constructor(source, internalEvents, eventName, callback, payload) {
         super(on);
-    
+        
+        this._
         this._source = source;
         this._internalEvents = internalEvents;
         this._eventName = eventName;
