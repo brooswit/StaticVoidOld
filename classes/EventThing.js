@@ -1,4 +1,6 @@
-function firstToUppercase(str) {}
+function firstToUppercase(str) {
+    
+}
 function the(subject) {
     return {is: {
         a: (Class) {
