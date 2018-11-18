@@ -4,7 +4,7 @@ class InterfaceFactory {
     }
 
     newInterface() {
-        return 
+        return new 
     }
 }
 class EventManager {
