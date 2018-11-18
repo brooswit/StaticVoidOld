@@ -93,5 +93,5 @@ class Eventy extends EventyInterface {
 }
 
 class EventyInterface {
-    on(eventName, callback)
+    on(eventName, callback, payload) {}
 }
