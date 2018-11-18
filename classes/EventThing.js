@@ -24,16 +24,12 @@ class EventHandler extends Promise {
         this._triggerCount = 0;
 
         // Requires Cleanup \/
-        this._emitter.on('trigger', this._handleTrigger);
+        this._emitter.on('trigger', this._cb);
         this._manager._emitter.on(eventName, this._cb);
         
         this._manager._internalEmitter.once(`close`, this.off);
         this._manager._internalEmitter.once(`off`, this.off);
         this._manager._internalEmitter.once(`off:${this._eventName}`, this.off);
-    }
-
-    _handleTrigger() {
-        return this._cb.apply(null, arguments);
     }
 
     on() {
