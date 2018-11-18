@@ -19,9 +19,6 @@ module.exports = class Element extends EventManager {
             element = element.parent;
         }
         return element;
-        if(this.__antiLoopbackToken === antiLoopbackToken) return null;
-        this.__antiLoopbackToken = antiLoopbackToken;
-        return this.parent ? this.parent.root(antiLoopbackToken) : this;
     }
 
     attach(parent) {
