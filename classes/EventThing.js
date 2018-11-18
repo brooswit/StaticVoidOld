@@ -9,7 +9,7 @@ class EventInterface {
     }
 
     close() {
-        
+        for(callbackHandlerIndex in this._callbackHandlers) {P}
     }
 }
 
