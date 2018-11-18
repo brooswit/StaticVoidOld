@@ -7,7 +7,7 @@ function the(subject) {
             return new Checker((resolve) => {
                 let type = subject.constructor.name;
                 let targetType = Class.name;
-                return type === targetType;
+                resolve(type === targetType);
             })
             
         },
