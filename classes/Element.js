@@ -4,8 +4,6 @@ module.exports = class Element extends EventManager {
     constructor(parent) {
         this.state = {};
         this._parentInterface = new EventManagerInterface(parent)
-        this.parent = null;
-        this._parentInterface = null;
         this._isDestroyed = false;
 
         if (parent) this.attach(parent);
@@ -29,7 +27,7 @@ module.exports = class Element extends EventManager {
         this.detach();
 
         this.parent = parent;
-        this._parentInterface = new EventManagerInterface(parent);
+        this._parentInterface.attach(parent); = new EventManagerInterface(parent);
         this._parentInterface.hook('snapshot', this);
 
         this.trigger('attached');
