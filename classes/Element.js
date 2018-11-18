@@ -12,7 +12,10 @@ module.exports = class Element extends EventManager {
 
     root(antiLoopbackToken={}) {
         let element = this;
-        while (element.parent);
+        while (element.parent) {
+            element = element.parent;
+        }
+        return element;
         if(this.__antiLoopbackToken === antiLoopbackToken) return null;
         this.__antiLoopbackToken = antiLoopbackToken;
         return this.parent ? this.parent.root(antiLoopbackToken) : this;
