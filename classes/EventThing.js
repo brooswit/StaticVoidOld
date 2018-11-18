@@ -4,7 +4,9 @@ class EventEmitter {
     }
 
     on(eventName, callback) {
-        return new Promise((re)
+        return new Promise((resolve, reject) => {
+            
+        }
     }
 }
 class EventInterface {
