@@ -10,11 +10,11 @@ async function asynchronously(method) {
     return method.then ? await method() : method();
 }
 
-function JSONsafeParse(str) {
+function JSONsafeParse(str, fallback = undefined) {
     try {
         return JSON.parse(str);
     } catch (ex) {
-        return undefined;
+        return fallback;
     }
 }
 
