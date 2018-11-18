@@ -25,6 +25,7 @@ class EventyHandler extends Promise {
         this.eventyHandler = source.on(this._eventName, this.trigger, this._payload);
     }
     detach() {
+        if(!this.eventyHandler) return;
         this.eventyHandler.off();
     }
     off() {
