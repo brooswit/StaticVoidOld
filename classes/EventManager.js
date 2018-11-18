@@ -13,8 +13,7 @@ class EventManagerInterface {
 
         this.detach();
 
-        this._eventManager = new EventInterface(_eventManager);
-        this._eventManager.on('snapshot', this.snapshot);
+        this._eventManager = eventManager;
 
         this.trigger('attached');
     }
