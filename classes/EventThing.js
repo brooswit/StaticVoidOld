@@ -28,9 +28,9 @@ class EventHandler extends Promise {
         this._manager._internalEmitter.once(`off:${this._eventName}`, this.off);
     }
 
-    handle((resolve, reject)) => {
+    handle(resolve, reject) {
 
-    })
+    )
 
     on(cb) {
         if (this._off) return;
