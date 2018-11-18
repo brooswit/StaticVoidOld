@@ -31,7 +31,7 @@ module.exports = class Element extends EventManager {
 
         this._parent = parent;
         this.parentInterface.attach(this._parent);
-        this.rootInterface.attach(this._parent);
+        this.rootInterface.attach(this.root());
 
         this.trigger('attached');
     }
@@ -42,6 +42,7 @@ module.exports = class Element extends EventManager {
 
         this._parent = null;
         this.parentInterface.detach();
+        this.rootInterface.detach();
 
         this.trigger('dettached');
     }
