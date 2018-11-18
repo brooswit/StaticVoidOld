@@ -69,9 +69,13 @@ class EventyHandler extends Promise, EventyInterface {
         this._internalEvents.on('detached', this._onDetach);
         this._internalEvents.once('closed', this.off);
     }
+
+    on()
+
     trigger(payload) {
         this._events.emit('triggered', payload);
     }
+
     off() {
         this._onDetach();
         this._internalEvents.off('attached', this._onAttach);
