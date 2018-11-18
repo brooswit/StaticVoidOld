@@ -13,8 +13,8 @@ class EventyHandler extends Promise {
 
         this.on(this._callback);
     }
-    on() {
-        
+    on(callback) {
+        this
     }
     off() {
 
