@@ -29,10 +29,9 @@ class EventHandler extends Promise {
     }
 
     async awaitTrigger() {
-        await new Promise((resolve, reject) {
-            this.on('trigger', resolve
+        return await new Promise((resolve, reject) {
+            this.on('trigger', resolve);
         }
-        this.on('')
     }
 
     
