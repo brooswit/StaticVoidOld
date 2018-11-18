@@ -10,7 +10,7 @@ class EventyView {
         if (eventySource) this.attach(eventySource);
     }
 }
-class Eventy {
+class Eventy extends EventyView {
     () {
         
     }
