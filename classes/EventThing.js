@@ -18,7 +18,6 @@ class EventHandler extends Promise {
         this._off = false;
         this._triggerCount = 0;
 
-        // Requires Cleanup \/
         this._eventInterface = new EventInterface();
         this._eventInterface.on(
             this._emitter,
