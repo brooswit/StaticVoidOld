@@ -29,7 +29,7 @@ module.exports = class ElementManager extends EventManager {
     }
 }
 
-class Element extends EventEmitter {
+class Element extends EventManager {
     constructor(manager, id, state = {}) {
         this._id = id;
         this._state = state;
