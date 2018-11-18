@@ -1,8 +1,7 @@
 class EventInterface {
-    constructor(parent) {
-        this._parent = parent;
-    }
+    constructor() {}
 
+    on
 
     close() {
 
