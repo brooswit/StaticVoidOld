@@ -6,7 +6,7 @@ function the(subject) {
         a: (Class) {
             let type = capitalize(typeof subject);
             if (type === "Object") {
-                
+                type = subject.Name
             }
         },
         not {
