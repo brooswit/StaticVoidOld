@@ -57,7 +57,6 @@ class EventyHandler extends Promise, EventyInterface {
         
         this._eventName = eventName;
         this._callback = callback;
-        this._payload = payload;
 
         this._events = new EventEmitter();
         this._events.on('triggered', this._callback);
