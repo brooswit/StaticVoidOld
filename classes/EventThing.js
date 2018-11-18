@@ -1,4 +1,4 @@
-class EventHandler extends {
+class EventHandler extends Promise {
     constructor(eventManager, eventName, callback, triggerLimit = false) {
         if (typeof callback !== 'function') 
         super(on)
