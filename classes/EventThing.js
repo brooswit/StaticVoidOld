@@ -6,6 +6,8 @@ class EventHandler {
         this._triggerLimit = triggerLimit === true ? 1 : triggerLimit;
         assert(this._manager instanceof EventManager);
         assert(typeof this._name === 'string');
+        assert(typeof this._cb === 'function');
+        assert(typeof this._cb === 'function');
 
         this._off = false;
         this._triggerCount = 0;
