@@ -52,7 +52,8 @@ class EventyHandler extends Promise {
         this._events.on('triggered', resolve);
         this._events.on('errored', reject);
     }
-    constructor(source, internalEvents, eventName, callback) {
+
+    constructor(eventy, internalEvents, eventName, callback) {
         super(this._promiseResolver);
         
         this._eventName = eventName;
@@ -61,7 +62,7 @@ class EventyHandler extends Promise {
         this._events = new EventEmitter();
         this._events.on('triggered', this._callback);
 
-        if(source) this._onAttach(source);
+        if(eventy) this._onAttach(eventy);
 
         this._internalEvents = internalEvents;
         this._internalEvents.on('attached', this._onAttach);
