@@ -30,6 +30,7 @@ class EventyHandler extends Promise {
         this._events.off('triggered', this._callback);
     }
     _onAttach(source) {
+        
         this.eventyHandler = source.on(this._eventName, this.trigger, this._payload);
     }
     _onDetach() {
