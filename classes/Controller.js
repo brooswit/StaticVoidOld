@@ -15,7 +15,11 @@ module.exports = class Controller extends EventManager.Interface {
     attach(element) {
         super.attach(element);
         this.world = new EventManager.Interface(this.attached.world);
+    }
 
+    detach() {
+        super.detach();
+        this
     }
 
     getElement() {
