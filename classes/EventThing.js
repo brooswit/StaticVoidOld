@@ -14,14 +14,14 @@ class EventHandler {
         assert(typeof this._cb === 'function');
         assert(typeof this._triggerLimit === 'number' || typeof this._triggerLimit === 'boolean');
 
-        this._emitter = new EventEmitterPlus();
+        this._emitter = new EventEmitter();
         this._off = false;
         this._triggerCount = 0;
 
         this._triggerPromise = null;
 
         // Requires Cleanup \/
-        this._manager._emitter.on('eventName', this._cb);
+        this._manager._emitter.on(eventName, this._cb);
         
         this._manager._internalEmitter.once(`close`, this.off);
         this._manager._internalEmitter.once(`off`, this.off);
@@ -68,8 +68,8 @@ class EventHandler {
 
 class EventManager {
     constructor() {
-        this._emitter = new EventEmitterPlus();
-        this._internalEmitter = new EventEmitterPlus();
+        this._emitter = new EventEmitter();
+        this._internalEmitter = new EventEmitter();
     }
 
     get(eventName) {
