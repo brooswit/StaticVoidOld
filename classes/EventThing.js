@@ -5,7 +5,9 @@ function the(subject) {
     return {is: {
         a: (Class) {
             let type = capitalize(typeof subject);
-            if ()
+            if (type === "Object") {
+                
+            }
         },
         not {
             a
