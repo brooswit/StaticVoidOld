@@ -74,7 +74,7 @@ class EventyView {
 }
 
 class EventyInternal {
-
+    
 }
 class Eventy extends EventyView {
     constructor() {
