@@ -25,7 +25,7 @@ class EventyView {
         this._emitter.emit('dettached');
     }
     on(eventName, callback, payload) {
-        let eventHandler = (this._emitter, eventName, callback, payload);
+        let eventHandler = new EventHandler(this._emitter, eventName, callback, payload);
     }
     trigger() { return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
 
