@@ -69,8 +69,8 @@ class EventyHandler extends Promise, EventyInterface {
         this._internalEvents.once('closed', this.off);
     }
 
-    on(callback, payload) {
-        return new EventyHandler(this._events, this._internalEvents, this._eventName, callback, payload);
+    on(callback) {
+        return new EventyHandler(this._events, this._internalEvents, this._eventName, callback);
     }
 
     trigger(payload) {
