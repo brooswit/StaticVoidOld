@@ -33,7 +33,7 @@ class EventHandler extends Promise {
     }
 
     on(cb) {
-        this._manager
+        this._manager.
         if (this._off) return;
         this._emitter.on('trigger', cb);
     }
