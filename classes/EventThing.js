@@ -17,9 +17,7 @@ class EventHandler extends Promise {
         this._off = false;
         this._triggerCount = 0;
 
-        this.tilTrigger = new Promise((resolve, reject) {
-            this.on('trigger', resolve);
-        });
+        this._triggerPromise = null;
 
         // Requires Cleanup \/
         this._manager._eventEmitter[once ? 'once' : 'on']('eventName', this._cb);
