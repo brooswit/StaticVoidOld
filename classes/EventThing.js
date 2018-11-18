@@ -47,11 +47,6 @@ class EventHandler extends Promise {
         return this;
     }
 
-    
-    _resolve() {
-
-    }
-
     trigger() {
         if (this._off) return;
         if (this._triggerLimit !== false && ++this._triggerCount >= this._triggerLimit) this.off();
