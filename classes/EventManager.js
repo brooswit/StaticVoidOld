@@ -2,7 +2,7 @@ const EventManagerInterface = require('./EventManagerInterface');
 const EventHandler = require('./EventHandler');
 const EventEmitter = require('events');
 class EventyHandler extends Promise {
-    
+
 }
 class EventyInternal {
 
@@ -23,7 +23,9 @@ class EventyView {
         this._source = null;
         this._emitter.emit('dettached');
     }
-    on(eventName, callback, ) { return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
+    on(eventName, callback, payload) {
+        
+    }
     trigger() { return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
 
 }
