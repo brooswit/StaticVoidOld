@@ -22,12 +22,11 @@ module.exports = class Element extends EventManager {
 
     attach(parent) {
         if (this._isDestroyed) return;
-        if (this.parent === parent) return;
+        this._parentInterface.attach(parent);
 
         this.detach();
 
         this.parent = parent;
-        this._parentInterface.attach(parent); = new EventManagerInterface(parent);
         this._parentInterface.hook('snapshot', this);
 
         this.trigger('attached');
