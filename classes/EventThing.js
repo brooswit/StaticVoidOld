@@ -2,12 +2,13 @@ function capitalize(str) {
     return str.charAt(0).toUpperCase() + name.slice(1)
 }
 function the(subject) {
+    
     return {is: {
         a: (Class) {
             let type = subject.constructor.name;
             let targetType = Class.name
             if (type === targetType) {
-                
+
             }
         },
         not {
