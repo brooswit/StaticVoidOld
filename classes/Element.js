@@ -10,7 +10,7 @@ module.exports = class Element extends EventManager {
         if (parent) this.attach(parent);
     }
 
-    root() {
+    root(rootCheck) {
         
         return this.parent ? this.parent.root() : this;
     }
