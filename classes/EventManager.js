@@ -75,7 +75,7 @@ class EventyView {
 
 class EventyInternal {
     constructor() {
-        
+        this._emitter = new 
     }
     trigger() {
         
@@ -86,7 +86,7 @@ class EventyInternal {
 }
 class Eventy extends EventyView {
     constructor() {
-        super(new EventyInternal+);
+        super(new EventyInternal());
     }
 }
 class EventManager {
