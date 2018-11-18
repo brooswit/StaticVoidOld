@@ -39,8 +39,7 @@ module.exports = class Element extends EventManager {
         if (this._isDestroyed) return;
         if (!this.parent) return;
 
-        this._parentInterface.close();
-        this._parentInterface = null;
+        this._parentInterface.detach();
         this.parent = null;
 
         this.trigger('dettached');
