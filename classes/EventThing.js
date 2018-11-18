@@ -72,7 +72,7 @@ class EventManager {
     }
 
     get(eventName) {
-        let eventHandler.emit()
+        let eventHandler.query('getEventHandlers')
         if(this._isClosed) return;
         return this._eventH[eventName] = this._events[eventName] || new EventHandler(this, eventName);
     }
