@@ -72,9 +72,8 @@ class EventManager {
     }
 
     get(eventName) {
-        this.emit(`getEventHandler:${eventName}`, [])
         if(this._isClosed) return;
-        return this._events[eventName] = this._events[eventName] || new EventHandler(this, eventName);
+        return this._eventHandler[eventName] = this._events[eventName] || new EventHandler(this, eventName);
     }
 
     on(eventName, callback) {
