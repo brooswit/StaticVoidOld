@@ -47,7 +47,6 @@ class EventyView {
     }
 
     attach(eventy) {
-        this.detach();
         this._events.on('triggered', eventy.trigger);
         this._events.emit('attached', eventy);
     }
