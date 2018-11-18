@@ -52,7 +52,7 @@ class EventHandler extends Promise {
 
     trigger() {
         if (this._isOff) return;
-        if (this._triggerLimit !== false && ++this._triggerCount >= this._triggerLimit) this.off();
+        if (this._triggerLimit !== false && ++this._triggerCount >= this._triggerLimit) return this.off();
         return this._cb.apply(this._context, arguments);
     }
 
@@ -69,7 +69,7 @@ class EventHandler extends Promise {
         this._isOff = true;
 
         this._managerEventInterface.close();
-        this._managerInternalEventInterface.close();ß
+        this._managerInternalEventInterface.close();
     }
 }
 
