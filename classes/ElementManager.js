@@ -1,7 +1,7 @@
 const Controller = require('./Controller');
 const Element = require('./Element');
 
-module.exports = class ElementFactory {
+module.exports = class WorldManager extends EventMa {
     constructor (Controllers = [], startId = 0) {
         this._Controllers = Controllers;
         this._nextId = startId;
