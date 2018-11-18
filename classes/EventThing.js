@@ -3,7 +3,7 @@ class EventEmitter {
 
     }
 
-    on
+    on(eventName)
 }
 class EventInterface {
     constructor(parent) {
