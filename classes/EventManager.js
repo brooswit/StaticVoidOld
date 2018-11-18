@@ -114,13 +114,13 @@ class EventManager {
 
     on(eventName, callback) {
         if(this._isClosed) return;
-        let eventHandler = new EventHandler(this._emitter, this._internalEmitter, eventName, callback, false, Array.prototype.slice.call(arguments, 1));
+        let eventHandler = new EventHandler(this._emitter, this._internalEmitter, eventName, callback, false, Array.prototype.slice.call(arguments, 2));
         return eventHandler;
     }
 
     once(eventName, callback) {
         if(this._isClosed) return;
-        let eventHandler = new EventHandler(this._emitter, this._internalEmitter, eventName, callback, 1);
+        let eventHandler = new EventHandler(this._emitter, this._internalEmitter, eventName, callback, 1, Array.prototype.slice.call(arguments, 2));
         return eventHandler;
     }
 
