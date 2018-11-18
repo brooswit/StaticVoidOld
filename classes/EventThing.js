@@ -5,7 +5,7 @@ class EventHandler {
     }
 
     trigger() {
-        callback.apply(null, arguments);
+        return callback.apply(null, arguments);
     }
 
     off() {
