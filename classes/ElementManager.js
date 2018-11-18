@@ -1,13 +1,14 @@
+const EventManager = require('./EventManager');
 const Controller = require('./Controller');
 const Element = require('./Element');
 
-module.exports = class WorldManager extends EventMa {
+module.exports = class WorldManager extends EventManager {
     constructor (Controllers = [], startId = 0) {
         this._Controllers = Controllers;
         this._nextId = startId;
     }
 
-    build() {
+    newElement() {
         let newElement = new Element(this, this._nextId++);
         for(controllerIndex in controllerNames) {
             let controllerName = controllerNames[controllerIndex];
