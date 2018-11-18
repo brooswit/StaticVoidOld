@@ -56,11 +56,11 @@ class EventHandler extends Promise {
     }
 
     on(callback) {
-        return this._manager.on(this._name, callback);
+        return this._managerEventInterface.on(this._name, callback);
     }
 
     once(callback) {
-        return this._manager.once(this._name, callback);
+        return this._managerEventInterface.once(this._name, callback);
     }
 
     off() {
