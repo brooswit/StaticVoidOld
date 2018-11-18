@@ -4,6 +4,10 @@ class EventHandler {
         this._manager._eventEmitter[once ? 'once' : 'on']('eventName', callback);
     }
 
+    trigger() {
+        
+    }
+
     off() {
         this._manager._eventEmitter.off('eventName', callback);
     }
