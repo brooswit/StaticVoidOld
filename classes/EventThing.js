@@ -6,7 +6,8 @@ class EventInterface {
 
     on(emitter, eventName, callback) {
         let eventHandler = this._eventHandlers.push(emitter.on(eventName, callback));
-        eventHandler.on
+        this._emitter.on('close')
+        eventHandler.on()
         return 
     }
 
