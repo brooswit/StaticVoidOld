@@ -1,7 +1,8 @@
 class Interface {
     constructor(parent) {
-        this._parent;
+        this._parent = parent;
     }
+    close =
 }
 class InterfaceFactory {
     constructor() {
