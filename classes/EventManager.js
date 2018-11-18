@@ -89,7 +89,7 @@ class EventManager {
 
     once(eventName, callback) {
         if(this._isClosed) return;
-        let eventHandler = new EventHandler(this, eventName, callback, 1);
+        let eventHandler = new EventHandler(this._emitter, this._internalEmitter, eventName, callback, 1);
         return eventHandler;
     }
 
