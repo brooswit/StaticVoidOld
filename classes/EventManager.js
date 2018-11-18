@@ -78,7 +78,7 @@ class EventyInternal {
         this._source = new EmitterEventyWrapper(new EventEmitter());
         this._events = new EventEmitter();
     }
-    trigger() {
+    trigger(eventName, payload) {
         this._source
     }
     on(eventName, callback, payload) {
