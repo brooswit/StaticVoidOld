@@ -1,7 +1,7 @@
 
 function the(subject) {
     return {is: {
-        a: () {
+        a: (){
 
         },
         not {
