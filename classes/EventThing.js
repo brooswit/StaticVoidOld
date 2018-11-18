@@ -8,6 +8,8 @@ class EventInterface {
         this.callbackHandlers.push(emitter.once(eventName, callback));
     }
 
+    off(emmitter)
+
     close() {
 
     }
