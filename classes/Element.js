@@ -31,6 +31,7 @@ module.exports = class Element extends EventManager {
 
         this._parent = parent;
         this.parentInterface.attach(this._parent);
+        this.rootInterface.attach(this._parent);
 
         this.trigger('attached');
     }
