@@ -86,7 +86,7 @@ class EventManager {
     close() {
         if(this._isClosed) return;
         this._isClosed = true;
-        this._internalEmitter.emit('close')
+        this._internalEmitter.emit('close');
     }
 }
 class EventInterface {
