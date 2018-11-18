@@ -10,6 +10,7 @@ module.exports = class Element extends EventManager {
     attach(world) {
         if (this._world) return;
         this._world = world;
+        this.trigger('attached', world)
     }
 
     addController(controllerName, state={}) {
