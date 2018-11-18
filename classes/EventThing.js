@@ -1,7 +1,9 @@
 class EventInterface {
     constructor() {}
 
-    on(emitter, eventName, ca)
+    on(emitter, eventName, callback) {
+        emitter.on
+    }
 
     close() {
 
