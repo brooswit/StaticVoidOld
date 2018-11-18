@@ -4,10 +4,11 @@ class EventManagerInterface {
     constructor(sourceEventManager) {
         this._sourceEventManager = sourceEventManager;
         this._emitter = new EventEmitter();
+        this._isClosed = false;
     }
 
     attach(sourceEventManager) {
-        if (this._isDestroyed) return;
+        if (this._isClosed) return;
         if (this.world === world) return;
 
         this.detach();
