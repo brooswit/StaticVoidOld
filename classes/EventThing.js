@@ -5,7 +5,7 @@ class EventHandler {
     }
 
     off() {
-
+        this._manager._eventEmitter.off('eventName', callback);
     }
 }
 
