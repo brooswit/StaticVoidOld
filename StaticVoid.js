@@ -10,7 +10,7 @@ async function asynchronously(method) {
     return method.then ? await method() : method();
 }
 
-function JSONsafeParse(str, fallback = undefined) {
+function JSONparseSafe(str, fallback = undefined) {
     try {
         return JSON.parse(str);
     } catch (ex) {
@@ -45,7 +45,7 @@ class StaticVoid extends ElementManager {
 
         ws.on('message', (msg) => {
 
-            let {rpc} = JSONsafeParse(msg, {});
+            let {rpc} = JSONparseSafe(msg, {});
             if (rpc) {
                 if (!rpc.command) {
                     let options = rpc.options || {};
@@ -86,7 +86,6 @@ class StaticVoid extends ElementManager {
                     debug
                 });
 
-                snapshot.debug = debug;
                 let rawData = JSON.stringify(snapshot);
                 getSnapshotEndTime = Date.now();
 
