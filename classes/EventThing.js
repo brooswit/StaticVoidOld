@@ -119,3 +119,5 @@ class EventManager {
         this._internalEmitter.emit('close');
     }
 }
+
+module.exports {}
