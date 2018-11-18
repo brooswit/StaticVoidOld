@@ -10,7 +10,11 @@ async function asynchronously(method) {
 }
 
 function JSONsafeParse(str) {
-    treturn JSON.parse(str);
+    try {
+        return JSON.parse(str);
+    } catch (ex) {
+        return undefined
+    }
 }
 
 class StaticVoid extends ElementManager {
