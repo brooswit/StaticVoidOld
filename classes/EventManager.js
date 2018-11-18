@@ -60,8 +60,7 @@ class EventHandler extends Promise {
     trigger() {
         if (this._isOff) return;
         if (this._triggerLimit !== false && ++this._triggerCount >= this._triggerLimit) this.off();
-        return this._cb.apply(context, arguments);
-        return this._emitter.emit.apply(_emitter, ['trigger'].concat(arguments));
+        return this._cb.apply(this._context, arguments);
     }
 
     on(callback) {
