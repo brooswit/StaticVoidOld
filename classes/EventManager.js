@@ -19,7 +19,7 @@ class EventyView {
         this._source = eventy;
         this._emitter.emit('source_changed');
     }
-    trigger() { return this._source.trigger.apply(this._source, arguments); }
+    trigger() { return this._source[arguments.callee.name].apply(this._source, arguments); }
     trigger() { return this._source.trigger.apply(this._source, arguments); }
 
 }
