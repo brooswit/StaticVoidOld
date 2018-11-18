@@ -4,6 +4,7 @@ const Controller = require('./Controller');
 module.exports = class ElementManager extends EventManager {
     constructor (Controllers=[], startId=0) {
         this._Controllers = Controllers;
+        this.
         this._id = startId;
     }
 
