@@ -1,11 +1,11 @@
 class EventEmitter {
     constructor() {
-
+        
     }
 
     on(eventName, callback) {
         return new Promise((resolve, reject) => {
-            
+
         }
     }
 }
