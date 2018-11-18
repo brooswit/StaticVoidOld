@@ -29,7 +29,7 @@ module.exports = class Element extends EventManager {
 
         this.parent = parent;
         this._parentInterface = new EventInterface(parent);
-        this._parentInterface.on('snapshot', this.snapshot);
+        this._parentInterface.on('snapshot', this.trigger);
 
         this.trigger('attached');
     }
