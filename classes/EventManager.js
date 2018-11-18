@@ -15,7 +15,8 @@ class EventyView {
     }
     attach(eventy) {
         this.detach();
-        this._sour
+        this._source = eventy;
+        
     }
 }
 class Eventy extends EventyView {
