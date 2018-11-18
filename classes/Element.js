@@ -4,12 +4,12 @@ module.exports = class Element extends EventManager {
     constructor() {
         this.state = {};
         this.world = null;
-        this._controllers = {};
     }
 
     attach(world) {
         if (this._world) return;
         this.world = world;
+        this.worldInterf
         this.trigger('attached', world)
     }
 
