@@ -9,14 +9,14 @@ class EventInterface {
 }
 class EventInterfaceFactory {
     constructor() {
-        
+
     }
 
     newInterface() {
         return new EventInterface(this);
     }
 }
-class EventManager {
+class EventManager extends EventInterfaceFactory {
     constructor() {
 
     }
