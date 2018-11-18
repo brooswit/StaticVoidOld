@@ -22,10 +22,10 @@ class EventManagerInterface {
         if (this._isDestroyed) return;
         if (!this.world) return;
 
-        this.world.close();
-        this.world = null;
+        this.close();
+        this._eventManager = null;
 
-        this.trigger('dettached');
+        this._emitter.trigger('dettached');
     }
 
     attach(eventManager) {
