@@ -70,8 +70,7 @@ class EventHandler extends Promise {
         this._isOff = true;
         this._emitter.close();
         this._managerEventInterface.close();
-        this.
-        this._emitter.on('off');
+        this._managerInternalEventInterface.close();ß
     }
 }
 
