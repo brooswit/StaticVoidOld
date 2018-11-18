@@ -29,8 +29,8 @@ class EventHandler extends Promise {
     }
 
     handle(resolve, reject) {
-
-    )
+        this.on(resolve)
+    }
 
     on(cb) {
         if (this._off) return;
