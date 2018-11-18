@@ -27,13 +27,14 @@ class EventHandler extends Promise {
         this._internalEmitter.once(`off:${this._eventName}`, this.off);
     }
 
+    
 
     trigger() {
         if (this._off) return;
         if (this._triggerLimit !== false && ++this._triggerCount >= this._triggerLimit) this.off();
         let result = this._cb.apply(null, arguments);
         this._resolve(result);
-        return 
+        return result;
     }
 
     off() {
