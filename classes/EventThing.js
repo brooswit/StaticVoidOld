@@ -9,7 +9,9 @@ class EventInterface {
     }
 
     close() {
-        for(callbackHandlerIndex in this._callbackHandlers) {P}
+        for(callbackHandlerIndex in this._callbackHandlers) {
+            let callbackHandler = this._callbackHandlers[callbackHandlerIndex];
+        }
     }
 }
 
