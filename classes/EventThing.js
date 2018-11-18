@@ -4,7 +4,7 @@ class EventEmitter {
     }
 
     on(eventName, callback) {
-        
+        return new Promise((re)
     }
 }
 class EventInterface {
