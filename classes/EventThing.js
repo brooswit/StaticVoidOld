@@ -16,7 +16,7 @@ class EventEmitter {
 
     on(eventName, callback) {
         return new Promise((resolve, reject) => {
-            new EventHandler(this)
+            new EventHandler(this, eventName, callback)
             this._events[eventName]
         });
     }
