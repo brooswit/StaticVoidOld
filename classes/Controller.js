@@ -7,6 +7,7 @@ module.exports = class Controller extends EventManager.Interface {
 
         this._isRemoved = false;
 
+        this.on('attached', )
         this.on('destroy', this.remove);
         this.on('snapshot', this.snapshot);
     }
