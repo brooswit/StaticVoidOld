@@ -9,6 +9,7 @@ class EventyHandler extends Promise {
         this._events = new EventEmitter();
 
         if(source) this.attach(source);
+
         this._internalEvents = internalEvents;
         this._internalEvents.on('attached', this.attach);
         this._internalEvents.on('detached', this.detach);
@@ -31,7 +32,9 @@ class EventyHandler extends Promise {
     }
     off() {
         this.detach();
-        
+        this._internalEvents.off('attached', this.attach);
+        this._internalEvents.off('detached', this.detach);
+        this._internalEvents.off('closed', this.off);
     }
 }
 class EventyView {
