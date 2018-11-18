@@ -7,7 +7,6 @@ class EventManagerInterface {
     }
 
     attach(eventManager) {
-        if (this._isClosed) return;
         if (this._eventManager === eventManager) return;
 
         this.detach();
@@ -18,7 +17,6 @@ class EventManagerInterface {
     }
 
     detach() {
-        if (this._isDestroyed) return;
         if (!this._eventManager) return;
 
         this.close();
