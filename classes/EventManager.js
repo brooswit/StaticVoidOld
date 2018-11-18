@@ -77,7 +77,9 @@ class EventyInternal {
     trigger() {
 
     }
-    
+    on() {
+        return new EventyHandler(this._source, this._events, eventName, callback, payload);
+    }
 }
 class Eventy extends EventyView {
     constructor() {
