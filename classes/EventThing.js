@@ -7,12 +7,13 @@ class EventInterface {
     on(emitter, eventName, callback) {
         let eventHandler = this._eventHandlers.push(emitter.on(eventName, callback));
         this._emitter.on('close', eventHandler.off);
-        return eventHandler
+        return eventHandler;
     }
 
     once(emitter, eventName, callback) {
-        let eventHandler = this._eventHandlers.push(emitter.on(eventName, callback));
-        this._emitter.on('close', eventHandler.off);
+        let eventHandler = emitter.on(eventName, callback);
+        this._emitter.once('close', eventHandler.off);
+        return eventHandler;
     }
 
     close() {
