@@ -41,7 +41,7 @@ class EventyHandler extends Promise {
 
 class EventyView {
     constructor(eventySource) {
-        this._internalEvents = new EventEmitter();
+        this._events = new EventEmitter();
         this._source = null;
         if (eventySource) this.attach(eventySource);
     }
@@ -49,20 +49,20 @@ class EventyView {
     attach(eventy) {
         this.detach();
         this._source = eventy;
-        this._internalEvents.emit('attached', eventy);
+        this._events.emit('attached', eventy);
     }
 
     detach() {
         this._source = null;
-        this._internalEvents.emit('dettached');
+        this._events.emit('dettached');
     }
 
     on(eventName, callback, payload) {
-        return new EventyHandler(this._source, this._internalEvents, eventName, callback, payload);
+        return new EventyHandler(this._source, this._events, eventName, callback, payload);
     }
 
     close() {
-        this._internalEvents.emit('closed');
+        this._events.emit('closed');
     }
 
     trigger() { 
