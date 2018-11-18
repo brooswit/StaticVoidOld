@@ -40,10 +40,10 @@ class EventyHandler extends Promise {
 }
 
 class EventyView {
-    constructor(eventySource) {
+    constructor(source) {
         this._events = new EventEmitter();
         this._source = null;
-        if (eventySource) this.attach(eventySource);
+        if (source) this.attach(source);
     }
 
     attach(newSource) {
@@ -74,7 +74,7 @@ class EventyView {
 }
 
 class EventyInternal {
-    
+
 }
 class Eventy extends EventyView {
     constructor() {
