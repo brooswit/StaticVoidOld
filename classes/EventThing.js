@@ -1,5 +1,7 @@
 class EventManager {
     constructor() {
-        
+
     }
+
+    
 }
