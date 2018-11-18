@@ -14,14 +14,13 @@ class EventyView {
         this._source = null;
         if (eventySource) this.attach(eventySource);
     }
-    trigger() {
-        this._source.trigger.apply(this._source, arguments)
-    }
     attach(eventy) {
         this.detach();
         this._source = eventy;
         this._emitter.emit('source_changed');
     }
+    trigger() { return this._source.trigger.apply(this._source, arguments); }
+    trigger() { return this._source.trigger.apply(this._source, arguments); }
 
 }
 class Eventy extends EventyView {
