@@ -3,7 +3,9 @@ class EventEmitter {
 
     }
 
-    on(eventName)
+    on(eventName, callback) {
+        
+    }
 }
 class EventInterface {
     constructor(parent) {
