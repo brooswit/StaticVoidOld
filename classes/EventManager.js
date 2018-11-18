@@ -55,7 +55,7 @@ class EventyView {
 
     detach() {
         if(!this._isAttached) return;
-        this._events.on('triggered', this._source.trigger);
+        this._events.off('triggered', this._source.trigger);
         this._source = null;
         this._events.emit('dettached');
     }
