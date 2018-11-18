@@ -1,4 +1,4 @@
-function
+function that
 class EventHandler {
     constructor(eventManager, eventName, callback, triggerLimit) {
         this._manager = eventManager;
