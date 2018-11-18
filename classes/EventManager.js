@@ -84,9 +84,7 @@ class EventManager {
 
     trigger(eventName) {
         if(this._isClosed) return;
-        this._emitter.emit()
-        let eventHandler = new EventHandler(this._emitter, this._internalEmitter, eventName, callback, 1);
-        return eventHandler;
+        return this._emitter.emit(eventName);
     }
 
     on(eventName, callback) {
