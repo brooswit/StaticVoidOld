@@ -20,7 +20,7 @@ class EventHandler extends Promise {
         this._emitter = this._manager._eventEmitter;
         this._internalEmitter = this._manager._internalEventEmitter;
 
-        this.untiawait new Promise((resolve, reject) {
+        this.tilTrigger = new Promise((resolve, reject) {
             this.on('trigger', resolve);
         }
         // Requires Cleanup \/
