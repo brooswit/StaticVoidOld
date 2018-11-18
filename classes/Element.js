@@ -1,10 +1,9 @@
 const EventManager = require('./EventManager');
 
 module.exports = class Element extends EventManager {
-    constructor(manager) {
+    constructor() {
         this._id = id;
         this._state = state;
-        this._manager = manager;
         this._controllers = {};
     }
 
