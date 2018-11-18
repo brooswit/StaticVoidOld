@@ -22,7 +22,7 @@ class EventyView {
         this._source = eventy;
         this._emitter.emit('source_changed');
     }
-    
+
 }
 class Eventy extends EventyView {
     constructor() {
