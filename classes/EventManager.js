@@ -4,8 +4,10 @@ const EventEmitter = require('events');
 class EventyInternal {
 
 }
-class EventCoreView {
-    constructor(eventySource)
+class EventyView {
+    constructor(eventySource) {
+        this._so
+    }
 }
 class Eventy {
     () {
