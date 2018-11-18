@@ -1,4 +1,4 @@
-const EventHandler = require('./')
+const EventHandler = require('./EventHandler')
 const EventEmitter = require('events');
 
 class EventManager {
