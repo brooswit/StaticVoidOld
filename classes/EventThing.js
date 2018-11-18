@@ -71,11 +71,11 @@ class EventManager {
         this._internalEmitter = new EventEmitterPlus();
     }
 
-    on(eventName, callback, triggerLimit) {
+    on(eventName, callback) {
         if(this._isClosed) return;
         let eventHandler = new EventHandler(this, eventName);
         eventHandler.on(callback);
-        return new EventHandler(this, eventName, callback, triggerLimit);
+        return eventHandler;
     }
 
     off(eventName) {
