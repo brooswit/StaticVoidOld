@@ -12,7 +12,7 @@ module.exports = class Element extends EventManager {
 
     attach(parent) {
         if (this._isDestroyed) return;
-        if (this._parentInterface === parent) return;
+        if (this.parent === parent) return;
 
         this.detach();
 
@@ -27,6 +27,7 @@ module.exports = class Element extends EventManager {
         if (this._isDestroyed) return;
         if (!this._parentInterface) return;
 
+        this.parent = parent;
         this._parentInterface.close();
         this._parentInterface = null;
 
