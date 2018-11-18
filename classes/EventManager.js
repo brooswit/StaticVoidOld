@@ -3,7 +3,7 @@ const EventEmitter = require('events');
 class EventManagerInterface {
     constructor() {
         this._emitter = new EventEmitter();
-        this._isClosed = false;
+        this._eventManager = null;
     }
 
     attach(eventManager) {
