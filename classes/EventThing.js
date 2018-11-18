@@ -17,6 +17,7 @@ class EventInterface {
     }
 
     close() {
+        this._emitter.trigger('close');
         for(eventHandlerIndex in this._eventHandlers) {
             let eventHandler = this._eventHandlers[eventHandlerIndex];
             eventHandler.off();
