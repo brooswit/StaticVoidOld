@@ -32,9 +32,8 @@ class EventHandler extends Promise {
         this._internalEmitter.once(`off:${this._eventName}`, this.off);
     }
 
-    async tilTrigger() {
-        return this._tilTrigger = this._tilTrigger || 
-        return await new Promise((resolve, reject) {
+    async on() {
+        return this._tilTrigger = this._tilTrigger || new Promise((resolve, reject) {
             this.on('trigger', resolve);
         }
     }
