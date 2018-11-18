@@ -4,28 +4,28 @@ module.exports = class Element extends EventManager {
     constructor(world) {
         this._isDestroyed = false;
         this.state = {};
-        this.world = null;
+        this.worldEvents = null;
         if (world) this.attach(world);
     }
 
     attach(world) {
         if (this._isDestroyed) return;
-        if (this.world === world) return;
+        if (this.worldEvents === world) return;
 
         this.detach();
 
         this.worldEvents = new EventInterface(world);
-        this.world.on('snapshot', this.snapshot);
+        this.worldEvents.on('snapshot', this.snapshot);
 
         this.trigger('attached');
     }
 
     detach() {
         if (this._isDestroyed) return;
-        if (!this.world) return;
+        if (!this.worldEvents) return;
 
-        this.world.close();
-        this.world = null;
+        this.worldEvents.close();
+        this.worldEvents = null;
 
         this.trigger('dettached');
     }
@@ -33,7 +33,7 @@ module.exports = class Element extends EventManager {
     destroy() {
         if (this._isDestroyed) return;
         this._isDestroyed = true;
-        this.world.close();
+        this.worldEvents.close();
         this.trigger('destroyed');
         this.close();
     }
