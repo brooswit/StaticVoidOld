@@ -1,5 +1,5 @@
 class EventyInterface {
-    on(eventName, callback, payload) {}
+    on(eventName, callback) {}
     trigger(eventName, payload) {}
     close() {}
 }
