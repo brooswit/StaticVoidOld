@@ -7,11 +7,8 @@ class Check {
     }
 
     is(value) {
-        if (value) return new ValueChecker(subject, value);
-        return new TypeChecker(())
-        if(value) {
-
-        }
+        if (value!==undefined) return new ValueChecker(subject, value);
+        else return new TypeChecker(subject, value)
     }
     return {is: {
         a: (Class) => {
