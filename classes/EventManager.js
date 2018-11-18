@@ -5,13 +5,13 @@ class EventManagerInterface {
     }
 
     on(eventName, callback) {
-        let eventHandler = emitter.on(eventName, callback);
+        let eventHandler = this._targetEmitter.on(eventName, callback);
         this._emitter.once('close', eventHandler.off);
         return eventHandler;
     }
 
     once(eventName, callback) {
-        let eventHandler = emitter.once(eventName, callback);
+        let eventHandler = this._targetEmitter.once(eventName, callback);
         this._emitter.once('close', eventHandler.off);
         return eventHandler;
     }
@@ -37,7 +37,7 @@ class EventHandler extends Promise {
         assert(typeof this._cb === 'function');
         assert(typeof this._triggerLimit === 'number' || typeof this._triggerLimit === 'boolean');
 
-        this._eventInterface = new EventInterface();
+        this._eventInterface = new EventInterface(this._emitter);
         this._emitter = new EventEmitter();
         this._isOff = false;
         this._triggerCount = 0;
