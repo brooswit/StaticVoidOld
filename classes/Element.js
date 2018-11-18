@@ -32,7 +32,7 @@ module.exports = class Element extends EventManager {
         if (this._isDestroyed) return;
         this._isDestroyed = true;
         this.world.close();
-        this.trigger('destroy');
+        this.trigger('destroyed');
     }
 
     snapshot(snapshot) {
