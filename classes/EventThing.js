@@ -55,7 +55,6 @@ class EventManager {
 
     off(eventName) {
         if(eventName) this._internalEventEmitter.emit(`off:${eventName}`)
-        if(eventName) this._internalEventEmitter.emit(`off:${eventName}`)
         return new EventHandler(this, eventName, callback, triggerLimit);
     }
 
