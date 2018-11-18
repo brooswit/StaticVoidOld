@@ -11,21 +11,21 @@ class EventyInternal {
 }
 class EventyView {
     constructor(eventySource) {
-        this._emitter = new EventEmitter();
+        this._internalEvents = new EventEmitter();
         this._source = null;
         if (eventySource) this.attach(eventySource);
     }
     attach(eventy) {
         this.detach();
         this._source = eventy;
-        this._emitter.emit('attached', eventy);
+        this._internalEvents.emit('attached', eventy);
     }
     detach() {
         this._source = null;
-        this._emitter.emit('dettached');
+        this._internalEvents.emit('dettached');
     }
     on(eventName, callback, payload) {
-        let eventHandler = new EventHandler(this._emitter, eventName, callback, payload);
+        return new EventHandler(this._internalEvents, eventName, callback, payload);
     }
     trigger() { return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
 
