@@ -41,7 +41,7 @@ module.exports = class Controller extends EventManager {
     }
     off() {
         if(!this.getElement()) return;
-        return this._element.off.apply(this._element, arguments);
+        return this._elementEventInterface.off.apply(this._element, arguments);
     }
     trigger() {
         if(!this.getElement()) return;
