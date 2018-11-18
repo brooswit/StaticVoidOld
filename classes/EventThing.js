@@ -2,7 +2,7 @@
 function the(subject) {
     return {is: {
         a: (Class) {
-
+            
         },
         not {
             a
