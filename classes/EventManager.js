@@ -94,4 +94,6 @@ class Eventy extends EventyInterface {
 
 class EventyInterface {
     on(eventName, callback, payload) {}
+    trigger(eventName, payload) {}
+    close() {}
 }
