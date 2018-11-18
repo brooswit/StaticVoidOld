@@ -16,7 +16,7 @@ class EventyHandler extends Promise {
     _onAttached(source) {
         this.eventyHandler = source.on(this._eventName, this._callback, this._payload);
     }
-    _onDetached(source) {
+    _onDetached() {
         this.eventyHandler.off();
     }
     on()
