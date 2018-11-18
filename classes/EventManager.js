@@ -79,13 +79,13 @@ class EventyInternal {
         this._internalEvents = new EventEmitter();
     }
     trigger(eventName, payload) {
-        this._source.trigger(eventName, payload);
+        this._events.trigger(eventName, payload);
     }
     on(eventName, callback, payload) {
-        return new EventyHandler(this._source, this._events, eventName, callback, payload);
+        return new EventyHandler(this._events, this._internalEvents, eventName, callback, payload);
     }
     close() {
-        this._events.emit('closed');
+        this._internalEvents.emit('closed');
     }
     trigger(eventName, payload) {
         this._events.emit(eventName, payload);
