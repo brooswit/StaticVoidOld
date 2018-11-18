@@ -1,7 +1,9 @@
 
 function the(subject) {
     return {is: {
-        a: {}
+        a: {
+            
+        },
     }}
 }
 class EventHandler {
