@@ -66,8 +66,8 @@ class EventHandler extends Promise {
 
 class EventManager {
     constructor() {
-        this._eventEmitter = new EventEmitter();
-        this._internalEventEmitter = new EventEmitter();
+        this._eventEmitter = new EventEmitterPlus();
+        this._internalEventEmitter = new EventEmitterPlus();
     }
 
     on(eventName, callback, triggerLimit) {
