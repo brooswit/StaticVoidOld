@@ -80,10 +80,10 @@ class EventyHandler extends Promise {
     }
     _onAttach(eventy) {
         this._onDetach();
-        this.eventyHandler = source.on(this._eventName, this.trigger);
+        this._eventyHandler = source.on(this._eventName, this.trigger);
     }
     _onDetach() {
-        if(!this.eventyHandler) return;
-        this.eventyHandler.off();
+        if(!this._eventyHandler) return;
+        this._eventyHandler.off();
     }
 }
