@@ -14,8 +14,9 @@ class EventyHandler extends Promise {
     }
     _onAttached(newSource) {
         this._source = newSource;
-        
+
     }
+    _onDetached(oldSource) 
     on()
     off() {
 
