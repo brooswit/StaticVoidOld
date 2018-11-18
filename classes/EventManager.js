@@ -53,7 +53,7 @@ class EventyHandler extends Promise {
         this._events.on('errored', reject);
     }
     
-    constructor(eventy, internalEvents, eventName, callback) {
+    constructor(eventy, eventName, callback) {
         super(this._promiseResolver);
         
         this._eventName = eventName;
