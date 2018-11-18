@@ -1,3 +1,14 @@
+class EventInterface {
+    constructor(parent) {
+        this._parent = parent;
+    }
+
+
+    close() {
+
+    }
+}
+
 class EventHandler extends Promise {
     constructor(eventManager, eventName, callback, context, triggerLimit = false) {
         super(on);
