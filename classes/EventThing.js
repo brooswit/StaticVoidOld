@@ -22,7 +22,7 @@ class EventHandler extends Promise {
 
         this.tilTrigger = new Promise((resolve, reject) {
             this.on('trigger', resolve);
-        }
+        });
 
         // Requires Cleanup \/
         this._emitter[once ? 'once' : 'on']('eventName', this._cb);
@@ -32,7 +32,8 @@ class EventHandler extends Promise {
         this._internalEmitter.once(`off:${this._eventName}`, this.off);
     }
 
-    async awaitTrigger() {
+    async tilTrigger() {
+        return this.
         return await new Promise((resolve, reject) {
             this.on('trigger', resolve);
         }
