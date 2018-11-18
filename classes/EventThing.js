@@ -4,7 +4,7 @@ class EventHandler {
         this._name = eventName;
         this._cb = callback;
         this._triggerLimit = triggerLimit === true ? 1 : triggerLimit;
-        assert(this._manager instanceof EventManager)
+        assert(this._manager instanceof EventManager);
 
         this._off = false;
         this._triggerCount = 0;
