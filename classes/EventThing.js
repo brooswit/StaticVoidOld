@@ -1,7 +1,7 @@
 class EventHandler {
     constructor(eventEmitter) {
         this._eventEmitter = eventEmitter;
-        this._
+        this._callbackIndex
     }
 }
 
