@@ -7,6 +7,7 @@ function the(subject) {
             let type = subject.constructor.name;
             let targetType = Class.name
             if (type === targetType) {
+                
             }
         },
         not {
