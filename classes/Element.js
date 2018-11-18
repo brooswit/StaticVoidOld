@@ -15,7 +15,10 @@ module.exports = class Element extends EventManager {
     }
 
     detach() {
+        if (this._isDestroyed) return;
+        if (!this.world) return;
         
+        this.world = null;
     }
 
     destroy() {
