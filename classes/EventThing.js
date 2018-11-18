@@ -33,7 +33,7 @@ class EventHandler extends Promise {
     }
 
     async tilTrigger() {
-        return this.
+        return this._tilTrigger =this._tilTrigger
         return await new Promise((resolve, reject) {
             this.on('trigger', resolve);
         }
