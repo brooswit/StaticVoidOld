@@ -48,6 +48,7 @@ class EventyView {
 
     attach(eventy) {
         this.detach();
+        eventy.on()
         this._source = eventy;
         this._events.emit('attached', eventy);
     }
@@ -65,7 +66,7 @@ class EventyView {
         this._events.emit('closed');
     }
 
-    trigger(pa) { 
+    trigger(payload) { 
         this._events.emit('triggered', payload);
         // return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
 
