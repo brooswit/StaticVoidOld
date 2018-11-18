@@ -25,7 +25,7 @@ class EventyView {
         this._emitter.emit('dettached');
     }
     on(eventName, callback, payload) {
-        let eventHandler = (this._emitter, )
+        let eventHandler = (this._emitter, eventName, callback, payload)
         this._emitter.once('attached',
         this._emitter.once('detached') 
     }
