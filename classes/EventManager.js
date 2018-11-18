@@ -1,9 +1,11 @@
 const EventManagerInterface = require('./EventManagerInterface');
 const EventHandler = require('./EventHandler');
 const EventEmitter = require('events');
-class EventCoreInternal
-class EventCoreView {
+class EventCoreInternal {
 
+}
+class EventCoreView {
+    
 }
 class EventCore {
     () {
