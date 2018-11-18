@@ -9,7 +9,7 @@ class EventInterface {
 }
 class EventInterfaceFactory {
     constructor() {
-
+        
     }
 
     newInterface() {
