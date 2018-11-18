@@ -20,7 +20,7 @@ class EventManagerInterface {
 
     detach() {
         if (this._isDestroyed) return;
-        if (!this.world) return;
+        if (!this._eventManager) return;
 
         this.close();
         this._eventManager = null;
