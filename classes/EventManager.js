@@ -47,7 +47,7 @@ class EventyView extends Eventy {
 }
 
 
-class EventyHandler extends Promise {
+class EventyHandler extends Promise, EventyInterface {
     _promiseResolver(resolve, reject) {
         this._events.on('triggered', resolve);
         this._events.on('errored', reject);
