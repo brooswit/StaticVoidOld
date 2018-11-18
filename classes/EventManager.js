@@ -26,7 +26,7 @@ class EventManagerInterface {
         this._emitter.trigger('dettached');
     }
 
-    trigger(eventName) {
+    trigger() {
         this.attached.trigger.apply(this.attached, arguments);
     }
 
