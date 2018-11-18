@@ -1,19 +1,19 @@
-class Interface {
+class EventInterface {
     constructor(parent) {
         this._parent = parent;
     }
-    
+
     close() {
 
     }
 }
-class InterfaceFactory {
+class EventInterfaceFactory {
     constructor() {
 
     }
 
     newInterface() {
-        return new Interface(this);
+        return new EventInterface(this);
     }
 }
 class EventManager {
