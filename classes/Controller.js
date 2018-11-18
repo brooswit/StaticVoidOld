@@ -21,9 +21,8 @@ module.exports = class Controller extends EventManager.Interface {
 
     remove() {
         if(!this.getElement()) return;
-        this.close();
         this._isRemoved = true;
-
+        this.close();
         this._managerEventInterface.close();
     }
 
