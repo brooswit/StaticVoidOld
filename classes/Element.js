@@ -3,8 +3,8 @@ const EventManager = require('./EventManager');
 module.exports = class Element extends EventManager {
     constructor(world) {
         this._isDestroyed = false;
-        this.world = null;
         this.state = {};
+        if (world) this.attach(world);
     }
 
     attach(world) {
