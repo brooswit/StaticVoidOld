@@ -19,7 +19,7 @@ class EventManager {
     }
 
     on(eventName, callback) {
-        return new EventHandler(this._eventEmitter, _internalEventEmitter, eventName, callback);
+        return new EventHandler(this, eventName, callback);
     }
 
     close() {
