@@ -1,4 +1,4 @@
-
+function capitalizeFirst()
 function the(subject) {
     return {is: {
         a: (Class) {
