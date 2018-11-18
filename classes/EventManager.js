@@ -1,4 +1,8 @@
 class EventyHandler extends Promise {
+    _promiseResolver(resolve, reject) {
+        this._events.on('triggered', resolve);
+        this._events.on('errored', reject);
+    }
     constructor(source, internalEvents, eventName, callback, payload) {
         super(this._promiseResolver);
         
@@ -32,10 +36,6 @@ class EventyHandler extends Promise {
     _detach() {
         if(!this.eventyHandler) return;
         this.eventyHandler.off();
-    }
-    _promiseResolver(resolve, reject) {
-        this._events.on('triggered', resolve);
-        this._events.on('errored', reject);
     }
 }
 class EventyView {
