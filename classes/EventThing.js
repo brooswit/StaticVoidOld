@@ -11,6 +11,7 @@ class EventHandler {
         this._emitter = this._manager._eventEmitter;
         this._internalEmitter = this._manager._internalEventEmitter;
 
+        // Clean up ev
         this._emitter[once ? 'once' : 'on']('eventName', this._cb);
         
         this._internalEmitter.once(`close`, this.off);
