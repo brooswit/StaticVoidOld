@@ -24,6 +24,7 @@ module.exports = class ElementManager extends EventEmitter{
     attachController(element, controllerName, state) {
         let newController = new (this._Controllers[controllerName] || Controller)(element, this._id++, state);
         this.trigger('newController', newController);
+        this.trigger('newController', newController);
         return newController;
     }
 }
