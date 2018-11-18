@@ -35,7 +35,9 @@ class StaticVoid extends ElementManager {
 
         ws.on('message', (msg) => {
             let data = {};
-            let data = JSON.parse(msg);
+            try {
+                data = JSON.parse(msg);
+            } catch 
             let {rpc} = data;
             if (rpc) {
                 if (!rpc.command) {
