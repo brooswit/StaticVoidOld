@@ -53,8 +53,12 @@ class EventManager {
         return new EventHandler(this, eventName, callback, triggerLimit);
     }
 
+    on(eventName, callback, triggerLimit) {
+        return new EventHandler(this, eventName, callback, triggerLimit);
+    }
+
     close() {
-        this._internalEventEmitter.emit('')
+        this._internalEventEmitter.emit('close')
     }
 }
 class EventInterface {
