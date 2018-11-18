@@ -26,7 +26,7 @@ class EventyView {
     }
 
     on(eventName, callback, payload) {
-        return new EventHandler(this._source, this._internalEvents, eventName, callback, payload);
+        return new EventyHandler(this._source, this._internalEvents, eventName, callback, payload);
     }
 
     trigger() { return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
