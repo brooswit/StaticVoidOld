@@ -70,7 +70,6 @@ class EventyView {
 
     trigger(payload) { 
         this._events.emit('triggered', payload);
-        // return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
 
 }
 class EventyInternal {
