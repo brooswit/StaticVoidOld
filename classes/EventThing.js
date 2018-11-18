@@ -3,7 +3,7 @@ function capitalize(str) {
 }
 function the(subject) {
     return {is: {
-        a: (Class) {
+        a: (Class) => {
             let type = subject.constructor.name;
             let targetType = Class.name
             return type === targetType;
@@ -25,7 +25,7 @@ class EventHandler {
         assert(this._manager instanceof EventManager);
         assert(typeof this._name === 'string');
         assert(typeof this._cb === 'function');
-        assert(the(this._triggerLimit).is.a(Number).or.a(Boolean)));
+        assert(the(this._triggerLimit).is.a(Number).or.a(Boolean).));
         assert(typeof this._triggerLimit === 'number' || typeof this._triggerLimit === 'boolean');
 
         this._off = false;
