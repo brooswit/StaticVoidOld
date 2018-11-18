@@ -1,31 +1,31 @@
 const EventManager = require('./EventManager');
 
 module.exports = class Element extends EventManager {
-    constructor(world) {
+    constructor(parent) {
         this._isDestroyed = false;
         this.state = {};
-        this.worldEvents = null;
-        if (world) this.attach(world);
+        this.parentEvents = null;
+        if (parent) this.attach(parent);
     }
 
-    attach(world) {
+    attach(parent) {
         if (this._isDestroyed) return;
-        if (this.worldEvents === world) return;
+        if (this.parentEvents === parent) return;
 
         this.detach();
 
-        this.worldEvents = new EventInterface(world);
-        this.worldEvents.on('snapshot', this.snapshot);
+        this.parentEvents = new EventInterface(parent);
+        this.parentEvents.on('snapshot', this.snapshot);
 
         this.trigger('attached');
     }
 
     detach() {
         if (this._isDestroyed) return;
-        if (!this.worldEvents) return;
+        if (!this.parentEvents) return;
 
-        this.worldEvents.close();
-        this.worldEvents = null;
+        this.parentEvents.close();
+        this.parentEvents = null;
 
         this.trigger('dettached');
     }
