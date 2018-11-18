@@ -6,7 +6,8 @@ class EventHandler {
 
         this._manager._eventEmitter[once ? 'once' : 'on']('eventName', callback);
         this._manager._internalEventEmitter.once('close', off);
-        this._manager._internalEventEmitter.once('off', (eventName)=>{if(this_off);
+        this._manager._internalEventEmitter.once('off', (eventName)=>{
+            if(this._eventName);
         }
 
     trigger() {
