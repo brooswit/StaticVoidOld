@@ -42,7 +42,7 @@ class EventHandler extends Promise {
     trigger() {
         if (this._off) return;
         if (this._triggerLimit !== false && ++this._triggerCount >= this._triggerLimit) this.off();
-        this._emitter.emit('trigger');
+        this._emitter.emit('trigger', );
         let result = this._cb.apply(null, arguments);
         this._resolve(result);
         return result;
