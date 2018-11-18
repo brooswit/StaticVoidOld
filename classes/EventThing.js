@@ -1,7 +1,9 @@
 function capitalize(str) {
     return str.charAt(0).toUpperCase() + name.slice(1)
 }
-class TypeChecker
+class TypeChecker {
+    constructor(subject, Class);
+}
 class Check {
     constructor(subject) {
         this._subject = subject;
