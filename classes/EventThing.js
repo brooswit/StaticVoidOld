@@ -29,10 +29,12 @@ class EventHandler extends Promise {
     }
 
     on(cb) {
+        if (this._off) return;
         return this._emitter.on('trigger', cb);
     }
 
     async once() {
+        return this._emitter.on('trigger', cb);
         return this._triggerPromise = this._triggerPromise || new Promise((resolve, reject) => {
             this._emitter.once('trigger', resolve);
         });
