@@ -15,7 +15,7 @@ class EventManagerInterface {
 
         this._eventManager = eventManager;
 
-        this.trigger('attached');
+        this._emitter.trigger('attached');
     }
 
     detach() {
