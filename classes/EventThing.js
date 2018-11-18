@@ -1,5 +1,7 @@
 class EventHandler {
-    constructor(eventEmitter)
+    constructor(eventEmitter) {
+        this
+    }
 }
 
 class EventEmitter {
