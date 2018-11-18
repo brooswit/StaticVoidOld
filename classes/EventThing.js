@@ -3,6 +3,7 @@ class EventHandler {
         this._manager = eventManager;
         this._once = once;
         this._off = false;
+
         this._manager._eventEmitter[once ? 'once' : 'on']('eventName', callback);
     }
 
@@ -15,6 +16,7 @@ class EventHandler {
     off() {
         if (this._off) return;
         this._off = true;
+
         this._manager._eventEmitter.off('eventName', callback);
     }
 }
