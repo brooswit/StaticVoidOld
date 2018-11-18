@@ -9,12 +9,14 @@ class EventyHandler extends Promise {
         this._callback = callback;
         this._payload = payload;
 
+        this._events = new 
+
         if(source) this._onAttached(source);
         internalEvents.on('attached', this._onAttached);
         internalEvents.on('dettached', this._onDettached);
     }
     _resolver(resolve) {
-        
+
     }
     _onAttached(source) {
         this.eventyHandler = source.on(this._eventName, this._callback, this._payload);
