@@ -2,7 +2,7 @@ class EventInterface {
     constructor() {}
 
     on(emitter, eventName, callback) {
-        return emitter.on(eventName, callback);
+        callbackHandlers = emitter.on(eventName, callback);
     }
 
     close() {
