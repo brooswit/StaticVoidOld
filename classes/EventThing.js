@@ -29,7 +29,7 @@ class EventHandler extends Promise {
     }
 
     _handleEvent() {
-        this._cb.apply()
+        this._cb.apply(null, arguments);
     }
 
     on(callback) {
