@@ -4,8 +4,10 @@ class EventHandler {
         this._name = eventName;
         this._cb = callback;
         this._triggerLimit = triggerLimit === true ? 1 : triggerLimit;
-        
+
         this._off = false;
+        this._triggerLi = 0;
+
         this._emitter = this._manager._eventEmitter;
         this._internalEmitter = this._manager._internalEventEmitter;
 
