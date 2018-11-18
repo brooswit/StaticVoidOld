@@ -1,43 +1,43 @@
-const EventHandler = require('./EventHandler')
-const EventEmitter = require('events');
 
-class EventManager {
-    constructor() {
-        this._isClosed = false;
+class EventHandler extends Promise {
+    constructor(emitter, internalEmitter, eventName, callback, context, triggerLimit = false, args = []) {
+        super(on);
+        this._isOff = false;
 
-        this._emitter = new EventEmitter();
-        this._internalEmitter = new EventEmitter();
+        this._name = eventName;
+        this._cb = callback;
+        this._triggerLimit = triggerLimit === true ?
+            1 : typeof triggerLimit === 'number' ?
+            triggerLimit : false;
+
+        assert(typeof this._name === 'string');
+        assert(typeof this._cb === 'function');
+        assert(typeof this._triggerLimit === 'number' || typeof this._triggerLimit === 'boolean');
+
+        this._context = context;
+
+        this._triggerCount = 0;
+        
+        this._managerEventInterface = new EventManagerInterface(emitter);
+        this._managerInternalEventInterface = new EventManagerInterface(internalEmitter);
+
+        this._managerEventInterface.on(eventName, this.trigger);
+        this._managerInternalEventInterface.once(`close`, this.off);
+        this._managerInternalEventInterface.once(`off`, this.off);
+        this._managerInternalEventInterface.once(`off:${this._eventName}`, this.off);
     }
 
-    trigger(eventName) {
-        if(this._isClosed) return;
-        return this._emitter.emit(eventName);
+    trigger() {
+        if (this._isOff) return;
+        if (this._triggerLimit !== false && ++this._triggerCount >= this._triggerLimit) return this.off();
+        return this._cb.apply(this._context, args.concat(arguments));
     }
 
-    on(eventName, callback) {
-        if(this._isClosed) return;
-        let eventHandler = new EventHandler(this._emitter, this._internalEmitter, eventName, callback, false, Array.prototype.slice.call(arguments, 2));
-        return eventHandler;
-    }
+    off() {
+        if (this._isOff) return;
+        this._isOff = true;
 
-    once(eventName, callback) {
-        if(this._isClosed) return;
-        let eventHandler = new EventHandler(this._emitter, this._internalEmitter, eventName, callback, 1, Array.prototype.slice.call(arguments, 2));
-        return eventHandler;
-    }
-
-    off(eventName) {
-        if(this._isClosed) return;
-        this._internalEmitter.emit(`off:${eventName}`);
-    }
-
-    close() {
-        if(this._isClosed) return;
-        this._isClosed = true;
-        this._internalEmitter.emit('close');
+        this._managerEventInterface.close();
+        this._managerInternalEventInterface.close();
     }
 }
-
-EventManager.Interface = EventManagerInterface;
-
-module.exports = EventManager;
