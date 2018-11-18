@@ -31,11 +31,12 @@ class EventHandler extends Promise {
         this._manager._internalEmitter.once(`off:${this._eventName}`, this.off);
     }
 
-    on(cb) {
-        return this._manager.on.apply(this._manager, [this._name].concat, cb);
+    on() {
+        return this._manager.on.apply(this._manager, [this._name].concat(arguments));
     }
 
-    once(cb) {
+    once() {
+        return this._manager.on.apply(this._manager, [this._name].concat(arguments));
         return this._manager.once(this._name, cb);
     }
 
