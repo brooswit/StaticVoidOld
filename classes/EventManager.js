@@ -80,6 +80,7 @@ class EmitterEventyWrapper {
     trigger(eventName, payload) {
         this._eventEmitter.emit(eventName, payload);
     }
+    
 }
 class EventyInternal {
     constructor() {
