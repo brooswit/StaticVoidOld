@@ -1,3 +1,8 @@
+class EventyInterface {
+    on(eventName, callback, payload) {}
+    trigger(eventName, payload) {}
+    close() {}
+}
 
 
 class Eventy extends EventyInterface {
@@ -18,6 +23,29 @@ class Eventy extends EventyInterface {
         this._internalEvents.emit('closed');
     }
 }
+
+class EventyView extends Eventy {
+    constructor(eventy) {
+        this._eventy = null;
+
+        if (eventy) this.attach(eventy);
+    }
+
+    attach(newEventy) {
+        if(this._eventy) return;
+        this._eventy = newEventy;
+        this._internalEvents.on('triggered', this._eventy.trigger);
+        this._internalEvents.emit('attached', newEventy);
+    }
+
+    detach() {
+        if(!this._eventy) return;
+        let oldEventy = this._eventy; this._eventy = null;
+        this._internalEvents.off('triggered', oldEventy.trigger);
+        this._internalEvents.emit('dettached', oldEventy);
+    }
+}
+
 
 class EventyHandler extends Promise {
     _promiseResolver(resolve, reject) {
@@ -58,32 +86,4 @@ class EventyHandler extends Promise {
         if(!this.eventyHandler) return;
         this.eventyHandler.off();
     }
-}
-
-class EventyView extends Eventy {
-    constructor(eventy) {
-        this._eventy = null;
-
-        if (eventy) this.attach(eventy);
-    }
-
-    attach(newEventy) {
-        if(this._eventy) return;
-        this._eventy = newEventy;
-        this._internalEvents.on('triggered', this._eventy.trigger);
-        this._internalEvents.emit('attached', newEventy);
-    }
-
-    detach() {
-        if(!this._eventy) return;
-        let oldEventy = this._eventy; this._eventy = null;
-        this._internalEvents.off('triggered', oldEventy.trigger);
-        this._internalEvents.emit('dettached', oldEventy);
-    }
-}
-
-class EventyInterface {
-    on(eventName, callback, payload) {}
-    trigger(eventName, payload) {}
-    close() {}
 }
