@@ -54,11 +54,12 @@ class EventManager {
     }
 
     off(eventName) {
+        if(this._isClosed)
         this._internalEventEmitter.emit(`off:${eventName}`);
     }
 
     close() {
-        this._isClosed = t
+        this._isClosed = true;
         this._internalEventEmitter.emit('close')
     }
 }
