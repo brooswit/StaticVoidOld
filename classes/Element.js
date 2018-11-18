@@ -39,6 +39,7 @@ module.exports = class Element extends EventManager {
     }
 
     snapshot(snapshot) {
+        if (this._isDestroyed) return;
         this.trigger('snapshot', snapshot);
     }
 }
