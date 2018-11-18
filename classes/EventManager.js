@@ -42,6 +42,7 @@ class EventyHandler extends Promise {
 class EventyView extends Eventy {
     constructor(eventy) {
         this._eventy = null;
+
         if (eventy) this.attach(eventy);
     }
 
