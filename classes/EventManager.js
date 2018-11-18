@@ -9,12 +9,12 @@ class EventManagerInterface {
 
     attach(sourceEventManager) {
         if (this._isClosed) return;
-        if (this.world === world) return;
+        if (this._sourceEventManager === sourceEventManager) return;
 
         this.detach();
 
-        this.world = new EventInterface(world);
-        this.world.on('snapshot', this.snapshot);
+        this._sourceEventManager = new EventInterface(_sourceEventManager);
+        this._sourceEventManager.on('snapshot', this.snapshot);
 
         this.trigger('attached');
     }
