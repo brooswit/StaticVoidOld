@@ -32,7 +32,7 @@ class EventHandler extends Promise {
     }
 
     on(cb) {
-        return this._manager.on.apply(this._name, cb);
+        return this._manager.on.apply(this._manager, [this._name].concat, cb);
     }
 
     once(cb) {
