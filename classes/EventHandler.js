@@ -1,4 +1,3 @@
-
 class EventHandler extends Promise {
     constructor(emitter, internalEmitter, eventName, callback, context, triggerLimit = false, args = []) {
         super(on);
