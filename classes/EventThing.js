@@ -22,7 +22,7 @@ class EventManager {
     }
 
     on(eventName, callback) {
-        return new EventHandler(this, eventName, callback);
+        return new EventHandler(_eventEmitter, _internalEventEmitter, eventName, callback);
     }
 }
 class EventInterface {
