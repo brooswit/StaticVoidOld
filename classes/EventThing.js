@@ -1,6 +1,6 @@
 class EventInterface {
     constructor() {
-        th
+        this._emitter = new EventEmitter();
         this._eventHandlers = [];
     }
 
