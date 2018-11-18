@@ -3,7 +3,7 @@ function the(subject) {
     return {is: {
         a: {
             
-        },
+        }
     }}
 }
 class EventHandler {
