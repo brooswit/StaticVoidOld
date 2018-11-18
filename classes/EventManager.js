@@ -1,6 +1,6 @@
 class EventyHandler extends Promise {
     constructor(source, internalEvents, eventName, callback, payload) {
-        super(this._resolver);
+        super(this._promiseResolver);
         
         this._eventName = eventName;
         this._callback = callback;
@@ -23,7 +23,7 @@ class EventyHandler extends Promise {
         this._detach();
         this._internalEvents.off('attached', this._attach);
         this._internalEvents.off('detached', this._detach);
-        this._events.on('triggered', this._callback);
+        this._events.off('triggered', this._callback);
     }
     _attach(source) {
         this._detach();
@@ -33,7 +33,7 @@ class EventyHandler extends Promise {
         if(!this.eventyHandler) return;
         this.eventyHandler.off();
     }
-    _resolver(resolve, reject) {
+    _promiseResolver(resolve, reject) {
         this._events.on('triggered', resolve);
         this._events.on('errored', reject);
     }
