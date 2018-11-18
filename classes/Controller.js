@@ -5,7 +5,7 @@ module.exports = class Controller extends EventManager.Interface {
         super(element);
         this._isRemoved = false;
 
-        this.elementManager = elementManager;
+        this.globalEvents = globalEventManagerInterface;
         this._element = element;
         this.elementManagerEventInterface = new EventManager.Interface(this.elementManager);
         
