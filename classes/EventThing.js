@@ -5,11 +5,11 @@ function the(subject) {
     return {is: {
         a: (Class) => {
             return new Checker((resolve) => {
-                
+                let type = subject.constructor.name;
+                let targetType = Class.name;
+                return type === targetType;
             })
-            let type = subject.constructor.name;
-            let targetType = Class.name
-            return type === targetType;
+            
         },
         not {
             a
