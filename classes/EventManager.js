@@ -5,7 +5,7 @@ class EventCoreInternal {
 
 }
 class EventCoreView {
-    constructor
+    constructor(s)
 }
 class EventCore {
     () {
