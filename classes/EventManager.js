@@ -78,7 +78,7 @@ class EventyInternal {
 
     }
     on() {
-        return new EventyHandler(this._source, this._events, eventName, callback, payload);
+        return new EventyHandler(this.w, this._events, eventName, callback, payload);
     }
 }
 class Eventy extends EventyView {
