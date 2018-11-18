@@ -11,8 +11,8 @@ class Eventy extends EventyInterface {
         this._internalEvents = new EventEmitter();
     }
 
-    on(eventName, callback, payload) {
-        return new EventyHandler(this, this._internalEvents, eventName, callback, payload);
+    on(eventName, callback) {
+        return new EventyHandler(this, this._internalEvents, eventName, callback);
     }
 
     trigger(eventName, payload) {
