@@ -7,6 +7,7 @@ class EventyHandler extends Promise {
         this._payload = payload;
 
         this._events = new EventEmitter();
+        this._events.on('triggered')
 
         if(source) this._attach(source);
 
@@ -23,10 +24,6 @@ class EventyHandler extends Promise {
         this._internalEvents.off('attached', this._attach);
         this._internalEvents.off('detached', this._detach);
     }
-    _resolver(resolve, reject) {
-        this._events.on('triggered', resolve);
-        this._events.on('errored', reject);
-    }
     _attach(source) {
         this._detach();
         this.eventyHandler = source.on(this._eventName, this.trigger, this._payload);
@@ -34,6 +31,10 @@ class EventyHandler extends Promise {
     _detach() {
         if(!this.eventyHandler) return;
         this.eventyHandler.off();
+    }
+    _resolver(resolve, reject) {
+        this._events.on('triggered', resolve);
+        this._events.on('errored', reject);
     }
 }
 class EventyView {
