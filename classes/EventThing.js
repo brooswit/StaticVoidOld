@@ -2,11 +2,6 @@ class EventHandler extends Promise {
     constructor(eventManager, eventName, callback, triggerLimit = false) {
         super(on);
 
-        if (typeof callback !== 'function') {
-            triggerLimit = callback;
-            callback = null;
-        }
-
         this._manager = eventManager;
         this._name = eventName;
         this._cb = callback;
@@ -32,11 +27,11 @@ class EventHandler extends Promise {
         this._manager._internalEmitter.once(`off:${this._eventName}`, this.off);
     }
 
-    on() {
+    on(callback) {
         return this._manager.on.apply(this._manager, [this._name].concat(arguments));
     }
 
-    once() {
+    once(callback) {
         return this._manager.on.apply(this._manager, [this._name].concat(arguments));
     }
 
