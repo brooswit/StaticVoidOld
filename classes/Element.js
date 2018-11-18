@@ -1,3 +1,4 @@
+const EventManager = require('./EventManager');
 
 class Element extends EventManager {
     constructor(manager, id, state = {}) {
@@ -9,7 +10,7 @@ class Element extends EventManager {
 
     addController(controllerName, state={}) {
         if (this.hasController(controller)) return;
-        this._controllers[controllerName] = manager.attachController(this, controllerName, state)
+        this._controllers[controllerName] = this._manager.attachController(this, controllerName, state)
     }
 
     removeController(controllerName) {
