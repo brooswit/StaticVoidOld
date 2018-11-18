@@ -38,14 +38,14 @@ class EventHandler extends Promise {
         assert(typeof this._triggerLimit === 'number' || typeof this._triggerLimit === 'boolean');
 
         this._emitter = new EventMamager();
-        this._emitterInterface = new EventManagerInterface(this._emitter);
+        this._emitterInterface = new EventManagerInterface(new EventMamager());
         this._managerEventInterface = new EventManagerInterface(this._manager._emitter);
         this._managerInternalEventInterface = new EventManagerInterface(this._manager._emitter);
 
         this._isOff = false;
         this._triggerCount = 0;
 
-        this._eventInterface.on(this._emitter, 'trigger', this._handleEvent);
+        this._eventInterface.on('trigger', this._handleEvent);
         this._eventInterface.once(`off`, this._eventInterface.close);
 
         this._managerEventInterface.on(eventName, this.trigger);
