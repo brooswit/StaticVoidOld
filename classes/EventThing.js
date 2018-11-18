@@ -53,7 +53,8 @@ class EventManager {
         return new EventHandler(this, eventName, callback, triggerLimit);
     }
 
-    on(eventName, callback, triggerLimit) {
+    off(eventName) {
+        if(eventName) 
         return new EventHandler(this, eventName, callback, triggerLimit);
     }
 
