@@ -12,9 +12,9 @@ class EventHandler {
     }
 }
 
-class EventEmitter {
+class EventManager {
     constructor() {
-        this._eventEmitter
+        this._eventEmitter = new EventEmitter();
         this._nextEventHandlerIndex = 0;
         this._eventHandlerLookup = {};
         this._eventLookup = {}
