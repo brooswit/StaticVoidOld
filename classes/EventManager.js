@@ -27,7 +27,8 @@ class EventHandler extends Promise {
 
         this._name = eventName;
         this._cb = callback;
-        assert(emitter instanceof EventManager);
+        assert(emitter instanceof EventEmitter);
+        assert(internalEmitter instanceof EventEmitter);
 
         this._managerEventInterface = new EventManagerInterface(emitter);
         this._managerInternalEventInterface = new EventManagerInterface(internalEmitter);
