@@ -32,6 +32,7 @@ module.exports = class Element extends EventManager {
 
     destroy() {
         if (this._isDestroyed) return;
+        this.detach();
         this._isDestroyed = true;
         this.worldEvents.close();
         this.trigger('destroyed');
