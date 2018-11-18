@@ -21,10 +21,10 @@ module.exports = class Controller extends EventManager.Interface {
 
     remove() {
         if(!this.getElement()) return;
+        this.close();
         this._isRemoved = true;
 
         this._managerEventInterface.close();
-        this._elementEventInterface.close();
     }
 
     snapshot(snapshot) {}
