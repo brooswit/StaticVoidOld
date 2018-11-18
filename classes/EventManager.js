@@ -11,8 +11,9 @@ class EventyView {
     }
 }
 class Eventy extends EventyView {
-    () {
+    constructor() {
         
+        super
     }
 }
 class EventManager {
