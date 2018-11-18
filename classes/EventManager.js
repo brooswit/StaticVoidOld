@@ -26,7 +26,7 @@ class EventyHandler extends Promise {
         this.eventyHandler.off();
     }
     off() {
-
+        this.detach
     }
 }
 class EventyView {
