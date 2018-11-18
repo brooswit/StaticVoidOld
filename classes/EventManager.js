@@ -65,7 +65,9 @@ class EventyView {
         this._internalEvents.emit('closed');
     }
 
-    trigger() { return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
+    trigger() { 
+        
+        return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
 
 }
 class EventyInternal {
