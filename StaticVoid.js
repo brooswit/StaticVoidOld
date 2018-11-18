@@ -9,6 +9,8 @@ async function asynchronously(method) {
     return method.then ? await method() : method();
 }
 
+function 
+
 class StaticVoid extends ElementManager {
     constructor(options = {}) {
         this._port = process.env.PORT || options.port || 8080;
@@ -35,8 +37,7 @@ class StaticVoid extends ElementManager {
 
         ws.on('message', (msg) => {
             let data = {};
-            try {
-                data = JSON.parse(msg); } catch (ex) {}
+            try { data = JSON.parse(msg); } catch (ex) {}
 
             let {rpc} = data;
             if (rpc) {
