@@ -14,7 +14,7 @@ class EventyHandler extends Promise {
         internalEvents.on('dettached', this._onDettached);
     }
     _onAttached(source) {
-        this._source = source;
+        source.on(this._eve);
 
     }
     _onDetached(source) {
