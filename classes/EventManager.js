@@ -40,7 +40,6 @@ class EventManagerInterface {
     }
 
     close() {
-        if (!this._eventManager) return;
         this._emitter.trigger('close');
     }
 }
