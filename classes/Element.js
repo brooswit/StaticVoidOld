@@ -17,8 +17,9 @@ module.exports = class Element extends EventManager {
     detach() {
         if (this._isDestroyed) return;
         if (!this.world) return;
-        
+        this.world.close();
         this.world = null;
+        this.trigger('attached');
     }
 
     destroy() {
