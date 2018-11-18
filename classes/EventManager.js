@@ -84,7 +84,7 @@ class Eventy extends EventyInterface {
     }
 
     trigger(eventName, payload) {
-        this._events.trigger(eventName, payload);
+        this._events.emit(eventName, payload);
     }
 
     close() {
