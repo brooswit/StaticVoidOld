@@ -4,6 +4,7 @@ function capitalize(str) {
 function the(subject) {
     return {is: {
         a: (Class) => {
+            return new
             let type = subject.constructor.name;
             let targetType = Class.name
             return type === targetType;
