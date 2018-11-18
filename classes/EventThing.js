@@ -54,7 +54,7 @@ class EventManager {
     }
 
     close() {
-        this.
+        this._internalEventEmitter.emit('')
     }
 }
 class EventInterface {
