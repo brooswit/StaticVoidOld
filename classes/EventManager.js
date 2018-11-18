@@ -15,7 +15,7 @@ class EventyView {
         if (eventySource) this.attach(eventySource);
     }
     trigger(eventName, payload = null) {
-        this._source
+        this._source.trigger.apply(this._source, )
     }
     attach(eventy) {
         this.detach();
