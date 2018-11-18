@@ -1,7 +1,7 @@
 class EventHandler extends Promise {
     constructor(eventManager, eventName, callback = false, triggerLimit = false) {
         super(on);
-        
+
         if (typeof callback !== 'function') {
             triggerLimit = callback;
             callback = null;
@@ -36,12 +36,12 @@ class EventHandler extends Promise {
     }
 
     on(cb) {
-        this._manager.on(t)
         if (this._off) return;
         this._emitter.on('trigger', cb);
+        return this;
     }
 
-    async once(cb) {
+     once(cb) {
         return this._emitter.on('trigger', cb);
     }
 
