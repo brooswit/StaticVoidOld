@@ -5,12 +5,13 @@ class EventInterface {
         this._callbackHandlers.push(emitter.on(eventName, callback));
     }
     once(emitter, eventName, callback) {
-        this._callbackHandlers.push(emitter.once(eventName, callback));
+        return this._callbackHandlers.push(emitter.once(eventName, callback));
     }
 
     close() {
         for(callbackHandlerIndex in this._callbackHandlers) {
             let callbackHandler = this._callbackHandlers[callbackHandlerIndex];
+            callbackHandler.off();
         }
     }
 }
