@@ -74,6 +74,9 @@ class EventyView {
 }
 
 class EventyInternal {
+    trigger() {
+
+    }
     
 }
 class Eventy extends EventyView {
