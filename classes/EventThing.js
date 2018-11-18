@@ -1,7 +1,7 @@
 class EventHandler {
     constructor(eventManager, eventName, callback, once = false) {
         this._manager = eventManager;
-        this._manager._eventEmitter[once :on('eventName', callback);
+        this._manager._eventEmitter[once ? 'once' : 'on']('eventName', callback);
     }
 
     off() {
