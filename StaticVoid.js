@@ -42,6 +42,8 @@ class StaticVoid extends ElementManager {
                     sessionElement.emit(`rpc_${command}`, options);
                     sessionElement.emit(`rpc`, {command, options});
                 }
+            } else {
+                p
             }
         });
 
