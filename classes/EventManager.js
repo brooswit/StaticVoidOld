@@ -37,7 +37,7 @@ class EventHandler extends Promise {
         assert(typeof this._cb === 'function');
         assert(typeof this._triggerLimit === 'number' || typeof this._triggerLimit === 'boolean');
 
-        this._emitter = new EventMamager();
+        this._emitter = new EventManager();
         this._emitterInterface = new EventManagerInterface(this._emitter);
         this._managerEventInterface = new EventManagerInterface(this._manager._emitter);
         this._managerInternalEventInterface = new EventManagerInterface(this._manager._emitter);
