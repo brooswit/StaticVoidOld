@@ -57,7 +57,7 @@ class EventManagerInterface {
 }
 
 class EventHandler extends Promise {
-    constructor(emitter, internalEmitter, eventName, callback, context, triggerLimit = false) {
+    constructor(emitter, internalEmitter, eventName, callback, context, triggerLimit = false, preArugme) {
         super(on);
         this._isOff = false;
 
