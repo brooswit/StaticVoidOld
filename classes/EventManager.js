@@ -6,7 +6,7 @@ class EventManagerInterface {
         this._emitter = new EventEmitter();
     }
 
-    attach(eventManager) {
+    attach(sourceEventManager) {
         if (this._isDestroyed) return;
         if (this.world === world) return;
 
