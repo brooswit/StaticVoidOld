@@ -2,7 +2,10 @@
 function the(subject) {
     return {is: {
         a: {
-            
+
+        },
+        not {
+            a
         }
     }}
 }
