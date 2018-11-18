@@ -3,13 +3,11 @@ const EventManager = require('./EventManager');
 module.exports = class Controller extends EventManager.Interface {
     constructor(globalEventManagerInterface, element, state = {}) {
         super(element);
-        this.globalEvents = globalEventManagerInterface;
-        
+        this.globalEvents = globalEventManagerInterface;new EventManager.Interface(this.elementManager)
+
         this._isRemoved = false;
         this._element = element;
 
-
-        
         this.on('destroy', this.remove);
         this.on('snapshot', this.snapshot);
 
@@ -24,7 +22,6 @@ module.exports = class Controller extends EventManager.Interface {
         if(!this.getElement()) return;
         this._isRemoved = true;
         this.close();
-        this.globalEvents.close();
     }
 
     snapshot(snapshot) {}
