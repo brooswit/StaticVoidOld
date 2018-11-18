@@ -12,7 +12,8 @@ module.exports = class Element extends EventManager {
 
     root(rootCheck={}) {
         if(this.__rootCheck === rootCheck) return null;
-        return this.parent ? this.parent.root() : this;
+        this.__rootCheck = rootCheck;
+        return this.parent ? this.parent.root(rootCheck) : this;
     }
 
     attach(parent) {
