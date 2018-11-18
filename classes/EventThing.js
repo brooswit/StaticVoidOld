@@ -1,6 +1,6 @@
 class EventHandler {
     constructor(eventManager, eventName, callback, triggerLimit = false) {
-        if (typeof cal)
+        if (typeof callback !== 'function') 
         super(on)
 
         this._manager = eventManager;
