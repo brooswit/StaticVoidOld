@@ -1,4 +1,3 @@
-const EventManager = require('./EventManager');
 const Controller = require('./Controller');
 const Element = require('./Element');
 
