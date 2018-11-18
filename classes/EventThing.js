@@ -9,9 +9,9 @@ class EventInterface {
     }
 
     close() {
-        for(backHandlerIndex in this._eventHandlers) {
-            let backHandler = this._eventHandlers[backHandlerIndex];
-            backHandler.off();
+        for(eventHandlerIndex in this._eventHandlers) {
+            let eventHandler = this._eventHandlers[eventHandlerIndex];
+            eventHandler.off();
         }
     }
 }
