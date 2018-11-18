@@ -62,6 +62,8 @@ class EventManager {
     constructor() {
         this._emitter = new EventEmitter();
         this._internalEmitter = new EventEmitter();
+
+        this._isClosed = false;
     }
 
     on(eventName, callback) {
