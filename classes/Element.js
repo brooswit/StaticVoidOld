@@ -14,10 +14,10 @@ module.exports = class Element extends EventManager {
     root() {
         let element = this;
         let token = {};
-        while (element.parent) {
+        while (element._parent) {
             if (element.root.__token === token) return null;
             element.root.__token = token;
-            element = element.parent;
+            element = element._parent;
         }
         return element;
     }
