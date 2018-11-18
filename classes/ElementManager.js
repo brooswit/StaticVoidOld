@@ -1,7 +1,7 @@
 const EventEmitter = require('events');
 const Controller = require('./Controller');
 
-module.exports = class ElementManager extends EventEmitter{
+module.exports = class ElementManager extends EventManager {
     constructor (Controllers=[], startId=0) {
         this._Controllers = Controllers;
         this._id = startId;
