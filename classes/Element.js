@@ -7,7 +7,9 @@ module.exports = class Element extends EventManager {
         this._controllers = {};
     }
 
-    attach(world)
+    attach(world) {
+        if(this._world)
+    }
 
     addController(controllerName, state={}) {
         if (this.hasController(controller)) return;
