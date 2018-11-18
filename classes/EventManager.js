@@ -46,18 +46,6 @@ class EventyView extends Eventy {
         if (source) this.attach(source);
     }
 
-    on(eventName, callback, payload) {
-        return new EventyHandler(this._source, this._events, eventName, callback, payload);
-    }
-
-    trigger(payload) { 
-        this._events.emit('triggered', payload);
-    }
-
-    close() {
-        this._events.emit('closed');
-    }
-
     attach(newSource) {
         if(this._source) return;
         this._source = newSource;
