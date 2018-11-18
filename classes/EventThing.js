@@ -4,7 +4,7 @@ class EventHandler extends Promise {
 
         this._manager = eventManager;
         this._name = eventName;
-        this._cb = this._handleEvent;
+        this._cb = callback;
         this._triggerLimit = triggerLimit === true ?
             1 : typeof triggerLimit === 'number' ?
             triggerLimit : false;
@@ -29,7 +29,7 @@ class EventHandler extends Promise {
     }
 
     _handleEvent() {
-        
+        this._cb.apply()
     }
 
     on(callback) {
