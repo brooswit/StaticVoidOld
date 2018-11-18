@@ -14,14 +14,14 @@ class EventHandler extends Promise {
         assert(typeof this._cb === 'function');
         assert(typeof this._triggerLimit === 'number' || typeof this._triggerLimit === 'boolean');
 
-        this._emitter = new EventEmitter();
+        this._emitter = new EventEmitterPlus();
         this._off = false;
         this._triggerCount = 0;
 
         this._triggerPromise = null;
 
         // Requires Cleanup \/
-        this._manager._eventEmitter[once ? 'once' : 'on']('eventName', this._cb);
+        this._manager._emitter[once ? 'once' : 'on']('eventName', this._cb);
         
         this._manager._internalEventEmitter.once(`close`, this.off);
         this._manager._internalEventEmitter.once(`off`, this.off);
@@ -57,7 +57,7 @@ class EventHandler extends Promise {
         if (this._off) return;
         this._off = true;
 
-        this._manager._eventEmitter.off('eventName', callback);
+        this._manager._emitter.off('eventName', callback);
         this._manager._internalEventEmitter.once(`close`, this.off);
         this._manager._internalEventEmitter.once(`off`, this.off);
         this._manager._internalEventEmitter.once(`off:${this._eventName}`, this.off);
@@ -66,7 +66,7 @@ class EventHandler extends Promise {
 
 class EventManager {
     constructor() {
-        this._eventEmitter = new EventEmitterPlus();
+        this._emitter = new EventEmitterPlus();
         this._internalEventEmitter = new EventEmitterPlus();
     }
 
