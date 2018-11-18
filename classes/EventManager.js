@@ -65,8 +65,8 @@ class EventyView {
         this._events.emit('closed');
     }
 
-    trigger() { 
-        this._events.emit('triggered')
+    trigger(pa) { 
+        this._events.emit('triggered', payload);
         // return this._source && this._source[arguments.callee.name].apply(this._source, arguments); }
 
 }
