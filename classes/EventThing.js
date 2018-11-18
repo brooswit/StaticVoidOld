@@ -7,7 +7,7 @@ class Check {
     }
 
     is(value) {
-        if (value) return new Checker(subject, value)
+        if (value) return new ValueChecker(subject, value);
         return new Checker(())
         if(value) {
 
