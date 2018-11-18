@@ -73,6 +73,7 @@ class EventManager {
 
     on(eventName, callback, triggerLimit) {
         if(this._isClosed) return;
+        let eventHandler = new EventHandler
         return new EventHandler(this, eventName, callback, triggerLimit);
     }
 
