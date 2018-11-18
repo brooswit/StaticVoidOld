@@ -1,6 +1,6 @@
 class EventEmitter {
     constructor() {
-        this._
+        this._nextCallbackReference = 0;
     }
 
     on(eventName, callback) {
