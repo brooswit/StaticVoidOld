@@ -1,17 +1,17 @@
 class EventManagerInterface {
     constructor(targetEmitter) {
-        this._targetEmitter = targetEmitter;
+        this._targetEventManager = targetEmitter;
         this._emitter = new EventEmitter();
     }
 
     on(eventName, callback) {
-        let eventHandler = this._targetEmitter.on(eventName, callback);
+        let eventHandler = this._targetEventManager.on(eventName, callback);
         this._emitter.once('close', eventHandler.off);
         return eventHandler;
     }
 
     once(eventName, callback) {
-        let eventHandler = this._targetEmitter.once(eventName, callback);
+        let eventHandler = this._targetEventManager.once(eventName, callback);
         this._emitter.once('close', eventHandler.off);
         return eventHandler;
     }
