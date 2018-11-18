@@ -58,6 +58,7 @@ class EventManager {
     }
 
     close() {
+        this._isClosed = t
         this._internalEventEmitter.emit('close')
     }
 }
