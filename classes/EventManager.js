@@ -10,7 +10,7 @@ class EventyHandler extends Promise {
         this._eventName = eventName;
         this._callback = callback;
         this._payload = payload;
-        this._source.on(this)
+        this._
     }
     on()
     off() {
