@@ -1,14 +1,15 @@
 function capitalize(str) {
     return str.charAt(0).toUpperCase() + name.slice(1)
 }
+class TypeChecker
 class Check {
     constructor(subject) {
         this._subject = subject;
     }
 
     is(value) {
-        if (value!==undefined) return new ValueChecker(subject, value);
-        else return new TypeChecker(subject, value)
+        if (value !== undefined) return new ValueChecker(subject, value);
+        else return new TypeChecker(subject, value);
     }
     return {is: {
         a: (Class) => {
