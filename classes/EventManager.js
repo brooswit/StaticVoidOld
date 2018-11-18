@@ -73,10 +73,10 @@ class EventyView {
     }
 }
 
-class EmitterEventyWrapper {
+class EventyInternal {
     constructor() {
         this._events = new EventEmitter();
-        this._internavents = new EventEmitter();
+        this._internalEvents = new EventEmitter();
     }
     trigger(eventName, payload) {
         this._events.emit(eventName, payload);
