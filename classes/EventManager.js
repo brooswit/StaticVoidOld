@@ -3,39 +3,39 @@ const EventEmitter = require('events');
 class EventManagerInterface {
     constructor(eventManager) {
         this._emitter = new EventEmitter();
-        this._eventManager = null;
+        this.attached = null;
         if (eventManager) this.attach(eventManager);
     }
 
     attach(eventManager) {
-        if (this._eventManager === eventManager) return;
+        if (this.attached === eventManager) return;
 
         this.detach();
 
-        this._eventManager = eventManager;
+        this.attached = eventManager;
 
         this._emitter.trigger('attached');
     }
 
     detach() {
-        if (!this._eventManager) return;
+        if (!this.attached) return;
 
         this.close();
-        this._eventManager = null;
+        this.attached = null;
 
         this._emitter.trigger('dettached');
     }
 
     on(eventName, callback) {
-        if (!this._eventManager) return;
-        let eventHandler = this._eventManager.on(eventName, callback);
+        if (!this.attached) return;
+        let eventHandler = this.attached.on(eventName, callback);
         this._emitter.once('close', eventHandler.off);
         return eventHandler;
     }
 
     once(eventName, callback) {
-        if (!this._eventManager) return;
-        let eventHandler = this._eventManager.once(eventName, callback);
+        if (!this.attached) return;
+        let eventHandler = this.attached.once(eventName, callback);
         this._emitter.once('close', eventHandler.off);
         return eventHandler;
     }
