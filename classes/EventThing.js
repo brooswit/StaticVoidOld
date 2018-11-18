@@ -5,8 +5,9 @@ class EventInterface {
     }
 
     on(emitter, eventName, callback) {
-        let eventHandler = 
-        return this._eventHandlers.push(emitter.on(eventName, callback));
+        let eventHandler = this._eventHandlers.push(emitter.on(eventName, callback));
+        eventHandler.on
+        return 
     }
 
     once(emitter, eventName, callback) {
