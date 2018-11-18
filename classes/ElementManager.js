@@ -49,11 +49,11 @@ class Element extends EventManager {
     }
 
     destroy() {
-        this.emit('destroy');
+        this.trigger('destroy');
     }
 
     async getSnapshot(snapshot = {}) {
-        this.emit('snapshot', snapshot);
+        this.trigger('snapshot', snapshot);
         return snapshot;
     }
 }
