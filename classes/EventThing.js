@@ -1,8 +1,8 @@
-class EventInterface extends EventManager {
+class EventInterface {
     constructor() {}
 
     on(emitter, eventName, callback) {
-        return super.onthis.callbackHandlers.push(emitter.on(eventName, callback));
+        this.callbackHandlers.push(emitter.on(eventName, callback));
     }
     once(emitter, eventName, callback) {
         this.callbackHandlers.push(emitter.once(eventName, callback));
