@@ -39,7 +39,7 @@ class EventyHandler extends Promise {
     }
 }
 
-class EventyView extends EventyInternal {
+class EventyView extends Eventy {
     constructor(source) {
         this._events = new EventEmitter();
         this._source = null;
@@ -73,7 +73,7 @@ class EventyView extends EventyInternal {
     }
 }
 
-class EventyInternal {
+class Eventy {
     constructor() {
         this._events = new EventEmitter();
         this._internalEvents = new EventEmitter();
@@ -88,49 +88,3 @@ class EventyInternal {
         this._internalEvents.emit('closed');
     }
 }
-
-class Eventy extends EventyView {
-    constructor() {
-        super(new EventyInternal());
-    }
-}
-class EventManager {
-    constructor() {
-        this._isClosed = false;
-
-        this._emitter = new EventEmitter();
-        this._internalEmitter = new EventEmitter();
-    }
-
-    trigger(eventName) {
-        if(this._isClosed) return;
-        return this._emitter.emit(eventName);
-    }
-
-    on(eventName, callback) {
-        if(this._isClosed) return;
-        let eventHandler = new EventHandler(this._emitter, this._internalEmitter, eventName, callback, false, Array.prototype.slice.call(arguments, 2));
-        return eventHandler;
-    }
-
-    once(eventName, callback) {
-        if(this._isClosed) return;
-        let eventHandler = new EventHandler(this._emitter, this._internalEmitter, eventName, callback, 1, Array.prototype.slice.call(arguments, 2));
-        return eventHandler;
-    }
-
-    off(eventName) {
-        if(this._isClosed) return;
-        this._internalEmitter.emit(`off:${eventName}`);
-    }
-
-    close() {
-        if(this._isClosed) return;
-        this._isClosed = true;
-        this._internalEmitter.emit('close');
-    }
-}
-
-EventManager.Interface = EventManagerInterface;
-
-module.exports = EventManager;
