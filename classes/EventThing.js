@@ -6,7 +6,11 @@ class Check {
         this._subject = subject;
     }
 
-    is(value)
+    is(value) {
+        if(value) {
+            
+        }
+    }
     return {is: {
         a: (Class) => {
             return new Checker((resolve) => {
