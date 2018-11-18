@@ -1,7 +1,8 @@
 class EventEmitter {
     constructor() {
         this._nextCallbackIndex = 0;
-        this._callbacks
+        this._callbackLookup = {};
+        this._callback
     }
 
     on(eventName, callback) {
