@@ -32,6 +32,7 @@ class EventManagerInterface {
     }
 
     hook(eventName, eventManager) {
+        if (!this.attached) return;
         return this.on(eventName, eventManager.trigger, eventName)
     }
 
