@@ -5,9 +5,9 @@ module.exports = class Element extends EventManager {
         super();
         this.id = nextId++;
         this.state = {};
-        this._parent = parent;
         this._isDestroyed = false;
-        this.parentInterface = new EventManagerInterface(parent);
+        this.parentInterface = new EventManagerInterface();
+        this._parent = null;
 
         if (parent) this.attach(parent);
     }
