@@ -2,19 +2,19 @@ const EventEmitter = require('events');
 
 class EventManagerInterface {
     constructor(sourceEventManager) {
-        this._sourceEventManager = sourceEventManager;
+        this._eventManager = sourceEventManager;
         this._emitter = new EventEmitter();
         this._isClosed = false;
     }
 
     attach(sourceEventManager) {
         if (this._isClosed) return;
-        if (this._sourceEventManager === sourceEventManager) return;
+        if (this._eventManager === sourceEventManager) return;
 
         this.detach();
 
-        this._sourceEventManager = new EventInterface(_sourceEventManager);
-        this._sourceEventManager.on('snapshot', this.snapshot);
+        this._eventManager = new EventInterface(_eventManager);
+        this._eventManager.on('snapshot', this.snapshot);
 
         this.trigger('attached');
     }
@@ -30,17 +30,17 @@ class EventManagerInterface {
     }
 
     attach(sourceEventManager) {
-        this._sourceEventManager
+        this._eventManager
     }
 
     on(eventName, callback) {
-        let eventHandler = this._sourceEventManager.on(eventName, callback);
+        let eventHandler = this._eventManager.on(eventName, callback);
         this._emitter.once('close', eventHandler.off);
         return eventHandler;
     }
 
     once(eventName, callback) {
-        let eventHandler = this._sourceEventManager.once(eventName, callback);
+        let eventHandler = this._eventManager.once(eventName, callback);
         this._emitter.once('close', eventHandler.off);
         return eventHandler;
     }
