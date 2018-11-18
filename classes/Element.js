@@ -11,6 +11,7 @@ module.exports = class Element extends EventManager {
     }
 
     root() {
+        
         return this.parent ? this.parent.root() : this;
     }
 
