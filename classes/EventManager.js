@@ -11,8 +11,9 @@ class EventyView {
         if (eventySource) this.attach(eventySource);
     }
     trigger(eventName) {
-        
+
     }
+    attach(eventy)
 }
 class Eventy extends EventyView {
     constructor() {
