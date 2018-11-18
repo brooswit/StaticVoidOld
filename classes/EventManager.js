@@ -70,8 +70,9 @@ class EventyView {
 
     trigger(payload) { 
         this._events.emit('triggered', payload);
-
+    }
 }
+
 class EventyInternal {
 
 }
