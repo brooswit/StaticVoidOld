@@ -72,13 +72,14 @@ class EventManager {
     }
 
     get(eventName) {
-        let eventHandlers = this._internalEmitter.query(`getEventHandlers:${eventName}`);
         if(this._isClosed) return;
+        let eventHandlers = this._internalEmitter.query(`getEventHandlers:${eventName}`);
         return this._eventH[eventName] = this._events[eventName] || new EventHandler(this, eventName);
     }
 
     on(eventName, callback) {
         if(this._isClosed) return;
+        let eventHandler = new Event
         let eventHandler = this.get(eventName);
         let eventCallbackHandler = eventHandler.on(callback)
         return eventCallbackHandler;
