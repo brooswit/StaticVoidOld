@@ -1,4 +1,4 @@
-class EventInterface {
+class EventManagerInterface {
     constructor() {
         this._emitter = new EventEmitter();
     }
