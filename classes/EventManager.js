@@ -73,7 +73,7 @@ class EventyView extends Eventy {
     }
 }
 
-class Eventy {
+class Eventy extends EventyInterface {
     constructor() {
         this._events = new EventEmitter();
         this._internalEvents = new EventEmitter();
@@ -91,3 +91,5 @@ class Eventy {
         this._internalEvents.emit('closed');
     }
 }
+
+class EventyInt
