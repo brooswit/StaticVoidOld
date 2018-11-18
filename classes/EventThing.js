@@ -1,9 +1,11 @@
 class EventInterface {
     constructor() {
+        th
         this._eventHandlers = [];
     }
 
     on(emitter, eventName, callback) {
+        let eventHandler = 
         return this._eventHandlers.push(emitter.on(eventName, callback));
     }
 
