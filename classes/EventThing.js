@@ -6,11 +6,12 @@ class EventHandler {
         this._once = once;
         this._off = false;
         this._emitter = this._manager._eventEmitter;
-        this.internalEmitter = this._manager._internalEventEmitter;
-        this._manager._eventEmitter[once ? 'once' : 'on']('eventName', this._cb);
-        this._manager._internalEventEmitter.once(`close`, this.off);
-        this._manager._internalEventEmitter.once(`off`, this.off);
-        this._manager._internalEventEmitter.once(`off:${this._eventName}`, this.off);
+        this._internalEmitter = this._manager._internalEventEmitter;
+
+        this._emitter[once ? 'once' : 'on']('eventName', this._cb);
+        this._internalEmitter.once(`close`, this.off);
+        this._internalEmitter.once(`off`, this.off);
+        this._internalEmitter.once(`off:${this._eventName}`, this.off);
     }
 
     trigger() {
