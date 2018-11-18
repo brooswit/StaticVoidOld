@@ -50,15 +50,17 @@ class EventManager {
     }
 
     on(eventName, callback, triggerLimit) {
+        if(this._isClosed) return;
         return new EventHandler(this, eventName, callback, triggerLimit);
     }
 
     off(eventName) {
-        if(this._isClosed)
+        if(this._isClosed) return;
         this._internalEventEmitter.emit(`off:${eventName}`);
     }
 
     close() {
+        if(this._isClosed) return;
         this._isClosed = true;
         this._internalEventEmitter.emit('close')
     }
