@@ -3,9 +3,8 @@ const Controller = require('./Controller');
 const Element = require('./Element');
 
 module.exports = class ControllerManager extends EventManager {
-    constructor (Controllers = [], startId = 0) {
+    constructor (Controllers = []) {
         this._Controllers = Controllers;
-        this._id = startId;
     }
 
     buildElement(controllerNames = [], state = {}) {
