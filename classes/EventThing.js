@@ -120,6 +120,6 @@ class EventManager {
     }
 }
 
-EventManager.EventInterface = EventInterface;
+EventManager.Interface = EventInterface;
 
 module.exports = EventManager;
