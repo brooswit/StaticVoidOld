@@ -20,6 +20,7 @@ class EventHandler extends Promise {
 
         // Requires Cleanup \/
         this._emitter.on('trigger', this._cb);
+
         this._manager._emitter.on(eventName, this._cb);
         
         this._manager._internalEmitter.once(`close`, this.off);
@@ -43,10 +44,12 @@ class EventHandler extends Promise {
 
     off() {
         if (this._off) return;
+
         this._off = true;
         this._emitter.off('trigger', this._cb);
 
         this._manager._emitter.off('eventName', callback);
+        
         this._manager._internalEmitter.once(`close`, this.off);
         this._manager._internalEmitter.once(`off`, this.off);
         this._manager._internalEmitter.once(`off:${this._eventName}`, this.off);
