@@ -6,6 +6,7 @@ class EventyInternal {
 }
 class EventyView {
     constructor(eventySource, static) {
+        this._emitter = new EventEmitter();
         this._static = static;
         this._source = null;
         if (eventySource) this.attach(eventySource);
@@ -16,7 +17,7 @@ class EventyView {
     attach(eventy) {
         this.detach();
         this._source = eventy;
-        
+
     }
 }
 class Eventy extends EventyView {
