@@ -6,12 +6,12 @@ class EventyInternal {
 }
 class EventyView {
     constructor(eventySource, static) {
-        
+        this._static = static;
         this._source = null;
         if (eventySource) this.attach(eventySource);
     }
     trigger(eventName) {
-
+        
     }
 }
 class Eventy extends EventyView {
