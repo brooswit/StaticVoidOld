@@ -28,7 +28,7 @@ class EventHandler {
 
     trigger() {
         if (this._off) return;
-        if (this._triggerLimit===true || this._triggerLimit++this._triggerCount >= this._triggerLimit) this.off();
+        if (this._triggerLimit !== false && ++this._triggerCount >= this._triggerLimit) this.off();
         return this._cb.apply(null, arguments);
     }
 
