@@ -80,10 +80,7 @@ class EventManager {
 
     off(eventName) {
         if(this._isClosed) return;
-        
         this._internalEmitter.emit(`off:${eventName}`);
-        this._events[eventName] = null;
-        this._events[eventName] = new EventHandler(this, eventName);
     }
 
     close() {
