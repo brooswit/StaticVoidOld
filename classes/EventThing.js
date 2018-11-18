@@ -71,7 +71,9 @@ class EventManager {
         this._internalEmitter = new EventEmitterPlus();
     }
 
-    get()
+    get(eventName) {
+        return 
+    }
 
     on(eventName, callback) {
         if(this._isClosed) return;
