@@ -10,7 +10,10 @@ module.exports = class Controller extends EventManager.Interface {
         this.on('destroy', this.remove);
         this.on('snapshot', this.snapshot);
     }
-    
+
+    attach(element) {
+        super.a
+    }
 
     getElement() {
         return this._isRemoved ? null : this._element;
