@@ -79,9 +79,7 @@ class EventManager {
 
     on(eventName, callback) {
         if(this._isClosed) return;
-        let eventHandler = new Event
-        let eventHandler = this.get(eventName);
-        let eventCallbackHandler = eventHandler.on(callback)
+        let eventHandler = new Event(this, eventName, callback);
         return eventCallbackHandler;
     }
 
