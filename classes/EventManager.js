@@ -31,7 +31,7 @@ class AbraView extends Abra {
     }
 
     on(eventName, callback) {
-        return new AbraHandler(this._abra, eventName, callback);
+        return new AbraHandler(this, eventName, callback);
     }
 
     attach(newAbra) {
