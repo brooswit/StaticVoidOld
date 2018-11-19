@@ -2,7 +2,9 @@ class EventHandler {
     constructor
 }
 class View {
-    
+    constructor(abra) {
+        this.
+    }
 }
 class Abra {
     constructor() {
