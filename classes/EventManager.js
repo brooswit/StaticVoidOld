@@ -20,7 +20,7 @@ class EventHandler extends promise {
     }
 
     trigger(payload) {
-        this.emit('triggered', payload);
+        this._events.emit('triggered', payload);
     }
 
     off() {
@@ -29,7 +29,7 @@ class EventHandler extends promise {
         this._events.off('triggered', this._callback);
         this._events.off('triggered', this._resolve);
         this._events.off('errored', this._reject);
-        this.emit('off');
+        this._events.emit('off');
     }
 }
 
