@@ -5,7 +5,7 @@ class EventHandler {
         this._eventName = eventName;
         this._callback = callback;
 
-        this._events.off('triggered', this._callback);
+        this._events.on('triggered', this._callback);
     }
 
     off() {
