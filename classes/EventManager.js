@@ -1,5 +1,7 @@
 class EventHandler {
     constructor(abra, eventName, callback) {
+        this._abra = abra;
+        this._eventName = eventName;
         
     }
 }
