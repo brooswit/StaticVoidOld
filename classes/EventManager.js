@@ -6,7 +6,7 @@ class EventHandler {
         this._callback = callback;
 
         this._abra._emitter.on(this._eventName, this.trigger);
-        this._events.on('triggered', this.trigger);
+        this._events.on('triggered', this._callback);
     }
 
     trigger(payload) {
@@ -14,8 +14,8 @@ class EventHandler {
     }
 
     off() {
-        this._events.off('triggered', this.trigger);
         this._abra._emitter.off(this._eventName, this.trigger);
+        this._events.off('triggered', this.trigger);
     }
 }
 
