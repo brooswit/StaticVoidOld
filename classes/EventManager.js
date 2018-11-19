@@ -46,7 +46,6 @@ class EventyView extends Eventy {
     }
 }
 
-
 class EventyHandler extends Promise {
     _promiseResolver(resolve, reject) {
         this._events.on('triggered', resolve);
@@ -85,7 +84,7 @@ class EventyHandler extends Promise {
         this._detach();
         this._eventyHandler = eventy.on(this._eventName, this.trigger);
     }
-    
+
     _detach() {
         if(!this._eventyHandler) return;
         this._eventyHandler.off();
