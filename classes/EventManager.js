@@ -1,11 +1,12 @@
 class EventHandler {
     constructor
 }
+
 class View extends Abra {
     constructor(abra) {
         super();
         this._source = abra;
-        this._source._events.on('closed', this.close);
+        this._source._events.once('closed', this.close);
         this._emitter = this._source._emitter;
     }
     on(eventName, callback) {
@@ -14,6 +15,7 @@ class View extends Abra {
         return eventHandler;
     }
 }
+
 class Abra {
     constructor() {
         this._emitter = new EventEmitter();
