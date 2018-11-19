@@ -1,4 +1,5 @@
-class AbraInterface {
+class Abra {
+    
     on(eventName, callback) {}
     trigger(eventName, payload) {}
     close() {}
