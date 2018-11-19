@@ -6,7 +6,7 @@ class Abra {
         this._emitter.emit('eventName', payload);
     }
     close() {
-        this._events.emit()
+        this._events.emit('closed')
     }
 }
 
