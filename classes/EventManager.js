@@ -1,18 +1,18 @@
-class abraInterface {
+class AbraInterface {
     on(eventName, callback) {}
     trigger(eventName, payload) {}
     close() {}
 }
 
 
-class abra extends abraInterface {
+class abra extends AbraInterface {
     constructor() {
         this._events = new EventEmitter();
         this._internalEvents = new EventEmitter();
     }
 
     on(eventName, callback) {
-        return new abraHandler(this, eventName, callback);
+        return new AbraHandler(this, eventName, callback);
     }
 
     trigger(eventName, payload) {
@@ -46,7 +46,7 @@ class abraView extends abra {
     }
 }
 
-class abraHandler extends Promise {
+class AbraHandler extends Promise {
     _promiseResolver(resolve, reject) {
         this._events.on('triggered', resolve);
         this._events.on('errored', reject);
@@ -61,7 +61,7 @@ class abraHandler extends Promise {
         this._events = new EventEmitter();
 
         this._abra = null;
-        this._abraHandler = null;
+        this._AbraHandler = null;
 
         this._events.on('triggered', this._callback);
 
@@ -81,7 +81,7 @@ class abraHandler extends Promise {
         this._detach();
 
         this._abra = abra;
-        this._abraHandler = this._abra.on(this._eventName, this.trigger);
+        this._AbraHandler = this._abra.on(this._eventName, this.trigger);
 
         this._abra._internalEvents.on('attached', this._attach);
         this._abra._internalEvents.on('detached', this._detach);
@@ -97,6 +97,6 @@ class abraHandler extends Promise {
         this._abra._internalEvents.off('closed', this.off);
 
         this._abra = null;
-        this._abraHandler = this._abraHandler.off() || null;
+        this._AbraHandler = this._AbraHandler.off() || null;
     }
 }
