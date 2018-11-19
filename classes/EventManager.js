@@ -5,7 +5,7 @@ class AbraInterface {
 }
 
 
-class abra extends AbraInterface {
+class Abra extends AbraInterface {
     constructor() {
         this._events = new EventEmitter();
         this._internalEvents = new EventEmitter();
@@ -24,7 +24,7 @@ class abra extends AbraInterface {
     }
 }
 
-class abraView extends abra {
+class AbraView extends abra {
     constructor(abra) {
         this._abra = null;
 
