@@ -1,4 +1,4 @@
-const EventManager = require('./EventManager');
+const EventManager = require('./Abra');
 let nextId = 0;
 module.exports = class Element extends EventManager {
     constructor(parent) {
