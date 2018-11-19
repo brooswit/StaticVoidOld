@@ -4,8 +4,8 @@ module.exports = class Element extends Abra {
     constructor(parent) {
         super();
         this.id = nextId++;
-        this.parentInterface = new Abra.();
-        this.rootInterface = new Abra.Interface();
+        this.parentView = new Abra.View();
+        this.rootView = new Abra.View();
         this.state = {};
         this._parent = null;
         this._isDestroyed = false;
@@ -31,8 +31,8 @@ module.exports = class Element extends Abra {
         this.detach();
 
         this._parent = parent;
-        this.parentInterface.attach(this._parent);
-        this.rootInterface.attach(this.root());
+        this.parentView.attach(this._parent);
+        this.rootView.attach(this.root());
 
         this.trigger('attached');
     }
@@ -42,8 +42,8 @@ module.exports = class Element extends Abra {
         if (!this._parent) return;
 
         this._parent = null;
-        this.parentInterface.detach();
-        this.rootInterface.detach();
+        this.parentView.detach();
+        this.rootView.detach();
 
         this.trigger('dettached');
     }
