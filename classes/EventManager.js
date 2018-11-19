@@ -36,13 +36,13 @@ class EventHandler extends promise {
 class View extends Abra {
     constructor(abra) {
         super();
-        this._source = abra;
-        this._source._events.once('closed', this.close);
-        this._emitter = this._source._emitter;
+        this._abra = abra;
+        this._abra._events.once('closed', this.close);
+        this._emitter = this._abra._emitter;
     }
     close() {
         super.close();
-        this._source._events.off('closed', this.close);
+        this._abra._events.off('closed', this.close);
     }
 }
 
