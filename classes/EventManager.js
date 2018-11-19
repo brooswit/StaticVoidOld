@@ -29,7 +29,6 @@ class EventHandler extends promise {
         this._events.off('triggered', this._callback);
         this._events.off('triggered', this._resolve);
         this._events.off('errored', this._reject);
-        this._events.emit('off');
     }
 }
 
