@@ -6,6 +6,7 @@ class EventHandler {
         this._callback = callback;
 
         this._events.on('triggered', this._callback);
+        this._abra.on
     }
 
     off() {
