@@ -1,9 +1,10 @@
 class EventHandler {
     constructor
 }
-class View {
+class View extends Abra {
     constructor(abra) {
         this._source = abra;
+        this._source._
         this._emitter = this._source._emitter;
     }
 }
