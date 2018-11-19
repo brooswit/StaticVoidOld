@@ -5,17 +5,17 @@ class EventHandler {
         this._eventName = eventName;
         this._callback = callback;
 
-        this._events.on('triggered', this._callback);
-        this._abra._emitter.on(this._eventName, this._callback);
+        this._events.on('triggered', this.trigger);
+        this._abra._emitter.on(this._eventName, this.trigger);
     }
 
-    trigger() {
-        this.emit('triggered')
+    trigger(payload) {
+        this.emit('triggered', payload);
     }
 
     off() {
-        this._events.off('triggered', this._callback);
-        this._abra._emitter.off(this._eventName, this._callback);
+        this._events.off('triggered', this.trigger);
+        this._abra._emitter.off(this._eventName, this.trigger);
     }
 }
 
