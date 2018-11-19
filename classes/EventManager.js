@@ -4,7 +4,7 @@ class EventHandler {
 class View extends Abra {
     constructor(abra) {
         this._source = abra;
-        this._source._events.on('closed', this)
+        this._source._events.on('closed', this.close);
         this._emitter = this._source._emitter;
     }
 }
