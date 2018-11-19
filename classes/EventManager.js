@@ -1,3 +1,6 @@
+class EventHandler {
+    constructor
+}
 class Abra {
     constructor() {
         this._emitter = new EventEmitter();
