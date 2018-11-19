@@ -1,7 +1,7 @@
 class Abra {
 
     on(eventName, callback) {
-        return new AbraEventHandler(this, eventName, )
+        return new AbraEventHandler(this, eventName, callback);
     }
     trigger(eventName, payload) {}
     close() {}
