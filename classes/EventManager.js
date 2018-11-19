@@ -1,6 +1,8 @@
 class Abra {
-    
-    on(eventName, callback) {}
+
+    on(eventName, callback) {
+        this._emmitter.
+    }
     trigger(eventName, payload) {}
     close() {}
 }
