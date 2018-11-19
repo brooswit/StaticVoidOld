@@ -1,11 +1,11 @@
-const EventManager = require('./Abra');
+const Abra = require('./Abra');
 let nextId = 0;
-module.exports = class Element extends EventManager {
+module.exports = class Element extends Abra {
     constructor(parent) {
         super();
         this.id = nextId++;
-        this.parentInterface = new EventManager.Interface();
-        this.rootInterface = new EventManager.Interface();
+        this.parentInterface = new Abra.();
+        this.rootInterface = new Abra.Interface();
         this.state = {};
         this._parent = null;
         this._isDestroyed = false;
