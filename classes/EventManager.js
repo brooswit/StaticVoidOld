@@ -80,6 +80,7 @@ class EventyHandler extends Promise {
         this._detach();
 
         this._eventy = eventy;
+
         this._eventy._internalEvents.on('attached', this._attach);
         this._eventy._internalEvents.on('detached', this._detach);
         this._eventy._internalEvents.once('closed', this.off);
@@ -89,7 +90,9 @@ class EventyHandler extends Promise {
 
     _detach() {
         if(!this._eventy) return;
-        
+
+        this._eventy
+
         this._eventy._internalEvents.off('attached', this._attach);
         this._eventy._internalEvents.off('detached', this._detach);
         this._eventy._internalEvents.off('closed', this.off);
