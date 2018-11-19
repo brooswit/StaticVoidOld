@@ -4,10 +4,12 @@ class EventHandler {
         this._events = new EventEmitter();
         this._eventName = eventName;
         this._callback = callback;
+
+        this._events.off('triggered', this._callback);
     }
 
     off() {
-        this._events.off('triggered')
+        this._events.off('triggered', this._callback);
     }
 }
 
