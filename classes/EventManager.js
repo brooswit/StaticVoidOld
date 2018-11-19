@@ -4,7 +4,6 @@ class AbraInterface {
     close() {}
 }
 
-
 class Abra extends AbraInterface {
     constructor() {
         this._events = new EventEmitter();
