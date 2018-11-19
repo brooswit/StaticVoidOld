@@ -55,7 +55,6 @@ class EventyHandler extends Promise {
     constructor(eventy, eventName, callback) {
         super(this._promiseResolver);
         
-        this._eventy = null;
         this._eventName = eventName;
         this._callback = callback;
 
@@ -63,7 +62,6 @@ class EventyHandler extends Promise {
         this._events.on('triggered', this._callback);
 
         this._attach(eventy);
-
     }
 
     trigger(payload) {
