@@ -5,7 +5,9 @@ class Abra {
     trigger(eventName, payload) {
         this._emitter.emit('eventName', payload);
     }
-    close() {}
+    close() {
+        this._events.emit()
+    }
 }
 
 class AbraInterface {
