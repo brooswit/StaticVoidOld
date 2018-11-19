@@ -1,11 +1,11 @@
 class EventHandler extends promise {
-    _promiseResolver(resolve, reject) {
+    _capturePromiseResolution(resolve, reject) {
         this._resolve = resolve;
         this._reject = reject;
     }
 
     constructor(abra, eventName, callback) {
-        super(this._promiseResolver);
+        super(this._capturePromiseResolution);
         this._abra = abra;
         this._eventName = eventName;
         this._callback = callback;
