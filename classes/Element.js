@@ -4,7 +4,24 @@ module.exports = class Element extends Abra {
     constructor(parent) {
         super();
         this.id = nextId++;
-        this.parentView = new Abra.View();
+        this.parentView = new Abra.View
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        ();
         this.rootView = new Abra.View();
         this.state = {};
         this._parent = null;
