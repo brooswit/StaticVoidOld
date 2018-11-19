@@ -96,8 +96,9 @@ class EventyHandler extends Promise {
         this._eventy._internalEvents.off('detached', this._detach);
         this._eventy._internalEvents.off('closed', this.off);
 
-        this._eventy = null;
-
         this._eventyHandler.off();
+
+        this._eventyHandler = null;
+        this._eventy = null;
     }
 }
