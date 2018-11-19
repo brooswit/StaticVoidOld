@@ -65,4 +65,3 @@ class Abra {
 Abra.View = View;
 
 module.exports = Abra;
-
