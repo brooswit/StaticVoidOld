@@ -1,4 +1,9 @@
-class EventHandler {
+class EventHandler extends promise {
+    _promiseResolver(resolve, reject) {
+        this._events.on('triggered', resolve);
+        this._events.on('errored', reject);
+    }
+
     constructor(abra, eventName, callback) {
         this._abra = abra;
         this._eventName = eventName;
