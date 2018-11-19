@@ -99,5 +99,7 @@ class AbraHandler extends Promise {
         this._AbraHandler = this._AbraHandler.off() || null;
     }
 }
-Abra.View = AbraV
+
+Abra.View = AbraView;
+
 module.exports = Abra;
