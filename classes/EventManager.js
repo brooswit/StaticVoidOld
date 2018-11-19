@@ -40,9 +40,9 @@ class AbraView extends Abra {
 
     detach() {
         if(!this._abra) return;
-        let oldabra = this._abra; this._abra = null;
-        this._internalEvents.off('triggered', oldabra.trigger);
-        this._internalEvents.emit('dettached', oldabra);
+        let oldAbra = this._abra; this._abra = null;
+        this._internalEvents.off('triggered', oldAbra.trigger);
+        this._internalEvents.emit('dettached', oldAbra);
     }
 }
 
