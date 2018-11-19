@@ -6,9 +6,9 @@ class EventHandler {
 
         this._events = new EventEmitter();
 
-        this._abra._eve.on(this._eventName, this.trigger);
         this._abra._emitter.on(this._eventName, this.trigger);
         this._events.on('triggered', this._callback);
+        this._abra._events.on('cl', this.trigger);
     }
 
     trigger(payload) {
