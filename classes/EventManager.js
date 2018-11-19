@@ -1,4 +1,7 @@
 class Abra {
+    constructor() {
+        this._emitter = new 
+    }
     on(eventName, callback) {
         return new AbraEventHandler(this, eventName, callback);
     }
