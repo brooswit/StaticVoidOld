@@ -55,7 +55,7 @@ class Abra {
         return new EventHandler(this, eventName, callback);
     }
     trigger(eventName, payload) {
-        this._emitter.emit('eventName', payload);
+        this._emitter.emit(eventName, payload);
     }
     close() {
         this._events.emit('closed')
