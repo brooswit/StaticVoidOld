@@ -40,12 +40,6 @@ class View extends Abra {
         this._source._events.once('closed', this.close);
         this._emitter = this._source._emitter;
     }
-
-    on(eventName, callback) {
-        let eventHandler = super.on(eventName, callback);
-        this._events.once('closed', eventHandler.off);
-        return eventHandler;
-    }
 }
 
 class Abra {
