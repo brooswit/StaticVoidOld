@@ -9,7 +9,7 @@ class View extends Abra {
         this._emitter = this._source._emitter;
     }
     on(eventName, callback) {
-        let eventHandler
+        let eventHandler = super.on(eventName,)
         return new EventHandler(this, eventName, callback);
     }
 }
