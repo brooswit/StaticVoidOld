@@ -40,8 +40,8 @@ class View extends Abra {
         this._source._events.once('closed', this.close);
         this._emitter = this._source._emitter;
     }
-    off() {
-        super.off();
+    close() {
+        super.close();
         this._source._events.once('closed', this.close);
     }
 }
