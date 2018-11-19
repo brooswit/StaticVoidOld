@@ -1,9 +1,10 @@
 class EventHandler {
     constructor(abra, eventName, callback) {
         this._abra = abra;
-        this._events = new EventEmitter();
         this._eventName = eventName;
         this._callback = callback;
+        
+        this._events = new EventEmitter();
 
         this._abra._emitter.on(this._eventName, this.trigger);
         this._events.on('triggered', this._callback);
@@ -15,7 +16,7 @@ class EventHandler {
 
     off() {
         this._abra._emitter.off(this._eventName, this.trigger);
-        this._events.off('triggered', this.trigger);
+        this._events.off('triggered', this._callback);
     }
 }
 
