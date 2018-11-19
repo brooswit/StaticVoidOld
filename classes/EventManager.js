@@ -3,7 +3,7 @@ class EventHandler {
         this._abra = abra;
         this._eventName = eventName;
         this._callback = callback;
-        
+
         this._events = new EventEmitter();
 
         this._abra._emitter.on(this._eventName, this.trigger);
@@ -50,6 +50,8 @@ class Abra {
         this._events.emit('closed')
     }
 }
+
+module.exports
 
 class AbraInterface {
     on(eventName, callback) {}
