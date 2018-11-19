@@ -1,5 +1,7 @@
 class EventHandler {
-    constructor
+    constructor(abra, eventName, callback) {
+        
+    }
 }
 
 class View extends Abra {
