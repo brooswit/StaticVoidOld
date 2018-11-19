@@ -1,18 +1,18 @@
-class EventyInterface {
+class AbraInterface {
     on(eventName, callback) {}
     trigger(eventName, payload) {}
     close() {}
 }
 
 
-class Eventy extends EventyInterface {
+class Abra extends AbraInterface {
     constructor() {
         this._events = new EventEmitter();
         this._internalEvents = new EventEmitter();
     }
 
     on(eventName, callback) {
-        return new EventyHandler(this, eventName, callback);
+        return new AbraHandler(this, eventName, callback);
     }
 
     trigger(eventName, payload) {
@@ -24,48 +24,48 @@ class Eventy extends EventyInterface {
     }
 }
 
-class EventyView extends Eventy {
-    constructor(eventy) {
-        this._eventy = null;
+class AbraView extends Abra {
+    constructor(Abra) {
+        this._Abra = null;
 
-        if (eventy) this.attach(eventy);
+        if (Abra) this.attach(Abra);
     }
 
-    attach(newEventy) {
-        if(this._eventy) return;
-        this._eventy = newEventy;
-        this._internalEvents.on('triggered', this._eventy.trigger);
-        this._internalEvents.emit('attached', newEventy);
+    attach(newAbra) {
+        if(this._Abra) return;
+        this._Abra = newAbra;
+        this._internalEvents.on('triggered', this._Abra.trigger);
+        this._internalEvents.emit('attached', newAbra);
     }
 
     detach() {
-        if(!this._eventy) return;
-        let oldEventy = this._eventy; this._eventy = null;
-        this._internalEvents.off('triggered', oldEventy.trigger);
-        this._internalEvents.emit('dettached', oldEventy);
+        if(!this._Abra) return;
+        let oldAbra = this._Abra; this._Abra = null;
+        this._internalEvents.off('triggered', oldAbra.trigger);
+        this._internalEvents.emit('dettached', oldAbra);
     }
 }
 
-class EventyHandler extends Promise {
+class AbraHandler extends Promise {
     _promiseResolver(resolve, reject) {
         this._events.on('triggered', resolve);
         this._events.on('errored', reject);
     }
     
-    constructor(eventy, eventName, callback) {
+    constructor(Abra, eventName, callback) {
         super(this._promiseResolver);
         
         this._eventName = eventName;
         this._callback = callback;
-        
+
         this._events = new EventEmitter();
 
-        this._eventy = null;
-        this._eventyHandler = null;
+        this._Abra = null;
+        this._AbraHandler = null;
 
         this._events.on('triggered', this._callback);
 
-        this._attach(eventy);
+        this._attach(Abra);
     }
 
     trigger(payload) {
@@ -77,26 +77,26 @@ class EventyHandler extends Promise {
         this._detach();
     }
 
-    _attach(eventy) {
+    _attach(Abra) {
         this._detach();
 
-        this._eventy = eventy;
-        this._eventyHandler = this._eventy.on(this._eventName, this.trigger);
+        this._Abra = Abra;
+        this._AbraHandler = this._Abra.on(this._eventName, this.trigger);
 
-        this._eventy._internalEvents.on('attached', this._attach);
-        this._eventy._internalEvents.on('detached', this._detach);
-        this._eventy._internalEvents.once('closed', this.off);
+        this._Abra._internalEvents.on('attached', this._attach);
+        this._Abra._internalEvents.on('detached', this._detach);
+        this._Abra._internalEvents.once('closed', this.off);
 
     }
 
     _detach() {
-        if(!this._eventy) return;
+        if(!this._Abra) return;
 
-        this._eventy._internalEvents.off('attached', this._attach);
-        this._eventy._internalEvents.off('detached', this._detach);
-        this._eventy._internalEvents.off('closed', this.off);
+        this._Abra._internalEvents.off('attached', this._attach);
+        this._Abra._internalEvents.off('detached', this._detach);
+        this._Abra._internalEvents.off('closed', this.off);
 
-        this._eventy = null;
-        this._eventyHandler = this._eventyHandler.off() || null;
+        this._Abra = null;
+        this._AbraHandler = this._AbraHandler.off() || null;
     }
 }
