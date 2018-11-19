@@ -63,7 +63,7 @@ class EventyHandler extends Promise {
         this._events.on('triggered', this._callback);
 
         this._internalEvents = eventy._internalEvents;
-        this._internalEvents.on('attached', this._onttach);
+        this._internalEvents.on('attached', this._attach);
         this._internalEvents.on('detached', this._detach);
         this._internalEvents.once('closed', this.off);
 
@@ -76,15 +76,16 @@ class EventyHandler extends Promise {
 
     off() {
         this._detach();
-        this._internalEvents.off('attached', this._onttach);
+        this._internalEvents.off('attached', this._attach);
         this._internalEvents.off('detached', this._detach);
         this._events.off('triggered', this._callback);
     }
 
-    _onttach(eventy) {
+    _attach(eventy) {
         this._detach();
         this._eventyHandler = eventy.on(this._eventName, this.trigger);
     }
+    
     _detach() {
         if(!this._eventyHandler) return;
         this._eventyHandler.off();
