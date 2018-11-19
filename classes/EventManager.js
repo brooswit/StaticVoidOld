@@ -89,6 +89,7 @@ class EventyHandler extends Promise {
 
     _detach() {
         if(!this._eventy) return;
+
         this._events.off('triggered', this._callback);
 
         this._eventy._internalEvents.off('attached', this._attach);
