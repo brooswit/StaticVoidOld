@@ -7,7 +7,7 @@ class EventHandler {
     }
 
     off() {
-
+        this._events.off('triggered')
     }
 }
 
