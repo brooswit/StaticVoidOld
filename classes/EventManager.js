@@ -4,7 +4,7 @@ class EventHandler {
 class View {
     constructor(abra) {
         this._source = abra;
-        this._events = 
+        this._events = this._source._events;
     }
 }
 class Abra {
