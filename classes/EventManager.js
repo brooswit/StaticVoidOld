@@ -51,7 +51,9 @@ class Abra {
     }
 }
 
-module.exports
+Abra.View = View;
+
+module.exports = Abra;
 
 class AbraInterface {
     on(eventName, callback) {}
