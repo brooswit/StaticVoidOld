@@ -24,18 +24,18 @@ class Abra extends AbraInterface {
     }
 }
 
-class AbraView extends abra {
+class AbraView extends Abra {
     constructor(abra) {
         this._abra = null;
 
         if (abra) this.attach(abra);
     }
 
-    attach(newabra) {
+    attach(newAbra) {
         if(this._abra) return;
-        this._abra = newabra;
+        this._abra = newAbra;
         this._internalEvents.on('triggered', this._abra.trigger);
-        this._internalEvents.emit('attached', newabra);
+        this._internalEvents.emit('attached', newAbra);
     }
 
     detach() {
