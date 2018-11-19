@@ -5,6 +5,7 @@ class EventHandler extends promise {
     }
 
     constructor(abra, eventName, callback) {
+        super(this._promiseResolver);
         this._abra = abra;
         this._eventName = eventName;
         this._callback = callback;
