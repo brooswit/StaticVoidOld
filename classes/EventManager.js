@@ -3,7 +3,7 @@ class Abra {
         return new AbraEventHandler(this, eventName, callback);
     }
     trigger(eventName, payload) {
-        this._emitter
+        this._emitter.emit('eventName', payload);
     }
     close() {}
 }
