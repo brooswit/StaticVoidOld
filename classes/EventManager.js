@@ -55,12 +55,13 @@ class EventyHandler extends Promise {
     constructor(eventy, eventName, callback) {
         super(this._promiseResolver);
         
-        this._eventy = eventy;
+        this._eventy = null;
         this._eventName = eventName;
         this._callback = callback;
 
         this._events = new EventEmitter();
         this._events.on('triggered', this._callback);
+        
 
         this._eventy._internalEvents.on('attached', this._attach);
         this._eventy._internalEvents.on('detached', this._detach);
