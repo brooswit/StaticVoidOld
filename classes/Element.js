@@ -33,6 +33,7 @@ module.exports = class Element extends Abra {
         }
         return false;
     }
+    
     attach(newParent) {
         if (this._isDestroyed) return;
         if (this._parent === newParent) return;
