@@ -5,10 +5,9 @@ module.exports = class Element extends Abra {
         super();
         this.id = nextId++;
         this.parentView = new Abra.View(parent);
-        this.rootView = new Abra.View(parent);
         this.state = {};
         this._parent = null;
-        this._isDestroyed = false;
+        this._isDestroyed = false;ß
 
         if (parent) this.attach(parent);
     }
@@ -42,7 +41,6 @@ module.exports = class Element extends Abra {
 
         this._parent = null;
         this.parentView.detach();
-        this.rootView.detach();
 
         this.trigger('dettached');
     }
