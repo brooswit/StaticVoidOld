@@ -39,7 +39,9 @@ module.exports = class Element extends Abra {
         if (this._parent === newParent) return;
         let oldParent = this._parent;
         this._parent = newParent;
-        
+        if (this._detectLoop()) {
+            
+        }
         this.detach();
 
         this._parent = newParent;
