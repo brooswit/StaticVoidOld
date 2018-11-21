@@ -38,7 +38,8 @@ module.exports = class Element extends Abra {
                 break;
             }
         }
-        return false;
+            this._parent = oldParent;
+            return hasLoop;
     }
 
     attach(newParent) {
