@@ -29,7 +29,7 @@ module.exports = class Element extends Abra {
         while (elementA) {
             elementA = elementA.parent();
             elementB = elementB && elementB.parent() && elementB.parent().parent();
-            
+            if(elementA === )
         }
     }
     attach(newParent) {
