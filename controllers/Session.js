@@ -8,6 +8,6 @@ module.exports = class Session extends Element {
     }
 
     _triggerRPC(payload) {
-        this.parent.trigger(`rpc_${payload.rpc.command}`, payload.options);
+        this.trigger(`rpc_${payload.rpc.command}`, payload.options);
     }
 }
