@@ -29,8 +29,9 @@ module.exports = class Element extends Abra {
         while (elementB) {
             elementA = elementA.parent();
             elementB = elementB && elementB.parent() && elementB.parent().parent();
-            if(elementA === elementB)
+            if(elementA === elementB) return true;
         }
+        return false;
     }
     attach(newParent) {
         if (this._isDestroyed) return;
