@@ -24,7 +24,9 @@ module.exports = class Element extends Abra {
         return element;
     }
 
-    _detectLoop() {
+    _detectLoopWith(newParent) {
+        let oldParent = this._parent;
+
         let elementA, elementB = this;
         while (elementB) {
             elementA = elementA.parent();
@@ -39,7 +41,7 @@ module.exports = class Element extends Abra {
         if (this._parent === newParent) return;
         let oldParent = this._parent;
         this._parent = newParent;
-        if (this._detectLoopWith()) {
+        if (this._detectLoopWith(newParent)) {
             this._parent = oldParent;
             return false;
         }
