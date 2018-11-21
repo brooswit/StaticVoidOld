@@ -4,10 +4,10 @@ module.exports = class Session extends Element {
     constructor(parent, state) {
         super(parent && parent.root(), state);
         
-        this.parentView.on('rpc', this.injestMessage);
+        this.parentView.on('rpc', this._triggerRPC);
     }
 
-    injestMessage(payload) {
+    _triggerRPC(payload) {
         this.parent.trigger(`rpc_${payload.rpc.command}`, payload.options);
     }
 }
