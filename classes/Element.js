@@ -12,6 +12,8 @@ module.exports = class Element extends Abra {
         if (parent) this.attach(parent);
     }
 
+    parent
+
     root() {
         let element = this;
         let token = {};
