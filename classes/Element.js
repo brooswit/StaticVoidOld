@@ -23,13 +23,13 @@ module.exports = class Element extends Abra {
         return element;
     }
 
-    attach(parent) {
+    attach(newParent) {
         if (this._isDestroyed) return;
-        if (this._parent === parent) return;
+        if (this._parent === newParent) return;
 
         this.detach();
 
-        this._parent = parent;
+        this._parent = newParent;
         this.parentView.attach(this._parent);
 
         this.trigger('attached');
