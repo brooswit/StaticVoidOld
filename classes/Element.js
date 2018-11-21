@@ -26,10 +26,10 @@ module.exports = class Element extends Abra {
 
     _detectLoop() {
         let elementA, elementB = this;
-        while (elementA) {
+        while (elementB) {
             elementA = elementA.parent();
             elementB = elementB && elementB.parent() && elementB.parent().parent();
-            if(elementA === )
+            if(elementA === elementB)
         }
     }
     attach(newParent) {
