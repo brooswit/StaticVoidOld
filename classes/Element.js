@@ -19,7 +19,9 @@ module.exports = class Element extends Abra {
 
     root() {
         let element = this;
-        while (element = element.parent()) {}
+        while (element.parent()) {
+            element = element.pare
+        }
         return element;
     }
 
