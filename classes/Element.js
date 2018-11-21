@@ -25,7 +25,7 @@ module.exports = class Element extends Abra {
     }
 
     _detectLoop() {
-        let elementA, elementB = 
+        let elementA, elementB = this;
     }
     attach(newParent) {
         if (this._isDestroyed) return;
