@@ -4,7 +4,7 @@ module.exports = class Session extends Element {
     constructor(parent, state) {
         super(parent && parent.root(), state);
         
-        this.parentView.on('rpc', this._triggerRPC);
+        this.on('rpc', this._triggerRPC);
     }
 
     _triggerRPC(payload) {
