@@ -1,5 +1,6 @@
 const Abra = require('./Abra');
 let nextId = 0;
+
 module.exports = class Element extends Abra {
     constructor(parent) {
         super();
