@@ -37,7 +37,7 @@ module.exports = class Element extends Abra {
     attach(newParent) {
         if (this._isDestroyed) return;
         if (this._parent === newParent) return;
-
+        let oldPar
         this.detach();
 
         this._parent = newParent;
