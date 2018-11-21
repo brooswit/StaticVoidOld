@@ -1,6 +1,6 @@
-const Controller = require('../classes/Controller');
+const Element = require('../classes/Element');
 
-module.exports = class Account extends Controller {
+module.exports = class Account extends Element {
     constructor(parent, state) {
         super(parent, state);
         this.parent.on('session_login', ({username, passwordHash})=>{
