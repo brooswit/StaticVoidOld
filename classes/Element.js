@@ -32,7 +32,6 @@ module.exports = class Element extends Abra {
 
         this._parent = parent;
         this.parentView.attach(this._parent);
-        this.rootView.attach(this.root());
 
         this.trigger('attached');
     }
