@@ -20,11 +20,7 @@ module.exports = class Element extends Abra {
     root() {
         let element = this;
         let token = {};
-        while (element = element._paren) {
-            if (element.root.__token === token) return null;
-            element.root.__token = token;
-            element = element._parent;
-        }
+        while (element = element.parent()) {}
         return element;
     }
 
