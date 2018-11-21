@@ -4,25 +4,8 @@ module.exports = class Element extends Abra {
     constructor(parent) {
         super();
         this.id = nextId++;
-        this.parentView = new Abra.View
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        ();
-        this.rootView = new Abra.View();
+        this.parentView = new Abra.View(parent);
+        this.rootView = new Abra.View(parent);
         this.state = {};
         this._parent = null;
         this._isDestroyed = false;
