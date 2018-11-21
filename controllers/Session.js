@@ -1,8 +1,8 @@
-const Controller = require('../classes/Controller');
+const Element = require('../classes/Element');
 
-module.exports = class Session extends Controller {
+module.exports = class Session extends Element {
     constructor(element, state) {
-        super(element, state);
+        super(element && element.root, state);
         this.element.on('rpc', this.injestMessage);
     }
 
