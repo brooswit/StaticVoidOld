@@ -13,6 +13,7 @@ module.exports = class Element extends Abra {
     }
 
     parent() {
+        this.token
         return this._parent;
     }
 
