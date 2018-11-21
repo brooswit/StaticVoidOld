@@ -12,7 +12,9 @@ module.exports = class Element extends Abra {
         if (parent) this.attach(parent);
     }
 
-    parent
+    parent() {
+        return this._parent;
+    }
 
     root() {
         let element = this;
