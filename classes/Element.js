@@ -13,14 +13,14 @@ module.exports = class Element extends Abra {
     }
 
     parent() {
-        this.token = this.token || 
+        this.token = this.token || {};
         return this._parent;
     }
 
     root() {
         let element = this;
         let token = {};
-        while (element._parent) {
+        while (element = element._paren) {
             if (element.root.__token === token) return null;
             element.root.__token = token;
             element = element._parent;
