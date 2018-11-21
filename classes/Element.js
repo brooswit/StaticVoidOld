@@ -33,7 +33,10 @@ module.exports = class Element extends Abra {
         while (elementB) {
             elementA = elementA.parent();
             elementB = elementB && elementB.parent() && elementB.parent().parent();
-            if(elementA === elementB) return true;
+            if (elementA === elementB) {
+                hasLoop = true;
+                break;
+            }
         }
         return false;
     }
