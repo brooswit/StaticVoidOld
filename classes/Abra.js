@@ -4,7 +4,9 @@ class CallbackRegistry {
     }
 
     register(callbackName, callback) {
-        
+        if (!callback) {
+            return.
+        }
         this._callbacks[callbackName] = callback;
     }
 
