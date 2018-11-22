@@ -3,9 +3,9 @@ class EventQuery {
         this._emitter = new EventEmitter();
     }
 
-    on(event, callback) {
+    on(event, promise) {
         this._emitter.on(event, async() => {
-            
+
         })
     }
 
