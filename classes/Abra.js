@@ -15,12 +15,11 @@ class EventQuery {
     }
 
     query(eventName, payload) {
-        let results = [];
-        let errors = [];
-        let errored = false;
-
-
         return new Promise((resolve, reject) => {
+            let results = [];
+            let errors = [];
+            let errored = false;
+
             function handleResult(index, error, result) {
                 errored = errored || !!error;
                 results[index] = result;
@@ -31,7 +30,7 @@ class EventQuery {
                 errors = errored ? errors : null;
                 resolve(errors, results);
             }
-            
+
             this._emitter.emit(eventName,
                 ()=>{
                     let index = results.length-1;
