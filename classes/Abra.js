@@ -20,10 +20,10 @@ class EventQuery {
             this._emitter.emit(eventName,
                 ()=>{
                     let index = results.length-1;
-                    results.push(null});
+                    results.push(null);
                 }
                 (index, result)=>{
-
+                    results[index]
                     results.push({
                         error: null,
                         result: null,
