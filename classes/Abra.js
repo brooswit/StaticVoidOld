@@ -1,3 +1,4 @@
+class CallbackRegistry
 class QueryEmitter {
     constructor() {
         this._emitter = new EventEmitter();
