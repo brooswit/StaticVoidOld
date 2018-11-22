@@ -5,10 +5,8 @@ class EventQuery {
 
     on(event, callback) {
         this._emitter.on(event, async() => {
-
+            
         })
-        this.event
-
     }
 
     query(eventName, payload) {
@@ -25,7 +23,7 @@ class EventQuery {
 
                 },
                 (index)=>{
-                    
+
                 }
             );
         });
