@@ -102,7 +102,7 @@ class EventHandler extends promise {
     }
 
     off() {
-        this._abra._callbackRegistry.off('closed', this.off);
+        this._abra._callbackRegistry.unregister('closed', this.off);
         this._abra._queryEmitter.stop(this._eventName, this.trigger);
         this._callbackRegistry.unregister('triggered');
         this._callbackRegistry.unregister('triggered');
@@ -119,7 +119,7 @@ class View extends Abra {
     }
     close() {
         super.close();
-        this._abra._callbackRegistry.off('closed', this.close);
+        this._abra._callbackRegistry.unregister('closed', this.close);
     }
 }
 
