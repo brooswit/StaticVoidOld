@@ -7,7 +7,7 @@ class EventQuery {
         this._emitter.on(event, (begin, resolve, reject) => {
             let index = begin();
             promise.then(()=>{
-                
+                resolve(index, 
             }).catch(reject);
         })
     }
