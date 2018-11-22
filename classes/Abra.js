@@ -1,7 +1,7 @@
 class EventQuery {
     constructor() {
         this._emitter = new EventEmitter();
-        this._lookupHandlerByPro
+        this._lookupHandlerByPromise = {};
     }
 
     off(event, promise) {
@@ -9,6 +9,7 @@ class EventQuery {
     }
 
     on(event, promise) {
+        const handler
         this._emitter.on(event, (provisionIndex, handleResult) => {
             let index = provisionIndex();
             promise.then((result)=>{
