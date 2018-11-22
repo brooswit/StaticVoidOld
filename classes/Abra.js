@@ -30,18 +30,8 @@ class EventQuery {
                 errors = errored ? errors : null;
                 resolve(errors, results);
             }
-            
-            function begin() {
-                let index = results.length-1;
-                results.push(undefined);
-                errors.push(undefined);
-                return index;
-            }
 
-            this._emitter.emit(eventName,
-                ()=>{
-                }, handleResult
-            );
+            this._emitter.emit(eventName,begin, handleResult);
         });
     }
 }
