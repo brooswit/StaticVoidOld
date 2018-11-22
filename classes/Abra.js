@@ -4,7 +4,7 @@ class EventQuery {
     }
 
     on(event, promise) {
-        this._emitter.on(event, (provisionIndex, handleResult) => {
+        this._emitter.on(event, this._handleEvent(provisionIndex, handleResult) => {
             let index = provisionIndex();
             promise.then((result)=>{
                 handleResult(index, undefined, result);
