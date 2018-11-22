@@ -48,7 +48,7 @@ class EventQuery {
                 resolve(errors, results);
             }
 
-            returnthis._emitter.query(eventName, provisionIndex, handleResult, payload);
+            this._emitter.emit(eventName, provisionIndex, handleResult, payload);
         });
     }
 }
