@@ -11,11 +11,11 @@ class EventQuery {
 
     }
 
-    async query(eventName, payload) {
-        this._emitter.emit(eventName, (result)=>{
+    query(eventName, payload) {
+        return new Promisethis._emitter.emit(eventName, (result)=>{
 
         }, ()=>{
-            
+
         })
     }
 }
