@@ -10,7 +10,7 @@ class EventQuery {
         delete this._lookupHandlerByPromise[promise];
     }
 
-    on(event, promise, payload) {
+    on(event, promise) {
         const handleResult = this._lookupHandlerByPromise[promise] = async (provisionIndex, handleResult, payload) => {
             let index = provisionIndex();
             let result, error;
@@ -48,7 +48,7 @@ class EventQuery {
                 resolve(errors, results);
             }
 
-            this._emitter.emit(eventName, provisionIndex, handleResult);
+            this._emitter.emit(eventName, provisionIndex, handleResult, payload);
         });
     }
 }
