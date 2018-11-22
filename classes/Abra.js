@@ -1,4 +1,4 @@
-class EventQuery {
+class QueryEmitter {
     constructor() {
         this._emitter = new EventEmitter();
         this._lookupHandlerByPromise = {};
