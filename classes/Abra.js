@@ -20,7 +20,6 @@ class EventQuery {
             let errors = [];
             let errored = false;
 
-            function begin(re)
             function handleResult(index, error, result) {
                 errored = errored || !!error;
                 results[index] = result;
