@@ -3,6 +3,10 @@ class EventQuery {
         this._emitter = new EventEmitter();
     }
 
+    off(event, promise) {
+        
+    }
+
     on(event, promise) {
         this._emitter.on(event, (provisionIndex, handleResult) => {
             let index = provisionIndex();
