@@ -25,7 +25,7 @@ class EventQuery {
                     results.push(undefined);
                     errors.push(undefined);
                 }, handleResult);
-            );
+            });
 
             function handleResult(index, error, result) {
                 errored = errored || !!error;
