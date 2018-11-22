@@ -37,7 +37,7 @@ class EventQuery {
                 for(resultIndex in results) {
                     if(!results[resultIndex]) return;
                 }
-                
+                    
             }
         });
     }
