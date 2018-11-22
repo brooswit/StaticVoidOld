@@ -4,6 +4,7 @@ class EventQuery {
     }
 
     on(event, callback) {
+        this._emitter.on(event, )
         this.event
 
     }
