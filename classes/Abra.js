@@ -93,8 +93,8 @@ class EventHandler extends promise {
         this._abra._callbackRegistry.once('closed', this.off);
         this._abra._queryEmitter.when(this._eventName, this.trigger);
         this._callbackRegistry.register('triggered', this._callback);
-        this._callbackRegistry.reg('triggered', this._resolve);
-        this._callbackRegistry.reg('errored',  this._reject);
+        this._callbackRegistry.register('triggered', this._resolve);
+        this._callbackRegistry.register('errored',  this._reject);
     }
 
     async trigger(payload) {
@@ -104,9 +104,9 @@ class EventHandler extends promise {
     off() {
         this._abra._callbackRegistry.off('closed', this.off);
         this._abra._queryEmitter.stop(this._eventName, this.trigger);
-        this._callbackRegistry.off('triggered', this._callback);
-        this._callbackRegistry.off('triggered', this._resolve);
-        this._callbackRegistry.off('errored', this._reject);
+        this._callbackRegistry.unregister('triggered', this._callback);
+        this._callbackRegistry.unregister('triggered', this._resolve);
+        this._callbackRegistry.unregister('errored', this._reject);
     }
 }
 
