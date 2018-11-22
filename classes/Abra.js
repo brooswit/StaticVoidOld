@@ -13,9 +13,9 @@ class EventQuery {
 
     query(eventName, payload) {
         return new Promise((resolve, reject) => {
-            this._emitter.emit(eventName, (result)=>{
+            this._emitter.emit(eventName, (results)=>{
         }, ()=>{
-            
+
         })
     }
 }
