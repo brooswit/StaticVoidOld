@@ -25,7 +25,8 @@ class EventQuery {
                         result: null,
                     });
                 }
-                ()=>{
+                (index, result)=>{
+
                     results.push({
                         error: null,
                         result: null,
