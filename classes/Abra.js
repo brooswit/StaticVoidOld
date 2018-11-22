@@ -64,7 +64,7 @@ class EventHandler extends promise {
         this._eventName = eventName;
         this._callback = callback;
 
-        this._events = new EventEmitter();
+        this._events = new QueryEmitter();
 
         this._abra._events.once('closed', this.off);
         this._abra._emitter.on(this._eventName, this.trigger);
@@ -101,7 +101,7 @@ class View extends Abra {
 
 class Abra {
     constructor() {
-        this._emitter = new EventEmitter();
+        this._emitter = new EvenEmitter();
         this._events = new EventEmitter();
     }
     on(eventName, callback) {
