@@ -12,7 +12,7 @@ class EventQuery {
     }
 
     async query(eventName, payload) {
-        
+        this._emitter.emit
     }
 }
 class EventHandler extends promise {
