@@ -19,17 +19,19 @@ class EventQuery {
         let errors = [];
         let errored = false;
 
-        function handleResult(index, error, result) {
-            errored = errored || !!error;
-            results[index] = result;
-            errors[index] = error;
-            for(resultIndex in results) {
-                if(!results[resultIndex]) return;
-            }
-            errors = errored ? errors : null;
-            resolve(errors, results);
-        }
+
         return new Promise((resolve, reject) => {
+            function handleResult(index, error, result) {
+                errored = errored || !!error;
+                results[index] = result;
+                errors[index] = error;
+                for(resultIndex in results) {
+                    if(!results[resultIndex]) return;
+                }
+                errors = errored ? errors : null;
+                resolve(errors, results);
+            }
+            
             this._emitter.emit(eventName,
                 ()=>{
                     let index = results.length-1;
