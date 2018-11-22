@@ -5,14 +5,13 @@ class CallbackRegistry {
 
     register(callbackName, callback) {
         if (!callback) {
-        delete this._callbacks[callbackName];
-            
-            return
+            unregisterreturn
         }
         this._callbacks[callbackName] = callback;
     }
 
-    off(callbackName) {
+    unregister(callbackName) {
+        delete this._callbacks[callbackName];
     }
 
     fire(callbackName) {
