@@ -103,7 +103,7 @@ class EventHandler extends promise {
 
     off() {
         this._abra._internalEvents.off('closed', this.off);
-        this._abra._queryEmitter.off(this._eventName, this.trigger);
+        this._abra._queryEmitter.stop(this._eventName, this.trigger);
         this._internalEvents.off('triggered', this._callback);
         this._internalEvents.off('triggered', this._resolve);
         this._internalEvents.off('errored', this._reject);
