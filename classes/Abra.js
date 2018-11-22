@@ -3,8 +3,9 @@ class EventQuery {
         this._emitter = new EventEmitter();
     }
 
-    on(event, callback) {
+    async on(event, callback) {
         
+
     }
 }
 class EventHandler extends promise {
