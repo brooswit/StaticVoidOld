@@ -8,7 +8,7 @@ class CallbackRegistry {
     }
 
     off(callbackName) {
-        this.register
+        this.register(callbackName, null);
     }
 }
 
