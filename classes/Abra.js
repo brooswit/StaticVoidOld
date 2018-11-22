@@ -98,7 +98,7 @@ class EventHandler extends promise {
     }
 
     async trigger(payload) {
-        return await this._callbackRegistry.emit('triggered', payload);
+        return await this._callbackRegistry.fire('triggered', payload);
     }
 
     off() {
