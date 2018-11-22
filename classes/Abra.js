@@ -15,7 +15,10 @@ class EventQuery {
             let index = provisionIndex();
             let result, error;
             try {
-                let result = await promise(payload);
+                result = await promise(payload);
+            } catch(err) {
+                
+            }
 
             promise(payload).then((result)=>{
                 handleResult(index, undefined, result);
