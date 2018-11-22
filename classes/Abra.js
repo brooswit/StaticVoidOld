@@ -9,7 +9,7 @@ class EventQuery {
     }
 
     on(event, promise) {
-        const handleResult 
+        const handleResult = 
         this._emitter.on(event, (provisionIndex, handleResult) => {
             let index = provisionIndex();
             promise.then((result)=>{
