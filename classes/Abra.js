@@ -31,6 +31,7 @@ class EventQuery {
                     });
                 },
                 (index, error) => {
+                    handleResponse(index, error, nu)
                     errored = true;
                 },
                 (index)=>{
