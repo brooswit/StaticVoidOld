@@ -3,7 +3,15 @@ class EventQuery {
         this._emitter = new EventEmitter();
     }
 
-    _handleEvent
+    _handleEvent(provisionIndex, handleResult) {
+        let index = provisionIndex();
+        promise.then((result)=>{
+            handleResult(index, undefined, result);
+        }).catch((error) => {
+            handleResult(index, error, undefined);
+        });
+    }
+
     on(event, promise) {
         this._emitter.on(event, this._handleEvent);
     }
