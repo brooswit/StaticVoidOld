@@ -3,7 +3,9 @@ class CallbackRegistry {
         this._callbacks = {};
     }
 
-    register()
+    register(callbackName, callback) {
+        
+    }
 }
 
 class QueryEmitter {
