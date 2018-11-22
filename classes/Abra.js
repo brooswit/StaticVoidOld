@@ -74,7 +74,7 @@ class EventHandler extends promise {
     }
 
     async trigger(payload) {
-        return await this._events.emi('triggered', payload);
+        return await this._events.emit('triggered', payload);
     }
 
     off() {
@@ -107,8 +107,8 @@ class Abra {
     on(eventName, callback) {
         return new EventHandler(this, eventName, callback);
     }
-    trigger(eventName, payload) {
-        this._emitter.emit(eventName, payload);
+    async trigger(eventName, payload) {
+        return await this._emitter.emit(eventName, payload);
     }
     close() {
         this._events.emit('closed')
