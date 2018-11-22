@@ -12,10 +12,11 @@ class EventQuery {
     }
 
     query(eventName, payload) {
-        
+        let results = [];
         return new Promise((resolve, reject) => {
             this._emitter.emit(eventName,
                 ()=>{
+                    
                 },
                 ()=>{
                 },
