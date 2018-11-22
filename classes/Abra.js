@@ -4,9 +4,9 @@ class EventQuery {
     }
 
     on(event, promise) {
-        this._emitter.on(event, async() => {
+        this._emitter.on(event, () => {
             promise.then(() => {
-                
+
             }
         })
     }
