@@ -22,7 +22,8 @@ class EventQuery {
             this._emitter.emit(eventName,
                 ()=>{
                     let index = results.length-1;
-                    results.push(null);
+                    results.push(undefined);
+                    results.push(undefined);
                 },
                 (index, result)=>{
                     handleResponse(index, null, result);
