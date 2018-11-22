@@ -22,6 +22,9 @@ class EventQuery {
                     });
                 },
                 (index)=>{
+
+                },
+                (index)=>{
                     
                 }
             );
