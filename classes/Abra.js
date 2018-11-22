@@ -35,9 +35,9 @@ class EventQuery {
                     let index = results.length-1;
                     results.push(undefined);
                     errors.push(undefined);
-                }, handleResult);
-            });
-    };
+                }, handleResult
+            );
+        });
     }
 }
 class EventHandler extends promise {
