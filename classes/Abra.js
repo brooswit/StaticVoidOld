@@ -16,7 +16,7 @@ class EventQuery {
             this._emitter.emit(eventName, results, ()=>{
             },
             ()=>{
-        }, ()=>{
+            }, ()=>{
 
         })
     }
