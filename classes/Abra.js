@@ -19,8 +19,8 @@ class EventQuery {
             } catch(err) {
                 error = err;
             }
-            handleResult()
-
+            handleResult(index, error, result);
+        }
             promise(payload).then((result)=>{
                 handleResult(index, undefined, result);
             }).catch((error) => {
