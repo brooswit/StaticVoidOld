@@ -88,25 +88,25 @@ class EventHandler extends promise {
         this._eventName = eventName;
         this._callback = callback;
 
-        this._internalEvents = new QueryEmitter();
+        this._commandRegistry = new QueryEmitter();
 
-        this._abra._internalEvents.once('closed', this.off);
+        this._abra._commandRegistry.once('closed', this.off);
         this._abra._queryEmitter.when(this._eventName, this.trigger);
-        this._internalEvents.on('triggered', this._callback);
-        this._internalEvents.once('triggered', this._resolve);
-        this._internalEvents.once('errored',  this._reject);
+        this._commandRegistry.on('triggered', this._callback);
+        this._commandRegistry.once('triggered', this._resolve);
+        this._commandRegistry.once('errored',  this._reject);
     }
 
     async trigger(payload) {
-        return await this._internalEvents.emit('triggered', payload);
+        return await this._commandRegistry.emit('triggered', payload);
     }
 
     off() {
-        this._abra._internalEvents.off('closed', this.off);
+        this._abra._commandRegistry.off('closed', this.off);
         this._abra._queryEmitter.stop(this._eventName, this.trigger);
-        this._internalEvents.off('triggered', this._callback);
-        this._internalEvents.off('triggered', this._resolve);
-        this._internalEvents.off('errored', this._reject);
+        this._commandRegistry.off('triggered', this._callback);
+        this._commandRegistry.off('triggered', this._resolve);
+        this._commandRegistry.off('errored', this._reject);
     }
 }
 
@@ -114,19 +114,19 @@ class View extends Abra {
     constructor(abra) {
         super();
         this._abra = abra;
-        this._abra._internalEvents.once('closed', this.close);
+        this._abra._commandRegistry.once('closed', this.close);
         this._queryEmitter = this._abra._queryEmitter;
     }
     close() {
         super.close();
-        this._abra._internalEvents.off('closed', this.close);
+        this._abra._commandRegistry.off('closed', this.close);
     }
 }
 
 class Abra {
     constructor() {
         this._queryEmitter = new QueryEmitter();
-        this._internalEvents = new EventEmitter();
+        this._commandRegistry = new EventEmitter();
     }
     on(eventName, callback) {
         return new EventHandler(this, eventName, callback);
@@ -135,7 +135,7 @@ class Abra {
         return await this._queryEmitter.query(eventName, payload);
     }
     close() {
-        this._internalEvents.emit('closed')
+        this._commandRegistry.emit('closed')
     }
 }
 
