@@ -4,7 +4,7 @@ class EventQuery {
     }
 
     on(event, promise) {
-        this._emitter.on(event, () => {
+        this._emitter.on(event, (begin) => {
             promise.then(() => {
 
             }
