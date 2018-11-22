@@ -15,7 +15,7 @@ class CallbackRegistry {
         delete this._callbacks[callbackName];
     }
 
-    fire(callbackName) {
+    fire(callbackName, payload) {
         if (this._callbacks[callbackName]) {
             this._callbacks[callbackName](payload);
         }
