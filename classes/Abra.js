@@ -5,7 +5,8 @@ class CallbackRegistry {
 
     register(callbackName, callback) {
         if (!callback) {
-            unregisterreturn
+            unregister(callbackName);
+            return;
         }
         this._callbacks[callbackName] = callback;
     }
@@ -15,7 +16,7 @@ class CallbackRegistry {
     }
 
     fire(callbackName) {
-
+        this._callbacks[callbackName]
     }
 }
 
