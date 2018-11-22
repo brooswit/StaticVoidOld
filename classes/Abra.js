@@ -128,7 +128,7 @@ class Abra {
         this._queryEmitter = new QueryEmitter();
         this._callbackRegistry = new EventEmitter();
     }
-    hook(eventName, callback) {
+    on(eventName, callback) {
         return new EventHandler(this, eventName, callback);
     }
     async trigger(eventName, payload) {
