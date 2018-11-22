@@ -74,7 +74,7 @@ class EventHandler extends promise {
     }
 
     async trigger(payload) {
-        retthis._events.emit('triggered', payload);
+        return await this._events.emi('triggered', payload);
     }
 
     off() {
