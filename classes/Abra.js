@@ -48,7 +48,7 @@ class EventQuery {
                 resolve(errors, results);
             }
 
-            this._emitter.emit(eventName, provisionIndex, handleResult, payload);
+            this._emitter.(eventName, provisionIndex, handleResult, payload);
         });
     }
 }
@@ -108,7 +108,7 @@ class Abra {
         return new EventHandler(this, eventName, callback);
     }
     async trigger(eventName, payload) {
-        return await this._emitter.emit(eventName, payload);
+        return await this._emitter.query(eventName, payload);
     }
     close() {
         this._events.emit('closed')
