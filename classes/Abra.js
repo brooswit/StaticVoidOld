@@ -16,10 +16,10 @@ class EventQuery {
             this._emitter.emit(eventName, results, ()=>{
             },
             ()=>{
-            }, ()=>{
-
-        })
-    }
+            },
+            ()=>{
+        );
+    });
 }
 class EventHandler extends promise {
     _capturePromiseResolution(resolve, reject) {
