@@ -1,8 +1,9 @@
 class EventQuery {
     constructor() {
         this._emitter = new EventEmitter();
-        this._emitter = new EventEmitter();
     }
+
+    on(event, callback)
 }
 class EventHandler extends promise {
     _capturePromiseResolution(resolve, reject) {
