@@ -24,21 +24,13 @@ class EventQuery {
                     results.push(null);
                 },
                 (index, result)=>{
-                    handleResponse(index, null, null);
-                    results[index]
-                    results.push({
-                        error: null,
-                        result: null,
-                    });
+                    handleResponse(index, null, result);
                 },
                 (index, error) => {
                     handleResponse(index, error, null);
-                    errored = true;
-                },
-                (index)=>{
-
                 }
             );
+            
         });
     }
 }
