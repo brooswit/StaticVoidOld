@@ -18,7 +18,9 @@ class EventQuery {
             ()=>{
             },
             ()=>{
-            )
+            
+        })
+        });
     }
 }
 class EventHandler extends promise {
