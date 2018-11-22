@@ -16,7 +16,9 @@ class EventQuery {
         return new Promise((resolve, reject) => {
             this._emitter.emit(eventName,
                 ()=>{
-                    results
+                    results.push({
+                        error: null,
+                    })
                 },
                 ()=>{
                 },
