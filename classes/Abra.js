@@ -4,7 +4,7 @@ class EventQuery {
     }
 
     async on(event, callback) {
-        
+        this.event
 
     }
 }
