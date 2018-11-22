@@ -64,17 +64,17 @@ class EventHandler extends promise {
         this._eventName = eventName;
         this._callback = callback;
 
-        this._events = new QueryEmitter();
+        this._internalQuery = new QueryEmitter();
 
-        this._abra._events.once('closed', this.off);
+        this._abra._internalQuery.once('closed', this.off);
         this._abra._queryEmitter.on(this._eventName, this.trigger);
-        this._events.on('triggered', this._callback);
-        this._events.once('triggered', this._resolve);
-        this._events.once('errored',  this._reject);
+        this._internalQuery.on('triggered', this._callback);
+        this._internalQuery.once('triggered', this._resolve);
+        this._internalQuery.once('errored',  this._reject);
     }
 
     async trigger(payload) {
-        return await this._events.emit('triggered', payload);
+        return await this._internalQuery.emit('triggered', payload);
     }
 
     off() {
