@@ -10,6 +10,10 @@ class CallbackRegistry {
     off(callbackName) {
         delete this._callbacks[callbackName];
     }
+
+    fire(callbackName) {
+        
+    }
 }
 
 class QueryEmitter {
