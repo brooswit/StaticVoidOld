@@ -4,6 +4,7 @@ class CallbackRegistry {
     }
 
     register(callbackName, callback) {
+        
         this._callbacks[callbackName] = callback;
     }
 
@@ -12,7 +13,7 @@ class CallbackRegistry {
     }
 
     fire(callbackName) {
-        
+
     }
 }
 
