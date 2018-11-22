@@ -4,7 +4,7 @@ class CallbackRegistry {
     }
 
     register(callbackName, callback) {
-        
+        this._callbacks
     }
 }
 
