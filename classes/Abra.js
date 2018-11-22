@@ -19,7 +19,8 @@ class EventQuery {
         return new Promise((resolve, reject) => {
             this._emitter.emit(eventName,
                 ()=>{
-                    let index = results.length
+                    let index = results.length-1;
+                    results[index] = 
                 }
                 ()=>{
                     results.push({
