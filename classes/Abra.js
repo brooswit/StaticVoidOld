@@ -13,7 +13,7 @@ class EventQuery {
     on(event, promise) {
         const handleResult = this._lookupHandlerByPromise[promise] = async (provisionIndex, handleResult, payload) => {
             let index = provisionIndex();
-            
+            let result, erro
             try 
             let result = await promise(payload);
 
