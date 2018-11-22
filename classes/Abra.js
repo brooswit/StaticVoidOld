@@ -5,8 +5,7 @@ class EventQuery {
 
     on(event, promise) {
         this._emitter.on(event, (resolve, reject) => {
-            promise.then(() 
-
+            promise.then(resolve).catch(reject);
             }
         })
     }
