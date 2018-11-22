@@ -90,8 +90,8 @@ class EventHandler extends promise {
 
         this._callbackRegistry = new CallbackRegistry();
 
-        this._abra._callbackRegistry.register('closed', this.off);
         this._abra._queryEmitter.when(this._eventName, this.trigger);
+        this._abra._callbackRegistry.register('closed', this.off);
         this._callbackRegistry.register('triggered', this._callback);
         this._callbackRegistry.register('triggered', this._resolve);
         this._callbackRegistry.register('errored',  this._reject);
@@ -102,8 +102,8 @@ class EventHandler extends promise {
     }
 
     off() {
-        this._abra._callbackRegistry.unregister('closed', this.off);
         this._abra._queryEmitter.stop(this._eventName, this.trigger);
+        this._abra._callbackRegistry.unregister('closed', this.off);
         this._callbackRegistry.unregister('triggered');
         this._callbackRegistry.unregister('triggered');
         this._callbackRegistry.unregister('errored');
