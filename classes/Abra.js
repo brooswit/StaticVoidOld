@@ -9,8 +9,15 @@ class EventQuery {
     }
 
     on(event, promise) {
-        const handleResult = this._lookupHandlerByPromise[promise] = 
-        this._emitter.on(event, );
+        const handleResult = this._lookupHandlerByPromise[promise] = (provisionIndex, handleResult) => {
+            let index = provisionIndex();
+            promise.then((result)=>{
+                handleResult(index, undefined, result);
+            }).catch((error) => {
+                handleResult(index, error, undefined);
+            });
+        }
+        this._emitter.on(event, handleResult);
     }
 
     query(eventName, payload) {
