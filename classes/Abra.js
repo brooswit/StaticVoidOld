@@ -18,6 +18,17 @@ class EventQuery {
         let results = [];
         let errors = [];
         let errored = false;
+
+        function handleResult(index, error, result) {
+            errored = errored || !!error;
+            results[index] = result;
+            errors[index] = error;
+            for(resultIndex in results) {
+                if(!results[resultIndex]) return;
+            }
+            errors = errored ? errors : null;
+            resolve(errors, results);
+        }
         return new Promise((resolve, reject) => {
             this._emitter.emit(eventName,
                 ()=>{
@@ -26,17 +37,6 @@ class EventQuery {
                     errors.push(undefined);
                 }, handleResult);
             });
-
-            function handleResult(index, error, result) {
-                errored = errored || !!error;
-                results[index] = result;
-                errors[index] = error;
-                for(resultIndex in results) {
-                    if(!results[resultIndex]) return;
-                }
-                errors = errored ? errors : null;
-                resolve(errors, results);
-            }
     };
     }
 }
