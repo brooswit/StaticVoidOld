@@ -4,7 +4,7 @@ class EventQuery {
     }
 
     on(event, promise) {
-        this._emitter.on(event, (begin, handleResult, reject) => {
+        this._emitter.on(event, (begin, handleResult) => {
             let index = begin();
             promise.then((result)=>{
                 handleResult(index, undefined, result);
@@ -26,14 +26,14 @@ class EventQuery {
                     errors.push(undefined);
                 },
                 (index, result) => {
-                    handleResponse(index, undefined, result);
+                    handleResult(index, undefined, result);
                 },
                 (index, error) => {
-                    handleResponse(index, error, undefined);
+                    handleResult(index, error, undefined);
                 }
             );
 
-            function handleResponse(index, error, result) {
+            function handleResult(index, error, result) {
                 errored = errored || !!error;
                 results[index] = result;
                 errors[index] = error;
