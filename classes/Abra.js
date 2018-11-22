@@ -11,7 +11,7 @@ class EventQuery {
     }
 
     on(event, promise) {
-        const handleResult = this._lookupHandlerByPromise[promise] = (provisionIndex, handleResult) => {
+        const handleResult = this._lookupHandlerByPromise[promise] = async (provisionIndex, handleResult, payload) => {
             let index = provisionIndex();
             promise(payload).then((result)=>{
                 handleResult(index, undefined, result);
