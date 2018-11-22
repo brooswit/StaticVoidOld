@@ -2,6 +2,8 @@ class CallbackRegistry {
     constructor() {
         this._callbacks = {};
     }
+
+    
 }
 
 class QueryEmitter {
