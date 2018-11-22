@@ -23,7 +23,7 @@ class EventQuery {
                 ()=>{
                     let index = results.length-1;
                     results.push(undefined);
-                    results.push(undefined);
+                    errors.push(undefined);
                 },
                 (index, result)=>{
                     handleResponse(index, null, result);
@@ -35,7 +35,8 @@ class EventQuery {
 
             function handleResponse(index, error, result) {
                 errored = errored || !!error;
-                results[index] = {error, result};
+                results[index] = result;
+                errors[index]
                 for(resultIndex in results) {
                     if(!results[resultIndex]) return;
                 }
