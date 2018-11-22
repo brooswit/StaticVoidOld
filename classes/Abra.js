@@ -40,7 +40,7 @@ class EventQuery {
                 for(resultIndex in results) {
                     if(!results[resultIndex]) return;
                 }
-                errored ? resolve(results) : reje
+                resolve(errorsresults)
             }
         });
     }
