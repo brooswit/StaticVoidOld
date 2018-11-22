@@ -9,7 +9,7 @@ class EventQuery {
             promise.then((result)=>{
                 resolve(index, result);
             }).catch((error) => {
-                
+                reject(index, error);
             });
         })
     }
@@ -18,7 +18,9 @@ class EventQuery {
         let results = [];
         return new Promise((resolve, reject) => {
             this._emitter.emit(eventName,
-                ()=>{ }
+                ()=>{
+                    let index = results.length
+                }
                 ()=>{
                     results.push({
                         error: null,
