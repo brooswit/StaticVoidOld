@@ -22,7 +22,7 @@ class EventQuery {
                 ()=>{
                     let index = results.length-1;
                     results.push(null);
-                }
+                },
                 (index, result)=>{
                     results[index]
                     results.push({
@@ -30,7 +30,7 @@ class EventQuery {
                         result: null,
                     });
                 },
-                (index)=>{
+                (index, error)=>{
 
                 },
                 (index)=>{
