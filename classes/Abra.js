@@ -3,7 +3,9 @@ class EventQuery {
         this._emitter = new EventEmitter();
     }
 
-    on(event, callback)
+    on(event, callback) {
+        
+    }
 }
 class EventHandler extends promise {
     _capturePromiseResolution(resolve, reject) {
