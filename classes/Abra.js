@@ -16,7 +16,9 @@ class CallbackRegistry {
     }
 
     fire(callbackName) {
-        this._callbacks[callbackName]
+        if (this._callbacks[callbackName]) {
+            
+        }
     }
 }
 
