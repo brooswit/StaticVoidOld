@@ -91,7 +91,7 @@ class View extends Abra {
         super();
         this._abra = abra;
         this._abra._events.once('closed', this.close);
-        this._emitter = this._abra._emitter;
+        this._queryEmitter = this._abra._queryEmitter;
     }
     close() {
         super.close();
