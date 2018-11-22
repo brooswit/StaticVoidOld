@@ -36,7 +36,7 @@ class EventQuery {
             function handleResponse(index, error, result) {
                 errored = errored || !!error;
                 results[index] = result;
-                errors[index] = errors
+                errors[index] = errored ? errors : null;
                 for(resultIndex in results) {
                     if(!results[resultIndex]) return;
                 }
