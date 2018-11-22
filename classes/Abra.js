@@ -3,7 +3,7 @@ class CallbackRegistry {
         this._callbacks = {};
     }
 
-    
+    register()
 }
 
 class QueryEmitter {
