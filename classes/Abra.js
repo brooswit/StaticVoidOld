@@ -1,7 +1,7 @@
 class EventQuery {
     constructor() {
         this._emitter = new EventEmitter();
-        this._promise_
+        this._promise_handler_join
     }
 
     off(event, promise) {
