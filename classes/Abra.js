@@ -101,14 +101,14 @@ class View extends Abra {
 
 class Abra {
     constructor() {
-        this._emitter = new EvenEmitter();
+        this._queryEmitter = new QueryEmitter();
         this._events = new EventEmitter();
     }
     on(eventName, callback) {
         return new EventHandler(this, eventName, callback);
     }
     async trigger(eventName, payload) {
-        return await this._emitter.query(eventName, payload);
+        return await this._queryEmitter.query(eventName, payload);
     }
     close() {
         this._events.emit('closed')
