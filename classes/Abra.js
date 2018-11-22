@@ -3,7 +3,7 @@ class EventQuery {
         this._emitter = new EventEmitter();
     }
 
-    async on(event, callback) {
+    on(event, callback) {
         this.event
 
     }
