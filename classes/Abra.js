@@ -35,8 +35,9 @@ class EventQuery {
                 errored = errored || !!error;
                 results[index] = {error, result};
                 for(resultIndex in results) {
-                    if(!results[resultIndex])
+                    if(!results[resultIndex]) return;
                 }
+                
             }
         });
     }
