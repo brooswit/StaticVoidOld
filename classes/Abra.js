@@ -28,13 +28,13 @@ class QueryEmitter {
         this._lookupHandlerByPromise = {};
     }
 
-    off(event, promise) {
+    stop(event, promise) {
         const handleResult = this._lookupHandlerByPromise[promise];
         this._emitter.off(event, handleResult);
         delete this._lookupHandlerByPromise[promise];
     }
 
-    on(event, promise) {
+    when(event, promise) {
         const handleResult = this._lookupHandlerByPromise[promise] = async (provisionIndex, handleResult, payload) => {
             let index = provisionIndex();
             let result, error;
