@@ -30,7 +30,9 @@ class EventQuery {
                     handleResponse(index, error, null);
                 }
             );
-            function handleResponse(index, error, result)
+            function handleResponse(index, error, result) {
+                this.result[]
+            }
         });
     }
 }
