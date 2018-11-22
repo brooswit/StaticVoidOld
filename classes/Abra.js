@@ -31,7 +31,8 @@ class EventQuery {
                 }
             );
             function handleResponse(index, error, result) {
-                this.result[]
+                this.result[index] = {
+                    error, result}
             }
         });
     }
