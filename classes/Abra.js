@@ -135,7 +135,7 @@ class Abra {
         return await this._queryEmitter.query(eventName, payload);
     }
     close() {
-        this._callbackRegistry.emit('closed')
+        this._callbackRegistry.fire('closed')
     }
 }
 
