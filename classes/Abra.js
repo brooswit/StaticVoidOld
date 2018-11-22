@@ -5,7 +5,8 @@ class EventQuery {
     }
 
     off(event, promise) {
-        const handleResult = this._lookupHandlerByPromise[promise]
+        const handleResult = this._lookupHandlerByPromise[promise];
+        this._emitter.off(event, handleResult);
     }
 
     on(event, promise) {
