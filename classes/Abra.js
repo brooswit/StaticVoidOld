@@ -4,10 +4,14 @@ class EventQuery {
     }
 
     on(event, callback) {
-        this._emitter.on(event, )
+        this._emitter.on(event, async() => {
+
+        })
         this.event
 
     }
+
+    
 }
 class EventHandler extends promise {
     _capturePromiseResolution(resolve, reject) {
