@@ -30,8 +30,8 @@ class EventQuery {
                         result: null,
                     });
                 },
-                (index, error)=>{
-
+                (index, error) => {
+                    errored = true;
                 },
                 (index)=>{
 
