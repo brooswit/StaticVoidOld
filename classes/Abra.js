@@ -102,7 +102,7 @@ class View extends Abra {
 class Abra {
     constructor() {
         this._queryEmitter = new QueryEmitter();
-        this._internalEvents = new QueryEmitter();
+        this._internalEvents = new EventEmitter();
     }
     on(eventName, callback) {
         return new EventHandler(this, eventName, callback);
