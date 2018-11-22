@@ -1,10 +1,11 @@
 class EventQuery {
     constructor() {
         this._emitter = new EventEmitter();
+        this._promise
     }
 
     off(event, promise) {
-        
+
     }
 
     on(event, promise) {
