@@ -36,6 +36,7 @@ class EventQuery {
                     let index = results.length-1;
                     results.push(undefined);
                     errors.push(undefined);
+                    return index;
                 }, handleResult
             );
         });
