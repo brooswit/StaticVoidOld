@@ -20,7 +20,7 @@ class EventQuery {
             let errors = [];
             let errored = false;
 
-            function provision() {
+            function provisionIndex() {
                 let index = results.length-1;
                 results.push(undefined);
                 errors.push(undefined);
@@ -38,7 +38,7 @@ class EventQuery {
                 resolve(errors, results);
             }
 
-            this._emitter.emit(eventName,provision, handleResult);
+            this._emitter.emit(eventName, provisionIndex, handleResult);
         });
     }
 }
