@@ -10,7 +10,7 @@ class EventQuery {
         delete this._lookupHandlerByPromise[promise];
     }
 
-    on(event, promise) {
+    on(event, promise, payload) {
         const handleResult = this._lookupHandlerByPromise[promise] = async (provisionIndex, handleResult, payload) => {
             let index = provisionIndex();
             let result, error;
