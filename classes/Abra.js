@@ -41,7 +41,7 @@ class EventQuery {
                     if(!results[resultIndex]) return;
                 }
                 errors = errored ? errors : null;
-                resolve(errors, results)
+                resolve(errors, results);
             }
         });
     }
