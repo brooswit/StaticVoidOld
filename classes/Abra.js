@@ -26,10 +26,10 @@ class EventQuery {
                     errors.push(undefined);
                 },
                 (index, result)=>{
-                    handleResponse(index, null, result);
+                    handleResponse(index, undefined, result);
                 },
                 (index, error) => {
-                    handleResponse(index, error, null);
+                    handleResponse(index, error, undefined);
                 }
             );
 
