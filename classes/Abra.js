@@ -20,13 +20,7 @@ class EventQuery {
                 error = err;
             }
             handleResult(index, error, result);
-        }
-            promise(payload).then((result)=>{
-                handleResult(index, undefined, result);
-            }).catch((error) => {
-                handleResult(index, error, undefined);
-            });
-        }
+        };
         this._emitter.on(event, handleResult);
     }
 
