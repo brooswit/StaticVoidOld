@@ -11,7 +11,7 @@ class EventQuery {
 
     }
 
-    query
+    query(eventName)
 }
 class EventHandler extends promise {
     _capturePromiseResolution(resolve, reject) {
