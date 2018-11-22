@@ -36,11 +36,11 @@ class EventQuery {
             function handleResponse(index, error, result) {
                 errored = errored || !!error;
                 results[index] = result;
-                errors[index] = errors : null;
+                errors[index] = error;
                 for(resultIndex in results) {
                     if(!results[resultIndex]) return;
                 }
-                errors[index] = errored ? errors : null;
+                errors = errored ? errors : null;
                 resolve(errors, results)
             }
         });
