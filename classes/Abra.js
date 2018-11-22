@@ -88,7 +88,7 @@ class EventHandler extends promise {
         this._eventName = eventName;
         this._callback = callback;
 
-        this._commandRegistry = new QueryEmitter();
+        this._commandRegistry = new CommandRegistry();
 
         this._abra._commandRegistry.once('closed', this.off);
         this._abra._queryEmitter.when(this._eventName, this.trigger);
