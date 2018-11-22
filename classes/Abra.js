@@ -67,7 +67,7 @@ class EventHandler extends promise {
         this._events = new QueryEmitter();
 
         this._abra._events.once('closed', this.off);
-        this._abra._emitter.on(this._eventName, this.trigger);
+        this._abra._queryEmitter.on(this._eventName, this.trigger);
         this._events.on('triggered', this._callback);
         this._events.once('triggered', this._resolve);
         this._events.once('errored',  this._reject);
@@ -79,7 +79,7 @@ class EventHandler extends promise {
 
     off() {
         this._abra._events.off('closed', this.off);
-        this._abra._emitter.off(this._eventName, this.trigger);
+        this._abra._queryEmitter.off(this._eventName, this.trigger);
         this._events.off('triggered', this._callback);
         this._events.off('triggered', this._resolve);
         this._events.off('errored', this._reject);
