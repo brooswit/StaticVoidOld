@@ -4,12 +4,12 @@ class EventQuery {
     }
 
     on(event, promise) {
-        this._emitter.on(event, (begin, resolve, reject) => {
+        this._emitter.on(event, (begin, handleResult, reject) => {
             let index = begin();
             promise.then((result)=>{
-                resolve(index, undefined, result);
+                handleResult(index, undefined, result);
             }).catch((error) => {
-                reject(index, error, 8u);
+                handleResult(index, error, undefined);
             });
         })
     }
