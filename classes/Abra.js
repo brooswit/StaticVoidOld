@@ -18,8 +18,8 @@ class EventQuery {
             ()=>{
             },
             ()=>{
-        );
-    });
+        ));
+    }
 }
 class EventHandler extends promise {
     _capturePromiseResolution(resolve, reject) {
