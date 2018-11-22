@@ -73,8 +73,8 @@ class EventHandler extends promise {
         this._events.once('errored',  this._reject);
     }
 
-    trigger(payload) {
-        this._events.emit('triggered', payload);
+    async trigger(payload) {
+        retthis._events.emit('triggered', payload);
     }
 
     off() {
