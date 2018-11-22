@@ -91,7 +91,7 @@ class EventHandler extends promise {
         this._internalEvents = new QueryEmitter();
 
         this._abra._internalEvents.once('closed', this.off);
-        this._abra._queryEmitter.on(this._eventName, this.trigger);
+        this._abra._queryEmitter.when(this._eventName, this.trigger);
         this._internalEvents.on('triggered', this._callback);
         this._internalEvents.once('triggered', this._resolve);
         this._internalEvents.once('errored',  this._reject);
