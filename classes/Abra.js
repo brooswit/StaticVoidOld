@@ -21,7 +21,7 @@ class EventQuery {
                         result: null,
                     });
                 },
-                ()=>{
+                (index)=>{
                     
                 }
             );
