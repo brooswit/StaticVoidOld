@@ -7,12 +7,13 @@ class EventQuery {
     off(event, promise) {
         const handleResult = this._lookupHandlerByPromise[promise];
         this._emitter.off(event, handleResult);
+        delete this._lookupHandlerByPromise[promise];
     }
 
     on(event, promise) {
         const handleResult = this._lookupHandlerByPromise[promise] = (provisionIndex, handleResult) => {
             let index = provisionIndex();
-            promise.then((result)=>{
+            promise(payload).then((result)=>{
                 handleResult(index, undefined, result);
             }).catch((error) => {
                 handleResult(index, error, undefined);
