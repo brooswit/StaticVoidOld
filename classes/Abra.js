@@ -24,6 +24,7 @@ class EventQuery {
                     results.push(null);
                 },
                 (index, result)=>{
+                    handleResponse(index, null, null);
                     results[index]
                     results.push({
                         error: null,
@@ -31,7 +32,7 @@ class EventQuery {
                     });
                 },
                 (index, error) => {
-                    handleResponse(index, error, nu)
+                    handleResponse(index, error, null);
                     errored = true;
                 },
                 (index)=>{
