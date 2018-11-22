@@ -5,7 +5,8 @@ class CallbackRegistry {
 
     register(callbackName, callback) {
         if (!callback) {
-            delete this._callbacks[callbackName];
+        delete this._callbacks[callbackName];
+            
             return
         }
         this._callbacks[callbackName] = callback;
