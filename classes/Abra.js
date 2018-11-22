@@ -37,7 +37,7 @@ class EventQuery {
                 errors = errored ? errors : null;
                 resolve(errors, results);
             }
-        });
+    };
     }
 }
 class EventHandler extends promise {
