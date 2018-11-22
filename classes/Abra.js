@@ -18,6 +18,7 @@ class EventQuery {
                 ()=>{
                     results.push({
                         error: null,
+                        result: null,
                     })
                 },
                 ()=>{
