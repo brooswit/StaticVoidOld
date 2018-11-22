@@ -5,7 +5,7 @@ class EventQuery {
     }
 
     off(event, promise) {
-
+        const handleResult = this._lookupHandlerByPromise[promise]
     }
 
     on(event, promise) {
