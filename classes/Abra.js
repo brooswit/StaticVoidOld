@@ -13,6 +13,7 @@ class EventQuery {
         let results = [];
         return new Promise((resolve, reject) => {
             this._emitter.emit(eventName,
+                ()=>{ }
                 ()=>{
                     results.push({
                         error: null,
