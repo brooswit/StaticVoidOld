@@ -17,7 +17,7 @@ class CallbackRegistry {
 
     fire(callbackName) {
         if (this._callbacks[callbackName]) {
-            
+            this._callbacks[callbackName](payload);
         }
     }
 }
