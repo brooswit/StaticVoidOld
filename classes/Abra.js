@@ -6,7 +6,9 @@ class EventQuery {
     on(event, promise) {
         this._emitter.on(event, (begin, resolve, reject) => {
             let index = begin();
-            promise.then().catch(reject);
+            promise.then(()=>{
+                
+            }).catch(reject);
         })
     }
 
