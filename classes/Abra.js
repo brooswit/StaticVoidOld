@@ -24,13 +24,7 @@ class EventQuery {
                     let index = results.length-1;
                     results.push(undefined);
                     errors.push(undefined);
-                },
-                (index, result) => {
-                    handleResult(index, undefined, result);
-                },
-                (index, error) => {
-                    handleResult(index, error, undefined);
-                }
+                }, handleResult);
             );
 
             function handleResult(index, error, result) {
