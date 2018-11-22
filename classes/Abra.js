@@ -30,6 +30,9 @@ class EventQuery {
                 errors = errored ? errors : null;
                 resolve(errors, results);
             }
+            function begin() {
+                
+            }
 
             this._emitter.emit(eventName,
                 ()=>{
