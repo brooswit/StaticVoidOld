@@ -157,7 +157,9 @@ class ElementView extends ElementInterface {
         }
         this._eventEmitter.on('sourceChanged', rehook);
         function rehook(oldSource, newSource) {
-            
+            if(oldSource) {
+                
+            }
         }
     }
 }
