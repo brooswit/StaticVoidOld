@@ -4,6 +4,7 @@ class StaticVoid extends Element {
         new SessionManager(this);
         new AccountSessionManager(this);
         new AccountManager(this);
+        
         this._port = process.env.PORT || options.port || 8080;
         this._syncThrottle = options.syncThrottle || 1000/3;
 
@@ -18,11 +19,13 @@ class StaticVoid extends Element {
             .ws('/stream', this._handleStreamRequest)
             .listen(this._port);
     }
+
     _handleWebRequest(req, res) {
         this.trigger('webRequest', {req, res});
     }
+
     _handleWebRequest(ws) {
-        this.trigger('stRequest', ws);
+        this.trigger('streamRequest', ws);
     }
 }
 
