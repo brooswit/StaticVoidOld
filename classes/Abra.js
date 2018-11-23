@@ -193,25 +193,6 @@ class Element extends ElementView {
     constructor(parent) {
         super(new ElementState(parent));
     }
-    _detectLoopWith(newParent) {
-        let hasLoop = false;
-        let oldParent = this._parent;
-        let elementA, elementB = this;
-
-        this._parent = newParent;
-        
-        while (elementB) {
-            elementA = elementA.parent();
-            elementB = elementB && elementB.parent() && elementB.parent().parent();
-            if (elementA === elementB) {
-                hasLoop = true;
-                break;
-            }
-        }
-        this._parent = oldParent;
-        return hasLoop;
-    }
-
     parent() {
         return this._parent;
     }
