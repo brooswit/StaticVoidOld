@@ -206,6 +206,9 @@ class ElementQueryHook {
         element._internalEvents.on('closed', ()=>{
             
         })
+        element._internalEvents.on('source_c', ()=>{
+            
+        })
     }
 }
 
