@@ -180,7 +180,7 @@ class View {
 }
 
 class EventHook {
-    constructor(e)
+    constructor(eventName, promise, element)
 }
 class ElementView extends View, ElementInterface {
     constructor(sourceElement) {
