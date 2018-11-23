@@ -179,6 +179,9 @@ class View {
     }
 }
 
+class EventHook {
+    constructor(e)
+}
 class ElementView extends View, ElementInterface {
     constructor(sourceElement) {
         super(ElementInterface, sourceElement);
