@@ -145,6 +145,7 @@ class ViewFactory {
     }
 
     change(newSource) {
+        if (newSource)
         this._sourceElement = newSource;
     }
 
