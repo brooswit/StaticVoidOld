@@ -114,7 +114,7 @@ class EventHandler extends promise {
 
 class ElementInterface {
     setParent(newParent) {
-        throw("setParent)
+        throw(arguments.callee + "setParent not defined)
     }
     destroy() {}
     parent() {}
