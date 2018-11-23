@@ -149,7 +149,7 @@ class View {
     }
 
     _wrap(methodName) {
-        this
+        this[methodName] = this[methodName]
     }
 
     exists() {
