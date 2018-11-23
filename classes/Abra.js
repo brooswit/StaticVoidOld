@@ -190,7 +190,7 @@ class ElementViewHook {
     _change(newElementView) {
         this.off();
         this._elementView = newElementView;
-        this._elementView.on('source_changed', change)
+        this._elementView.on('source_changed', _change)
         this._elementView.on('view_closed', this.off);
     }
 
