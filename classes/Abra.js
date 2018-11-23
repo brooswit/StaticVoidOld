@@ -136,7 +136,7 @@ class ElementInterface {
 class View {
     constructor(Class, newSource) {
         this._eventEmitter = new EventEmitter();
-        this._isOpen = true;
+        this._open = true;
         this._source = null;
         this.change(newSource);
 
@@ -152,24 +152,27 @@ class View {
         this[methodName] = this[methodName] || wrap;
         function wrap() {
             if (!this.exists()) return;
-            this._source[methodName].call(this._source)
+            this._source[methodName].call(this._source, arguments);
         }
     }
 
+    isOpen() {
+        
+    }
     exists() {
-        return this._isOpen && !!this._source;
+        return this._open && !!this._source;
     }
 
     change(newSource = null) {
-        if (!this._isOpen || newSource === this._sourceElement) return;
+        if (!this._open || newSource === this._sourceElement) return;
         this._sourceElement = newSource;
         this._eventEmitter.emit('source_changed');
     }
 
     close() {
-        if(!this._isOpen) return;
+        if(!this._open) return;
         change(null);
-        this._isOpen = false;
+        this._open = false;
         this._eventEmitter.emit('closed');
     }
 }
