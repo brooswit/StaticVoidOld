@@ -125,6 +125,8 @@ class View extends Abra {
 
 class Abra {
     constructor() {
+        this,_isDestroyed = false;
+        
         this._queryEmitter = new QueryEmitter();
         this._callbackRegistry = new EventEmitter();
     }
