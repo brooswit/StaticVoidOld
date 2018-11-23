@@ -1,36 +1,36 @@
-class CallbackRegistry {
-    constructor() {
-        this._callbacks = {};
-    }
+// class CallbackRegistry {
+//     constructor() {
+//         this._callbacks = {};
+//     }
 
-    register(callbackName, callback) {
-        if (!callback) {
-            unregister(callbackName);
-            return;
-        }
-        this._callbacks[callbackName] = callback;
-    }
+//     register(callbackName, callback) {
+//         if (!callback) {
+//             unregister(callbackName);
+//             return;
+//         }
+//         this._callbacks[callbackName] = callback;
+//     }
 
-    unregister(callbackName) {
-        delete this._callbacks[callbackName];
-    }
+//     unregister(callbackName) {
+//         delete this._callbacks[callbackName];
+//     }
 
-    fire(callbackName, payload) {
-        if (this._callbacks[callbackName]) {
-            this._callbacks[callbackName](payload);
-        }
-    }
-}
+//     fire(callbackName, payload) {
+//         if (this._callbacks[callbackName]) {
+//             this._callbacks[callbackName](payload);
+//         }
+//     }
+// }
 
 class QueryRequester {
     constructor() {
-        this._emitter = new EventEmitter();
+        this._events = new EventEmitter();
         this._lookupHandlerByPromise = {};
     }
 
     stop(event, promise) {
         const handleResult = this._lookupHandlerByPromise[promise];
-        this._emitter.off(event, handleResult);
+        this._events.off(event, handleResult);
         delete this._lookupHandlerByPromise[promise];
     }
 
@@ -45,7 +45,7 @@ class QueryRequester {
             }
             handleResult(index, error, result);
         };
-        this._emitter.on(requestName, handleResult);
+        this._events.on(requestName, handleResult);
     }
 
     request(requestName, payload) {
@@ -72,7 +72,7 @@ class QueryRequester {
                 resolve(errors, results);
             }
 
-            this._emitter.emit(requestName, provisionIndex, handleResult, payload);
+            this._events.emit(requestName, provisionIndex, handleResult, payload);
         });
     }
 }
