@@ -134,7 +134,8 @@ class ElementInterface {
 }
 class ViewFactory {
     constructor(source) {
-        this._
+        this._source = null;
+        this.change
     }
 }
 
