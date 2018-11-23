@@ -130,8 +130,8 @@ class View extends EventEmitter {
     }
 
     change(newSource = null) {
-        if (!this.isOpen() || newSource === this.sourceElement) return;
-        this.sourceElement = newSource;
+        if (!this.isOpen() || this.source === newSource) return;
+        this.source = newSource;
         this.emit('source_changed');
     }
 
