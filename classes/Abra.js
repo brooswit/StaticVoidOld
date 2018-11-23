@@ -234,6 +234,7 @@ class ElementState extends ElementInterface {
         let oldParent = this._parent;
         let elementA, elementB = this;
 
+        this.parent
         this._parent = newParent;
         
         while (elementB) {
