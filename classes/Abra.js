@@ -151,7 +151,7 @@ class ElementView extends View {
     }
 
     element() {
-        return this;
+        return this.source;
     }
 }
 
