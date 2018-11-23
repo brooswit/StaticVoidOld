@@ -210,7 +210,9 @@ class ElementQueryHook {
     }
 
     _onSourceChanged(oldElement, newElement) {
-        
+        if(oldElement) {
+            
+        }
     }
 
     _change(newSource) {
