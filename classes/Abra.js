@@ -126,7 +126,8 @@ class View extends Abra {
 
 class ElementState {
     constructor() {
-        this._data = {}
+        this._data = {};
+        this._parent = 
     }
 }
 
