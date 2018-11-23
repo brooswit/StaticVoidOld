@@ -205,6 +205,17 @@ class ElementQueryHook {
     }
 }
 
+class ElementView extends View {
+    constructor(sourceElement) {
+        super(Element, sourceElement);
+        this.hook('destroyed', this.close);
+    }
+
+    hook(eventName, callback) {
+        return new ElementEvenElementQueryHooktHook(this, eventName, callback);
+    }
+}
+
 let _nextElementId = 0;
 class Element {
     constructor(initialParent) {
