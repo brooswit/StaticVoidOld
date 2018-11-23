@@ -145,6 +145,7 @@ class ElementView extends ElementInterface {
     }
 
     change(newSource) {
+        let oldSource =this._sourceElement
         this._sourceElement = newSource;
         this._eventEmitter.trigger('sourceChanged', oldSource, newSource);
     }
