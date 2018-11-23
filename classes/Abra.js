@@ -219,6 +219,10 @@ class Element {
         return this._parent.element();
     }
 
+    async children() {
+        
+    }
+
     root() {
         let element = this;
         while (element.parent()) {
