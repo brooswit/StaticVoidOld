@@ -102,7 +102,7 @@ class View extends EventEmitter {
     constructor(Class, newSource) {
         this._wrappedMethods = {};
         this._open = true;
-        this._source = null;
+        this.source = null;
         this.change(newSource);
 
         let methods = Object.getOwnPropertyNames(Class.prototype);
@@ -115,7 +115,7 @@ class View extends EventEmitter {
         if(this._wrappedMethods[methodName]) return this._wrappedMethods[methodName];
         this._wrappedMethods[methodName] = function () {
             if (!this.exists()) return;
-            this._source[methodName].call(this._source, arguments);
+            this.source[methodName].call(this.source, arguments);
         }
         this._wrappedMethods[methodName].name = methodName
         return this._wrappedMethods[methodName];
@@ -126,12 +126,12 @@ class View extends EventEmitter {
     }
 
     exists() {
-        return this.isOpen() && !!this._source;
+        return this.isOpen() && !!this.source;
     }
 
     change(newSource = null) {
-        if (!this.isOpen() || newSource === this._sourceElement) return;
-        this._sourceElement = newSource;
+        if (!this.isOpen() || newSource === this.sourceElement) return;
+        this.sourceElement = newSource;
         this.emit('source_changed');
     }
 
@@ -218,8 +218,9 @@ class ElementState extends ElementInterface {
         this._callbackRegistry = new CallbackRegistry();
         this._data = {};
 
-
         this,_isDestroyed = false;
+
+        this.source = this;
 
         this.parent = new ElementView(initialParent);
         this.parent.hook('destroyed', this.destroy);
