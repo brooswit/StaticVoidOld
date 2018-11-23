@@ -171,7 +171,7 @@ class ElementState {
     }
 }
 class ElementInterface {
-    setParent()
+    setParent(newParent {}
 }
 class Element extends ElementInterface {
     constructor(parent) {
