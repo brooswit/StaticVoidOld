@@ -153,18 +153,11 @@ class Element {
         this._parent = newParent;
         this.parentView.setTarget(this._parent);
 
-        this.trigger('newParent', );
+        this.trigger('newParent', newParent, oldParent);
     }
 
     detach() {
         this.attach(null)
-        if (this._isDestroyed) return;
-        if (!this._parent) return;
-
-        this._parent = null;
-        this.parentView.detach();
-
-        this.trigger('dettached');
     }
 
     destroy() {
