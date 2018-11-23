@@ -130,7 +130,7 @@ class ElementView extends ElementInterface {
     }
 
     hook(eventName, promise) {
-        this._eventEmitter.on('')
+        this._eventEmitter.on('sourceChanged'
     }
 }
 
