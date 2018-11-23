@@ -181,6 +181,7 @@ class View {
 
 class EventHook {
     constructor(elementView, eventName, promise) {
+        
         this._eventEmitter.on('source_changed', eventHook.change)
         this._eventEmitter.on('view_closed', eventHook.off);
         this._eventEmitter.on('view_closed', eventHook.off);
