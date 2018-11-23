@@ -163,15 +163,12 @@ class ElementView extends View, ElementInterface {
     constructor(sourceElement) {
         super();
         this._eventEmitter = new EventEmitter();
-        this.hook('destroyed', this.change);
+        this.hook('destroyed', this.close);
         if(sourceElement) {
             this.change(sourceElement);
         }
     }
 
-    change(newSource) {
-        this._sourceElement = newSource;
-        this._eventEmitter.trigger('source_changed', newSource);
     }
 
     close() {
