@@ -201,7 +201,7 @@ class ElementEventHook {
 
 class ElementQueryHook {
     constructor(source, eventName, callback) {
-        this._elementView.on('source_changed', _change)
+        source.on('source_changed', _change)
 
         let queryEmitter = source.element()._queryEmitter
         source.element()._queryEmitter.when(eventName, callback);
