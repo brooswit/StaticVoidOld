@@ -98,7 +98,7 @@ class ElementInterface {
     }
 }
 
-class View extends EventEmitter {
+class View {
     constructor(Class, newSource) {
         this._wrappedMethods = {};
         this._open = true;
