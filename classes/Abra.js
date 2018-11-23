@@ -210,7 +210,7 @@ class ElementView extends View, ElementInterface {
     }
 
     close() {
-        
+        this.emit('closed');
     }
 }
 
