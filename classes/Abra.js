@@ -221,8 +221,6 @@ class Element {
 
         this._isDestroyed = false;
 
-        this.source = this;
-
         this.parent = new ElementView(initialParent);
         this.parent.hook('destroyed', this.destroy);
         this.parent.hook('get_children', this._getThis);
@@ -246,7 +244,7 @@ class Element {
                 break;
             }
         }
-        this.parent.change(oldParentElement)
+        this.parent.change(oldParentElement);
         return hasLoop;
     }
 
