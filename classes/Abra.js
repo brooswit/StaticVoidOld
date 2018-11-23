@@ -156,25 +156,23 @@ class ElementViewHook extends CallbackRegistry, Promise {
         this._eventName = eventName;
         this._callback = callback;
 
-        this._callbackRegistry = new CallbackRegistry();
-
         this._elementView.when(this._eventName, this.trigger);
         this._elementView.register('destroyed', this.off);
-        this._callbackRegistry.register('triggered', this._callback);
-        this._callbackRegistry.register('triggered', this._resolve);
-        this._callbackRegistry.register('errored',  this._reject);
+        this.register('triggered', this._callback);
+        this.register('triggered', this._resolve);
+        this.register('errored',  this._reject);
     }
 
     async trigger(payload) {
-        return await this._callbackRegistry.fire('triggered', payload);
+        return await this.fire('triggered', payload);
     }
 
     off() {
         this._abra._queryEmitter.stop(this._eventName, this.trigger);
         this._abra._callbackRegistry.unregister('destroyed', this.off);
-        this._callbackRegistry.unregister('triggered');
-        this._callbackRegistry.unregister('triggered');
-        this._callbackRegistry.unregister('errored');
+        this.unregister('triggered');
+        this.unregister('triggered');
+        this.unregister('errored');
     }
 }
 
