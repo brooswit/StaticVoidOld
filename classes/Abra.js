@@ -125,8 +125,12 @@ class ElementInterface {
     root() {
         throw(arguments.callee.name + " not defined");
     }
-    hook(eventName, promise) 
-    async trigger(eventName, payload) {}
+    hook(eventName, promise) {
+        throw(arguments.callee.name + " not defined");
+    }
+    async trigger(eventName, payload) {
+        throw(arguments.callee.name + " not defined");
+    }
 }
 
 class ElementView extends ElementInterface {
