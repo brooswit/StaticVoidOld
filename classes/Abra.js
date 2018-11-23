@@ -82,8 +82,8 @@ class ElementQueryHook {
         this._elementView = elementView;
         this._eventName = eventName;
         this._promise = promise;
-        this._source._internalEvents.on('source_changed', this._onSourceChanged);
-        this._source._internalEvents.on('closed', this._onClosed);
+        this._elementView._internalEvents.on('source_changed', this._onSourceChanged);
+        this._elementView._internalEvents.on('closed', this._onClosed);
         this._onSourceChanged(null, source);
     }
 
@@ -97,8 +97,8 @@ class ElementQueryHook {
     }
 
     _onClosed() {
-        this._source._internalEvents.off('source_changed', this._onSourceChanged);
-        this._source._internalEvents.off('closed', this._onClosed);
+        this._elementView._internalEvents.off('source_changed', this._onSourceChanged);
+        this._elementView._internalEvents.off('closed', this._onClosed);
     }
 }
 
@@ -136,6 +136,7 @@ class View {
 
     change(newSource = null) {
         if (!this.isOpen() || this.source === newSource) return;
+        let oldSource = this.source;
         this.source = newSource;
         this._internalEvents.emit('source_changed');
     }
