@@ -146,7 +146,7 @@ class View {
 
 class ElementView extends View {
     constructor(sourceElement) {
-        super(ElementState, sourceElement);
+        super(Element, sourceElement);
         this.hook('destroyed', this.close);
     }
 
@@ -211,7 +211,7 @@ class ElementViewHook {
 }
 
 let _nextElementId = 0;
-class ElementState {
+class Element {
     constructor(initialParent) {
         this._id = _nextElementId++;
 
