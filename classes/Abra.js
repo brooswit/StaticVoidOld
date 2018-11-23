@@ -149,7 +149,7 @@ class Element {
         if (this._parent === newParent) return;
         if (this._detectLoopWith(newParent)) return;
 
-        let 
+        let oldParent = this._parent;
         this._parent = newParent;
         this.parentView.setTarget(this._parent);
 
