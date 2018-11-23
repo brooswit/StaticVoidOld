@@ -230,7 +230,7 @@ class Element {
         let newParentElement = newParentElementOrView.element ? newParentElementOrView.element : newParentElementOrView;
         let hasLoop = false;
         let oldParentElement = this.parent().element;
-        this.parent().change(newParentElement);
+        this._parent.change(newParentElement);
     
         let elementA, elementB = this;
         while (elementB) {
