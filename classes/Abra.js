@@ -222,7 +222,9 @@ class Element {
         this._parent.hook('get_children', this._getThis);
     }
 
-    getPar
+    getParent() {
+        return this._
+    }
 
     async _getThis() {
         return this;
