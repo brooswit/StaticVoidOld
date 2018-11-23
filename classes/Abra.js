@@ -48,7 +48,7 @@ class QueryRequester {
         this._emitter.on(event, handleResult);
     }
 
-    query(eventName, payload) {
+    request(eventName, payload) {
         return new Promise((resolve, reject) => {
             let results = [];
             let errors = [];
@@ -97,10 +97,10 @@ class ElementQueryHook {
 
     _onElementViewSourceChanged(newSource) {
         if(this._source) {
-            this._source.element()._QueryRequester.stop(this._eventName, this._promise);
+            this._source.element()._queryRequester.stop(this._eventName, this._promise);
         }
         if(newSource) {
-            newSource.element()._QueryRequester.when(this._eventName, this._promise);
+            newSource.element()._queryRequester.when(this._eventName, this._promise);
         }
         this._source = newSource;
     }
@@ -181,7 +181,7 @@ class Element {
     constructor(initialParent) {
         this._id = _nextElementId++;
 
-        this._QueryRequester = new QueryRequester();
+        this._queryRequester = new QueryRequester();
         this._internalEvents = new EventEmitter();
         this._data = {};
 
@@ -205,7 +205,7 @@ class Element {
     }
 
     async trigger(eventName, payload) {
-        return await this._QueryRequester.query(eventName, payload);
+        return await this._queryRequester.query(eventName, payload);
     }
 
     element() {
