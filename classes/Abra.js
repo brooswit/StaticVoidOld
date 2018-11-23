@@ -229,8 +229,8 @@ class Element {
     _detectLoopWith(newParentElementOrView) {
         let newParentElement = newParentElementOrView.element ? newParentElementOrView.element : newParentElementOrView;
         let hasLoop = false;
-        let oldParentElement = this.parent.element;
-        this.parent.change(newParentElement);
+        let oldParentElement = this._parent.element;
+        this._parent.change(newParentElement);
     
         let elementA, elementB = this;
         while (elementB) {
@@ -241,7 +241,7 @@ class Element {
                 break;
             }
         }
-        this.parent.change(oldParentElement);
+        this._parent.change(oldParentElement);
         return hasLoop;
     }
 
