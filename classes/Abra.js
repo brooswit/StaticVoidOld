@@ -238,7 +238,7 @@ class ElementView extends View {
     }
 
     hook(eventName, callback) {
-        return new ElementEvenElementQueryHooktHook(this, eventName, callback);
+        return new ElementQueryHook(this, eventName, callback);
     }
 }
 
