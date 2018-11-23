@@ -151,7 +151,6 @@ class Element {
         if (this._parent) this.detach();
 
         this._parent = newParent;
-        this.parentView.trigger('childRe')
         this.parentView.setTarget(this._parent);
 
         this.trigger('attached');
