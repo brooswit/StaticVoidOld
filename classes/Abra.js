@@ -114,12 +114,18 @@ class EventHandler extends promise {
 
 class ElementInterface {
     setParent(newParent) {
-        throw(arguments.callee.name + " not defined)
+        throw(arguments.callee.name + " not defined");
     }
-    destroy() {}
-    parent() {}
-    root() {}
-    hook(eventName, promise) {}
+    destroy() {
+        throw(arguments.callee.name + " not defined");
+    }
+    parent() {
+        throw(arguments.callee.name + " not defined");
+    }
+    root() {
+        throw(arguments.callee.name + " not defined");
+    }
+    hook(eventName, promise) 
     async trigger(eventName, payload) {}
 }
 
