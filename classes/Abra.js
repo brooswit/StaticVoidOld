@@ -134,7 +134,13 @@ class Abra {
         if (this._isDestroyed) return;
         if (this._parent === newParent) return;
         if (this._detectLoopWith(newParent)) return;
+
         if (this._parent) this.detach();
+
+        this._parent = newParent;
+        this.parentView.attach(this._parent);
+
+        this.trigger('attached');
     }
     hook(eventName, callback) {
         return new EventHandler(this, eventName, callback);
