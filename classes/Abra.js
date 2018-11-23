@@ -156,7 +156,9 @@ class ElementView extends ElementInterface {
             eventHandler = rehook(null, this._sourceElement)
         }
         this._eventEmitter.on('sourceChanged', rehook);
-        function rehook(oldSource, newSource)
+        function rehook(oldSource, newSource) {
+            
+        }
     }
 }
 
