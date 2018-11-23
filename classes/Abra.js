@@ -144,9 +144,9 @@ class ElementView extends ElementInterface {
         }
     }
 
-    change(newSourceElement) {
-        this._eventEmitter.trigger('sourceChanged', )
-        this._sourceElement = newSourceElement
+    change(newSource) {
+        this._eventEmitter.trigger('sourceChanged', oldSource, newSource)
+        this._sourceElement = newSource;
     }
 
     hook(eventName, promise) {
