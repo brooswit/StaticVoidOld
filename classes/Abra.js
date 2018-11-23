@@ -273,10 +273,6 @@ class Element {
         return element;
     }
 
-    isDestroyed() {
-        return this.isDestroyed
-    }
-
     changeParent(newParent) {
         if (this._isDestroyed) return;
         if (this.parent._sourceElement === newParent) return;
