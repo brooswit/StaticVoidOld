@@ -245,6 +245,10 @@ class Element {
         return hasLoop;
     }
 
+    element() {
+        return this;
+    }
+
     parent() {
         if (this._isDestroyed) return;
         return this._parent.element;
