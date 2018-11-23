@@ -203,7 +203,7 @@ class ElementViewHook {
 
 class ElementView extends View, ElementInterface {
     constructor(sourceElement) {
-        super(ElementInterface, sourceElement);
+        super(ElementState, sourceElement);
         this.hook('destroyed', this.close);
         if(sourceElement) {
             this.change(sourceElement);
@@ -216,7 +216,7 @@ class ElementView extends View, ElementInterface {
 }
 
 let _nextElementId = 0;
-class ElementState extends ElementInterface, QueryEmitter, {
+class ElementState extends ElementInterface, QueryEmitter, CallbackRegistry {
     constructor(initialParent) {
         this._id = _nextElementId++;
         this,_isDestroyed = false;
