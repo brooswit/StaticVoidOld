@@ -1,10 +1,11 @@
 class StaticVoid extends Element {
     constructor(options = {}) {
+        new ExpressManager(this);
         new WebSocketClientManager(this);
         new SessionManager(this);
         new AccountSessionManager(this);
         new AccountManager(this);
-        
+
         this._port = process.env.PORT || options.port || 8080;
         this._syncThrottle = options.syncThrottle || 1000/3;
 
