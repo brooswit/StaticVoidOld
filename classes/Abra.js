@@ -223,7 +223,7 @@ class Element {
     }
 
     getParent() {
-        return new ElementView
+        return new ElementView(this._parent.s)
     }
 
     async _getThis() {
