@@ -209,6 +209,10 @@ class ElementQueryHook {
         this._change(initialSource);
     }
 
+    _onSourceChanged(oldElement, newElement) {
+        
+    }
+
     _change(newSource) {
         if(source != this._source) {
             if(this._source && ) {
