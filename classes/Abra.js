@@ -192,6 +192,14 @@ class ElementState {
         this._isDestroyed = true;
         this.trigger('destroyed');
     }
+
+    hook(eventName, callback) {
+        return new EventHandler(this, eventName, callback);
+    }
+
+    async trigger(eventName, payload) {
+        return await this._queryEmitter.query(eventName, payload);
+    }
 }
 class ElementInterface {
     setParent(newParent) {}
@@ -204,14 +212,6 @@ class ElementInterface {
 class Element extends ElementView {
     constructor(parent) {
         super(new ElementState(parent));
-    }
-
-    hook(eventName, callback) {
-        return new EventHandler(this, eventName, callback);
-    }
-
-    async trigger(eventName, payload) {
-        return await this._queryEmitter.query(eventName, payload);
     }
 }
 
