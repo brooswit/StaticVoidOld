@@ -92,7 +92,7 @@ class ElementQueryHook {
     }
 
     _isClosed() {
-        return !this._elementView
+        return !this._elementView;
     }
 
     _onSourceChanged(newSource) {
@@ -112,6 +112,7 @@ class ElementQueryHook {
     }
 
     off() {
+        if(_isClosed()) return;
         this._onClosed();
     }
 }
