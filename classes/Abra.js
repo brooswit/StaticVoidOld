@@ -284,14 +284,6 @@ class Element {
         this._isDestroyed = true;
         this.trigger('destroyed');
     }
-
-    hook(eventName, callback) {
-        return new ElementEventHook(this, eventName, callback);
-    }
-
-    async trigger(eventName, payload) {
-        return await this._queryEmitter.query(eventName, payload);
-    }
 }
 
 Element.View = ElementView;
