@@ -208,7 +208,7 @@ class ElementQueryHook {
     }
 
     _change({source, eventName, callback}) {
-        if(source !== )
+        if(source != this._source)
     }
 
         source._internalEvents.on('source_changed', _change)
