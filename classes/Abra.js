@@ -226,7 +226,8 @@ class Element {
         return this;
     }
 
-    _detectLoopWith(newParentElement) {
+    _detectLoopWith(newParentElementOrElement) {
+        let 
         let hasLoop = false;
         let oldParentElement = this.parent.element;
         this.parent.change(newParentElement);
