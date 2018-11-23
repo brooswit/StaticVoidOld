@@ -170,11 +170,6 @@ class Element {
     async trigger(eventName, payload) {
         return await this._queryEmitter.query(eventName, payload);
     }
-
-    destroy() {
-        this,_isDestroyed = true;
-        this._callbackRegistry.fire('destroyed');
-    }
 }
 
 Abra.View = View;
