@@ -154,11 +154,11 @@ class ElementViewHook extends CallbackRegistry, Promise {
         this._elementView = null;
         this._abra = initialElementView;
         this._eventName = eventName;
-        this._callback = callback;
+        this._promise = promise;
 
         this._elementView.when(this._eventName, this.trigger);
         this._elementView.register('destroyed', this.off);
-        this.register('triggered', this._callback);
+        this.register('triggered', this._promise);
         this.register('triggered', this._resolve);
         this.register('errored',  this._reject);
     }
