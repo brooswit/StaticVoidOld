@@ -141,7 +141,7 @@ class ElementState {
 
     setParent(newParent) {
         if (this._isDestroyed) return;
-        if (this._parent === newParent) return;
+        if (this._parentView._pare === newParent) return;
         if (this._detectLoopWith(newParent)) return;
 
         let oldParent = this._parent;
