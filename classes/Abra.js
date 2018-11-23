@@ -275,7 +275,7 @@ class ElementState extends ElementInterface {
     }
 
     hook(eventName, callback) {
-        return new EventHandler(this, eventName, callback);
+        return new ElementEventHook(this, eventName, callback);
     }
 
     async trigger(eventName, payload) {
