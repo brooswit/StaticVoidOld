@@ -220,7 +220,7 @@ class Element {
     }
 
     async children() {
-        
+        return await this.trigger('get_children');
     }
 
     root() {
