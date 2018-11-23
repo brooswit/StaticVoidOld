@@ -162,6 +162,10 @@ class ElementState {
         return hasLoop;
     }
 
+    parent() {
+        return this._parent;
+    }
+
     setParent(newParent) {
         if (this._isDestroyed) return;
         if (this._parentView._sourceElement === newParent) return;
@@ -192,9 +196,6 @@ class ElementInterface {
 class Element extends ElementView {
     constructor(parent) {
         super(new ElementState(parent));
-    }
-    parent() {
-        return this._parent;
     }
 
     root() {
