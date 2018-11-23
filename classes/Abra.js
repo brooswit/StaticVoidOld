@@ -192,6 +192,7 @@ class ElementViewHook {
     }
 
     off() {
+        if(!this._elementView) 
         this._elementView.off('source_changed', change)
         this._elementView.off('view_closed', this.off);
     }
