@@ -240,6 +240,10 @@ class Element {
         this._parent.hook('get_children', this._getThis);
     }
 
+    async _getThis() {
+        return this;
+    }
+
     view() {
         return new ElementView(this.element());
     }
@@ -250,10 +254,6 @@ class Element {
 
     async trigger(eventName, payload) {
         return await this._queryEmitter.query(eventName, payload);
-    }
-
-    async _getThis() {
-        return this;
     }
 
     element() {
