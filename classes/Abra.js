@@ -106,6 +106,10 @@ class ElementQueryHook {
         this._elementView._internalEvents.off('closed', this._onClosed);
         _onSourceChanged(null);
     }
+
+    off() {
+        
+    }
 }
 
 class View {
