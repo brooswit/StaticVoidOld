@@ -178,6 +178,52 @@ class ElementQueryHook {
     }
 }
 
+class View {
+    constructor(Class, newSource) {
+        this._internalEvents = new EventEmitter();
+        this._wrappedMethods = {};
+        this._open = true;
+        this.source = null;
+        this.change(newSource);
+
+        let methods = Object.getOwnPropertyNames(Class.prototype);
+        for (methodIndex in methods) {
+            this[methodName] = this[methodName] || this.wrap(methods[methodIndex])
+        }
+    }
+
+    wrap(methodName) {
+        if(this._wrappedMethods[methodName]) return this._wrappedMethods[methodName];
+        this._wrappedMethods[methodName] = ()=>{
+            if (!this.exists()) return null;
+            this.source[methodName].call(this.source, arguments);
+        }
+        this._wrappedMethods[methodName].name = methodName
+        return this._wrappedMethods[methodName];
+    }
+
+    isOpen() {
+        return this._open;
+    }
+
+    exists() {
+        return this.isOpen() && !!this.source;
+    }
+
+    change(newSource = null) {
+        if (!this.isOpen() || this.source === newSource) return;
+        this.source = newSource;
+        this._internalEvents.emit('source_changed');
+    }
+
+    close() {
+        if(!this.isOpen()) return;
+        change(null);
+        this._open = false;
+        this._internalEvents.emit('closed');
+    }
+}
+
 class ElementView extends View {
     constructor(sourceElement) {
         super(Element, sourceElement);
