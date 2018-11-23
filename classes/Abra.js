@@ -144,17 +144,6 @@ class View {
     }
 }
 
-class ElementView extends View {
-    constructor(sourceElement) {
-        super(Element, sourceElement);
-        this.hook('destroyed', this.close);
-    }
-
-    hook(eventName, callback) {
-        return new ElementEventHook(this, eventName, callback);
-    }
-}
-
 class ElementEventHook extends View {
     // _capturePromiseResolution(resolve, reject) {
     //     this._resolve = resolve;
