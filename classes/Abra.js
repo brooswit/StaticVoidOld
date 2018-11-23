@@ -229,7 +229,7 @@ class Element {
         this._id = _nextElementId++;
 
         this._queryEmitter = new QueryEmitter();
-        this._internalEvents = new QueryEmitter();
+        this._internalEvents = new EventEmitter();
         this._callbackRegistry = new CallbackRegistry();
         this._data = {};
 
