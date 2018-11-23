@@ -235,7 +235,7 @@ class Element {
         let elementA, elementB = this;
         while (elementB) {
             elementA = elementA.parent();
-            elementB = elementB && elementB.parent() && elementB.parent().parent();
+            elementB = elementB && elementB.parent && elementB.parent().parent;
             if (elementA === elementB) {
                 hasLoop = true;
                 break;
