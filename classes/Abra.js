@@ -191,7 +191,7 @@ class ElementInterface {
 }
 class Element extends ElementView {
     constructor(parent) {
-        
+        super(new ElementState())
         this._elementState = new ElementState();
         this.setParent(parent);
     }
