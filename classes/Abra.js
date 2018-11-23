@@ -177,10 +177,6 @@ class ElementState extends ElementInterface {
         return hasLoop;
     }
 
-    parent() {
-        return this._parent;
-    }
-
     root() {
         let element = this;
         while (element.parent()) {
