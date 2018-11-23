@@ -206,13 +206,6 @@ class Element extends ElementView {
         super(new ElementState(parent));
     }
 
-    destroy() {
-        if (this._isDestroyed) return;
-        this.setParent(null);
-        this._isDestroyed = true;
-        this.trigger('destroyed');
-    }
-
     hook(eventName, callback) {
         return new EventHandler(this, eventName, callback);
     }
