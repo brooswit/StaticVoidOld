@@ -144,11 +144,11 @@ class View {
         for (methodIndex in methods) {
             method = methods[methodIndex];
             if (this[method]) continue;
-            this[method] = this[method] || this.makeWrapper(method)
+            this._wrap(method)
         }
     }
 
-    makeWrapper(methodName) {
+    _wrap(methodName) {
         return 
     }
 
