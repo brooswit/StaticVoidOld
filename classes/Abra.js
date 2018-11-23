@@ -238,6 +238,7 @@ class Element {
     destroy() {
         if (this._isDestroyed) return;
         this.parent.close();
+        this._internalEvents.emit('closed')
         this._isDestroyed = true;
         this.trigger('destroyed');
     }
