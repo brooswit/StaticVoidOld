@@ -134,10 +134,11 @@ class Abra {
         this.parentView = new ElementView();
         this.parentView.hook('getChildren', this._getSelf);
         this.parentView.hook('destroyed', this.destroy);
+
         this.attach(parent);
     }
     async _getSelf() {
-        return this
+        return this;
     }
     attach(newParent) {
         if (this._isDestroyed) return;
