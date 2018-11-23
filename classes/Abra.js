@@ -209,8 +209,11 @@ class ElementEventHook {
         this._elementView.off('view_closed', this.off);
     }
 }
+
 class ElementQueryHook {
-    constructor(element, eventName)
+    constructor(element, eventName, callback) {
+        
+    }
 }
 
 let _nextElementId = 0;
