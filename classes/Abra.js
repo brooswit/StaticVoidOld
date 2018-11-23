@@ -129,7 +129,7 @@ class View {
         let methodNames = Object.getOwnPropertyNames(Class.prototype);
         for (methodNameIndex in methodNames) {
             let methodName = methodNames[methodNameIndex];
-            if(methodName[])
+            if (methodName[0]==='_') continue;
             this[methodName] = this[methodName] || this.wrap(methods[methodIndex])
         }
     }
