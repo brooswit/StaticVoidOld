@@ -34,7 +34,7 @@ class QueryRequester {
         delete this._lookupHandlerByPromise[promise];
     }
 
-    when(event, promise) {
+    when(requestName, promise) {
         const handleResult = this._lookupHandlerByPromise[promise] = async (provisionIndex, handleResult, payload) => {
             let index = provisionIndex();
             let result, error;
@@ -45,10 +45,10 @@ class QueryRequester {
             }
             handleResult(index, error, result);
         };
-        this._emitter.on(event, handleResult);
+        this._emitter.on(requestName, handleResult);
     }
 
-    request(eventName, payload) {
+    request(requestName, payload) {
         return new Promise((resolve, reject) => {
             let results = [];
             let errors = [];
@@ -72,7 +72,7 @@ class QueryRequester {
                 resolve(errors, results);
             }
 
-            this._emitter.emit(eventName, provisionIndex, handleResult, payload);
+            this._emitter.emit(requestName, provisionIndex, handleResult, payload);
         });
     }
 }
