@@ -130,6 +130,7 @@ class ElementState {
         this._id = _nextElementId++;
         this._data = {};
         this._parentView = new ElementView();
+        
     }
 }
 
