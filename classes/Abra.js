@@ -152,8 +152,8 @@ class View {
             if (!this.exists()) return;
             this._source[methodName].call(this._source, arguments);
         }
-        wrappedMethod[methodName].name = methodName
-        return wrappedMethod[methodName];
+        this._wrappedMethod[methodName].name = methodName
+        return this._wrappedMethod[methodName];
     }
 
     isOpen() {
