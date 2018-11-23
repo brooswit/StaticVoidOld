@@ -246,7 +246,7 @@ class Element {
     }
 
     parent() {
-        return this._parent;
+        return this._parent.element;
     }
 
     root() {
