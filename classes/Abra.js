@@ -125,6 +125,7 @@ class View extends Abra {
 
 class Abra {
     constructor() {
+        this._parent = nul;
         this,_isDestroyed = false;
 
         this._queryEmitter = new QueryEmitter();
