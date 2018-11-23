@@ -138,7 +138,7 @@ class Abra {
         return await this._queryEmitter.query(eventName, payload);
     }
     destroy() {
-        this,_destroy
+        this,_isDestroyed =
         this._callbackRegistry.fire('destroyed');
     }
 }
