@@ -124,7 +124,11 @@ class View extends Abra {
     }
 }
 
-class ElementState
+class ElementState {
+    constructor() {
+        
+    }
+}
 
 let _nextElementId = 0;
 class Element {
