@@ -149,43 +149,39 @@ class ElementView extends View {
         super(Element, sourceElement);
         this.hook('destroyed', this.close);
     }
-
-    hook(eventName, promise) {
-        new ElementHook(this, eventName, promise);
-    }
 }
 
-class ElementHook extends View, Promise {
-    _capturePromiseResolution(resolve, reject) {
-        this._resolve = resolve;
-        this._reject = reject;
-    }
+// class ElementHook extends View, Promise {
+//     _capturePromiseResolution(resolve, reject) {
+//         this._resolve = resolve;
+//         this._reject = reject;
+//     }
 
-    constructor(initialElementView, eventName, promise) {
-        super(this._capturePromiseResolution);
-        this._elementView = null;
-        this._eventName = eventName;
-        this._promise = promise;
+//     constructor(initialElementView, eventName, promise) {
+//         super(this._capturePromiseResolution);
+//         this._elementView = null;
+//         this._eventName = eventName;
+//         this._promise = promise;
 
-        this._elementView.when(this._eventName, this.trigger);
-        this._elementView.register('destroyed', this.off);
-        this.register('triggered', this._promise);
-        this.register('triggered', this._resolve);
-        this.register('errored',  this._reject);
-    }
+//         this._elementView.when(this._eventName, this.trigger);
+//         this._elementView.register('destroyed', this.off);
+//         this.register('triggered', this._promise);
+//         this.register('triggered', this._resolve);
+//         this.register('errored',  this._reject);
+//     }
 
-    async trigger(payload) {
-        return await this.fire('triggered', payload);
-    }
+//     async trigger(payload) {
+//         return await this.fire('triggered', payload);
+//     }
 
-    off() {
-        this._abra._queryEmitter.stop(this._eventName, this.trigger);
-        this._abra._callbackRegistry.unregister('destroyed', this.off);
-        this.unregister('triggered');
-        this.unregister('triggered');
-        this.unregister('errored');
-    }
-}
+//     off() {
+//         this._abra._queryEmitter.stop(this._eventName, this.trigger);
+//         this._abra._callbackRegistry.unregister('destroyed', this.off);
+//         this.unregister('triggered');
+//         this.unregister('triggered');
+//         this.unregister('errored');
+//     }
+// }
 
 class ElementViewHook {
     constructor(initialElementView, eventName, promise) {
