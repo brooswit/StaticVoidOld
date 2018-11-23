@@ -201,7 +201,7 @@ class ElementEventHook {
 
 class ElementQueryHook {
     constructor(element, eventName, callback) {
-        element.element()._queryEmitter
+        element.element()._queryEmitter.when(eventName, callback)
     }
 }
 
