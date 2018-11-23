@@ -139,6 +139,10 @@ class ElementState {
         this._callbackRegistry = new EventEmitter();
     }
 
+    async _getSelf() {
+        return this;
+    }
+
     _detectLoopWith(newParent) {
         let hasLoop = false;
         let oldParent = this._parent;
