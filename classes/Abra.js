@@ -156,6 +156,7 @@ class Element {
     }
 
     detach() {
+        this.attach(null)
         if (this._isDestroyed) return;
         if (!this._parent) return;
 
