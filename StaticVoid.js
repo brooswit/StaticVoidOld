@@ -1,6 +1,6 @@
 class StaticVoid extends Element {
     new WebSocketClientManager(this);
-    new WebSocketClientManager(this);
+    new SessionManager(this);
     const express = require('express');
 const enableWs = require('express-ws');
 const path = require('path');
