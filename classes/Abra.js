@@ -152,7 +152,7 @@ class Element {
         this._parent = newParent;
         this.parentView.setTarget(this._parent);
 
-        this.trigger('attached');
+        this.trigger('newParent');
     }
 
     detach() {
