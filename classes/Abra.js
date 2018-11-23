@@ -194,6 +194,10 @@ class ElementViewHook {
             elementView.off('view_closed', off);
         }
     }
+
+    off() {
+        
+    }
 }
 
 class ElementView extends View, ElementInterface {
