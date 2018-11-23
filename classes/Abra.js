@@ -171,10 +171,10 @@ class ElementState {
     }
 }
 
-class Element {
+class Element extends ElementInterface {
     constructor(parent) {
         this._elementState = new ElementState();
-        this.attach(parent);
+        this.setParent(parent);
     }
 
     async _getSelf() {
