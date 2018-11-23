@@ -130,7 +130,9 @@ class ElementState {
         this._id = _nextElementId++;
         this._data = {};
         this._parentView = new ElementView();
-        
+
+        this._queryEmitter = new QueryEmitter();
+        this._callbackRegistry = new EventEmitter();
     }
 }
 
