@@ -222,7 +222,7 @@ class ElementState extends ElementInterface {
 
         this.parent = new ElementView(initialParent);
         this.parent.hook('destroyed', this.destroy);
-        this.parent.hook('getChildren', this._getSelf);
+        this.parent.hook('get_children', this._getSelf);
     }
 
     async _getSelf() {
