@@ -144,7 +144,7 @@ class Element {
         return this;
     }
 
-    attach(newParent) {
+    setParent(newParent) {
         if (this._isDestroyed) return;
         if (this._parent === newParent) return;
         if (this._detectLoopWith(newParent)) return;
