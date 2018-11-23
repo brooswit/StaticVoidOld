@@ -161,7 +161,7 @@ class View {
     }
 
     exists() {
-        return this._open && !!this._source;
+        return this.isOpen() && !!this._source;
     }
 
     change(newSource = null) {
