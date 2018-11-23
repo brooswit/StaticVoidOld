@@ -133,7 +133,7 @@ class ElementInterface {
     }
 }
 
-class ViewFactory {
+class View {
     constructor(source, controllers) {
         this._eventEmitter = new EventEmitter();
         this._source = null;
@@ -152,7 +152,7 @@ class ViewFactory {
 
     close() {
         change(null);
-        this._eventEmitter.emit('c');
+        this._eventEmitter.emit('closed');
     }
 }
 
