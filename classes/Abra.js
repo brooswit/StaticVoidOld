@@ -198,7 +198,7 @@ class ElementViewHook {
     }
 }
 
-class ElementView extends View, ElementInterface {
+class ElementView extends View {
     constructor(sourceElement) {
         super(ElementState, sourceElement);
         this.hook('destroyed', this.close);
