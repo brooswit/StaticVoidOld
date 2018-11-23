@@ -250,7 +250,7 @@ class Element {
     }
 
     parent() {
-        if (this._isDestroyed) return;
+        if (this._isDestroyed) return null;
         return this._parent.element();
     }
 
