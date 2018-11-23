@@ -142,9 +142,7 @@ class View {
 
         let methods = Object.getOwnPropertyNames(Class.prototype);
         for (methodIndex in methods) {
-            method = methods[methodIndex];
-            if (this[method]) continue;
-            this._wrap(method)
+            this._wrap(methods[methodIndex])
         }
     }
 
