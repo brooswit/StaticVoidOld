@@ -216,6 +216,7 @@ class ElementState extends ElementInterface {
 
         this._queryEmitter = new QueryEmitter();
         this._callbackRegistry = new CallbackRegistry();
+
         this._data = {};
         this.source = this;
 
