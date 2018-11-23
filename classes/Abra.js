@@ -244,4 +244,5 @@ class Element {
     }
 }
 
+module.exports = 
 Element.View = ElementView;
