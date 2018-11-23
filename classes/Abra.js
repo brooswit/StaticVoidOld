@@ -138,7 +138,7 @@ class Abra {
         if (this._parent) this.detach();
 
         this._parent = newParent;
-        this.parentView.attach(this._parent);
+        this.parentView.setTarget(this._parent);
 
         this.trigger('attached');
     }
