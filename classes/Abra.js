@@ -200,11 +200,11 @@ class ElementEventHook {
 }
 
 class ElementQueryHook {
-    constructor(initialSource, eventName, callback) {
+    constructor(source, eventName, callback) {
         this._source = null;
         this._eventName = null;
         this._promise = null
-        this._change(initialSource);
+        this._change({source, eventName, callback});
     }
 
         source._internalEvents.on('source_changed', _change)
