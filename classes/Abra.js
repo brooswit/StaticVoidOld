@@ -202,15 +202,6 @@ class ElementState {
     }
 }
 
-class ElementInterface {
-    setParent(newParent) {}
-    destroy() {}
-    parent() {}
-    root() {}
-    hook(eventName, promise) {}
-    async trigger(eventName, payload) {}
-}
-
 class Element extends ElementView {
     constructor(parent) {
         super(new ElementState(parent));
