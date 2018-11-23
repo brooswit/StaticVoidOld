@@ -133,9 +133,8 @@ class ElementInterface {
     }
 }
 
-class View exte{
+class View extends EventEmitter {
     constructor(Class, newSource) {
-        this = new EventEmitter();
         this._wrappedMethods = {};
         this._open = true;
         this._source = null;
@@ -182,10 +181,10 @@ class View exte{
 class EventHook {
     constructor(elementView, eventName, promise) {
         elementView
-        this.on('source_changed', eventHook.change)
-        this.on('view_closed', eventHook.off);
-        this.on('view_closed', eventHook.off);
-        this.on('view_closed', ()=>{
+        elementView.on('source_changed', eventHook.change)
+        elementView.on('view_closed', eventHook.off);
+        elementView.on('view_closed', eventHook.off);
+        elementView.on('view_closed', ()=>{
 
         })
         function change(newSource) {
