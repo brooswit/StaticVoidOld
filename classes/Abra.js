@@ -217,13 +217,11 @@ class Element {
 
         this._isDestroyed = false;
 
-        this._parent = new ElementView(initialParent);
-        this._parent.hook('destroyed', this.destroy);
-        this._parent.hook('get_children', this._getThis);
+        this.parent = new ElementView(initialParent);
+        this.parent.hook('destroyed', this.destroy);
+        this.parent.hook('get_children', this._getThis);
     }
 
-    getParent() {
-        return new ElementView(this._parent.element);
     }
 
     async _getThis() {
