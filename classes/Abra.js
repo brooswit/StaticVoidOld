@@ -124,7 +124,7 @@ class View extends Abra {
     }
 }
 
-class Abra {
+class Element {
     constructor(parent) {
         this._parent = null;
         this,_isDestroyed = false;
