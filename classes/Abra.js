@@ -210,7 +210,7 @@ class ElementEventHook {
     }
 }
 class ElementEventHook {
-    
+
 }
 
 let _nextElementId = 0;
@@ -231,7 +231,7 @@ class Element {
     }
 
     hook(eventName, callback) {
-        return new ElementEventHook(this, eventName, callback);
+        return new ElementQueryHook(this, eventName, callback);
     }
 
     async trigger(eventName, payload) {
