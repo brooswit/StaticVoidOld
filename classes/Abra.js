@@ -161,7 +161,6 @@ class Element {
         this.setParent(null);
         this._isDestroyed = true;
         this.trigger('destroyed');
-        this.close();
     }
 
     hook(eventName, callback) {
