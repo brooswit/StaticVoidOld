@@ -78,7 +78,7 @@ class QueryEmitter {
 }
 
 class ElementQueryHook {
-    constructor(view, eventName, promise) {
+    constructor(elementView, eventName, promise) {
         this._view = null;
         this._eventName = eventName;
         this._promise = promise;
