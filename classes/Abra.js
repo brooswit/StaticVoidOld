@@ -196,7 +196,9 @@ class ElementView extends View, ElementInterface {
         this._eventEmitter.on('view_closed', ()=>{
 
         })
-        function change(newSource)
+        function change(newSource) {
+            eventHook.change(newSource);
+        }
     }
 }
 
