@@ -205,7 +205,7 @@ class ElementQueryHook {
         this._eventName = eventName;
         this._promise = promise;
         this._source._internalEvents.on('source_changed', this._onSourceChanged);
-        this._source._internalEvents.on('closed', _onClosed);
+        this._source._internalEvents.on('closed', this._onClosed);
         this._source.element()._queryEmitter.when
         this._change(initialSource);
     }
@@ -214,6 +214,10 @@ class ElementQueryHook {
         if(oldElement) {
             oldElement._queryEmitter.stop(this._eventName, this._promise);
         }
+    }
+
+    _onClosed() {
+        
     }
 
     _change(newSource) {
