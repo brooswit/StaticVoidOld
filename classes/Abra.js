@@ -226,7 +226,6 @@ class Element {
         return this;
     }
 
-
     _detectLoopWith(newParentElementOrView) {
         let newParentElement = newParentElementOrView.element ? newParentElementOrView.element : newParentElementOrView;
         let hasLoop = false;
@@ -244,6 +243,10 @@ class Element {
         }
         this.parent.change(oldParentElement);
         return hasLoop;
+    }
+
+    parent() {
+        
     }
 
     root() {
