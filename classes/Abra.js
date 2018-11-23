@@ -164,6 +164,18 @@ class Element {
         return hasLoop;
     }
 
+    parent() {
+        return this._parent;
+    }
+
+    root() {
+        let element = this;
+        while (element.parent()) {
+            element = element.parent();
+        }
+        return element;
+    }
+
     setParent(newParent) {
         if (this._isDestroyed) return;
         if (this._parent === newParent) return;
