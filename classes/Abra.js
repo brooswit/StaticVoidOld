@@ -202,7 +202,7 @@ class ElementEventHook {
 class ElementQueryHook {
     constructor(element, eventName, callback) {
         element.element()._queryEmitter.when(eventName, callback);
-        element
+        element._internalEvents.on('closed')
     }
 }
 
