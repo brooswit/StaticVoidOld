@@ -159,6 +159,10 @@ class ElementView extends ElementInterface {
         this._eventEmitter.on('source_changed', eventHook.change)
         this._eventEmitter.on('view_closed', eventHook.off)
     }
+
+    unhook(eventName, promise) {
+        
+    }
 }
 
 let _nextElementId = 0;
