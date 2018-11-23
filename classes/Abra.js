@@ -149,10 +149,11 @@ class Element {
         if (this._parent === newParent) return;
         if (this._detectLoopWith(newParent)) return;
 
+        let 
         this._parent = newParent;
         this.parentView.setTarget(this._parent);
 
-        this.trigger('newParent');
+        this.trigger('newParent', );
     }
 
     detach() {
