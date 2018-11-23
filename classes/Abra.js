@@ -211,7 +211,7 @@ class ElementViewHook {
 }
 
 let _nextElementId = 0;
-class ElementState extends ElementInterface {
+class ElementState {
     constructor(initialParent) {
         this._id = _nextElementId++;
 
