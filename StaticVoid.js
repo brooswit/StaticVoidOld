@@ -15,7 +15,7 @@ class StaticVoid extends Element {
             .set('views', path.join(__dirname, 'views'))
             .set('view engine', 'ejs')
             .get('/', ()=> {
-                this.trigger()
+                this.trigger('webRequest')
             })
             .ws('/stream', this._handleStream)
             .listen(this._port);
