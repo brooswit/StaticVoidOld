@@ -206,19 +206,6 @@ class Element extends ElementView {
         super(new ElementState(parent));
     }
 
-
-    setParent(newParent) {
-        if (this._isDestroyed) return;
-        if (this._parent === newParent) return;
-        if (this._detectLoopWith(newParent)) return;
-
-        let oldParent = this._parent;
-        this._parent = newParent;
-        this.parentView.setTarget(this._parent);
-
-        this.trigger('newParent', newParent, oldParent);
-    }
-
     destroy() {
         if (this._isDestroyed) return;
         this.setParent(null);
