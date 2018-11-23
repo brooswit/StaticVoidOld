@@ -100,7 +100,7 @@ class QueryEmitter {
 
 class View {
     constructor(Class, newSource) {
-        this._eventEmitter = new EventEmitter();
+        this._internalEvents = new EventEmitter();
         this._wrappedMethods = {};
         this._open = true;
         this.source = null;
@@ -133,14 +133,14 @@ class View {
     change(newSource = null) {
         if (!this.isOpen() || this.source === newSource) return;
         this.source = newSource;
-        this._eventEmitter.emit('source_changed');
+        this._internalEvents.emit('source_changed');
     }
 
     close() {
         if(!this.isOpen()) return;
         change(null);
         this._open = false;
-        this._eventEmitter.emit('closed');
+        this._internalEvents.emit('closed');
     }
 }
 
