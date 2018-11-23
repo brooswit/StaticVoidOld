@@ -134,7 +134,7 @@ class ElementInterface {
 }
 
 class View {
-    constructor(newSource) {
+    constructor(Class, newSource) {
         this._eventEmitter = new EventEmitter();
         this._isOpen = true;
         this._source = null;
