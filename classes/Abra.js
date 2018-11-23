@@ -195,14 +195,17 @@ class Element {
     }
 
     async _getThis() {
+        if (this._isDestroyed) return null;
         return this;
     }
 
     view() {
+        if (this._isDestroyed) return null;
         return new ElementView(this.element());
     }
 
     hook(eventName, callback) {
+        if (this._isDestroyed) return null;
         return new ElementQueryHook(this, eventName, callback);
     }
 
