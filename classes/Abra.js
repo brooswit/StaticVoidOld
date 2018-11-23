@@ -155,11 +155,11 @@ class ElementView extends View {
     }
 }
 
-class ElementEventHook extends View, Promise {
-    _capturePromiseResolution(resolve, reject) {
-        this._resolve = resolve;
-        this._reject = reject;
-    }
+class ElementEventHook extends View {
+    // _capturePromiseResolution(resolve, reject) {
+    //     this._resolve = resolve;
+    //     this._reject = reject;
+    // }
 
     constructor(initialElementView, eventName, promise) {
         super(this._capturePromiseResolution);
