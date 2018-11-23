@@ -171,7 +171,8 @@ class ElementState {
     }
 }
 class ElementInterface {
-    setParent(newParent {}
+    setParent(newParent) {}
+    destroy() {}
 }
 class Element extends ElementInterface {
     constructor(parent) {
