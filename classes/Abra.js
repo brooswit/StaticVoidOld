@@ -275,7 +275,7 @@ class Element {
 
     changeParent(newParent) {
         if (this._isDestroyed) return;
-        if (this.parent._sourceElement === newParent) return;
+        if (this._parent._sourceElement === newParent) return;
         if (this._hasLoopWithParent(newParent)) return;
 
         let oldParent = this._parent;
