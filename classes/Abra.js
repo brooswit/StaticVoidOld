@@ -144,8 +144,10 @@ class ViewFactory {
         return !!this._source;
     }
 
-    change(newSource) {
-        if (newSource)
+    change(newSource = null) {
+        if (newSource === this._sourceElement) {
+            
+        }
         this._sourceElement = newSource;
     }
 
