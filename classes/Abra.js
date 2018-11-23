@@ -208,10 +208,6 @@ class ElementView extends View, ElementInterface {
     hook(eventName, promise) {
         new ElementViewHook(this, eventName, promise);
     }
-
-    close() {
-        this.emit('closed');
-    }
 }
 
 let _nextElementId = 0;
