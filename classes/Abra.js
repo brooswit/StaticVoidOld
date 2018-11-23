@@ -100,6 +100,7 @@ class ElementInterface {
 
 class View {
     constructor(Class, newSource) {
+        this._EventEmitter =  EventEmitter()
         this._wrappedMethods = {};
         this._open = true;
         this.source = null;
