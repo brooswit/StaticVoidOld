@@ -87,16 +87,18 @@ class ElementQueryHook {
 
         this._elementView._internalEvents.on('source_changed', this._onSourceChanged);
         this._elementView._internalEvents.on('closed', this._onClosed);
+
         this._onSourceChanged(null, source);
     }
 
     _onSourceChanged(newSource, oldSource) {
-        if(oldSource) {
-            oldSource.element()._queryEmitter.stop(this._eventName, this._promise);
+        if(this._source) {
+            this._source.element()._queryEmitter.stop(this._eventName, this._promise);
         }
         if(newSource) {
             newSource.element()._queryEmitter.when(this._eventName, this._promise);
         }
+        this._source
     }
 
     _onClosed() {
