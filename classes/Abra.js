@@ -124,14 +124,15 @@ class View extends Abra {
     }
 }
 
+let _nextElementId = 0;
 class ElementState {
     constructor() {
+        this._id = _nextElementId++;
         this._data = {};
-        this._parentView 
+        this._parentView =
     }
 }
 
-let _nextElementId = 0;
 class Element {
     constructor(parent) {
         this._id = _nextElementId++;
