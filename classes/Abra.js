@@ -142,7 +142,7 @@ class ElementView extends ElementInterface {
     }
 
     change(newSource) {
-        
+        this.source
     }
 
     hook(eventName, promise) {
