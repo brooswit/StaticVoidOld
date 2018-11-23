@@ -238,7 +238,6 @@ class Element {
         let elementA, elementB = this;
 
         this.parent.change(newParentElement)
-        this._parent = newParent;
         
         while (elementB) {
             elementA = elementA.parent();
@@ -248,7 +247,7 @@ class Element {
                 break;
             }
         }
-        this.par = oldParentElement;
+        this.parent.change(oldParentElement)
         return hasLoop;
     }
 
