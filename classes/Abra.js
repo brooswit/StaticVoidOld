@@ -155,7 +155,7 @@ class ElementView extends View {
     }
 }
 
-class ElementViewHook extends View, CallbackRegistry, Promise {
+class ElementViewHook extends View, Promise {
     _capturePromiseResolution(resolve, reject) {
         this._resolve = resolve;
         this._reject = reject;
