@@ -212,10 +212,11 @@ class ElementView extends View, ElementInterface {
 let _nextElementId = 0;
 class ElementState extends ElementInterface {
     constructor(initialParent) {
+        this._id = _nextElementId++;
+        
         this._queryEmitter = new QueryEmitter();
         this._callbackRegistry = new CallbackRegistry();
 
-        this._id = _nextElementId++;
         this,_isDestroyed = false;
         this._data = {};
 
