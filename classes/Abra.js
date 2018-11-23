@@ -278,7 +278,7 @@ class Element {
         if (this._parent.element() === newParent) return;
 
         let oldParent = this._parent.element();
-        this._parent = newParent;
+        this._parent.change(newParent);
         this.parent.change(this.newParent);
 
         this.trigger('parent_changed', newParent, oldParent);
