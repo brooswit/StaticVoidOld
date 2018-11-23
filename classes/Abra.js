@@ -156,7 +156,7 @@ class View {
     }
 }
 
-class ElementView extends ElementInterface {
+class ElementView extends View, ElementInterface {
     constructor(sourceElement) {
         super();
         this._eventEmitter = new EventEmitter();
