@@ -141,6 +141,10 @@ class ViewFactory {
     change(newSource) {
         this._sourceElement = newSource;
     }
+
+    close() {
+        change(null);
+    }
 }
 
 class ElementView extends ElementInterface {
