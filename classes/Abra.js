@@ -259,7 +259,7 @@ class Element {
 
         let oldParent = this._parent;
         this._parent = newParent;
-        this.parent.change(this._parent);
+        this.parent.change(this.newParent);
 
         this.trigger('parent_changed', newParent, oldParent);
     }
