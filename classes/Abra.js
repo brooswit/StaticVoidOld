@@ -146,9 +146,8 @@ class View {
         }
     }
 
-    _wrap(methodName) {
-         wrap;
-        function wrap() {
+    wrap(methodName) {
+        return function wrap() {
             if (!this.exists()) return;
             this._source[methodName].call(this._source, arguments);
         }
