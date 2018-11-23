@@ -143,7 +143,7 @@ class Element {
     async _getSelf() {
         return this;
     }
-    
+
     attach(newParent) {
         if (this._isDestroyed) return;
         if (this._parent === newParent) return;
@@ -155,6 +155,24 @@ class Element {
         this.parentView.setTarget(this._parent);
 
         this.trigger('attached');
+    }
+
+    detach() {
+        if (this._isDestroyed) return;
+        if (!this._parent) return;
+
+        this._parent = null;
+        this.parentView.detach();
+
+        this.trigger('dettached');
+    }
+
+    destroy() {
+        if (this._isDestroyed) return;
+        this.detach();
+        this._isDestroyed = true;
+        this.trigger('destroyed');
+        this.close();
     }
 
     hook(eventName, callback) {
