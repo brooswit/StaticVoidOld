@@ -191,15 +191,8 @@ class ElementInterface {
 }
 class Element extends ElementView {
     constructor(parent) {
-        super(new ElementState())
-        this._elementState = new ElementState();
-        this.setParent(parent);
+        super(new ElementState(parent));
     }
-
-    async _getSelf() {
-        return this;
-    }
-
     _detectLoopWith(newParent) {
         let hasLoop = false;
         let oldParent = this._parent;
