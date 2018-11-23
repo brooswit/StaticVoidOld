@@ -128,6 +128,7 @@ class Abra {
         this._queryEmitter = new QueryEmitter();
         this._callbackRegistry = new EventEmitter();
     }
+    attach
     hook(eventName, callback) {
         return new EventHandler(this, eventName, callback);
     }
