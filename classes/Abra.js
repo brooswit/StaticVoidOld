@@ -288,10 +288,4 @@ class ElementState {
     }
 }
 
-class Element extends ElementView {
-    constructor(parent) {
-        super(new ElementState(parent));
-    }
-}
-
 Element.View = ElementView;
