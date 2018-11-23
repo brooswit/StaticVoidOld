@@ -93,7 +93,7 @@ class ElementQueryHook {
         }
         if(newElement) {
             newElement.element()._queryEmitter.when(this._eventName, this._promise);
-            this.source = 
+            this._source = newElement.
         }
     }
 
