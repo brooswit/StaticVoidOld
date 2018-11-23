@@ -175,7 +175,8 @@ class ElementInterface {
     destroy() {}
     parent() {}
     root() {}
-    hook() {}
+    hook(eventName, promise) {}
+    trigger() {}
 }
 class Element extends ElementInterface {
     constructor(parent) {
