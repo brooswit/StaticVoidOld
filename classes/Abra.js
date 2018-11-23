@@ -151,6 +151,7 @@ class ElementView extends ElementInterface {
 
     close() {
         change(null);
+        this.eventHook.off
     }
 
     hook(eventName, promise) {
