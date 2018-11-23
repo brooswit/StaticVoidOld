@@ -148,7 +148,7 @@ class View {
     }
 
     wrap(methodName) {
-        
+        return (this._source
     }
 
     exists() {
