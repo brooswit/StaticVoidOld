@@ -248,7 +248,7 @@ class Element {
                 break;
             }
         }
-        this._parent = oldParent;
+        this.par = oldParentElement;
         return hasLoop;
     }
 
