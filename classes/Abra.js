@@ -79,7 +79,7 @@ class QueryEmitter {
 
 class ElementQueryHook {
     constructor(source, eventName, promise) {
-        this._source = source;
+        this._source = null;
         this._eventName = eventName;
         this._promise = promise;
         this._source._internalEvents.on('source_changed', this._onSourceChanged);
@@ -93,6 +93,7 @@ class ElementQueryHook {
         }
         if(newElement) {
             newElement.element()._queryEmitter.when(this._eventName, this._promise);
+            this.source = 
         }
     }
 
