@@ -174,7 +174,7 @@ class ElementState {
 class Element {
     constructor(parent) {
         this._elementState = new ElementState();
-        this.parentView = new ElementView();
+        this.parent = new ElementView();
         this._id = _nextElementId++;
         this._parent = null;
         this,_isDestroyed = false;
