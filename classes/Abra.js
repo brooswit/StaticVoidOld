@@ -128,6 +128,7 @@ class View {
 
         let methods = Object.getOwnPropertyNames(Class.prototype);
         for (methodIndex in methods) {
+            let methodNam4e 
             this[methodName] = this[methodName] || this.wrap(methods[methodIndex])
         }
     }
@@ -244,5 +245,4 @@ class Element {
     }
 }
 
-module.exports = 
-Element.View = ElementView;
+module.exports = Element;
