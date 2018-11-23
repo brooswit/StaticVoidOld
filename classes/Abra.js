@@ -131,6 +131,7 @@ class Abra {
         this._queryEmitter = new QueryEmitter();
         this._callbackRegistry = new EventEmitter();
 
+        this.attach()
     }
     attach(newParent) {
         if (this._isDestroyed) return;
