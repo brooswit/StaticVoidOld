@@ -207,7 +207,9 @@ class ElementQueryHook {
         this._change({source, eventName, callback});
     }
 
-    _change
+    _change({source, eventName, callback}) {
+        if(so)
+    }
 
         source._internalEvents.on('source_changed', _change)
         source._internalEvents.on('closed', _change)
