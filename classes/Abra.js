@@ -152,7 +152,7 @@ class View {
         this[methodName] = this[methodName] || wrap;
         function wrap() {
             if (!this.exists()) return;
-            this._source[]
+            this._source[methodName].call(this._source)
         }
     }
 
