@@ -229,12 +229,12 @@ class ElementState extends ElementInterface {
         return this;
     }
 
-    _detectLoopWith(newElement) {
+    _detectLoopWith(newParentElement) {
         let hasLoop = false;
-        let oldParent = this.parent.source;
+        let oldParentElement = this.parent.source;
         let elementA, elementB = this;
 
-        this.parent.change(newSource)
+        this.parent.change(newParentElement)
         this._parent = newParent;
         
         while (elementB) {
