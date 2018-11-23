@@ -140,6 +140,7 @@ class Element {
 
         this.attach(parent);
     }
+
     async _getSelf() {
         return this;
     }
