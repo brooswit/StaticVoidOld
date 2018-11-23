@@ -157,8 +157,9 @@ class View {
     }
 
     isOpen() {
-        
+        return this._open;
     }
+
     exists() {
         return this._open && !!this._source;
     }
