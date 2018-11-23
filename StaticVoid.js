@@ -14,9 +14,7 @@ class StaticVoid extends Element {
         _app.use(express.static(path.join(__dirname, 'public')))
             .set('views', path.join(__dirname, 'views'))
             .set('view engine', 'ejs')
-            .get('/', ()=>{
-                this.trigger('s')
-            })
+            .get('/', ())
             .ws('/stream', this._handleStream)
             .listen(this._port);
     }
