@@ -113,7 +113,7 @@ class EventHandler extends promise {
 
 
 class ElementInterface {
-    setParent(newParent) {
+    changeParent(newParent) {
         throw(arguments.callee.name + " not defined");
     }
     destroy() {
@@ -145,7 +145,7 @@ class ElementView extends ElementInterface {
     }
 
     change(newSource) {
-        let oldSource =this._sourceElement
+        let oldSource = this._sourceElement;
         this._sourceElement = newSource;
         this._eventEmitter.trigger('sourceChanged', oldSource, newSource);
     }
@@ -206,7 +206,7 @@ class ElementState extends ElementInterface {
         return element;
     }
 
-    setParent(newParent) {
+    changeParent(newParent) {
         if (this._isDestroyed) return;
         if (this.parent._sourceElement === newParent) return;
         if (this._hasLoopWithParent(newParent)) return;
@@ -220,7 +220,7 @@ class ElementState extends ElementInterface {
 
     destroy() {
         if (this._isDestroyed) return;
-        this.setParent(null);
+        this.changeParent(null);
         this._isDestroyed = true;
         this.trigger('destroyed');
     }
