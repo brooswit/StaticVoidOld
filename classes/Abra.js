@@ -234,7 +234,7 @@ class Element {
         let oldParent = this._parent.element();
         this._parent.change(newParent);
 
-        this.trigger('parent_changed', {newParent, oldParent});
+        this.trigger('parent_changed', newParent);
     }
 
     destroy() {
