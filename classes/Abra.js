@@ -143,6 +143,7 @@ class Element {
     async _getSelf() {
         return this;
     }
+    
     attach(newParent) {
         if (this._isDestroyed) return;
         if (this._parent === newParent) return;
@@ -155,6 +156,7 @@ class Element {
 
         this.trigger('attached');
     }
+
     hook(eventName, callback) {
         return new EventHandler(this, eventName, callback);
     }
