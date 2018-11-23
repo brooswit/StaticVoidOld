@@ -133,9 +133,9 @@ class ElementInterface {
     }
 }
 
-class View {
+class View exte{
     constructor(Class, newSource) {
-        this._eventEmitter = new EventEmitter();
+        this = new EventEmitter();
         this._wrappedMethods = {};
         this._open = true;
         this._source = null;
@@ -168,24 +168,24 @@ class View {
     change(newSource = null) {
         if (!this.isOpen() || newSource === this._sourceElement) return;
         this._sourceElement = newSource;
-        this._eventEmitter.emit('source_changed');
+        this.emit('source_changed');
     }
 
     close() {
         if(!this.isOpen()) return;
         change(null);
         this._open = false;
-        this._eventEmitter.emit('closed');
+        this.emit('closed');
     }
 }
 
 class EventHook {
     constructor(elementView, eventName, promise) {
         elementView
-        this._eventEmitter.on('source_changed', eventHook.change)
-        this._eventEmitter.on('view_closed', eventHook.off);
-        this._eventEmitter.on('view_closed', eventHook.off);
-        this._eventEmitter.on('view_closed', ()=>{
+        this.on('source_changed', eventHook.change)
+        this.on('view_closed', eventHook.off);
+        this.on('view_closed', eventHook.off);
+        this.on('view_closed', ()=>{
 
         })
         function change(newSource) {
