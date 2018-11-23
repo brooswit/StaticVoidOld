@@ -147,6 +147,10 @@ class View {
         }
     }
 
+    wrap(methodName) {
+        
+    }
+
     exists() {
         return this._isOpen && !!this._source;
     }
