@@ -285,7 +285,7 @@ class Element {
 
     destroy() {
         if (this._isDestroyed) return;
-        this.close();
+        this.parent.close();
         this._isDestroyed = true;
         this.trigger('destroyed');
     }
