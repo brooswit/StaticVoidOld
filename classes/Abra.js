@@ -134,7 +134,9 @@ class ElementInterface {
 }
 
 class ViewSchema {
-    
+    constructor() {
+        
+    }
 }
 
 class ViewFactory {
