@@ -209,7 +209,9 @@ class ElementQueryHook {
 
     _change({source, eventName, callback}) {
         if(source != this._source) {
-            if(this._source)
+            if(this._source && ) {
+
+            }
         }
     }
 
