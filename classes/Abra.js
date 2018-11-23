@@ -100,7 +100,7 @@ class ElementInterface {
 
 class View {
     constructor(Class, newSource) {
-        this._EventEmitter =  EventEmitter()
+        this._eventEmitter = new EventEmitter();
         this._wrappedMethods = {};
         this._open = true;
         this.source = null;
@@ -133,14 +133,14 @@ class View {
     change(newSource = null) {
         if (!this.isOpen() || this.source === newSource) return;
         this.source = newSource;
-        this.emit('source_changed');
+        this._eventEmitter.emit('source_changed');
     }
 
     close() {
         if(!this.isOpen()) return;
         change(null);
         this._open = false;
-        this.emit('closed');
+        this._eventEmitter.emit('closed');
     }
 }
 
