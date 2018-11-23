@@ -165,13 +165,13 @@ class View {
     }
 
     change(newSource = null) {
-        if (!this._open || newSource === this._sourceElement) return;
+        if (!this.isOpen() || newSource === this._sourceElement) return;
         this._sourceElement = newSource;
         this._eventEmitter.emit('source_changed');
     }
 
     close() {
-        if(!this._open) return;
+        if(!this.isOpen()) return;
         change(null);
         this._open = false;
         this._eventEmitter.emit('closed');
