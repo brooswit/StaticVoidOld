@@ -1,4 +1,4 @@
-const express = require('express');
+class StaticVoid const express = require('express');
 const enableWs = require('express-ws');
 const path = require('path');
 
