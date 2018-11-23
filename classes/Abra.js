@@ -207,7 +207,7 @@ class ElementQueryHook {
         this._change(initialSource);
     }
 
-    _change({source, eventName, callback}) {
+    _change(newSource) {
         if(source != this._source) {
             if(this._source && ) {
 
