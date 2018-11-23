@@ -277,7 +277,7 @@ class Element {
         if (this._isDestroyed) return;
         if (this._parent.element() === newParent) return;
 
-        let oldParent = this._parent;
+        let oldParent = this._parent.element();
         this._parent = newParent;
         this.parent.change(this.newParent);
 
