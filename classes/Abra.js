@@ -181,9 +181,9 @@ class View extends EventEmitter {
 class EventHook {
     constructor(elementView, eventName, promise) {
         elementView
-        elementView.on('source_changed', eventHook.change)
-        elementView.on('view_closed', eventHook.off);
-        elementView.on('view_closed', eventHook.off);
+        elementView.on('source_changed', change)
+        elementView.on('view_closed', off);
+        elementView.on('view_closed', off);
         elementView.on('view_closed', ()=>{
 
         })
