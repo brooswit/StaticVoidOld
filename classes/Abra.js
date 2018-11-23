@@ -151,7 +151,8 @@ class View {
     _wrap(methodName) {
         this[methodName] = this[methodName] || wrap;
         function wrap() {
-            if (!this.e)
+            if (!this.exists()) return;
+            
         }
     }
 
