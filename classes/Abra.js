@@ -133,6 +133,10 @@ class ElementInterface {
     }
 }
 
+class ViewSchema {
+    
+}
+
 class ViewFactory {
     constructor(source, controllers) {
         this._source = null;
