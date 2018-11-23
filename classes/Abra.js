@@ -158,8 +158,8 @@ class ElementViewHook extends promise {
 
         this._callbackRegistry = new CallbackRegistry();
 
-        this._abra._queryEmitter.when(this._eventName, this.trigger);
-        this._abra._callbackRegistry.register('destroyed', this.off);
+        this._elementView.when(this._eventName, this.trigger);
+        this._elementView.register('destroyed', this.off);
         this._callbackRegistry.register('triggered', this._callback);
         this._callbackRegistry.register('triggered', this._resolve);
         this._callbackRegistry.register('errored',  this._reject);
