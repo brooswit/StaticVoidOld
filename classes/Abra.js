@@ -126,9 +126,10 @@ class View {
         this.source = null;
         this.change(newSource);
 
-        let methods = Object.getOwnPropertyNames(Class.prototype);
-        for (methodIndex in methods) {
+        let methodNames = Object.getOwnPropertyNames(Class.prototype);
+        for (methodNameIndex in methodNames) {
             let methodName = methodNames[methodNameIndex];
+            if(methodName[])
             this[methodName] = this[methodName] || this.wrap(methods[methodIndex])
         }
     }
