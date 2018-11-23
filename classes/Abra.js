@@ -214,10 +214,13 @@ class ElementQueryHook {
         if(oldElement) {
             oldElement._queryEmitter.stop(this._eventName, this._promise);
         }
+        if(newElement) {
+            newElement._queryEmitter.wh(this._eventName, this._promise);
+        }
     }
 
     _onClosed() {
-        
+
     }
 
     _change(newSource) {
