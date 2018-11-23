@@ -174,15 +174,6 @@ class ElementState {
 class Element {
     constructor(parent) {
         this._elementState = new ElementState();
-        this._parent = null;
-        this,_isDestroyed = false;
-
-        this._queryEmitter = new QueryEmitter();
-        this._callbackRegistry = new EventEmitter();
-
-        this.parentView.hook('destroyed', this.destroy);
-        this.parentView.hook('getChildren', this._getSelf);
-
         this.attach(parent);
     }
 
