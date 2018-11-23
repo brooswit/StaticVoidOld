@@ -189,7 +189,7 @@ class ElementView extends View, ElementInterface {
     }
 
     hook(eventName, promise) {
-        let eventHook = new EventHook(eventName, promise, this._sourceElement);
+        let eventHook = this.wrap(new EventHook(eventName, promise, this._sourceElement);
         this._eventEmitter.on('source_changed', eventHook.change)
         this._eventEmitter.on('view_closed', eventHook.off)
         this._eventEmitter.on('view_closed', eventHook.off)
