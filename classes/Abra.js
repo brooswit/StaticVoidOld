@@ -76,6 +76,7 @@ class QueryEmitter {
         });
     }
 }
+
 class EventHandler extends promise {
     _capturePromiseResolution(resolve, reject) {
         this._resolve = resolve;
