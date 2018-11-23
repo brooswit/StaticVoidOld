@@ -189,7 +189,7 @@ class ElementInterface {
     hook(eventName, promise) {}
     async trigger(eventName, payload) {}
 }
-class Element extends ElementInterface {
+class Element extends ElementView {
     constructor(parent) {
         this._elementState = new ElementState();
         this.setParent(parent);
