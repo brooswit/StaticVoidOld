@@ -134,6 +134,7 @@ class Abra {
         if (this._isDestroyed) return;
         if (this._parent === newParent) return;
         if (this._detectLoopWith(newParent)) return;
+        if (this._parent) de
     }
     hook(eventName, callback) {
         return new EventHandler(this, eventName, callback);
