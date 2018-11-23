@@ -183,7 +183,7 @@ class ElementHook {
         change(elementView);
         elementView.hook(eventName, promise);
         function change(newElementView) {
-            elementView
+            elementView.off('source_changed', change);
             elementView.on('source_changed', change)
             elementView.on('view_closed', off);
         }
