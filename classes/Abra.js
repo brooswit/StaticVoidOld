@@ -220,31 +220,8 @@ class ElementQueryHook {
 
     _onClosed() {
         this._source._internalEvents.off('source_changed', this._onSourceChanged);
-        this._source._internalEvents.('closed', this._onClosed);
+        this._source._internalEvents.off('closed', this._onClosed);
     }
-
-    _change(newSource) {
-        if(source != this._source) {
-            if(this._source && ) {
-
-            }
-        }
-    }
-
-        source._internalEvents.on('source_changed', _change)
-        source._internalEvents.on('closed', _change)
-
-        let queryEmitter = source.element()._queryEmitter
-        source.element()._queryEmitter.when(eventName, callback);
-        source._internalEvents.on('closed', ()=>{
-            
-        })
-        element._internalEvents.on('source_changed', ()=>{
-            
-        })
-    }
-
-    _onChange
 }
 
 class ElementView extends View {
