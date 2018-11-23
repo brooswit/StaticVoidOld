@@ -242,7 +242,6 @@ class Element {
         if (this._isDestroyed) return;
         if (this._parent.element() === newParent) return;
 
-        let oldParent = this._parent.element();
         this._parent.change(newParent);
 
         this.trigger('parent_changed', newParent);
