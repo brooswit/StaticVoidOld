@@ -149,6 +149,10 @@ class ElementView extends View {
         super(Element, sourceElement);
         this.hook('destroyed', this.close);
     }
+
+    element() {
+        return this;
+    }
 }
 
 class ElementEventHook extends View, Promise {
