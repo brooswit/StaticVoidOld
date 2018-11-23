@@ -137,7 +137,17 @@ class ElementState {
         this._callbackRegistry = new EventEmitter();
     }
 
-    setParent()
+    setParent(newParent) {
+        if (this._isDestroyed) return;
+        if (this._parent === newParent) return;
+        if (this._detectLoopWith(newParent)) return;
+
+        let oldParent = this._parent;
+        this._parent = newParent;
+        this.parentView.setTarget(this._parent);
+
+        this.trigger('newParent', newParent, oldParent);
+    }
 }
 
 class Element {
