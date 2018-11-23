@@ -108,7 +108,7 @@ class ElementQueryHook {
     }
 
     off() {
-        
+        this._onClosed();
     }
 }
 
