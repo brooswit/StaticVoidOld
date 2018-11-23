@@ -22,7 +22,7 @@ class CallbackRegistry {
     }
 }
 
-class QueryEmitter {
+class QueryRequester {
     constructor() {
         this._emitter = new EventEmitter();
         this._lookupHandlerByPromise = {};
@@ -97,10 +97,10 @@ class ElementQueryHook {
 
     _onElementViewSourceChanged(newSource) {
         if(this._source) {
-            this._source.element()._queryEmitter.stop(this._eventName, this._promise);
+            this._source.element()._QueryRequester.stop(this._eventName, this._promise);
         }
         if(newSource) {
-            newSource.element()._queryEmitter.when(this._eventName, this._promise);
+            newSource.element()._QueryRequester.when(this._eventName, this._promise);
         }
         this._source = newSource;
     }
@@ -181,7 +181,7 @@ class Element {
     constructor(initialParent) {
         this._id = _nextElementId++;
 
-        this._queryEmitter = new QueryEmitter();
+        this._QueryRequester = new QueryRequester();
         this._internalEvents = new EventEmitter();
         this._data = {};
 
@@ -205,7 +205,7 @@ class Element {
     }
 
     async trigger(eventName, payload) {
-        return await this._queryEmitter.query(eventName, payload);
+        return await this._QueryRequester.query(eventName, payload);
     }
 
     element() {
