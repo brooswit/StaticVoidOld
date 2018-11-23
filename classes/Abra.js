@@ -129,7 +129,9 @@ class ElementView extends ElementInterface {
         this.hook('destroyed', this.setSource);
     }
 
-    hook(eventName, p)
+    hook(eventName, promise) {
+        this._eventEmitter.on('')
+    }
 }
 
 let _nextElementId = 0;
