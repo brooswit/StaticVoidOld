@@ -152,7 +152,6 @@ class ElementViewHook extends View, CallbackRegistry, Promise {
     constructor(initialElementView, eventName, promise) {
         super(this._capturePromiseResolution);
         this._elementView = null;
-        this._abra = initialElementView;
         this._eventName = eventName;
         this._promise = promise;
 
