@@ -193,7 +193,9 @@ class ElementView extends View, ElementInterface {
         this._eventEmitter.on('source_changed', eventHook.change)
         this._eventEmitter.on('view_closed', eventHook.off);
         this._eventEmitter.on('view_closed', eventHook.off);
-        this._eventEmitter.on('vi')
+        this._eventEmitter.on('view_closed', ()=>{
+            
+        })
     }
 }
 
