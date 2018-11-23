@@ -149,8 +149,6 @@ class Element {
         if (this._parent === newParent) return;
         if (this._detectLoopWith(newParent)) return;
 
-        if (this._parent) this.detach();
-
         this._parent = newParent;
         this.parentView.setTarget(this._parent);
 
