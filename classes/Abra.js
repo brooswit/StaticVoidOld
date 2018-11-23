@@ -212,6 +212,8 @@ class ElementQueryHook {
             
         })
     }
+
+    _onChange
 }
 
 class ElementView extends View {
