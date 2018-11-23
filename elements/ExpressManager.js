@@ -1,0 +1,24 @@
+
+
+        this._port = process.env.PORT || options.port || 8080;
+        this._syncThrottle = options.syncThrottle || 1000/3;
+
+        this._app = express();
+
+        enableWs(_app);
+
+        _app.use(express.static(path.join(__dirname, 'public')))
+            .set('views', path.join(__dirname, 'views'))
+            .set('view engine', 'ejs')
+            .get('/', this._handleWebRequest)
+            .ws('/stream', this._handleStreamRequest)
+            .listen(this._port);
+    }
+
+    _handleWebRequest(req, res) {
+        this.trigger('webRequest', {req, res});
+    }
+
+    _handleWebRequest(ws) {
+        this.trigger('streamRequest', ws);
+    }
