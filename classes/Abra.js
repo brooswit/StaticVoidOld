@@ -233,10 +233,10 @@ class Element {
     }
 
     _detectLoopWith(newParentElement) {
+        let hasLoop = false;
         let oldParentElement = this.parent.source;
         this.parent.change(newParentElement);
     
-        let hasLoop = false;
         let elementA, elementB = this;
         while (elementB) {
             elementA = elementA.parent();
