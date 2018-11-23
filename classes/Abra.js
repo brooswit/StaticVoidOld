@@ -207,10 +207,12 @@ class Element {
     }
 
     async trigger(eventName, payload) {
+        if (this._isDestroyed) return null;
         return await this._queries.request(eventName, payload);
     }
 
     element() {
+        if (this._isDestroyed) return null;
         return this;
     }
 
