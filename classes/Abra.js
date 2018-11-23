@@ -209,6 +209,9 @@ class ElementEventHook {
         this._elementView.off('view_closed', this.off);
     }
 }
+class ElementEventHook {
+    
+}
 
 let _nextElementId = 0;
 class Element {
