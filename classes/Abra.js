@@ -194,7 +194,7 @@ class View {
 
     wrap(methodName) {
         if(this._wrappedMethods[methodName]) return this._wrappedMethods[methodName];
-        this._wrappedMethods[methodName] = ()=>{
+        this._wrappedMethods[methodName] = function () {
             if (!this.exists()) return null;
             this.source[methodName].call(this.source, arguments);
         }
