@@ -144,8 +144,8 @@ class ElementView extends ElementInterface {
         }
     }
 
-    change(newSource) {
-        this.source
+    change(newSourceElement) {
+        this._sourceElement
     }
 
     hook(eventName, promise) {
