@@ -226,6 +226,14 @@ class Element {
         this._parent.hook('get_children', this._getThis);
     }
 
+    hook(eventName, callback) {
+        return new ElementEventHook(this, eventName, callback);
+    }
+
+    async trigger(eventName, payload) {
+        return await this._queryEmitter.query(eventName, payload);
+    }
+
     async _getThis() {
         return this;
     }
