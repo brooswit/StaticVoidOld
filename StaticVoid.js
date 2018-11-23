@@ -1,4 +1,6 @@
-class StaticVoid const express = require('express');
+class StaticVoid extends Element {
+    new WebSocketClientManag
+    const express = require('express');
 const enableWs = require('express-ws');
 const path = require('path');
 
