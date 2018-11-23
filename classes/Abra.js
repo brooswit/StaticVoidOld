@@ -111,7 +111,17 @@ class EventHandler extends promise {
     }
 }
 
-class View extends Abra {
+
+class ElementInterface {
+    setParent(newParent) {}
+    destroy() {}
+    parent() {}
+    root() {}
+    hook(eventName, promise) {}
+    async trigger(eventName, payload) {}
+}
+
+class View extends Abra ElementInterface {
     constructor(abra) {
         super();
         this._abra = abra;
@@ -125,7 +135,7 @@ class View extends Abra {
 }
 
 let _nextElementId = 0;
-class ElementState {
+class ElementState {extend
     constructor() {
         this._id = _nextElementId++;
         this,_isDestroyed = false;
