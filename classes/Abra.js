@@ -211,7 +211,7 @@ class ElementQueryHook {
 
     _onSourceChanged(oldElement, newElement) {
         if(oldElement) {
-            
+            oldElement._queryEmitter.stop(this._event)
         }
     }
 
