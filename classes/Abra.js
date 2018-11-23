@@ -203,7 +203,8 @@ class ElementState extends ElementInterface {
 
     destroy() {
         if (this._isDestroyed) return;
-        this.setParent(null);_parentView
+        this.setParent(null);
+        this._isDestroyed = true;
         this.trigger('destroyed');
     }
 
