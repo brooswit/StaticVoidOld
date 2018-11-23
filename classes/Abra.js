@@ -75,7 +75,7 @@ class QueryEmitter {
             this._emitter.emit(eventName, provisionIndex, handleResult, payload);
         });
     }
-// }
+}
 
 // class ElementInterface {
 //     changeParent(newParent) {
@@ -151,7 +151,7 @@ class ElementView extends View {
     }
 }
 
-class ElementHook extends View, Promise {
+class ElementEventHook extends View, Promise {
     _capturePromiseResolution(resolve, reject) {
         this._resolve = resolve;
         this._reject = reject;
@@ -183,7 +183,7 @@ class ElementHook extends View, Promise {
     }
 }
 
-class ElementViewHook {
+class ElementEventHook {
     constructor(initialElementView, eventName, promise) {
         this._elementView = null;
         this._change(initialElementView);
