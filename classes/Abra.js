@@ -211,7 +211,7 @@ class ElementView extends View, ElementInterface {
 }
 
 let _nextElementId = 0;
-class ElementState extends ElementInterface {
+class ElementState extends ElementInterface, QueryEmitter, EventEmitter {
     constructor(parent) {
         this._id = _nextElementId++;
         this,_isDestroyed = false;
