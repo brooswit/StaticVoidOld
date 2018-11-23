@@ -152,7 +152,7 @@ class View {
             this._source[methodName].call(this._source, arguments);
         }
         wrappedMethod.name = methodName
-        return 
+        return wrappedMethod;
     }
 
     isOpen() {
