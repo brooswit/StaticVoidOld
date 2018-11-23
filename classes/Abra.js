@@ -143,6 +143,17 @@ class View extends EventEmitter {
     }
 }
 
+class ElementView extends View {
+    constructor(sourceElement) {
+        super(ElementState, sourceElement);
+        this.hook('destroyed', this.close);
+    }
+
+    hook(eventName, promise) {
+        new ElementViewHook(this, eventName, promise);
+    }
+}
+
 class ElementViewHook extends View, CallbackRegistry, Promise {
     _capturePromiseResolution(resolve, reject) {
         this._resolve = resolve;
@@ -195,17 +206,6 @@ class ElementViewHook {
         if(!this._elementView) return;
         this._elementView.off('source_changed', change)
         this._elementView.off('view_closed', this.off);
-    }
-}
-
-class ElementView extends View {
-    constructor(sourceElement) {
-        super(ElementState, sourceElement);
-        this.hook('destroyed', this.close);
-    }
-
-    hook(eventName, promise) {
-        new ElementViewHook(this, eventName, promise);
     }
 }
 
