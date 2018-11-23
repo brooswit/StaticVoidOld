@@ -174,7 +174,8 @@ class ElementInterface {
     setParent(newParent) {}
     destroy() {}
     parent() {}
-    root())
+    root() {}
+    hook() {}
 }
 class Element extends ElementInterface {
     constructor(parent) {
