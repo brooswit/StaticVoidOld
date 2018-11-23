@@ -139,6 +139,8 @@ class View {
         this._isOpen = true;
         this._source = null;
         this.change(newSource);
+
+        
     }
 
     exists() {
