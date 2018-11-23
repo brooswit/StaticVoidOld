@@ -176,7 +176,7 @@ class ElementInterface {
     parent() {}
     root() {}
     hook(eventName, promise) {}
-    trigger(eventName, payload) {}
+    async trigger(eventName, payload) {}
 }
 class Element extends ElementInterface {
     constructor(parent) {
