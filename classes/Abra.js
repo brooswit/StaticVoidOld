@@ -205,9 +205,6 @@ class ElementView extends View, ElementInterface {
     constructor(sourceElement) {
         super(ElementState, sourceElement);
         this.hook('destroyed', this.close);
-        if(sourceElement) {
-            this.change(sourceElement);
-        }
     }
 
     hook(eventName, promise) {
