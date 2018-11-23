@@ -21,6 +21,9 @@ class StaticVoid extends Element {
     _handleWebRequest(req, res) {
         this.trigger('webRequest', {req, res});
     }
+    _handleWebRequest(ws) {
+        this.trigger('stRequest', ws);
+    }
 }
 
 const express = require('express');
