@@ -136,7 +136,7 @@ class ElementInterface {
 class View {
     constructor(Class, newSource) {
         this._eventEmitter = new EventEmitter();
-        this._wrappedMethod = {};
+        this._wrappedMethods = {};
         this._open = true;
         this._source = null;
         this.change(newSource);
@@ -148,13 +148,13 @@ class View {
     }
 
     wrap(methodName) {
-        if(this._wrappedMethod[methodName]) return this._wrappedMethod[methodName];
-        this._wrappedMethod[methodName] = function () {
+        if(this._wrappedMethods[methodName]) return this._wrappedMethods[methodName];
+        this._wrappedMethods[methodName] = function () {
             if (!this.exists()) return;
             this._source[methodName].call(this._source, arguments);
         }
-        this._wrappedMethod[methodName].name = methodName
-        return this._wrappedMethod[methodName];
+        this._wrappedMethods[methodName].name = methodName
+        return this._wrappedMethods[methodName];
     }
 
     isOpen() {
@@ -189,6 +189,7 @@ class ElementView extends View, ElementInterface {
     }
 
     hook(eventName, promise) {
+        this.wrap('hook')()
         let eventHook = new EventHook(eventName, promise, this._sourceElement);
         this._eventEmitter.on('source_changed', eventHook.change)
         this._eventEmitter.on('view_closed', eventHook.off)
