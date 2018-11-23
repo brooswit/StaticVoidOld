@@ -217,4 +217,4 @@ class Element extends ElementView {
     }
 }
 
-Abra.View = View;
+Element.View = ElementView;
