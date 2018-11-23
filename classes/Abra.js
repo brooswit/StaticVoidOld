@@ -205,7 +205,7 @@ class Element {
     }
 
     async trigger(eventName, payload) {
-        return await this._queryRequester.query(eventName, payload);
+        return await this._queryRequester.request(eventName, payload);
     }
 
     element() {
