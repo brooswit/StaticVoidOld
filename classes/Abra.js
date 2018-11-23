@@ -91,6 +91,10 @@ class ElementQueryHook {
         this._onSourceChanged(null, source);
     }
 
+    _isClosed() {
+        return !this._elementView
+    }
+
     _onSourceChanged(newSource) {
         if(this._source) {
             this._source.element()._queryEmitter.stop(this._eventName, this._promise);
