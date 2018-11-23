@@ -75,28 +75,28 @@ class QueryEmitter {
             this._emitter.emit(eventName, provisionIndex, handleResult, payload);
         });
     }
-}
+// }
 
-class ElementInterface {
-    changeParent(newParent) {
-        throw(arguments.callee.name + " not defined");
-    }
-    destroy() {
-        throw(arguments.callee.name + " not defined");
-    }
-    parent() {
-        throw(arguments.callee.name + " not defined");
-    }
-    root() {
-        throw(arguments.callee.name + " not defined");
-    }
-    hook(eventName, promise) {
-        throw(arguments.callee.name + " not defined");
-    }
-    async trigger(eventName, payload) {
-        throw(arguments.callee.name + " not defined");
-    }
-}
+// class ElementInterface {
+//     changeParent(newParent) {
+//         throw(arguments.callee.name + " not defined");
+//     }
+//     destroy() {
+//         throw(arguments.callee.name + " not defined");
+//     }
+//     parent() {
+//         throw(arguments.callee.name + " not defined");
+//     }
+//     root() {
+//         throw(arguments.callee.name + " not defined");
+//     }
+//     hook(eventName, promise) {
+//         throw(arguments.callee.name + " not defined");
+//     }
+//     async trigger(eventName, payload) {
+//         throw(arguments.callee.name + " not defined");
+//     }
+// }
 
 class View {
     constructor(Class, newSource) {
