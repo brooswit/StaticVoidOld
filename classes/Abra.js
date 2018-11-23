@@ -113,7 +113,9 @@ class EventHandler extends promise {
 
 
 class ElementInterface {
-    setParent(newParent) {}
+    setParent(newParent) {
+        throw("setParent)
+    }
     destroy() {}
     parent() {}
     root() {}
@@ -149,7 +151,7 @@ class ElementState extends ElementInterface {
         this._queryEmitter = new QueryEmitter();
         this._callbackRegistry = new EventEmitter();
 
-        this.parent = new ElementView();
+        this.parent = new ElementView(parent);
         this.parent.hook('destroyed', this.destroy);
         this.parent.hook('getChildren', this._getSelf);
     }
