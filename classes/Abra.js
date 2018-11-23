@@ -149,8 +149,10 @@ class View {
     }
 
     _wrap(methodName) {
-        this[methodName] = this[methodName] || this._wrap;
-        
+        this[methodName] = this[methodName] || wrap;
+        function wrap() {
+            
+        }
     }
 
     exists() {
