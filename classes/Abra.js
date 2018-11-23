@@ -145,9 +145,8 @@ class ViewFactory {
     }
 
     change(newSource = null) {
-        if (newSource === this._sourceElement) {
-            
-        }
+        if (newSource === this._sourceElement) return;
+        this._eventEmitter.emit('source_changed')
         this._sourceElement = newSource;
     }
 
