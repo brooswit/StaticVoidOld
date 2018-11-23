@@ -206,7 +206,7 @@ class ElementView extends View, ElementInterface {
     }
 
     hook(eventName, promise) {
-        let ElementHook = new ElementHook(this, eventName, promise);
+        new ElementHook(this, eventName, promise);
     }
 }
 
