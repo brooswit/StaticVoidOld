@@ -135,8 +135,8 @@ class Abra {
         this.parentView.hook('getChildren', this._handleGetChildren);
         this.attach(parent);
     }
-    asy_handleGetChildren() {
-
+    async _getSelf() {
+        return this
     }
     attach(newParent) {
         if (this._isDestroyed) return;
