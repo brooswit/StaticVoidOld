@@ -77,82 +77,6 @@ class QueryEmitter {
     }
 }
 
-// class ElementInterface {
-//     changeParent(newParent) {
-//         throw(arguments.callee.name + " not defined");
-//     }
-//     destroy() {
-//         throw(arguments.callee.name + " not defined");
-//     }
-//     parent() {
-//         throw(arguments.callee.name + " not defined");
-//     }
-//     root() {
-//         throw(arguments.callee.name + " not defined");
-//     }
-//     hook(eventName, promise) {
-//         throw(arguments.callee.name + " not defined");
-//     }
-//     async trigger(eventName, payload) {
-//         throw(arguments.callee.name + " not defined");
-//     }
-// }
-
-class ElementEventHook extends View {
-    // _capturePromiseResolution(resolve, reject) {
-    //     this._resolve = resolve;
-    //     this._reject = reject;
-    // }
-
-    constructor(initialElementView, eventName, promise) {
-        super(this._capturePromiseResolution);
-        this._elementView = null;
-        this._eventName = eventName;
-        this._promise = promise;
-
-        this._elementView.when(this._eventName, this.trigger);
-        this._elementView.register('destroyed', this.off);
-        this.register('triggered', this._promise);
-        this.register('triggered', this._resolve);
-        this.register('errored',  this._reject);
-    }
-
-    async trigger(payload) {
-        return await this.fire('triggered', payload);
-    }
-
-    off() {
-        this._abra._queryEmitter.stop(this._eventName, this.trigger);
-        this._abra._callbackRegistry.unregister('destroyed', this.off);
-        this.unregister('triggered');
-        this.unregister('triggered');
-        this.unregister('errored');
-    }
-}
-
-class ElementEventHook {
-    constructor(initialElementView, eventName, promise) {
-        this._elementView = null;
-        this._change(initialElementView);
-        this._elementView.hook(eventName, promise);
-        function change(newElementView) {
-        }
-    }
-
-    _change(newElementView) {
-        this.off();
-        this._elementView = newElementView;
-        this._elementView.on('source_changed', _change)
-        this._elementView.on('view_closed', this.off);
-    }
-
-    off() {
-        if(!this._elementView) return;
-        this._elementView.off('source_changed', change)
-        this._elementView.off('view_closed', this.off);
-    }
-}
-
 class ElementQueryHook {
     constructor(source, eventName, promise) {
         this._source = source;
@@ -197,7 +121,7 @@ class View {
         this._wrappedMethods[methodName] = function () {
             if (!this.exists()) return null;
             this.source[methodName].call(this.source, arguments);
-        }.bind()
+        }.bind(this);
         this._wrappedMethods[methodName].name = methodName
         return this._wrappedMethods[methodName];
     }
