@@ -140,7 +140,7 @@ class View {
         this._source = null;
         this.change(newSource);
 
-        
+        let methods = Class.prototype
     }
 
     exists() {
