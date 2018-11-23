@@ -139,6 +139,10 @@ class ViewFactory {
         this.change(newSource);
     }
 
+    exists() {
+        return !!
+    }
+
     change(newSource) {
         this._sourceElement = newSource;
     }
