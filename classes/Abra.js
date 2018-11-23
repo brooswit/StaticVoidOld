@@ -214,7 +214,7 @@ class ElementQueryHook {
             oldSource.element()._queryEmitter.stop(this._eventName, this._promise);
         }
         if(newElement) {
-            newElement._queryEmitter.when(this._eventName, this._promise);
+            newElement.element()._queryEmitter.when(this._eventName, this._promise);
         }
     }
 
