@@ -124,6 +124,7 @@ class View extends Abra {
     }
 }
 
+let nextElementId
 class Element {
     constructor(parent) {
         this._parent = null;
