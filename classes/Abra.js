@@ -126,7 +126,6 @@ class ElementView extends ElementInterface {
         super();
         this._sourceElement = sourceElement;
         this.hook('destroyed', this.setSource);
-        this._queryEmitter = this._abra._queryEmitter;
     }
     destroy() {
         super.destroy();
