@@ -187,16 +187,15 @@ class ElementViewHook {
             off();
             this._elementView = newElementView;
             this._elementView.on('source_changed', change)
-            this._elementView.on('view_closed', off);
+            this._elementView.on('view_closed', this.off);
         }
         function off() {
-            this._elementView.off('source_changed', change)
-            this._elementView.off('view_closed', off);
         }
     }
 
     off() {
-
+        this._elementView.off('source_changed', change)
+        this._elementView.off('view_closed', this.off);
     }
 }
 
