@@ -219,7 +219,8 @@ class ElementQueryHook {
     }
 
     _onClosed() {
-
+        this._source._internalEvents.off('source_changed', this._onSourceChanged);
+        this._source._internalEvents.('closed', this._onClosed);
     }
 
     _change(newSource) {
