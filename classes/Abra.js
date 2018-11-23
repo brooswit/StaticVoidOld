@@ -135,12 +135,13 @@ class ElementInterface {
 
 class ViewFactory {
     constructor(source, controllers) {
+        this._eventEmitter = new EventEmitter();
         this._source = null;
         this.change(newSource);
     }
 
     exists() {
-        return !!
+        return !!this._source;
     }
 
     change(newSource) {
