@@ -183,7 +183,6 @@ class Element {
 
         this._queryEmitter = new QueryEmitter();
         this._internalEvents = new EventEmitter();
-        this._callbackRegistry = new CallbackRegistry();
         this._data = {};
 
         this._isDestroyed = false;
