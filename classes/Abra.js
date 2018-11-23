@@ -196,7 +196,7 @@ class ElementState extends ElementInterface {
 
         let oldParent = this._parent;
         this._parent = newParent;
-        this.parentView.setSource(this._parent);
+        this.parent.setSource(this._parent);
 
         this.trigger('newParent', newParent, oldParent);
     }
