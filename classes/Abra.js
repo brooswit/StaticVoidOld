@@ -149,9 +149,10 @@ class ElementViewHook extends promise {
         this._reject = reject;
     }
 
-    constructor(abra, eventName, callback) {
+    constructor(initialElementView, eventName, callback) {
         super(this._capturePromiseResolution);
-        this._abra = abra;
+        this._elementView = null;
+        this._abra = initialElementView;
         this._eventName = eventName;
         this._callback = callback;
 
