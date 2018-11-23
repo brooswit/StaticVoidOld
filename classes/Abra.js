@@ -204,7 +204,7 @@ class ElementQueryHook {
         this._source = source;
         this._eventName = eventName;
         this._promise = callback;
-        this._source.element().
+        this._source.element().hook()
         this._change(initialSource);
     }
 
