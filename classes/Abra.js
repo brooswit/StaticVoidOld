@@ -124,7 +124,7 @@ class ElementInterface {
 class ElementView extends ElementInterface {
     constructor(sourceElement) {
         super();
-        this._event
+        this._eventEmitter = new EventEmitter();
         this._sourceElement = sourceElement;
         this.hook('destroyed', this.setSource);
     }
