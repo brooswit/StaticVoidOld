@@ -85,8 +85,8 @@ class ElementQueryHook {
         
         this._source = null;
 
-        this._elementView._internalEvents.on('source_changed', this._onElementViewSourceChanged);
-        this._elementView._internalEvents.on('closed', this._onElementViewClosed);
+        this._elementView._events.on('source_changed', this._onElementViewSourceChanged);
+        this._elementView._events.on('closed', this._onElementViewClosed);
 
         this._onElementViewSourceChanged(null, source);
     }
@@ -106,8 +106,8 @@ class ElementQueryHook {
     }
 
     _onElementViewClosed() {
-        this._elementView._internalEvents.off('source_changed', this._onElementViewSourceChanged);
-        this._elementView._internalEvents.off('closed', this._onElementViewClosed);
+        this._elementView._events.off('source_changed', this._onElementViewSourceChanged);
+        this._elementView._events.off('closed', this._onElementViewClosed);
         this._elementView = null;
         _onElementViewSourceChanged(null);
     }
@@ -120,7 +120,7 @@ class ElementQueryHook {
 
 class View {
     constructor(Class, newSource) {
-        this._internalEvents = new EventEmitter();
+        this._events = new EventEmitter();
         this._wrappedMethods = {};
         this._open = true;
         this.source = null;
@@ -154,14 +154,14 @@ class View {
         if (!this.isOpen() || this.source === newSource) return;
         let oldSource = this.source;
         this.source = newSource;
-        this._internalEvents.emit('source_changed', {newSource, oldSource});
+        this._events.emit('source_changed', {newSource, oldSource});
     }
 
     close() {
         if(!this.isOpen()) return;
         change(null);
         this._open = false;
-        this._internalEvents.emit('closed');
+        this._events.emit('closed');
     }
 }
 
@@ -182,7 +182,7 @@ class Element {
         this._id = _nextElementId++;
 
         this._queries = new QueryRequester();
-        this._internalEvents = new EventEmitter();
+        this._events = new EventEmitter();
         this._data = {};
 
         this._isDestroyed = false;
@@ -240,7 +240,7 @@ class Element {
         this.parent.close();
         this._isDestroyed = true;
         this.trigger('destroyed');
-        this._internalEvents.emit('closed');
+        this._events.emit('closed');
     }
 }
 
