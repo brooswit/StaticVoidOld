@@ -142,12 +142,12 @@ class View {
 
         let methods = Object.getOwnPropertyNames(Class.prototype);
         for (methodIndex in methods) {
-            this._wrap(methods[methodIndex])
+            this[methodName] = this[methodName] || this.wrap(methods[methodIndex])
         }
     }
 
     _wrap(methodName) {
-        this[methodName] = this[methodName] || wrap;
+         wrap;
         function wrap() {
             if (!this.exists()) return;
             this._source[methodName].call(this._source, arguments);
