@@ -87,13 +87,13 @@ class ElementQueryHook {
         this._onSourceChanged(null, source);
     }
 
-    _onSourceChanged(oldSource, newElement) {
+    _onSourceChanged(oldSource, newSource) {
         if(oldSource) {
             oldSource.element()._queryEmitter.stop(this._eventName, this._promise);
         }
-        if(newElement) {
-            newElement.element()._queryEmitter.when(this._eventName, this._promise);
-            this._source = newElement.
+        if(newSource) {
+            newSource.element()._queryEmitter.when(this._eventName, this._promise);
+            this._source = newSource.element()
         }
     }
 
