@@ -121,7 +121,7 @@ class ElementInterface {
     async trigger(eventName, payload) {}
 }
 
-class View extends Abra ElementInterface {
+class View extends ElementInterface {
     constructor(abra) {
         super();
         this._abra = abra;
@@ -135,7 +135,7 @@ class View extends Abra ElementInterface {
 }
 
 let _nextElementId = 0;
-class ElementState {extend
+class ElementState extends ElementInterface {
     constructor() {
         this._id = _nextElementId++;
         this,_isDestroyed = false;
