@@ -136,6 +136,8 @@ class ElementState {
         this._queryEmitter = new QueryEmitter();
         this._callbackRegistry = new EventEmitter();
     }
+
+    setParent()
 }
 
 class Element {
