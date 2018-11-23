@@ -178,14 +178,14 @@ class View extends EventEmitter {
     }
 }
 
-class EventHook {
+class ElementHook {
     constructor(elementView, eventName, promise) {
         change(elementView)
-        elementView.hook()
+        elementView.hook(eventName)
         elementView.on('source_changed', change)
         elementView.on('view_closed', off);
         function change(newSource) {
-            eventHook.change(newSource);
+            ElementHook.change(newSource);
         }
     }
 }
@@ -199,7 +199,7 @@ class ElementView extends View, ElementInterface {
     }
 
     hook(eventName, promise) {
-        let eventHook = new EventHook(this, eventName, promise);
+        let ElementHook = new ElementHook(this, eventName, promise);
     }
 }
 
