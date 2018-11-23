@@ -156,7 +156,7 @@ class ElementView extends ElementInterface {
 
     hook(eventName, promise) {
         let eventHook = new EventHook(eventName, promise, this._sourceElement);
-        let eventHHook = this._eventEmitter.hook('source_changed', rehook())
+        this._eventEmitter.hook('source_changed', rehook())
         let eventHandler = null;
         if (this._sourceElement) {
             eventHandler = rehook(null, this._sourceElement)
