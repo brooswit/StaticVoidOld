@@ -200,11 +200,11 @@ class ElementEventHook {
 }
 
 class ElementQueryHook {
-    constructor(source, eventName, callback) {
+    constructor(initialSource, eventName, callback) {
         this._source = null;
         this._eventName = null;
         this._promise = null
-        this._change({source, eventName, callback});
+        this._change(initialSource);
     }
 
     _change({source, eventName, callback}) {
