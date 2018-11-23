@@ -201,6 +201,7 @@ class ElementEventHook {
 
 class ElementQueryHook {
     constructor(element, eventName, callback) {
+        let queryEmitter =
         element.element()._queryEmitter.when(eventName, callback);
         element._internalEvents.on('closed', ()=>{
             
