@@ -1,12 +1,13 @@
 class StaticVoid extends Element {
     constructor() {
-    new WebSocketClientManager(this);
-    new SessionManager(this);
-    new AccountSessionManager(this);
-    new AccountManager(this);
+        new WebSocketClientManager(this);
+        new SessionManager(this);
+        new AccountSessionManager(this);
+        new AccountManager(this);
     }
 }
-    const express = require('express');
+
+const express = require('express');
 const enableWs = require('express-ws');
 const path = require('path');
 
