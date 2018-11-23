@@ -145,6 +145,25 @@ class Element {
         return this;
     }
 
+    _detectLoopWith(newParent) {
+        let hasLoop = false;
+        let oldParent = this._parent;
+        let elementA, elementB = this;
+
+        this._parent = newParent;
+        
+        while (elementB) {
+            elementA = elementA.parent();
+            elementB = elementB && elementB.parent() && elementB.parent().parent();
+            if (elementA === elementB) {
+                hasLoop = true;
+                break;
+            }
+        }
+        this._parent = oldParent;
+        return hasLoop;
+    }
+
     setParent(newParent) {
         if (this._isDestroyed) return;
         if (this._parent === newParent) return;
