@@ -84,7 +84,7 @@ class ElementQueryHook {
         this._promise = promise;
         this._source._internalEvents.on('source_changed', this._onSourceChanged);
         this._source._internalEvents.on('closed', this._onClosed);
-        this._onSourceChanged(null, source.element());
+        this._onSourceChanged(null, source);
     }
 
     _onSourceChanged(oldSource, newElement) {
