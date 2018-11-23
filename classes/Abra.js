@@ -132,6 +132,7 @@ class ElementInterface {
         throw(arguments.callee.name + " not defined");
     }
 }
+class ViewFactory
 
 class ElementView extends ElementInterface {
     constructor(sourceElement) {
