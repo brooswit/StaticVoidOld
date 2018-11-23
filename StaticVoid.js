@@ -20,7 +20,9 @@ class StaticVoid extends Element {
             .ws('/stream', this._handleStream)
             .listen(this._port);
     }
-    _handleWeb
+    _handleWebRequest(req, res) {
+        this.trigger('webRequest', {req, res});
+    }
 }
 
 const express = require('express');
