@@ -274,7 +274,7 @@ class Element {
     }
 
     isDestroyed() {
-    re
+        return this.isDestroyed
     }
 
     changeParent(newParent) {
