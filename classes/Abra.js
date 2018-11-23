@@ -143,6 +143,40 @@ class View extends EventEmitter {
     }
 }
 
+class ElementViewHook extends promise {
+    _capturePromiseResolution(resolve, reject) {
+        this._resolve = resolve;
+        this._reject = reject;
+    }
+
+    constructor(abra, eventName, callback) {
+        super(this._capturePromiseResolution);
+        this._abra = abra;
+        this._eventName = eventName;
+        this._callback = callback;
+
+        this._callbackRegistry = new CallbackRegistry();
+
+        this._abra._queryEmitter.when(this._eventName, this.trigger);
+        this._abra._callbackRegistry.register('destroyed', this.off);
+        this._callbackRegistry.register('triggered', this._callback);
+        this._callbackRegistry.register('triggered', this._resolve);
+        this._callbackRegistry.register('errored',  this._reject);
+    }
+
+    async trigger(payload) {
+        return await this._callbackRegistry.fire('triggered', payload);
+    }
+
+    off() {
+        this._abra._queryEmitter.stop(this._eventName, this.trigger);
+        this._abra._callbackRegistry.unregister('destroyed', this.off);
+        this._callbackRegistry.unregister('triggered');
+        this._callbackRegistry.unregister('triggered');
+        this._callbackRegistry.unregister('errored');
+    }
+}
+
 class ElementViewHook {
     constructor(initialElementView, eventName, promise) {
         this._elementView = null;
