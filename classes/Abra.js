@@ -201,6 +201,7 @@ class ElementState {
         return await this._queryEmitter.query(eventName, payload);
     }
 }
+
 class ElementInterface {
     setParent(newParent) {}
     destroy() {}
@@ -209,6 +210,7 @@ class ElementInterface {
     hook(eventName, promise) {}
     async trigger(eventName, payload) {}
 }
+
 class Element extends ElementView {
     constructor(parent) {
         super(new ElementState(parent));
