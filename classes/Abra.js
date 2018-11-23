@@ -224,7 +224,7 @@ class Element {
     }
 
     root() {
-        if (this._isDestroyed)  ;
+        if (this._isDestroyed) return null;
         let element = this;
         while (element.parent()) {
             element = element.parent();
