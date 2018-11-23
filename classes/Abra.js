@@ -124,12 +124,9 @@ class ElementInterface {
 class ElementView extends ElementInterface {
     constructor(sourceElement) {
         super();
+        this._event
         this._sourceElement = sourceElement;
         this.hook('destroyed', this.setSource);
-    }
-    destroy() {
-        super.destroy();
-        this._abra._callbackRegistry.unregister('destroyed', this.destroy);
     }
 }
 
