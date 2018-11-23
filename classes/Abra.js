@@ -132,6 +132,7 @@ class ElementInterface {
         throw(arguments.callee.name + " not defined");
     }
 }
+
 class ViewFactory {
     constructor(source) {
         this._source = null;
