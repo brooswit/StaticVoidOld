@@ -216,9 +216,9 @@ class ElementState extends ElementInterface {
 
         this._queryEmitter = new QueryEmitter();
         this._callbackRegistry = new CallbackRegistry();
-        this._store = new Store(this._id)
-        this,_isDestroyed = false;
         this._data = {};
+
+        this,_isDestroyed = false;
 
         this.parent = new ElementView(initialParent);
         this.parent.hook('destroyed', this.destroy);
