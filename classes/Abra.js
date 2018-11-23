@@ -91,7 +91,7 @@ class EventHandler extends promise {
         this._callbackRegistry = new CallbackRegistry();
 
         this._abra._queryEmitter.when(this._eventName, this.trigger);
-        this._abra._callbackRegistry.register('closed', this.off);
+        this._abra._callbackRegistry.register('destroyd', this.off);
         this._callbackRegistry.register('triggered', this._callback);
         this._callbackRegistry.register('triggered', this._resolve);
         this._callbackRegistry.register('errored',  this._reject);
@@ -103,7 +103,7 @@ class EventHandler extends promise {
 
     off() {
         this._abra._queryEmitter.stop(this._eventName, this.trigger);
-        this._abra._callbackRegistry.unregister('closed', this.off);
+        this._abra._callbackRegistry.unregister('destroyd', this.off);
         this._callbackRegistry.unregister('triggered');
         this._callbackRegistry.unregister('triggered');
         this._callbackRegistry.unregister('errored');
@@ -114,12 +114,12 @@ class View extends Abra {
     constructor(abra) {
         super();
         this._abra = abra;
-        this._abra._callbackRegistry.register('closed', this.close);
+        this._abra._callbackRegistry.register('destroyd', this.destroy);
         this._queryEmitter = this._abra._queryEmitter;
     }
-    close() {
-        super.close();
-        this._abra._callbackRegistry.unregister('closed', this.close);
+    destroy() {
+        super.destroy();
+        this._abra._callbackRegistry.unregister('destroyd', this.destroy);
     }
 }
 
@@ -129,7 +129,7 @@ class Abra {
         this._callbackRegistry = new EventEmitter();
     }
     attach(newParent) {
-        
+
     }
     hook(eventName, callback) {
         return new EventHandler(this, eventName, callback);
@@ -137,8 +137,8 @@ class Abra {
     async trigger(eventName, payload) {
         return await this._queryEmitter.query(eventName, payload);
     }
-    close() {
-        this._callbackRegistry.fire('closed');
+    destroy() {
+        this._callbackRegistry.fire('destroyd');
     }
 }
 
