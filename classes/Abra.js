@@ -126,12 +126,14 @@ class View extends Abra {
 class Abra {
     constructor() {
         this,_isDestroyed = false;
-        
+
         this._queryEmitter = new QueryEmitter();
         this._callbackRegistry = new EventEmitter();
     }
     attach(newParent) {
-
+        if (this._isDestroyed) return;
+        if (this._parent === newParent) return;
+        if (this._detectLoopWith(newParent)) return;
     }
     hook(eventName, callback) {
         return new EventHandler(this, eventName, callback);
