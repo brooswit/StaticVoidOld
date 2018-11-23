@@ -127,6 +127,8 @@ class View extends Abra {
 let _nextElementId = 0;
 class ElementState {
     constructor() {
+        this,_isDestroyed = false;
+
         this._id = _nextElementId++;
         this._data = {};
         this._parentView = new ElementView();
