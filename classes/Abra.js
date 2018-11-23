@@ -150,6 +150,10 @@ class ElementView extends ElementInterface {
         this._eventEmitter.trigger('sourceChanged', oldSource, newSource);
     }
 
+    close() {
+        change(null);
+    }
+
     hook(eventName, promise) {
         let eventHook = new EventHook(eventName, promise, );
         let eventHandler = null;
