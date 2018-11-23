@@ -179,7 +179,7 @@ class View extends EventEmitter {
 }
 
 class ElementHook {
-    constructor(elementView, eventName, promise) {
+    constructor(sElementView, eventName, promise) {
         let elementView = null;
         change(elementView);
         elementView.hook(eventName, promise);
