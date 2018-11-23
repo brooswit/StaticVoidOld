@@ -279,7 +279,7 @@ class ElementState extends ElementInterface {
     }
 
     async trigger(eventName, payload) {
-        return await this.query(eventName, payload);
+        return await this._queryEmitter.query(eventName, payload);
     }
 }
 
