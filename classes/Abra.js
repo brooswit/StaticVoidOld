@@ -143,7 +143,7 @@ class View extends EventEmitter {
     }
 }
 
-class ElementViewHook extends CallbackRegistry, Promise {
+class ElementViewHook extends View, CallbackRegistry, Promise {
     _capturePromiseResolution(resolve, reject) {
         this._resolve = resolve;
         this._reject = reject;
