@@ -138,7 +138,7 @@ class View {
         if (!this.isOpen() || this.source === newSource) return;
         let oldSource = this.source;
         this.source = newSource;
-        this._internalEvents.emit('source_changed');
+        this._internalEvents.emit('source_changed', newSource, oldSource);
     }
 
     close() {
