@@ -161,7 +161,7 @@ class ElementView extends ElementInterface {
     }
 
     unhook(eventName, promise) {
-        
+        this._eventEmitter.off
     }
 }
 
