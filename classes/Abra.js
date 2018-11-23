@@ -166,6 +166,14 @@ class ElementState {
         return this._parent;
     }
 
+    root() {
+        let element = this;
+        while (element.parent()) {
+            element = element.parent();
+        }
+        return element;
+    }
+
     setParent(newParent) {
         if (this._isDestroyed) return;
         if (this._parentView._sourceElement === newParent) return;
@@ -198,13 +206,6 @@ class Element extends ElementView {
         super(new ElementState(parent));
     }
 
-    root() {
-        let element = this;
-        while (element.parent()) {
-            element = element.parent();
-        }
-        return element;
-    }
 
     setParent(newParent) {
         if (this._isDestroyed) return;
