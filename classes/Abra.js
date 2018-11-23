@@ -138,7 +138,7 @@ class ElementView extends ElementInterface {
         super();
         this._eventEmitter = new EventEmitter();
         this._sourceElement = null;
-        this.hook('destroyed', this.setSource);
+        this.hook('destroyed', this.change);
         if(sourceElement) {
             this.change(sourceElement);
         }
@@ -218,7 +218,7 @@ class ElementState extends ElementInterface {
 
         let oldParent = this._parent;
         this._parent = newParent;
-        this.parent.setSource(this._parent);
+        this.parent.change(this._parent);
 
         this.trigger('newParent', newParent, oldParent);
     }
