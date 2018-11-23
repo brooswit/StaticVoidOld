@@ -141,17 +141,17 @@ class ElementView extends ElementInterface {
 
 let _nextElementId = 0;
 class ElementState extends ElementInterface {
-    constructor() {
+    constructor(parent) {
         this._id = _nextElementId++;
         this,_isDestroyed = false;
         this._data = {};
 
+        this._queryEmitter = new QueryEmitter();
+        this._callbackRegistry = new EventEmitter();
+
         this.parent = new ElementView();
         this.parent.hook('destroyed', this.destroy);
         this.parent.hook('getChildren', this._getSelf);
-
-        this._queryEmitter = new QueryEmitter();
-        this._callbackRegistry = new EventEmitter();
     }
 
     async _getSelf() {
