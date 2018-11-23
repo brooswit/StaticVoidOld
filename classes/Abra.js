@@ -241,7 +241,7 @@ class Element {
     }
 
     view() {
-        return new ElementView()
+        return new ElementView(this.element());
     }
 
     hook(eventName, callback) {
