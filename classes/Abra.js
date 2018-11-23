@@ -246,6 +246,7 @@ class Element {
     }
 
     parent() {
+        if (this._isDestroyed) return;
         return this._parent.element;
     }
 
