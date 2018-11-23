@@ -146,9 +146,9 @@ class ElementState extends ElementInterface {
         this,_isDestroyed = false;
         this._data = {};
 
-        this._parentView = new ElementView();
-        this._parentView.hook('destroyed', this.destroy);
-        this._parentView.hook('getChildren', this._getSelf);
+        this.parent = new ElementView();
+        this.parent.hook('destroyed', this.destroy);
+        this.parent.hook('getChildren', this._getSelf);
 
         this._queryEmitter = new QueryEmitter();
         this._callbackRegistry = new EventEmitter();
@@ -187,7 +187,7 @@ class ElementState extends ElementInterface {
 
     setParent(newParent) {
         if (this._isDestroyed) return;
-        if (this._parentView._sourceElement === newParent) return;
+        if (this.parent._sourceElement === newParent) return;
         if (this._hasLoopWithParent(newParent)) return;
 
         let oldParent = this._parent;
