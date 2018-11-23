@@ -122,9 +122,9 @@ class ElementInterface {
 }
 
 class ElementView extends ElementInterface {
-    constructor(abra) {
+    constructor(sourceElement) {
         super();
-        this._abra = abra;
+        this._sourceElement = abra;
         this._abra._callbackRegistry.register('destroyed', this.destroy);
         this._queryEmitter = this._abra._queryEmitter;
     }
