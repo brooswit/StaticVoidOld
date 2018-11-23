@@ -212,13 +212,12 @@ class ElementView extends View, ElementInterface {
 
 let _nextElementId = 0;
 class ElementState extends ElementInterface, QueryEmitter {
-    constructor(parent) {
+    constructor(initialParent) {
         this._id = _nextElementId++;
         this,_isDestroyed = false;
         this._data = {};
 
-
-        this.parent = new ElementView(parent);
+        this.parent = new ElementView(initialParent);
         this.parent.hook('destroyed', this.destroy);
         this.parent.hook('getChildren', this._getSelf);
     }
