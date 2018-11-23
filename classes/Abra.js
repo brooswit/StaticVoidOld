@@ -217,7 +217,7 @@ class ElementState extends ElementInterface {
         this,_isDestroyed = false;
         this._data = {};
 
-        this._queryEmitter = new QueryEmitter();
+        this = new QueryEmitter();
         this._callbackRegistry = new EventEmitter();
 
         this.parent = new ElementView(parent);
@@ -280,7 +280,7 @@ class ElementState extends ElementInterface {
     }
 
     async trigger(eventName, payload) {
-        return await this._queryEmitter.query(eventName, payload);
+        return await this.query(eventName, payload);
     }
 }
 
