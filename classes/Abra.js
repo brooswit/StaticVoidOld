@@ -155,9 +155,10 @@ class Element {
 
         this.trigger('newParent', newParent, oldParent);
     }
+
     destroy() {
         if (this._isDestroyed) return;
-        this.detach();
+        this.setParent(null);
         this._isDestroyed = true;
         this.trigger('destroyed');
         this.close();
