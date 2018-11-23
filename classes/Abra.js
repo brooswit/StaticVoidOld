@@ -240,6 +240,10 @@ class Element {
         this._parent.hook('get_children', this._getThis);
     }
 
+    view() {
+        return new ElementView()
+    }
+
     hook(eventName, callback) {
         return new ElementQueryHook(this, eventName, callback);
     }
