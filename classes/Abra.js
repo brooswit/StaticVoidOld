@@ -173,6 +173,13 @@ class ElementState {
 
         this.trigger('newParent', newParent, oldParent);
     }
+
+    destroy() {
+        if (this._isDestroyed) return;
+        this.setParent(null);
+        this._isDestroyed = true;
+        this.trigger('destroyed');
+    }
 }
 class ElementInterface {
     setParent(newParent) {}
