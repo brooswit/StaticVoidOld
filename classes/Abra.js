@@ -86,7 +86,7 @@ class ElementQueryHook {
         this._source = null;
 
         this._elementView._internalEvents.on('source_changed', this._onElementViewSourceChanged);
-        this._elementView._internalEvents.on('closed', this._onClosed);
+        this._elementView._internalEvents.on('closed', this._onElementViewClosed);
 
         this._onElementViewSourceChanged(null, source);
     }
