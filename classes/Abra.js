@@ -132,7 +132,7 @@ class Abra {
         this._callbackRegistry = new EventEmitter();
 
         this.parentView = new ElementView();
-        this.parentView.
+        this.parentView.hook('getChildren',)
         this.attach(parent);
     }
     attach(newParent) {
