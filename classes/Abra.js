@@ -154,6 +154,7 @@ class View {
     close() {
         if(!this._isOpen) return;
         change(null);
+        this._isOpen = false;
         this._eventEmitter.emit('closed');
     }
 }
