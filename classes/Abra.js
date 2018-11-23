@@ -147,7 +147,7 @@ class ElementView extends ElementInterface {
     change(newSource) {
         let oldSource = this._sourceElement;
         this._sourceElement = newSource;
-        this._eventEmitter.trigger('sourceChanged', oldSource, newSource);
+        this._eventEmitter.trigger('source_changed', oldSource, newSource);
     }
 
     close() {
@@ -156,7 +156,7 @@ class ElementView extends ElementInterface {
 
     hook(eventName, promise) {
         let eventHook = new EventHook(eventName, promise, this._sourceElement);
-        this._eventEmitter.hook
+        this._eventEmitter.hook('source_changed')
         let eventHandler = null;
         if (this._sourceElement) {
             eventHandler = rehook(null, this._sourceElement)
