@@ -1,6 +1,6 @@
 const EventManager = require('./EventManager');
 const Controller = require('./Controller');
-const Element = require('./Element');
+const Element = require('./Element_old');
 
 module.exports = class WorldManager extends EventManager {
     constructor (Controllers = [], startId = 0) {
