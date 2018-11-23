@@ -170,7 +170,9 @@ class ElementState {
         this.trigger('newParent', newParent, oldParent);
     }
 }
-
+class ElementInterface {
+    setParent()
+}
 class Element extends ElementInterface {
     constructor(parent) {
         this._elementState = new ElementState();
