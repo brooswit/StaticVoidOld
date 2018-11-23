@@ -202,7 +202,10 @@ class ElementEventHook {
 class ElementQueryHook {
     constructor(initialSource, eventName, callback) {
         this._source = null;
+        this._eventName = nu
         this._change(initialSource);
+    }
+
         source._internalEvents.on('source_changed', _change)
         source._internalEvents.on('closed', _change)
 
