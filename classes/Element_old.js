@@ -1,4 +1,4 @@
-const Abra = require('./Element');
+const Abra = require('../elements/Element');
 let nextId = 0;
 
 module.exports = class Element extends Abra {
