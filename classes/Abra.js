@@ -115,7 +115,7 @@ class View {
     wrap(methodName) {
         if(this._wrappedMethods[methodName]) return this._wrappedMethods[methodName];
         this._wrappedMethods[methodName] = function () {
-            if (!this.exists()) return;
+            if (!this.exists()) return null;
             this.source[methodName].call(this.source, arguments);
         }
         this._wrappedMethods[methodName].name = methodName
@@ -235,7 +235,7 @@ class Element {
         let elementA, elementB = this;
         while (elementB) {
             elementA = elementA.parent();
-            elementB = elementB && elementB.parent() && elementB.parent().parent() && elementB.parent().parent();
+            elementB = elementB && elementB.parent() && elementB.parent().parent();
             if (elementA === elementB) {
                 hasLoop = true;
                 break;
