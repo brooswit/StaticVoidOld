@@ -180,6 +180,7 @@ class View extends EventEmitter {
 
 class ElementHook {
     constructor(elementView, eventName, promise) {
+        let elementView = null;
         change(elementView);
         elementView.hook(eventName, promise);
         function change(newElementView) {
@@ -189,7 +190,7 @@ class ElementHook {
             elementView.on('view_closed', off);
         }
         function off() {
-            
+
             elementView.off('source_changed', change)
             elementView.off('view_closed', off);
         }
