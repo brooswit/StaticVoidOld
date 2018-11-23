@@ -219,7 +219,7 @@ class Element {
         this._callbackRegistry = new CallbackRegistry();
         this._data = {};
 
-        this,_isDestroyed = false;
+        this._isDestroyed = false;
 
         this.source = this;
 
