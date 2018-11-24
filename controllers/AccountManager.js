@@ -5,7 +5,9 @@ class AccountManager extends Element {
         this.parent.hook('client_created', _onClientCreated);
     }
 
-    _onClientCreated(newClient)
+    _onClientCreated(newClient) {
+        new AccountSession
+    }
 }
 
 module.exports = ExpressManager
