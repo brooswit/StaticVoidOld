@@ -1,5 +1,5 @@
 
-class ExpressManager extends Element {
+class AccountManager extends Element {
     constructor(parent, options) {
         super(parent)
         this._port = process.env.PORT || options.port || 8080;
