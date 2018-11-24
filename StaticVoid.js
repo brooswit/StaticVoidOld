@@ -30,8 +30,8 @@ class StaticVoid extends Element {
             if (rpc) {
                 if (!rpc.command) {
                     let options = rpc.options || {};
-                    sessionElement.emit(`rpc_${command}`, options);
-                    sessionElement.emit(`rpc`, {command, options});
+                    session.emit(`rpc_${command}`, options);
+                    session.emit(`rpc`, {command, options});
                 }
             } else {
                 return console.log('unknown websocket message type');
@@ -39,11 +39,11 @@ class StaticVoid extends Element {
         });
 
         ws.on('close', () => {
-            sessionElement.destroy();
+            session.destroy();
         });
 
-        sessionElement.on('destroy', () => {
-            sessionElement = null;
+        session.on('destroy', () => {
+            session = null;
         });
 
         asynchronously(async () => {
@@ -52,7 +52,7 @@ class StaticVoid extends Element {
             let sendSnapshotStartTime;
             let sendSnapshotEndTime;
 
-            while(sessionElement) {
+            while(session) {
                 let debug = {
                     getSnapshotStartTime,
                     getSnapshotEndTime,
@@ -61,7 +61,7 @@ class StaticVoid extends Element {
                 };
 
                 getSnapshotStartTime = Date.now();
-                let snapshot = await sessionElement.getSnapshot({
+                let snapshot = await session.getSnapshot({
                     state: {},
                     rpc: [],
                     debug
