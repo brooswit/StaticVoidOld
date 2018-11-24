@@ -1,6 +1,6 @@
 
-class Express {
-
+class ExpressManager extends Element {
+    
         this._port = process.env.PORT || options.port || 8080;
         this._syncThrottle = options.syncThrottle || 1000/3;
 
