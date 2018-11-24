@@ -19,7 +19,6 @@
         this.trigger('webRequest', {req, res});
     }
 
-    _handleWebRequest(ws) {
+    _handleStreamRequest(ws) {
         this.trigger('streamRequest', ws);
     }
-    
