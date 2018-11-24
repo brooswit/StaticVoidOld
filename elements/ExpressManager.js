@@ -1,6 +1,7 @@
 
 class ExpressManager extends Element {
     constructor(parent, options) {
+        super(parent)
         this._port = process.env.PORT || options.port || 8080;
         this._syncThrottle = options.syncThrottle || 1000/3;
 
@@ -24,3 +25,5 @@ class ExpressManager extends Element {
         this.trigger('streamRequest', ws);
     }
 }
+
+module.exports = ExpressManager
