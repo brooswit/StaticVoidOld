@@ -2,7 +2,7 @@
 class AccountManager extends Element {
     constructor(parent, options) {
         super(parent);
-        AccountManager
+        this.parent.hook
     }
 }
 
