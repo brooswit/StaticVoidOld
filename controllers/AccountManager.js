@@ -2,7 +2,7 @@
 class AccountManager extends Element {
     constructor(parent, options) {
         super(parent);
-        this.parent.hook('')
+        this.parent.hook('client_created"')
     }
 }
 
