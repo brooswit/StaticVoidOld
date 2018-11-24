@@ -1,7 +1,6 @@
 class StaticVoid extends Element {
     constructor(options = {}) {
         new ExpressManager(this);
-        new WebSocketClientManager(this);
         new SessionManager(this);
         new AccountSessionManager(this);
         new AccountManager(this);
