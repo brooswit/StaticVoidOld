@@ -22,3 +22,4 @@
     _handleWebRequest(ws) {
         this.trigger('streamRequest', ws);
     }
+    
