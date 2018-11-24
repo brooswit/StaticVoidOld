@@ -23,7 +23,7 @@ class StaticVoid extends Element {
     }
 
     _handleStream(ws) {
-        
+        let session = new Session();
         let sessionElement = this.buildElement(['Session']);
 
         ws.on('message', (msg) => {
