@@ -6,7 +6,7 @@ module.exports = class AccountManager extends Element {
         this.parent.on('session_created', this._onSessionCreated);
     }
 
-    login(username, passwordHash) {
+    _onSessionCreated(newSession) {
         
     }
 }
