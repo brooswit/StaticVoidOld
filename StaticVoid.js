@@ -1,8 +1,30 @@
+
+
+const express = require('express');
+const enableWs = require('express-ws');
+const path = require('path');
+
+const Controller = require('./Controller');
+const ElementManager = require('./classes/ElementManager');
+
+// UTILITY
+async function asynchronously(method) {
+    return method.then ? await method() : method();
+}
+
+function JSONparseSafe(str, fallback = undefined) {
+    try {
+        return JSON.parse(str);
+    } catch (ex) {
+        return fallback;
+    }
+}
+
 class StaticVoid extends Element {
     constructor(options = {}) {
+        new SessionManager(this);
         new AccountSessionManager(this);
         new AccountManager(this);
-        new SessionManager(this);
         
         this._port = process.env.PORT || options.port || 8080;
         this._syncThrottle = options.syncThrottle || 1000/3;
