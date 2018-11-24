@@ -18,6 +18,7 @@ class ExpressManager extends Element {
     }
 
     _handleWebRequest(req, res) {
+        new
         this.trigger('webRequest', {req, res});
     }
 
