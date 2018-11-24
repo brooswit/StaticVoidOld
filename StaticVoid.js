@@ -1,6 +1,5 @@
 class StaticVoid extends Element {
     constructor(options = {}) {
-        new ClientSessionManager(this);
         new SessionManager(this);
         new AccountSessionManager(this);
         new AccountManager(this);
