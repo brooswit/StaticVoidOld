@@ -129,7 +129,7 @@ class StaticVoid extends ElementManager {
     }
 
     _handleStream(ws) {
-        let clientElement = this.buildElement(['Session']);
+        let sessionElement = this.buildElement(['Session']);
 
         ws.on('message', (msg) => {
             let {rpc} = JSONparseSafe(msg, {});
