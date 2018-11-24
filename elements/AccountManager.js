@@ -7,6 +7,6 @@ module.exports = class AccountManager extends Element {
     }
 
     _onSessionCreated(newSession) {
-        
+        new Account(newSession)
     }
 }
