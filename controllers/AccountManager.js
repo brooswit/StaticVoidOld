@@ -6,7 +6,7 @@ class AccountManager extends Element {
     }
 
     _onClientCreated(newClient) {
-        new AccountSession
+        new Account(newClient)
     }
 }
 
