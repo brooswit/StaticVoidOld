@@ -2,6 +2,7 @@ class StaticVoid extends Element {
     constructor(options = {}) {
         new AccountSessionManager(this);
         new AccountManager(this);
+        new SessionManager(this);
         
         this._port = process.env.PORT || options.port || 8080;
         this._syncThrottle = options.syncThrottle || 1000/3;
@@ -23,7 +24,7 @@ class StaticVoid extends Element {
     }
 
     _handleStream(ws) {
-        let session = new Clie(this);
+        let session = new Client(this);
 
         ws.on('message', (msg) => {
             let {rpc} = JSONparseSafe(msg, {});
