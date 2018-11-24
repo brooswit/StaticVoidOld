@@ -24,15 +24,15 @@ class StaticVoid extends Element {
     }
 
     _handleStream(ws) {
-        let session = new Client(this);
+        let client = new Client(this);
 
         ws.on('message', (msg) => {
             let {rpc} = JSONparseSafe(msg, {});
             if (rpc) {
                 if (!rpc.command) {
                     let options = rpc.options || {};
-                    session.emit(`rpc_${command}`, options);
-                    session.emit(`rpc`, {command, options});
+                    client.emit(`rpc_${command}`, options);
+                    client.emit(`rpc`, {command, options});
                 }
             } else {
                 return console.log('unknown websocket message type');
@@ -40,12 +40,12 @@ class StaticVoid extends Element {
         });
 
         ws.on('close', () => {
-            session.destroy();
+            client.destroy();
         });
 
-        session.hook('destroy', () => {
+        client.hook('destroy', () => {
             ws.close();
-            session = null;
+            client = null;
         });
 
         asynchronously(async () => {
@@ -54,7 +54,7 @@ class StaticVoid extends Element {
             let sendSnapshotStartTime;
             let sendSnapshotEndTime;
 
-            while(session) {
+            while(client) {
                 let debug = {
                     getSnapshotStartTime,
                     getSnapshotEndTime,
@@ -63,7 +63,7 @@ class StaticVoid extends Element {
                 };
 
                 getSnapshotStartTime = Date.now();
-                let snapshot = await session.getSnapshot({
+                let snapshot = await client.getSnapshot({
                     state: {},
                     rpc: [],
                     debug
@@ -129,7 +129,7 @@ class StaticVoid extends ElementManager {
     }
 
     _handleStream(ws) {
-        let sessionElement = this.buildElement(['Session']);
+        let clientElement = this.buildElement(['Session']);
 
         ws.on('message', (msg) => {
             let {rpc} = JSONparseSafe(msg, {});
