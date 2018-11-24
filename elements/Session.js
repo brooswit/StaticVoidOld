@@ -1,6 +1,6 @@
 const Element = require('./Element');
 
-module.exports = class Client extends Element {
+module.exports = class Session extends Element {
     constructor(parent, options) {
         super(parent, options);
     }
