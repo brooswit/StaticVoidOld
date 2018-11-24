@@ -1,6 +1,5 @@
 class StaticVoid extends Element {
     constructor(options = {}) {
-        new SessionManager(this);
         new AccountSessionManager(this);
         new AccountManager(this);
         
@@ -24,6 +23,7 @@ class StaticVoid extends Element {
     }
 
     _handleStream(ws) {
+        
         let sessionElement = this.buildElement(['Session']);
 
         ws.on('message', (msg) => {
