@@ -43,6 +43,7 @@ class StaticVoid extends Element {
         });
 
         session.hook('destroy', () => {
+            ws.close();
             session = null;
         });
 
