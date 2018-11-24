@@ -10,4 +10,4 @@ class AccountManager extends Element {
     }
 }
 
-module.exports = ExpressManager
+module.exports = AccountManager
