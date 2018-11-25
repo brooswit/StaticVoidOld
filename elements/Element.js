@@ -180,7 +180,7 @@ class ElementView extends View {
 
 let _nextElementId = 0;
 class Element {
-    constructor(initialParent) {
+    constructor(initialParent, options) {
         this._id = _nextElementId++;
 
         this._queries = new QueryRequester();
