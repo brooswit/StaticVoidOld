@@ -185,7 +185,7 @@ class Element {
 
         this._queries = new QueryRequester();
         this._events = new EventEmitter();
-        this._data = {};
+        this._data = Object.assign({}, options);
 
         this._isDestroyed = false;
 
