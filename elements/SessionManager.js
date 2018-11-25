@@ -1,12 +1,12 @@
 const Element = require('./Element');
 
-module.exports = class AccountManager extends Element {
+module.exports = class SessionManager extends Element.View {
     constructor(parent, state) {
         super(parent, state);
         this.parent.on('client_created', this._onClientCreated);
     }
 
     _onClientCreated(newClient) {
-        new Account(newClient);
+        new Session(newClient);
     }
 }
