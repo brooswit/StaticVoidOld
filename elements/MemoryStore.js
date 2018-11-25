@@ -7,7 +7,7 @@ module.exports = class MemoryStore extends Element {
             let pathElements = path.split('/');
             let pointer = this.data;
             for (let pathElementIndex = 0; pathElementIndex <= pathElements.length - 1; pathElementIndex ++) {
-                pointer = pointer[pathElementIndex] === undefined ?  
+                pointer = pointer[pathElementIndex] === undefined ? {} : pointer[pathElementIndex];
                 pathElement = pathElements[pathElementIndex];
             }
             this.data
