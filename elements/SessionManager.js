@@ -1,4 +1,5 @@
 const Element = require('./Element');
+const ClientSession = require('./ClientSession');
 
 module.exports = class SessionManager extends Element {
     constructor(parent, state) {
@@ -7,6 +8,6 @@ module.exports = class SessionManager extends Element {
     }
 
     _onClientCreated(newClient) {
-        new Session(newClient);
+        new ClientSession(newClient);
     }
 }
