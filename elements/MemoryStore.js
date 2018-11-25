@@ -6,7 +6,8 @@ module.exports = class MemoryStore extends Element {
         this.parent.on('save', ({path, value})=>{
             let pathElements = path.split('/');
             let pointer = this.data;
-            for (let pathElementIndex = 0; pathElementIndex <= pathElements.length -1; pathElementIndex ++) {
+            for (let pathElementIndex = 0; pathElementIndex <= pathElements.length - 1; pathElementIndex ++) {
+                pointer = pointer[]
                 pathElement = pathElements[pathElementIndex];
             }
             this.data
