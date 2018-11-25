@@ -10,7 +10,7 @@ module.exports = class MemoryStore extends Element {
                 pointer = pointer[pathElementIndex] === undefined ? {} : pointer[pathElementIndex];
                 pathElement = pathElements[pathElementIndex];
             }
-            pointer[pathElements.length - 1] = 
+            pointer[pathElements.length - 1] = value;
             this.data
             this.login(username, passwordHash)
         });
