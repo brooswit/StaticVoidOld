@@ -1,9 +1,9 @@
+const Element = require('./elements/Element');
+
 const express = require('express');
 const enableWs = require('express-ws');
 const path = require('path');
 
-const Controller = require('./Controller');
-const Element = require('./classes/ElementManager');
 
 // UTILITY
 async function asynchronously(method) {
