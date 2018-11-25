@@ -4,7 +4,6 @@ const express = require('express');
 const enableWs = require('express-ws');
 const path = require('path');
 
-
 // UTILITY
 async function asynchronously(method) {
     return method.then ? await method() : method();
