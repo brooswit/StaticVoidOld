@@ -104,3 +104,5 @@ class StaticVoid extends Element {
         });
     }
 }
+
+module.exports = StaticVoid;
