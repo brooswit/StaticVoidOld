@@ -11,8 +11,6 @@ module.exports = class MemoryStore extends Element {
                 pathElement = pathElements[pathElementIndex];
             }
             pointer[pathElements.length - 1] = value;
-            this.data
-            this.login(username, passwordHash)
         });
     }
 
