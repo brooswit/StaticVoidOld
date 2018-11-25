@@ -12,7 +12,7 @@ module.exports = class MemoryStore extends Element {
             }
             pointer[pathElements.length - 1] = value;
         });
-        this.parent.hook('save', ({path, value})=>{
+        this.parent.hook('load', ({path, value})=>{
             let pathElements = path.split('/');
             let pointer = this.data;
             for (let pathElementIndex = 0; pathElementIndex < pathElements.length - 1; pathElementIndex ++) {
