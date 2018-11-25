@@ -19,7 +19,7 @@ module.exports = class MemoryStore extends Element {
                 pointer = pointer[pathElementIndex] === undefined ? {} : pointer[pathElementIndex];
                 pathElement = pathElements[pathElementIndex];
             }
-            pointer[pathElements.length - 1] = value;
+            return pointer[pathElements.length - 1];
         });
     }
 
