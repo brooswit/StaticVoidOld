@@ -22,8 +22,4 @@ module.exports = class MemoryStore extends Element {
             return pointer[pathElements.length - 1];
         });
     }
-
-    login(username, passwordHash) {
-        
-    }
 }
