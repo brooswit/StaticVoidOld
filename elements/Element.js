@@ -193,9 +193,9 @@ class Element {
 
         this._isDestroyed = false;
 
-        this._parent = new ElementView(initialParent);
-        this._parent.hook('destroyed', this.destroy);
-        this._parent.hook('get_children', this._getThis);
+        this._parentView = new ElementView(initialParent);
+        this._parentView.hook('destroyed', this.destroy);
+        this._parentView.hook('get_children', this._getThis);
     }
 
     async _getThis() {
@@ -205,7 +205,7 @@ class Element {
     parentView() {
         
     }
-    parentView() {
+    rootView() {
         
     }
     view() {
@@ -230,7 +230,7 @@ class Element {
 
     parent() {
         if (this._isDestroyed) return null;
-        return this._parent.element();
+        return this._parentView.element();
     }
 
     async children() {
@@ -249,9 +249,9 @@ class Element {
 
     changeParent(newParent) {
         if (this._isDestroyed) return;
-        if (this._parent.element() === newParent) return;
+        if (this._parentView.element() === newParent) return;
 
-        this._parent.change(newParent);
+        this._parentView.change(newParent);
 
         this.trigger('parent_changed', newParent);
     }
