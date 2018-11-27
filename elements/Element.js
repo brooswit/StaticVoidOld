@@ -173,6 +173,10 @@ class ElementView extends View {
         this.hook('destroyed', this.close);
     }
 
+    view() {
+        if (this._isDestroyed) return null;
+        return new ElementView(this);
+    }
     hook(eventName, callback) {
         return new ElementQueryHook(this, eventName, callback);
     }
