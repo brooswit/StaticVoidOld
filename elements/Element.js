@@ -201,7 +201,7 @@ class Element {
 
     view() {
         if (this._isDestroyed) return null;
-        return new ElementView(this.element());
+        return new ElementView(this);
     }
 
     hook(eventName, callback) {
