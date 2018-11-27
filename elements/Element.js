@@ -246,7 +246,7 @@ class Element {
 
     async children(type) {
         if (this._isDestroyed) return [];
-        return await this.trigger(`get_children${}`);
+        return await this.trigger(`get_children${type?`_${type`}`);
     }
 
     root() {
