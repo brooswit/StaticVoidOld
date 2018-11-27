@@ -244,7 +244,8 @@ class Element {
         return this.parentView().element();
     }
 
-    async children(type) {
+    async children(optionalType) {
+        let type
         if (this._isDestroyed) return [];
         return await this.trigger(`get_children${type?`_${type}`:''}`);
     }
