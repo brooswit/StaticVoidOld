@@ -241,7 +241,7 @@ class Element {
 
     parent() {
         if (this._isDestroyed) return null;
-        return this._parentView.element();
+        return this.parentView().element();
     }
 
     async children() {
@@ -260,9 +260,9 @@ class Element {
 
     changeParent(newParent) {
         if (this._isDestroyed) return;
-        if (this._parentView.element() === newParent) return;
+        if (this.parentView().element() === newParent) return;
 
-        this._parentView.change(newParent);
+        this.parentView().change(newParent);
 
         this.trigger('parent_changed', newParent);
     }
