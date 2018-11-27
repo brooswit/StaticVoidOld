@@ -3,10 +3,10 @@ const Element = require('./Element');
 module.exports = class AccountManager extends Element {
     constructor(parent, state) {
         super(parent, state);
-        this.parent.hook('session_login', this._onSessionCreated);
+        this.parent.hook('account_login', this._onAccountLogin);
     }
 
-    _onSessionCreated(newSession) {
+    _onAccountLogin(newSession) {
         new Account(this);
     }
 }
