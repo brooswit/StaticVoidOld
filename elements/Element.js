@@ -194,7 +194,7 @@ class Element {
         this._isDestroyed = false;
 
         this._parentView = new ElementView(initialParent);
-        this._rootView = new ElementView();
+        this._rootView = new ElementView(this.root());
 
         this.parentView().hook('destroyed', this.destroy);
         this.parentView().hook('get_children', this._getThis);
