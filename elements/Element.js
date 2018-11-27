@@ -203,7 +203,9 @@ class Element {
         this.rootView().hook(`get_all_elements_${this.name}`, this._getThis);
         this.rootView().hook(`get_all_elements`, this._getThis);
 
-        this.parentView().trigger(`${this.name.toLowerCase()}chi_created`, this);
+        this.parentView().trigger(`child_created`, this);
+        this.parentView().trigger(`child_created`, this);
+        this.parentView().trigger(`${this.name.toLowerCase()}_child_created`, this);
         this.rootView().trigger(`${this.name.toLowerCase()}_created`, this);
     }
 
