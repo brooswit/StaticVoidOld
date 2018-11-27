@@ -203,7 +203,8 @@ class Element {
         this.rootView().hook(`get_all_elements_${this.name}`, this._getThis);
         this.rootView().hook(`get_all_elements`, this._getThis);
 
-        this.rootView().hook(`${this.name.toLowerCase()}_created`, this._getThis);
+        this.rootView().trigger(`${this.name.toLowerCase()}_created`, this._getThis);
+        this.rootView().trigger(`${this.name.toLowerCase()}_created`, this._getThis);
     }
 
     async _getThis() {
