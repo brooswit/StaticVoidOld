@@ -245,7 +245,7 @@ class Element {
     }
 
     async children(optionalType) {
-        let type = type ? (typeof optionalType 
+        let type = type ? (typeof optionalType === 'string' ? optionalType : optionalType.name) : null;
         if (this._isDestroyed) return [];
         return await this.trigger(`get_children${type?`_${type}`:''}`);
     }
