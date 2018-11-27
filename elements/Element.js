@@ -202,7 +202,12 @@ class Element {
         if (this._isDestroyed) return null;
         return this;
     }
-
+    parentView() {
+        
+    }
+    parentView() {
+        
+    }
     view() {
         if (this._isDestroyed) return null;
         return new ElementView(this);
