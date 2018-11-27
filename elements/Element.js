@@ -198,9 +198,10 @@ class Element {
 
         this.parentView().hook('destroyed', this.destroy);
         this.parentView().hook('get_children', this._getThis);
+        this.parentView().hook(`get_${this.name}_children`);
         
         this.rootView().hook(`get_${this.name}_children`);
-        this._parentView.hook('destroyed', this.destroy);
+        this.rootView().hook(`get_${this.name}_children`);
     }
 
     async _getThis() {
