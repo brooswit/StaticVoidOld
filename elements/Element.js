@@ -209,6 +209,7 @@ class Element {
         return this;
     }
     parentView() {
+        this._parentView.
         return this._parentView;
     }
     rootView() {
