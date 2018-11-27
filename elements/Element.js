@@ -200,8 +200,7 @@ class Element {
         this.parentView().hook('get_children', this._getThis);
         this.parentView().hook(`get_${this.name}_children`);
         
-        this.rootView().hook(`get_${this.name}_children`);
-        this.rootView().hook(`get_${this.name}_children`);
+        this.rootView().hook(`get_all_${this.name}`);
     }
 
     async _getThis() {
