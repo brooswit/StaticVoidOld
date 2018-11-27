@@ -244,9 +244,9 @@ class Element {
         return this.parentView().element();
     }
 
-    async children() {
+    async children(type) {
         if (this._isDestroyed) return [];
-        return await this.trigger('get_children');
+        return await this.trigger(`get_children${}`);
     }
 
     root() {
