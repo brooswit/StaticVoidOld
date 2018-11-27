@@ -213,6 +213,8 @@ class Element {
         return this._parentView;
     }
     rootView() {
+        this._rootView.change(this.root());
+        return this._rootView;
         
     }
     view() {
