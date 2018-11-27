@@ -202,6 +202,8 @@ class Element {
         
         this.rootView().hook(`get_all_elements_${this.name}`, this._getThis);
         this.rootView().hook(`get_all_elements`, this._getThis);
+
+        this.rootView().hook(``, this._getThis);
     }
 
     async _getThis() {
