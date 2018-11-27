@@ -208,15 +208,17 @@ class Element {
         if (this._isDestroyed) return null;
         return this;
     }
+
     parentView() {
         this._parentView.change(this.parent());
         return this._parentView;
     }
+
     rootView() {
         this._rootView.change(this.root());
         return this._rootView;
-        
     }
+
     view() {
         if (this._isDestroyed) return null;
         return new ElementView(this);
