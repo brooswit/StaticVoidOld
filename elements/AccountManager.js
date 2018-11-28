@@ -8,6 +8,6 @@ module.exports = class AccountManager extends Element {
 
     _onAccountLogin({session, username, passhash}) {
         this.auth.login(username, passhash);
-        new Account(this, session, username, passhash);
+        return new Account(this, session, username, passhash);
     }
 }
