@@ -21,7 +21,7 @@ function extractArguments (args) {
   }
   if (unpack) options = args[0]
 }
-function applyOptions (context, options, func) {
+async function applyOptions (context, options, asyncFunc) {
 
 }
 module.exports = class BaseStore extends Element {
