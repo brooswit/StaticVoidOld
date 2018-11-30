@@ -23,4 +23,7 @@ module.exports = class MemoryStore extends Element {
       return pointer[pathElements.length - 1]
     })
   }
+  _onSave({collection, key, value}) {
+      
+  }
 }
