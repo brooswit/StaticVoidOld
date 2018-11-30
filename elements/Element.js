@@ -1,26 +1,4 @@
-// class CallbackRegistry {
-//     constructor() {
-//         this._callbacks = {};
-//     }
 
-//     register(callbackName, callback) {
-//         if (!callback) {
-//             unregister(callbackName);
-//             return;
-//         }
-//         this._callbacks[callbackName] = callback;
-//     }
-
-//     unregister(callbackName) {
-//         delete this._callbacks[callbackName];
-//     }
-
-//     fire(callbackName, payload) {
-//         if (this._callbacks[callbackName]) {
-//             this._callbacks[callbackName](payload);
-//         }
-//     }
-// }
 const EventEmitter = require('events')
 
 class QueryRequester {
@@ -245,7 +223,7 @@ class Element {
     return this.parentView().element()
   }
 
-    children (optionalType) {
+  children (optionalType) {
     let type = optionalType !== undefined ? (typeof optionalType === 'string' ? optionalType : optionalType.name) : null
     if (this._isDestroyed) return []
     return this.trigger(`get_children${type ? `_${type}` : ''}`)
