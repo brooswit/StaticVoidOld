@@ -27,7 +27,8 @@ module.exports = class MemoryStore extends BaseStore {
         this.data[collection] = this.data[collection] || {};
         this.data[collection][key] = value;
     }
-    load(collection, key,) {
+    load(collection, key, optionalDefault) {
+        let default = optionalDefault || null
         this.data[collection] = this.data[collection] || {};
         this.data[collection][key] = value;
     }
