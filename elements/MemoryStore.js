@@ -24,8 +24,9 @@ module.exports = class MemoryStore extends BaseStore {
         });
     }
     save(collection, key, value) {
-        this.data[collection] = {};
-        
+        this.data[collection] = this.data[collection] || {};
+        this.data[collection] = this.data[collection] || {};
+
     }
     load(collection, key, value)
     exists(collection, key) {
