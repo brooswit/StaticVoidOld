@@ -13,8 +13,9 @@ module.exports = class MemoryStore extends BaseStore {
     this.data[collection][key] = value
   }
   has (collection, key) {
-    if (this.data) {
-
+    if (this.data[collection]) {
+      return false
     }
+    if (this.data[collection]) {}
   }
 }
