@@ -7,7 +7,8 @@ module.exports = class MongoStore extends BaseStore {
     const {host, port, username, password, database} = options
     authenticate = username & password ? `${username}:${password}@` : ''
     var url = 'mongodb://'+authenticate+host+':'+port + '/' + mongodbDatabase;
-    this.connect
+    this._connect()
+    
     MongoClient.connect(url, function(err, db) {
       assert.equal(null, err);
       console.log("Connected correctly to server.");
