@@ -7,7 +7,7 @@ module.exports = class BaseStore extends Element {
     this.rootView().hook('load', this._onLoad)
   }
 
-  _onSave (options) { 
+  _onSave (options) { optionsToArguments(options)
     this.save(collection, key, value)
   }
 
