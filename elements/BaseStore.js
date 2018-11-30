@@ -11,9 +11,10 @@ function extractArguments (args) {
   let options = {}
   let argNames = getArgumentNames(args.callee)
   let unpack = 
-  for (argNameIndex in argNames) {
-    let argName = argNames[argNameIndex]
-    options[argName] = args[argNameIndex]
+  for (argIndex in argNames) {
+    let argName = argNames[argIndex]
+    options[argName] = args[argIndex]
+    if()
   }
 }
 
