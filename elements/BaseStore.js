@@ -1,6 +1,5 @@
 const Element = require('./Element')
-
-
+const getArgumentNames
 function extract (args) {
 
 }
