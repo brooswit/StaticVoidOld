@@ -1,16 +1,16 @@
 const Element = require('./Element')
 
-function getArgumentNames (func) {
-  let argumentNames = null
+function getArgmentNames (func) {
+  let arguentNames = null
   try {
-    argumentNames = func.toString().split('(')[1].split(')')[0].replace(/\s/g, '').split(',')
+    argmentNames = func.toString().split('(')[1].split(')')[0].replace(/\s/g, '').split(',')
   } catch (e) {}
-  return argumentNames
+  return argmentNames
 }
 
-function extractArguments (args, func) {
+function extractArgments (args, func) {
   let options = {}
-  let argNames = getArgumentNames(func)
+  let argNames = getArgmentNames(func)
   let unpack = true
   for (let argIndex in argNames) {
     let argName = argNames[argIndex]
@@ -23,12 +23,8 @@ function extractArguments (args, func) {
 }
 
 function applyOptions (context, options, func) {
-  let args = extractArguments(options, func)
+  let args = extractArgments(options, func)
   func.apply(context, args)
-}
-
-function optionsApplyer (func) {
-    
 }
 
 module.exports = class BaseStore extends Element {
