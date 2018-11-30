@@ -9,6 +9,9 @@ function getArgumentNames (func) {
 
 function extractArguments (args) {
   let argNames = getArgumentNames(args.callee)
+  for (argName in argNames) {
+      
+  }
 }
 
 module.exports = class BaseStore extends Element {
