@@ -1,11 +1,10 @@
 const Element = require('./Element')
 const getArgumentNames(func) {
-    let argumentNames =
+    let argumentNames = null;
     try {
-        return func.toString().split('(')[1].split(')')[0].replace(/\s/g,'').split(',')
-    } catch(e) {
-        return null;        
-    }
+        argumentNames = func.toString().split('(')[1].split(')')[0].replace(/\s/g,'').split(',')
+    } catch(e) {}
+    return argumentNames
 }
 function extract (args) {
 
