@@ -163,12 +163,13 @@ class ElementView extends View {
 
 let _nextElementId = 0
 class Element {
-  constructor (initialParent, state) {
+  constructor (initialParent, options) {
+    this._options = options
     this._id = _nextElementId++
 
     this._queries = new QueryRequester()
     this._events = new EventEmitter()
-    this._data = Object.assign({}, state)
+    this._data = {}
 
     this._isDestroyed = false
 
