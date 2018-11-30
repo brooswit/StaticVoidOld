@@ -1,16 +1,14 @@
-const MongoClient = require('mongodb').MongoClient;
+const MongoClient = require('mongodb').MongoClient
 const BaseStore = require('./BaseStore')
 
 module.exports = class MongoStore extends BaseStore {
   constructor (parent, options) {
     super(parent, options)
-    
     const {host, port, username, password, database} = options
-    
 
     var host = '127.0.0.1';
     var port = '27017';
-         authenticate = username & password ? `${username}:${password}@` : ''
+    authenticate = username & password ? `${username}:${password}@` : ''
     var url = 'mongodb://'+authenticate+host+':'+port + '/' + mongodbDatabase;
 
   }
