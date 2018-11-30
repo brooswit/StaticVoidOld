@@ -139,7 +139,7 @@ class View {
     if (this._wrappedMethods[methodName]) return this._wrappedMethods[methodName]
     this._wrappedMethods[methodName] = function () {
       if (!this.exists()) return null
-      this.source[methodName].call(this.source, arguments)
+      this.source[methodName].apply(this.source, arguments)
     }.bind(this)
     this._wrappedMethods[methodName].name = methodName
     return this._wrappedMethods[methodName]
