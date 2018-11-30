@@ -13,7 +13,8 @@ module.exports = class MongoStore extends BaseStore {
     MongoClient.connect(url, function(err, db) {
       if (err) {
         console.log(err);
-        this._conn
+        this._connect()
+        return
       }
   }
     MongoClient.connect(url, function(err, db) {
