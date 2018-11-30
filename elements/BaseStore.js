@@ -41,5 +41,6 @@ module.exports = class BaseStore extends Element {
   }
 
   save (collection, key, value) {}
-  load (collection, key, value) {}
+  load (collection, key, defaultValue = null) {}
+  asyhas (collection, key) {}
 }
