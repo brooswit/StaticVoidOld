@@ -245,10 +245,10 @@ class Element {
     return this.parentView().element()
   }
 
-  async children (optionalType) {
+   children (optionalType) {
     let type = type ? (typeof optionalType === 'string' ? optionalType : optionalType.name) : null
     if (this._isDestroyed) return []
-    return await this.trigger(`get_children${type ? `_${type}` : ''}`)
+    return this.trigger(`get_children${type ? `_${type}` : ''}`)
   }
 
   root () {
