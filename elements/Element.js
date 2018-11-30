@@ -245,8 +245,8 @@ class Element {
     return this.parentView().element()
   }
 
-   children (optionalType) {
-    let type = optionalType !=== undefined ? (typeof optionalType === 'string' ? optionalType : optionalType.name) : null
+    children (optionalType) {
+    let type = optionalType !== undefined ? (typeof optionalType === 'string' ? optionalType : optionalType.name) : null
     if (this._isDestroyed) return []
     return this.trigger(`get_children${type ? `_${type}` : ''}`)
   }
