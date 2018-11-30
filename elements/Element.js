@@ -128,7 +128,7 @@ class View {
     this.change(newSource)
 
     let methodNames = Object.getOwnPropertyNames(Class.prototype)
-    for (methodNameIndex in methodNames) {
+    for (let methodNameIndex in methodNames) {
       let methodName = methodNames[methodNameIndex]
       if (methodName[0] === '_') continue
       this[methodName] = this[methodName] || this.wrap(methods[methodIndex])
