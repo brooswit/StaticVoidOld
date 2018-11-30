@@ -9,21 +9,22 @@ function getArgNames (func) {
 }
 
 function optsToFuncArgs (args, func) {
-  let options = {}
+  let opts = {}
   let argNames = getArgNames(func)
+  if ()
   let unpack = true
   for (let argIndex in argNames) {
     let argName = argNames[argIndex]
     let arg = args[argIndex]
-    options[argName] = args[argIndex]
+    opts[argName] = args[argIndex]
     if (argIndex === 0 && (typeof arg !== 'object' || arg === null)) unpack = false
     if (argIndex > 0 && arg !== undefined) unpack = false
   }
-  if (unpack) options = args[0]
+  if (unpack) opts = args[0]
 }
 
-function applyOptions (context, options, func) {
-  let args = optsToFuncArgs(options, func)
+function applyOpts (context, opts, func) {
+  let args = optsToFuncArgs(opts, func)
   func.apply(context, args)
 }
 
@@ -34,12 +35,12 @@ module.exports = class BaseStore extends Element {
     this.rootView().hook('load', this._onLoad)
   }
 
-  _onSave (options) {
-    applyOptions(this, this.save, options)
+  _onSave (opts) {
+    applyOpts(this, this.save, opts)
   }
 
-  _onLoad (options) {
-    applyOptions(this, this.load, options)
+  _onLoad (opts) {
+    applyOpts(this, this.load, opts)
   }
 
   async save (collection, key, value) {}
