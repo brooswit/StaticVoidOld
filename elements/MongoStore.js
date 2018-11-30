@@ -12,11 +12,8 @@ module.exports = class MongoStore extends BaseStore {
     var port = '27017';
      
     var authenticate ='';
-    //cloud
     if (cloud) {
-     host = 'YOURHOST.mlab.com';
-     port = 'YOURPORT';
-     authenticate = username & password ? `${username}:${password}`'YOURUSER:YOURPASSWORD@'
+     authenticate = username & password ? `${username}:${password}@` 
     }
      
     var mongodbDatabase = 'world';
