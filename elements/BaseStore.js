@@ -36,9 +36,10 @@ module.exports = class BaseStore extends Element {
     applyOptions(this, this.save, options)
   }
 
-  save (collection, key, value) {}
-
-  _onLoad ({ collection, key, defaultValue = null }) {
+  _onLoad (options) {
     applyOptions(this, this.save, options)
   }
+
+  save (collection, key, value) {}
+  load (collection, key, value) {}
 }
