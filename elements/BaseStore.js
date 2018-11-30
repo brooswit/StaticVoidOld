@@ -21,7 +21,9 @@ function extractArguments (args) {
   }
   if (unpack) options = args[0]
 }
+function applyOptions (context, options, func) {
 
+}
 module.exports = class BaseStore extends Element {
   constructor (parent, state) {
     super(parent, state)
