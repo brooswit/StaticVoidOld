@@ -12,12 +12,10 @@ function optsToFuncArgs (opts, func) {
   let args = []
   let argNames = getArgNames(func)
   for (let argIndex in argNames) {
-    if (argIndex === 0 && (typeof arg !== 'object' || arg === null)) unpack = false
-    if (argIndex > 0 && arg !== undefined) unpack = false
+    let argName = argNames[argIndex]
   }
   if (unpack) opts = args[0]
   if un
-    let argName = argNames[argIndex]
     let arg = opts[argName]
     args[argName] = opts[argIndex]
   }
