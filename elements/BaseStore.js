@@ -14,7 +14,7 @@ function extractArguments (args) {
   for (argIndex in argNames) {
     let argName = argNames[argIndex]
     options[argName] = args[argIndex]
-    if()
+    if(argIndex === 0 && )
   }
 }
 
