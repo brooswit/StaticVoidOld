@@ -162,7 +162,7 @@ class View {
 
   close () {
     if (!this.isOpen()) return
-    change(null)
+    this.change(null)
     this._open = false
     this._events.emit('closed')
   }
@@ -230,9 +230,9 @@ class Element {
     return new ElementQueryHook(this, eventName, callback)
   }
 
-  async trigger (eventName, payload) {
+  trigger (eventName, payload) {
     if (this._isDestroyed) return null
-    return await this._queries.request(eventName, payload)
+    return this._queries.request(eventName, payload)
   }
 
   element () {
