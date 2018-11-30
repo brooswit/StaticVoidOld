@@ -17,7 +17,9 @@ module.exports = class MongoStore extends BaseStore {
         this._connect()
         return
       }
+    }
   }
+
   async save (collection, key, value) {
     this.data[collection] = this.data[collection] || {}
     this.data[collection][key] = value
