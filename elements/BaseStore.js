@@ -17,7 +17,8 @@ function extractArguments (args) {
     options[argName] = args[argIndex]
     if (argIndex === 0 && (typeof arg !== 'object' || arg === null)) unpack = false
     if (argIndex > 0 && arg !== undefined) unpack = false
-  } if (unpack) options = options
+  }
+  if (unpack) options = args[0]
 }
 
 module.exports = class BaseStore extends Element {
