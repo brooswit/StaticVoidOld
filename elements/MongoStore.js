@@ -1,6 +1,7 @@
 const BaseStore = require('./BaseStore')
 
 module.exports = class MongoStore extends BaseStore {
+  constructor()
   async save (collection, key, value) {
     this.data[collection] = this.data[collection] || {}
     this.data[collection][key] = value
