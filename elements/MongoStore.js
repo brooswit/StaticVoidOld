@@ -5,6 +5,21 @@ module.exports = class MongoStore extends BaseStore {
   constructor (parent, options) {
     super(parent, options)
 
+    var mongodbHost = '127.0.0.1';
+    var mongodbPort = '27017';
+     
+    var authenticate ='';
+    //cloud
+    if (cloud) {
+     mongodbHost = 'YOURHOST.mlab.com';
+     mongodbPort = 'YOURPORT';
+     authenticate = 'YOURUSER:YOURPASSWORD@'
+    }
+     
+    var mongodbDatabase = 'world';
+     
+    // connect string for mongodb server running locally, connecting to a database called test
+    var url = 'mongodb://'+authenticate+mongodbHost+':'+mongodbPort + '/' + mongodbDatabase;
   }
   async save (collection, key, value) {
     this.data[collection] = this.data[collection] || {}
