@@ -8,15 +8,15 @@ function getArgNames (func) {
   return argNames
 }
 
-function optsToFuncArgs (args, func) {
+function optsToFuncArgs (opts, func) {
   let opts = {}
   let argNames = getArgNames(func)
   if (!argNames) return []
   let unpack = true
   for (let argIndex in argNames) {
     let argName = argNames[argIndex]
-    let arg = args[argIndex]
-    opts[argName] = args[argIndex]
+    let arg = opts[argIndex]
+    opts[argName] = opts[argIndex]
     if (argIndex === 0 && (typeof arg !== 'object' || arg === null)) unpack = false
     if (argIndex > 0 && arg !== undefined) unpack = false
   }
