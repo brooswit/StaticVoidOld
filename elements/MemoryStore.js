@@ -23,5 +23,7 @@ module.exports = class MemoryStore extends BaseStore {
             return pointer[pathElements.length - 1];
         });
     }
-    _onSave(collection, key, value)
+    save(collection, key, value)
+    load(collection, key, value)
+    exis
 }
