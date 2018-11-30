@@ -13,6 +13,7 @@ function optsToFuncArgs (opts, func) {
   let argNames = getArgNames(func)
   for (let argIndex in argNames) {
     let argName = argNames[argIndex]
+    args[argIndex] = opts[argName]
   }
   if (unpack) opts = args[0]
   if un
