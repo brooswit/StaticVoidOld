@@ -12,8 +12,9 @@ module.exports = class MemoryStore extends BaseStore {
     this.data[collection] = this.data[collection] || {}
     this.data[collection][key] = value
   }
-  has (collection, key) {
+  async has (collection, key) {
     if (!this.data[collection]) return false
-    if (!this.data[collection]) return false
+    if (!this.data[collection][key]) return false
+    return true
   }
 }
