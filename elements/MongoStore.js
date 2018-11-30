@@ -4,11 +4,15 @@ const BaseStore = require('./BaseStore')
 module.exports = class MongoStore extends BaseStore {
   constructor (parent, options) {
     super(parent, options)
-    const {host, port, username, password, database} = options
+    const {host
+    this.port
+    this.username
+    this.password
+    this.database} = options
     authenticate = username & password ? `${username}:${password}@` : ''
     var url = 'mongodb://'+authenticate+host+':'+port + '/' + mongodbDatabase;
     this._connect()
-    
+
     MongoClient.connect(url, function(err, db) {
       assert.equal(null, err);
       console.log("Connected correctly to server.");
