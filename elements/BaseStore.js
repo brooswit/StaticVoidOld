@@ -1,6 +1,5 @@
 const Element = require('./Element')
 
-
 module.exports = class BaseStore extends Element {
   constructor (parent, state) {
     super(parent, state)
@@ -13,7 +12,7 @@ module.exports = class BaseStore extends Element {
   }
 
   save (collection, key, value) {
-    let args = extractArguments(arguments)
+
   }
 
   _onLoad ({ collection, key, defaultValue = null }) {
