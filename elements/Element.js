@@ -200,8 +200,8 @@ class Element {
     this.parentView().hook('get_children', this._getThis)
     this.parentView().hook(`get_children_${this.name}`, this._getThis)
 
-    this.rootView().hook(`get_all_elements_${this.name}`, this._getThis)
-    this.rootView().hook(`get_all_elements`, this._getThis)
+    this.rootView().hook(`get_elements_${this.name}`, this._getThis)
+    this.rootView().hook(`get_elements`, this._getThis)
 
     this.parentView().trigger(`child_created`, this)
     this.parentView().trigger(`${this.name.toLowerCase()}_child_created`, this)
