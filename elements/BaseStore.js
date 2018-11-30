@@ -9,5 +9,7 @@ module.exports = class MemoryStore extends Element {
   _onSave ({ collection, key, value }) {
     this.save(collection, key, value)
   }
-  _onLoad({collection, key, de})
+  _onLoad ({ collection, key, defaultValue = null }) {
+
+  }
 }
