@@ -10,7 +10,7 @@ function getArgumentNames (func) {
 
 function extractArguments (args, func) {
   let options = {}
-  let argNames = getArgumentNames(args.callee)
+  let argNames = getArgumentNames(func)
   let unpack = true
   for (let argIndex in argNames) {
     let argName = argNames[argIndex]
@@ -21,10 +21,12 @@ function extractArguments (args, func) {
   }
   if (unpack) options = args[0]
 }
+
 function applyOptions (context, options, func) {
   let args = extractArguments(options, func)
   func.apply(context, args)
 }
+
 module.exports = class BaseStore extends Element {
   constructor (parent, state) {
     super(parent, state)
