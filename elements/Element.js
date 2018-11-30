@@ -200,7 +200,7 @@ class Element {
     this.parentView().hook('get_children', this._getThis)
     this.parentView().hook(`find_${this.name.toLowerCase()}_children`, this._getThis)
 
-    this.rootView().hook(`get_elements_${this.name.toLowerCase()}`, this._getThis)
+    this.rootView().hook(`find_${this.name.toLowerCase()}`, this._getThis)
     this.rootView().hook(`get_elements`, this._getThis)
 
     this.parentView().trigger(`child_created`, this)
