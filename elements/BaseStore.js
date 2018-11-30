@@ -11,8 +11,6 @@ function getArgNames (func) {
 function optsToFuncArgs (opts, func) {
   let args = []
   let argNames = getArgNames(func)
-  if (!argNames) return []
-  let unpack = true
   for (let argIndex in argNames) {
     if (argIndex === 0 && (typeof arg !== 'object' || arg === null)) unpack = false
     if (argIndex > 0 && arg !== undefined) unpack = false
