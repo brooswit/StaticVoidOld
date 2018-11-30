@@ -1,11 +1,11 @@
 const BaseStore = require('./BaseStore');
 
 module.exports = class MemoryStore extends BaseStore {
-    constructor(parent, options) {
-        super(parent, options);
-        this.parent.hook('save', ({path, value})=>{
+  constructor(parent, options) {
+    super(parent, options);
+    this.parent.hook('save', ({path, value})=>{
             
-            let pathElements = path.split('/');
+    let pathElements = path.split('/');
             let pointer = this.data;
             for (let pathElementIndex = 0; pathElementIndex < pathElements.length - 1; pathElementIndex ++) {
                 pointer = pointer[pathElementIndex] === undefined ? {} : pointer[pathElementIndex];
