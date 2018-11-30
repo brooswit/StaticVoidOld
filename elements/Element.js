@@ -198,9 +198,9 @@ class Element {
 
     this.parentView().hook('destroyed', this.destroy)
     this.parentView().hook(`${this.name.toLowerCase()}_children_views`, this.view)
-    this.parentView().hook('find_children', this._getThis)
+    this.parentView().hook('children_views', this._getThis)
 
-    this.rootView().hook(`find_all_${this.name.toLowerCase()}`, this._getThis)
+    this.rootView().hook(`${this.name.toLowerCase()}_`, this._getThis)
     this.rootView().hook(`find_all_elements`, this._getThis)
 
     this.parentView().trigger(`child_created`, this)
