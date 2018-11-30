@@ -1,5 +1,7 @@
 const Element = require('./Element')
-const getArgumentNames
+const getArgumentNames(func) {
+    c.toString().split('(')[1].split(')')[0].replace(/\s/g,'').split(',')
+}
 function extract (args) {
 
 }
