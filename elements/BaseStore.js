@@ -9,22 +9,16 @@ function getArgNames (func) {
 }
 
 function optsToFuncArgs (opts, func) {
-  if (unpack) opts = args[0]
-  if un
-    let arg = opts[argName]
-    args[argName] = opts[argIndex]
-  }
-}
-
-
-
-function applyOpts (context, opts, func) {
-let args = []
-let argNames = getArgNames(func)
-for (let argIndex in argNames) {
+  let args = []
+  let argNames = getArgNames(func)
+  for (let argIndex in argNames) {
     let argName = argNames[argIndex]
     args[argIndex] = opts[argName]
+  }
+  return args
 }
+
+function applyOpts (context, opts, func) {
   let args = optsToFuncArgs(opts, func)
   func.apply(context, args)
 }
