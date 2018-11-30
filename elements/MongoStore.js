@@ -1,7 +1,7 @@
 const BaseStore = require('./BaseStore')
 
 module.exports = class MongoStore extends BaseStore {
-  constructor(parent, options) {
+  constructor (parent, options) {
     super(parent, options)
     
   }
