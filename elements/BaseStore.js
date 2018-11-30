@@ -1,5 +1,8 @@
 const Element = require('./Element')
 
+function extract (args) {
+
+}
 module.exports = class BaseStore extends Element {
   constructor (parent, state) {
     super(parent, state)
