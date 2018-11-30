@@ -157,7 +157,7 @@ class View {
     if (!this.isOpen() || this.source === newSource) return
     let oldSource = this.source
     this.source = newSource
-    this._events.emit('source_changed', {oldSource, newSource)
+    this._events.emit('source_changed', { oldSource, newSource })
   }
 
   close () {
