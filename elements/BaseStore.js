@@ -22,8 +22,8 @@ function extractArguments (args) {
   if (unpack) options = args[0]
 }
 function applyOptions (context, options, func) {
-  let args = optionsToFuncArgs()
-  func.apply()
+  let args = optionsToFuncArgs(options, func)
+  func.apply(context, args)
 }
 module.exports = class BaseStore extends Element {
   constructor (parent, state) {
