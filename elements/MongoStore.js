@@ -7,7 +7,18 @@ module.exports = class MongoStore extends BaseStore {
     const {host, port, username, password, database} = options
     authenticate = username & password ? `${username}:${password}@` : ''
     var url = 'mongodb://'+authenticate+host+':'+port + '/' + mongodbDatabase;
-
+    MongoClient.connect(url, function(err, db) {
+      assert.equal(null, err);
+      console.log("Connected correctly to server.");
+   //var cursor = collection.find({});
+       // find top 20 countries by  size
+       db.collection('countries').find({},{"sort": [["area",-1]]}).limit(20).toArray(function(err, results){
+       console.log("Country One " +JSON.stringify(results[0])); 
+       console.log("Name of Country Four " +results[3].name+ " and size: " +results[3].area);
+    
+         db.close();
+         console.log("Connection to database is closed.");
+       });
   }
   async save (collection, key, value) {
     this.data[collection] = this.data[collection] || {}
