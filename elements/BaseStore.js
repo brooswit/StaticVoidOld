@@ -43,7 +43,7 @@ module.exports = class BaseStore extends Element {
   }
 
   _onLoad (options) {
-    applyOptions(this, this.save, options)
+    applyOptions(this, this.load, options)
   }
 
   async save (collection, key, value) {}
