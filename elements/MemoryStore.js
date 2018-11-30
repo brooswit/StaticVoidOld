@@ -1,8 +1,8 @@
 const Element = require('./Element');
 
 module.exports = class MemoryStore extends BaseStore {
-    constructor(parent, state) {
-        super(parent, state);
+    constructor(parent, options) {
+        super(parent, options);
         this.parent.hook('save', ({path, value})=>{
             let pathElements = path.split('/');
             let pointer = this.data;
