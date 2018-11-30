@@ -6,6 +6,7 @@ module.exports = class MongoStore extends BaseStore {
     super(parent, options)
     
     
+
     var mongodbHost = '127.0.0.1';
     var mongodbPort = '27017';
      
