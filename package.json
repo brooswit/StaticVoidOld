@@ -1,6 +1,6 @@
 {
     "name": "staticvoid",
-    "version": "0.0.2767",
+    "version": "0.0.2768",
     "description": "",
     "main": "StaticVoid.js",
     "scripts": {
@@ -20,7 +20,8 @@
     "homepage": "https://github.com/brooswit/StaticVoid#readme",
     "devDependencies": {
         "grunt": "^1.0.3",
-        "grunt-contrib-watch": "^1.1.0"
+        "grunt-contrib-watch": "^1.1.0",
+        "jshint": "^2.9.6"
     },
     "dependencies": {
         "ejs": "^2.6.1",
