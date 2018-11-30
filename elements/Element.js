@@ -246,7 +246,7 @@ class Element {
   }
 
    children (optionalType) {
-    let type = type ? (typeof optionalType === 'string' ? optionalType : optionalType.name) : null
+    let type = optionalType !=== undefined ? (typeof optionalType === 'string' ? optionalType : optionalType.name) : null
     if (this._isDestroyed) return []
     return this.trigger(`get_children${type ? `_${type}` : ''}`)
   }
