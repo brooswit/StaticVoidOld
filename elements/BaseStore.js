@@ -15,7 +15,9 @@ function extractArguments (args) {
     let argName = argNames[argIndex]
     let arg = args[argIndex]
     options[argName] = args[argIndex]
-    if(argIndex === 0 && typeof arg !== 'object' && arg !== null )
+    if (argIndex === 0 && (typeof arg !== 'object' || arg === null)) {
+
+    }
   }
 }
 
