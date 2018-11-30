@@ -10,7 +10,8 @@ module.exports = class BaseStore extends Element {
   _onSave ({ collection, key, value }) {
     this.save(collection, key, value)
   }
-  
+
+  save()
 
   _onLoad ({ collection, key, defaultValue = null }) {
     this.load(collection, key, defaultValue)
