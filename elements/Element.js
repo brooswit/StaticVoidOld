@@ -66,7 +66,7 @@ class QueryRequester {
         errored = errored || !!error
         results[index] = result
         errors[index] = error
-        for (resultIndex in results) {
+        for (let resultIndex in results) {
           if (!results[resultIndex]) return
         }
         errors = errored ? errors : null
