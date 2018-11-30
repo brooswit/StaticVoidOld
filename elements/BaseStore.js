@@ -11,14 +11,12 @@ function extractArguments (args) {
   let options = {}
   let argNames = getArgumentNames(args.callee)
   let unpack = true
-  for (argIndex in argNames) {
+  for (let argIndex in argNames) {
     let argName = argNames[argIndex]
     let arg = args[argIndex]
     options[argName] = args[argIndex]
-    if (argIndex === 0 && (typeof arg !== 'object' || arg === null)) {
-
-    }
-  }
+    if (argIndex === 0 && (typeof arg !== 'object' || arg === null)) unpack = false
+  } 
 }
 
 module.exports = class BaseStore extends Element {
