@@ -6,9 +6,11 @@ function getArgumentNames (func) {
   } catch (e) {}
   return argumentNames
 }
-function extractArguments (args) {
 
+function extractArguments (args) {
+  let argNames = getArgumentNames(args.callee)
 }
+
 module.exports = class BaseStore extends Element {
   constructor (parent, state) {
     super(parent, state)
