@@ -27,6 +27,7 @@ module.exports = class BaseStore extends Element {
   constructor (parent, state) {
     super(parent, state)
     this.rootView().hook('save', this._onSave)
+    this.rootView().hook('save', this._onSave)
     this.rootView().hook('load', this._onLoad)
   }
 
