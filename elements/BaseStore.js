@@ -6,9 +6,8 @@ function getArgumentNames (func) {
   } catch (e) {}
   return argumentNames
 }
-function extract (args) {
-
-}
+function extractArguments (args) {
+  ar}
 module.exports = class BaseStore extends Element {
   constructor (parent, state) {
     super(parent, state)
