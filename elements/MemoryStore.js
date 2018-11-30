@@ -1,7 +1,7 @@
 const BaseStore = require('./BaseStore');
 
 module.exports = class MemoryStore extends BaseStore {
-  constructor(parent, options) {
+  constructor (parent, options) {
     super(parent, options);
     this.parent.hook('save', ({path, value})=>{
             
