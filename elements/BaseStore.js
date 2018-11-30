@@ -21,7 +21,7 @@ module.exports = class BaseStore extends Element {
   }
 
   save (collection, key, value) {
-    
+    { colle ction,}
     extract(arguments)
   }
 
