@@ -33,7 +33,7 @@ module.exports = class BaseStore extends Element {
   }
 
   save (collection, key, value) {
-    let options = extractArguments(arguments)
+    let{collection, key, value} = extractArguments(arguments)
     collection = options.collection
   }
 
