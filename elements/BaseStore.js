@@ -8,7 +8,7 @@ module.exports = class BaseStore extends Element {
   }
 
   _onSave (options) {
-    callWithOptionsAsArguments(options, this.save)
+    callWithOptionsAsArguments(this, this.save, options)
   }
 
   save (collection, key, value) {}
