@@ -198,10 +198,10 @@ class Element {
 
     this.parentView().hook('destroyed', this.destroy)
     this.parentView().hook(`${this.name.toLowerCase()}_children_views`, this.view)
-    this.parentView().hook('children_views', this._getThis)
+    this.parentView().hook('children_views', this.view)
 
-    this.rootView().hook(`${this.name.toLowerCase()}_`, this._getThis)
-    this.rootView().hook(`find_all_elements`, this._getThis)
+    this.rootView().hook(`${this.name.toLowerCase()}_views`, this.view)
+    this.rootView().hook(`all_element_views`, this.view)
 
     this.parentView().trigger(`child_created`, this)
     this.parentView().trigger(`${this.name.toLowerCase()}_child_created`, this)
@@ -209,10 +209,6 @@ class Element {
     this.rootView().trigger(`${this.name.toLowerCase()}_created`, this)
   }
 
-  async _getThis () {
-    if (this._isDestroyed) return null
-    return this
-  }
 
   parentView () {
     this._parentView.change(this.parent())
