@@ -21,6 +21,7 @@
 //         }
 //     }
 // }
+const EventEmitter = require('events')
 
 class QueryRequester {
   constructor () {
@@ -208,7 +209,6 @@ class Element {
     this.rootView().trigger(`element_created`, this)
     this.rootView().trigger(`${this.name.toLowerCase()}_created`, this)
   }
-
 
   parentView () {
     this._parentView.change(this.parent())
