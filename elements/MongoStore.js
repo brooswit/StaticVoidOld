@@ -4,7 +4,7 @@ const BaseStore = require('./BaseStore')
 module.exports = class MongoStore extends BaseStore {
   constructor (parent, options) {
     super(parent, options)
-    let {host, por}
+    
     var mongodbHost = '127.0.0.1';
     var mongodbPort = '27017';
      
