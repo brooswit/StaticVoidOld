@@ -10,9 +10,10 @@ function getArgumentNames (func) {
 function extractArguments (args) {
   let options = {}
   let argNames = getArgumentNames(args.callee)
-  let unpack = 
+  let unpack = true
   for (argIndex in argNames) {
     let argName = argNames[argIndex]
+    let arg = args[argIndex]
     options[argName] = args[argIndex]
     if(argIndex === 0 && )
   }
