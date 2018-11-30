@@ -8,6 +8,7 @@ function getArgumentNames (func) {
 }
 
 function extractArguments (args) {
+  let options = {}
   let argNames = getArgumentNames(args.callee)
   for (argNameIndex in argNames) {
     let argName = argNames[argNameIndex]
