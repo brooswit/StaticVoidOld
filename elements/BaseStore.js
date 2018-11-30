@@ -1,16 +1,16 @@
 const Element = require('./Element')
 
-function getArgumentNames (func) {
-  let argumentNames = null
+function getArgNames (func) {
+  let argNames = null
   try {
-    argumentNames = func.toString().split('(')[1].split(')')[0].replace(/\s/g, '').split(',')
+    argNames = func.toString().split('(')[1].split(')')[0].replace(/\s/g, '').split(',')
   } catch (e) {}
-  return argumentNames
+  return argNames
 }
 
-function extractArguments (args, func) {
+function optsToFuncArgs (args, func) {
   let options = {}
-  let argNames = getArgumentNames(func)
+  let argNames = getArgNames(func)
   let unpack = true
   for (let argIndex in argNames) {
     let argName = argNames[argIndex]
@@ -23,7 +23,7 @@ function extractArguments (args, func) {
 }
 
 function applyOptions (context, options, func) {
-  let args = extractArguments(options, func)
+  let args = optsToFuncArgs(options, func)
   func.apply(context, args)
 }
 
