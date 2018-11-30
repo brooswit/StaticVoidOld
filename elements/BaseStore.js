@@ -1,5 +1,6 @@
 const Element = require('./Element')
 const getArgumentNames(func) {
+    let argumentNames =
     try {
         return func.toString().split('(')[1].split(')')[0].replace(/\s/g,'').split(',')
     } catch(e) {
