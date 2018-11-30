@@ -23,7 +23,11 @@ module.exports = class MemoryStore extends BaseStore {
             return pointer[pathElements.length - 1];
         });
     }
-    save(collection, key, value)
+    save(collection, key, value) {
+        this.
+    }
     load(collection, key, value)
-    exists(collection, key) {}
+    exists(collection, key) {
+
+    }
 }
