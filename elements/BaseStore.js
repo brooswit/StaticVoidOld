@@ -7,7 +7,7 @@ module.exports = class BaseStore extends Element {
     this.rootView().hook('load', this._onLoad)
   }
 
-  _onSave ({ collection, key, value }) {
+  _onSave (options) { 
     this.save(collection, key, value)
   }
 
