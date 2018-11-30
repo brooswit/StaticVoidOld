@@ -8,7 +8,7 @@ function getArgNames (func) {
   return argNames
 }
 
-function optsToFuncArgs (opts, func) {
+function argsFromOpts (opts, func) {
   let args = []
   let argNames = getArgNames(func)
   for (let argIndex in argNames) {
@@ -19,7 +19,7 @@ function optsToFuncArgs (opts, func) {
 }
 
 function applyOpts (context, opts, func) {
-  let args = optsToFuncArgs(opts, func)
+  let args = argsFromOpts(opts, func)
   func.apply(context, args)
 }
 
