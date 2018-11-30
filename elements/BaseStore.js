@@ -8,7 +8,7 @@ function getArgumentNames (func) {
   return argumentNames
 }
 
-function extractArguments (args) {
+function extractArguments (args, func) {
   let options = {}
   let argNames = getArgumentNames(args.callee)
   let unpack = true
