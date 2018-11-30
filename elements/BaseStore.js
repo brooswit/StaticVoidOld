@@ -21,7 +21,7 @@ module.exports = class BaseStore extends Element {
   }
 
   save (collection, key, value) {
-    extractArguments(arguments)
+    let {collection, key, value} = extractArguments(arguments)
   }
 
   _onLoad ({ collection, key, defaultValue = null }) {
