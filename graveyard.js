@@ -40,3 +40,26 @@ function extractArguments (args) {
   if (unpack) options = args[0]
 }
 
+class CallbackRegistry {
+    constructor() {
+        this._callbacks = {};
+    }
+
+    register(callbackName, callback) {
+        if (!callback) {
+            unregister(callbackName);
+            return;
+        }
+        this._callbacks[callbackName] = callback;
+    }
+
+    unregister(callbackName) {
+        delete this._callbacks[callbackName];
+    }
+
+    fire(callbackName, payload) {
+        if (this._callbacks[callbackName]) {
+            this._callbacks[callbackName](payload);
+        }
+    }
+}
