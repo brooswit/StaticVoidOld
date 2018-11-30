@@ -35,6 +35,7 @@ module.exports = class MemoryStore extends BaseStore {
         this.data[collection][key] = value;
     }
     exists(collection, key) {
+        if(this.data)
 
     }
 }
