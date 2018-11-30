@@ -14,13 +14,15 @@ function optsToFuncArgs (opts, func) {
   if (!argNames) return []
   let unpack = true
   for (let argIndex in argNames) {
-    let argName = argNames[argIndex]
-    let arg = opts[argName]
-    args[argName] = opts[argIndex]
     if (argIndex === 0 && (typeof arg !== 'object' || arg === null)) unpack = false
     if (argIndex > 0 && arg !== undefined) unpack = false
   }
   if (unpack) opts = args[0]
+  if un
+    let argName = argNames[argIndex]
+    let arg = opts[argName]
+    args[argName] = opts[argIndex]
+  }
 }
 
 function applyOpts (context, opts, func) {
