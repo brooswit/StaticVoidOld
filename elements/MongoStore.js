@@ -8,21 +8,21 @@ module.exports = class MongoStore extends BaseStore {
     const {host, port, username, password, database} = options
     
 
-    var mongodbHost = '127.0.0.1';
-    var mongodbPort = '27017';
+    var host = '127.0.0.1';
+    var port = '27017';
      
     var authenticate ='';
     //cloud
     if (cloud) {
-     mongodbHost = 'YOURHOST.mlab.com';
-     mongodbPort = 'YOURPORT';
+     host = 'YOURHOST.mlab.com';
+     port = 'YOURPORT';
      authenticate = 'YOURUSER:YOURPASSWORD@'
     }
      
     var mongodbDatabase = 'world';
      
     // connect string for mongodb server running locally, connecting to a database called test
-    var url = 'mongodb://'+authenticate+mongodbHost+':'+mongodbPort + '/' + mongodbDatabase;
+    var url = 'mongodb://'+authenticate+host+':'+port + '/' + mongodbDatabase;
   }
   async save (collection, key, value) {
     this.data[collection] = this.data[collection] || {}
@@ -48,21 +48,21 @@ var assert = require('assert');
  
 var cloud = true;
  
-var mongodbHost = '127.0.0.1';
-var mongodbPort = '27017';
+var host = '127.0.0.1';
+var port = '27017';
  
 var authenticate ='';
 //cloud
 if (cloud) {
  mongodbHost = 'YOURHOST.mlab.com';
- mongodbPort = 'YOURPORT';
+ port = 'YOURPORT';
  authenticate = 'YOURUSER:YOURPASSWORD@'
 }
  
 var mongodbDatabase = 'world';
  
 // connect string for mongodb server running locally, connecting to a database called test
-var url = 'mongodb://'+authenticate+mongodbHost+':'+mongodbPort + '/' + mongodbDatabase;
+var url = 'mongodb://'+authenticate+mongodbHost+':'+port + '/' + mongodbDatabase;
  
  
 // find and CRUD: http://mongodb.github.io/node-mongodb-native/2.0/tutorials/crud_operations/
