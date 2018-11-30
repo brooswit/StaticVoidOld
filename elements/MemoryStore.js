@@ -1,4 +1,4 @@
-const Element = require('./Element');
+const BaseStore = require('./BaseStore');
 
 module.exports = class MemoryStore extends BaseStore {
     constructor(parent, options) {
