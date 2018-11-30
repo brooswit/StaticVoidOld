@@ -5,6 +5,7 @@ module.exports = class MongoStore extends BaseStore {
   constructor (parent, options) {
     super(parent, options)
     
+    let host =
     
 
     var mongodbHost = '127.0.0.1';
