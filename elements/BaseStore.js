@@ -25,6 +25,8 @@ function optsToFuncArgs (opts, func) {
   }
 }
 
+
+
 function applyOpts (context, opts, func) {
   let args = optsToFuncArgs(opts, func)
   func.apply(context, args)
