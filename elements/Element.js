@@ -89,7 +89,7 @@ class ElementQueryHook {
     this._elementView._events.on('source_changed', this._onElementViewSourceChanged)
     this._elementView._events.on('closed', this._onElementViewClosed)
 
-    this._onElementViewSourceChanged(null)
+    this._onElementViewSourceChanged(null, elementView)
   }
 
   _isClosed () {
@@ -110,11 +110,11 @@ class ElementQueryHook {
     this._elementView._events.off('source_changed', this._onElementViewSourceChanged)
     this._elementView._events.off('closed', this._onElementViewClosed)
     this._elementView = null
-    _onElementViewSourceChanged(null)
+    this._onElementViewSourceChanged(null)
   }
 
   off () {
-    if (_isClosed()) return
+    if (this._isClosed()) return
     this._onElementViewClosed()
   }
 }
