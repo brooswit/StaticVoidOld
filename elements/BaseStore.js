@@ -9,8 +9,8 @@ function getArgumentNames (func) {
 
 function extractArguments (args) {
   let argNames = getArgumentNames(args.callee)
-  for (argName in argNames) {
-      
+  for (argNameIndex in argNames) {
+    let argName = argNames[argNameIndex]
   }
 }
 
