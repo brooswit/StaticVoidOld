@@ -6,6 +6,7 @@ module.exports = class MongoStore extends BaseStore {
     super(parent, options)
     this._connect()
   }
+
   _connect() {
     const {host, port, username, password, database} = options
     authenticate = username & password ? `${username}:${password}@` : ''
@@ -36,36 +37,3 @@ module.exports = class MongoStore extends BaseStore {
     return true
   }
 }
-
-var assert = require('assert');
- 
-var cloud = true;
- 
-var host = '127.0.0.1';
-var port = '27017';
- 
-var authenticate ='';
-//cloud
-if (cloud) {
- mongodbHost = 'YOURHOST.mlab.com';
- port = 'YOURPORT';
- authenticate = 'YOURUSER:YOURPASSWORD@'
-}
- 
-var mongodbDatabase = 'world';
- 
-// connect string for mongodb server running locally, connecting to a database called test
-var url = 'mongodb://'+authenticate+mongodbHost+':'+port + '/' + mongodbDatabase;
- 
- 
-// find and CRUD: http://mongodb.github.io/node-mongodb-native/2.0/tutorials/crud_operations/
-// aggregation: http://mongodb.github.io/node-mongodb-native/2.0/tutorials/aggregation/
- 
-MongoClient.connect(url, function(err, db) {
-   assert.equal(null, err);
-   console.log("Connected correctly to server.");
-//var cursor = collection.find({});
-    // find top 20 countries by  size
-    
- 
-}) //connect()
