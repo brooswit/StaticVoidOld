@@ -27,7 +27,9 @@ function applyOptions (context, options, func) {
   func.apply(context, args)
 }
 
-function optionsApplyer()
+function optionsApplyer (func) {
+
+}
 
 module.exports = class BaseStore extends Element {
   constructor (parent, state) {
