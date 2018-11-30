@@ -25,6 +25,5 @@ module.exports = class MemoryStore extends BaseStore {
     }
     save(collection, key, value)
     load(collection, key, value)
-    exists(collection, key)
-    
+    exists(collection, key) {}
 }
