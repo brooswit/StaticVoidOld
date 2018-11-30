@@ -10,16 +10,9 @@ module.exports = class MongoStore extends BaseStore {
 
     var host = '127.0.0.1';
     var port = '27017';
-     
-    var authenticate ='';
-    if (cloud) {
-     authenticate = username & password ? `${username}:${password}@` 
-    }
-     
-    var mongodbDatabase = 'world';
-     
-    // connect string for mongodb server running locally, connecting to a database called test
+         authenticate = username & password ? `${username}:${password}@` : ''
     var url = 'mongodb://'+authenticate+host+':'+port + '/' + mongodbDatabase;
+
   }
   async save (collection, key, value) {
     this.data[collection] = this.data[collection] || {}
