@@ -7,11 +7,10 @@ module.exports = class MemoryStore extends BaseStore {
   }
 
   async load (collection, key, optionalDefault) {
-    let value = optionalDefault || null
-    if (this.data[collection]) {
+    let value = optionalDefault !== undefined ? optionalDefault : null
+    if (this.has(collection, key)) {
+      value = this.data[collection][key]
     }
-    this.data[collection] = this.data[collection] || {}
-    this.data[collection][key] = value
   }
 
   async has (collection, key) {
