@@ -11,6 +11,7 @@ module.exports = class MemoryStore extends BaseStore {
     if (this.has(collection, key)) {
       value = this.data[collection][key]
     }
+    return value
   }
 
   async has (collection, key) {
