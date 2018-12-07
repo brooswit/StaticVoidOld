@@ -15,7 +15,7 @@ test('outputs array argument names for a callback', () => {
 })
 
 test('outputs array argument names for an async callback', () => {
-  let func = (a, b, c) => {}
+  let func = async (a, b, c) => {}
   let funcArgs = getArgNames(func)
   let expectedArgs = ['a', 'b', 'c']
   expect(funcArgs).toEqual(expectedArgs)
