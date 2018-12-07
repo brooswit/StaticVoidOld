@@ -1,4 +1,5 @@
-const getArgNames = require('getArgNames')
+const getArgNames = require('./getArgNames')
+
 module.exports = function argsFromOpts (opts, func) {
   let args = []
   let argNames = getArgNames(func)
