@@ -8,7 +8,8 @@ const path = require('path')
 
 // UTILITY
 async function asynchronously (method) {
-  return method.then ? await method() : method()
+  let result = method.then ? await method() : method()
+   
 }
 
 class StaticVoid extends Element {
