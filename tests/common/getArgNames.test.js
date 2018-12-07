@@ -6,3 +6,10 @@ test('outputs array argument names for a function', () => {
   let expectedArgs = ['a', 'b', 'c']
   expect(funcArgs).toEqual(expectedArgs)
 })
+
+test('outputs array argument names for a function', () => {
+  function func (a, b, c) {}
+  let funcArgs = getArgNames(func)
+  let expectedArgs = ['a', 'b', 'c']
+  expect(funcArgs).toEqual(expectedArgs)
+})
