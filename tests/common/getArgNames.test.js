@@ -7,8 +7,8 @@ test('outputs array argument names for a function', () => {
   expect(funcArgs).toEqual(expectedArgs)
 })
 
-test('outputs array argument names for a function', () => {
-  function func (a, b, c) {}
+test('outputs array argument names for an', () => {
+  let func = (a, b, c) => {}
   let funcArgs = getArgNames(func)
   let expectedArgs = ['a', 'b', 'c']
   expect(funcArgs).toEqual(expectedArgs)
