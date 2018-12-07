@@ -1,4 +1,4 @@
-const BaseStore = require('./BaseStore')
+const BaseStore = require('../shared/BaseStore')
 
 module.exports = class MemoryStore extends BaseStore {
   async save (collection, key, value) {
